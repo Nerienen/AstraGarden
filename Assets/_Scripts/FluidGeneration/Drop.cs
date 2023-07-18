@@ -69,13 +69,11 @@ public abstract class Drop : MonoBehaviour
     protected virtual void OnCollisionEnter(Collision collision)
     {
         DisplaySplash(collision.contacts[0].normal, collision.contacts[0].point);
-        ReduceScale();
     }
     
     protected virtual void OnCollisionStay(Collision collision)
     {
         DisplaySplash(collision.contacts[0].normal, collision.contacts[0].point);
-        ReduceScale();
     }
 
     protected void DisableDrop(Vector3 splashForward, Vector3 splashPosition)
@@ -91,10 +89,10 @@ public abstract class Drop : MonoBehaviour
         splash.transform.forward = splashForward;
     }
 
-    private void ReduceScale()
+    protected void ReduceScale()
     {
         transform.localScale *= 0.65f;
-        if(transform.localScale.x < 0.1f) gameObject.SetActive(false);
+        if(transform.localScale.x < 0.15f) gameObject.SetActive(false);
     }
 
     protected void AddScale(Vector3 addition)

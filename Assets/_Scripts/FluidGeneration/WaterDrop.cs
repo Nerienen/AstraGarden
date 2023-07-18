@@ -24,6 +24,7 @@ public class WaterDrop : Drop
            return;
        }
        
+       ReduceScale();
     }
     
     protected override void OnCollisionStay(Collision collision)
@@ -46,5 +47,6 @@ public class WaterDrop : Drop
             return;
         }
         
+        ReduceScale();
     }
 }
