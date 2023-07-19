@@ -6,17 +6,18 @@ using UnityEngine;
 public class FMODEvents : MonoBehaviour
 {
     [field: Header("Ambience")]
-    [field: SerializeReference] public EventReference ambience { get; private set; }
+    //[field: SerializeReference] public EventReference ambience { get; private set; }
     
     [field: Header("Music")]
-    [field: SerializeReference] public EventReference music { get; private set; }
+    [field: SerializeReference] public EventReference drift { get; private set; }
+    [field: SerializeReference] public EventReference ending { get; private set; }
     
     [field: Header("Water SFX")]
-    [field: SerializeReference] public EventReference inflationSound { get; private set; }
-    [field: SerializeReference] public EventReference blobSound { get; private set; }
+    //[field: SerializeReference] public EventReference inflationSound { get; private set; }
+    //[field: SerializeReference] public EventReference blobSound { get; private set; }
     
     [field: Header("Player SFX")]
-    [field: SerializeReference] public EventReference footStepsSound { get; private set; }
+    //[field: SerializeReference] public EventReference footStepsSound { get; private set; }
 
     
     
