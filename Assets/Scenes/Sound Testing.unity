@@ -643,6 +643,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e1f46805a47e84981069635d7a0f14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isIntro: 1
+  hasTriggeredIntro: 0
+  isNormal: 0
+  isBlackout: 0
+  hasTriggeredBlackout: 0
+  isEnding: 0
+  hasTriggeredTransitionToEnd: 0
+  hasTriggeredEendingSequence: 0
 --- !u!1 &331107269
 GameObject:
   m_ObjectHideFlags: 0
@@ -1566,7 +1574,6 @@ GameObject:
   m_Component:
   - component: {fileID: 909224479}
   - component: {fileID: 909224481}
-  - component: {fileID: 909224480}
   m_Layer: 0
   m_Name: FMODEvents
   m_TagString: Untagged
@@ -1589,37 +1596,6 @@ Transform:
   m_Father: {fileID: 915312448}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &909224480
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 909224478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  Event: 
-  PlayEvent: 0
-  StopEvent: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  AllowNonRigidbodyDoppler: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: -1
-  OverrideMaxDistance: -1
 --- !u!114 &909224481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1632,6 +1608,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 581bb87d640152b48b30b22e3f2f7e6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <drift>k__BackingField:
+    Guid:
+      Data1: 146540823
+      Data2: 1322592475
+      Data3: 1244116125
+      Data4: -1888551160
+    Path: event:/Music/Drift
+  <ending>k__BackingField:
+    Guid:
+      Data1: 146540823
+      Data2: 1322592475
+      Data3: 1244116125
+      Data4: -1888551160
+    Path: event:/Music/Drift
 --- !u!1 &915312447
 GameObject:
   m_ObjectHideFlags: 0

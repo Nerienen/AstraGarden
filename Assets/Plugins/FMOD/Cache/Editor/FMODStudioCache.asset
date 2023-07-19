@@ -32,6 +32,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 640000
+--- !u!114 &-8694070458198138379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Ambient.bank
+  m_EditorClassIdentifier: 
+  Path: FMODAssets/levelUpSound/Build/Desktop/Ambient.bank
+  Name: Ambient
+  StudioPath: bank:/Ambient
+  lastModified: 638254001787914730
+  FileSizes:
+  - Name: Desktop
+    Value: 7085568
+  Exists: 1
 --- !u!114 &-8608490991598121373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,10 +67,10 @@ MonoBehaviour:
   Path: FMODAssets/levelUpSound/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638253938681769289
+  lastModified: 638254001750474367
   FileSizes:
   - Name: Desktop
-    Value: 1036
+    Value: 1672
   Exists: 1
 --- !u!114 &-8403107467871874435
 MonoBehaviour:
@@ -87,11 +107,39 @@ MonoBehaviour:
   Path: FMODAssets/levelUpSound/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638253961469425900
+  lastModified: 638254001752045812
   FileSizes:
   - Name: Desktop
-    Value: 51505952
+    Value: 51508544
   Exists: 1
+--- !u!114 &-7486877404661933974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambient/Rattling AC
+  m_EditorClassIdentifier: 
+  Path: event:/Ambient/Rattling AC
+  Guid:
+    Data1: -1208179279
+    Data2: 1271783974
+    Data3: 1672031140
+    Data4: -1159460145
+  Banks:
+  - {fileID: -8694070458198138379}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -5932218532930665544}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 196625
 --- !u!114 &-6488182869926142585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +162,30 @@ MonoBehaviour:
     data2: 1820173575
   Type: 0
   IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-5932218532930665544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Rattling AC/isBlackout
+  m_EditorClassIdentifier: 
+  Name: isBlackout
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 739971066
+    data2: 1534347243
+  Type: 0
+  IsGlobal: 1
   Labels: []
   Exists: 1
 --- !u!114 &-5241861373131807682
@@ -184,6 +256,34 @@ MonoBehaviour:
   - Name: Desktop
     Value: 1036
   Exists: 1
+--- !u!114 &-3883131290339986279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambient/Computer Hum
+  m_EditorClassIdentifier: 
+  Path: event:/Ambient/Computer Hum
+  Guid:
+    Data1: -1588442621
+    Data2: 1219344935
+    Data3: 1392129685
+    Data4: 768309754
+  Banks:
+  - {fileID: -8694070458198138379}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 991285685204441413}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 196625
 --- !u!114 &-3078632344979745908
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,6 +306,30 @@ MonoBehaviour:
     data2: 1053559129
   Type: 0
   IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-2879134208480270008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Low Fan/isBlackout
+  m_EditorClassIdentifier: 
+  Name: isBlackout
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 739971066
+    data2: 1534347243
+  Type: 0
+  IsGlobal: 1
   Labels: []
   Exists: 1
 --- !u!114 &-2545007135724813468
@@ -261,6 +385,7 @@ MonoBehaviour:
   - {fileID: 2841649368893325459}
   - {fileID: 8367850168535774715}
   - {fileID: -6488182869926142585}
+  - {fileID: 4521170151641143097}
   MinDistance: 1
   MaxDistance: 20
   Length: 640000
@@ -280,15 +405,48 @@ MonoBehaviour:
   - {fileID: 792988694106373277}
   - {fileID: -8608490991598121373}
   - {fileID: -8314815526676812634}
+  - {fileID: -8694070458198138379}
   EditorEvents:
   - {fileID: -1693281759335115784}
-  EditorParameters: []
+  - {fileID: -3883131290339986279}
+  - {fileID: -7486877404661933974}
+  - {fileID: 362365451105174395}
+  EditorParameters:
+  - {fileID: 4908963123747501093}
   MasterBanks:
   - {fileID: -8608490991598121373}
   StringsBanks:
   - {fileID: 792988694106373277}
-  cacheTime: 638253961469425900
+  cacheTime: 638254001787914730
   cacheVersion: 131605
+--- !u!114 &362365451105174395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambient/Low Fan
+  m_EditorClassIdentifier: 
+  Path: event:/Ambient/Low Fan
+  Guid:
+    Data1: 1557707493
+    Data2: 1241288065
+    Data3: 1481028775
+    Data4: 1421692828
+  Banks:
+  - {fileID: -8694070458198138379}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -2879134208480270008}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 196625
 --- !u!114 &792988694106373277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -304,10 +462,34 @@ MonoBehaviour:
   Path: FMODAssets/levelUpSound/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638253938681779301
+  lastModified: 638254001750484378
   FileSizes:
   - Name: Desktop
-    Value: 1030
+    Value: 1386
+  Exists: 1
+--- !u!114 &991285685204441413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Computer Hum/isBlackout
+  m_EditorClassIdentifier: 
+  Name: isBlackout
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 739971066
+    data2: 1534347243
+  Type: 0
+  IsGlobal: 1
+  Labels: []
   Exists: 1
 --- !u!114 &1550218396980523529
 MonoBehaviour:
@@ -399,6 +581,54 @@ MonoBehaviour:
     data2: 1820173575
   Type: 0
   IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &4521170151641143097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Drift/isBlackout
+  m_EditorClassIdentifier: 
+  Name: isBlackout
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 739971066
+    data2: 1534347243
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &4908963123747501093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/isBlackout
+  m_EditorClassIdentifier: 
+  Name: isBlackout
+  StudioPath: parameter:/isBlackout
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 739971066
+    data2: 1534347243
+  Type: 0
+  IsGlobal: 1
   Labels: []
   Exists: 1
 --- !u!114 &6914039085295730569
