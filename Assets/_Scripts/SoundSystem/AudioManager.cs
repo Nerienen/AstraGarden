@@ -1,12 +1,34 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMOD.Studio;
+using FMODUnity;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public static AudioManager instance;
-    [SerializeField] private AudioSource musicSource;
-    [SerializeField] private AudioSource effectSource;
+    [Header("Volume")] 
+    [Range(0,1)]
+    public float masterVolume = 1;
+    [Range(0,1)]
+    public float musicVolume = 1; 
+    [Range(0,1)]
+    public float sfxVolume = 1; 
+    [Range(0,1)]
+    public float ambienceVolume = 1;
+
+    private Bus _masterBus;
+    private Bus _musicBus;
+    private Bus _sfxBus;
+    private Bus _ambienceBus;
+    
+    private List<EventInstance> _eventInstances;
+    private List<StudioEventEmitter> _eventEmitters;
+
+    private EventInstance _ambienceEventInstance;
+    private EventInstance _musicEventInstance;
+    
+    public static AudioManager instance { get; private set; }
     
     void Awake()
     {
@@ -17,72 +39,75 @@ public class AudioManager : MonoBehaviour
         }
         instance = this;
         DontDestroyOnLoad(gameObject);
+
+        _eventEmitters = new List<StudioEventEmitter>();
+        _eventInstances = new List<EventInstance>();
+
+        _masterBus = RuntimeManager.GetBus("bus:/");
+        _musicBus = RuntimeManager.GetBus("bus:/Music");
+        _ambienceBus = RuntimeManager.GetBus("bus:/Ambience");
+        _sfxBus = RuntimeManager.GetBus("bus:/SFX");
     }
-    public void PlaySound(AudioClip clip)
+
+    private void Start()
+    {
+        InitializeAmbience(FMODEvents.instance.ambience);
+        InitializeMusic(FMODEvents.instance.music);
+    }
+
+    private void Update()
+    {
+        _masterBus.setVolume(masterVolume);
+        _musicBus.setVolume(musicVolume);
+        _ambienceBus.setVolume(ambienceVolume);
+        _sfxBus.setVolume(sfxVolume);
+    }
+
+    private void InitializeAmbience(EventReference instanceAmbience)
+    {
+        _ambienceEventInstance = CreateInstance(instanceAmbience);
+        _ambienceEventInstance.start();
+    }
+    
+    private void InitializeMusic(EventReference instanceMusic)
+    {
+        _musicEventInstance = CreateInstance(instanceMusic);
+        _musicEventInstance.start();
+    }
+
+    public void SetMusicArea(MusicArea area)
+    {
+        _musicEventInstance.setParameterByName("area", (float)area);
+    }
+
+    public void PlayOneShot(EventReference sound, Vector3 worldPos)
     { 
-        if(clip == null)
+        RuntimeManager.PlayOneShot(sound, worldPos);
+    }
+
+    public EventInstance CreateInstance(EventReference eventReference)
+    {
+        EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
+        _eventInstances.Add(eventInstance);
+        return eventInstance;
+    }
+
+    private void CleanUp()
+    {
+        foreach (var eventInstance in _eventInstances)
         {
-            Debug.LogError("AudioClip is missing!");
-            return;
+            eventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            eventInstance.release();
         }
-        
-        effectSource.PlayOneShot(clip);
-    }
 
-    public void PlayMusic(AudioClip clip)
-    {
-        if(clip == null)
+        foreach (var eventEmitter in _eventEmitters)
         {
-            Debug.LogError("AudioClip is missing!");
-            return;
+            eventEmitter.Stop();
         }
-        
-        musicSource.clip = clip;
-        musicSource.Play();
-    }
-
-    public void ChangeMasterVolume(float value)
-    {
-        AudioListener.volume = value;
     }
     
-    public float GetMasterVolume()
+    private void OnDestroy()
     {
-        return AudioListener.volume;
-    }
-
-    public void ChangeMusicVolume(float value)
-    {
-        musicSource.volume = value;
-    }
-
-    public void ChangeEffectsVolume(float value)
-    {
-        effectSource.volume = value;
-    }
-
-    public void StopMusic()
-    {
-        musicSource.Pause();
-    }
-
-    public void StopEffect()
-    {
-        effectSource.Stop();
-    }
-
-    public void ResumeMusic()
-    {
-        musicSource.Play();
-    }
-    
-    public void ToggleEffects()
-    {
-        effectSource.mute = !effectSource.mute;
-    }
-    
-    public void ToggleMusic()
-    {
-        musicSource.mute = !musicSource.mute;
+        CleanUp(); 
     }
 }
