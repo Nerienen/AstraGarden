@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 764943640196624559}
   - component: {fileID: 886128630569774753}
   m_Layer: 0
-  m_Name: WaterSplash
+  m_Name: EnergySplash
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2173310209236607822}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.325655, y: 1.8575655, z: 0.64057505}
+  m_LocalPosition: {x: 0.56268233, y: 1.8718901, z: 2.5004625}
   m_LocalScale: {x: 0.49999997, y: 0.49999997, z: 0.49999997}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -980,7 +980,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 10
+        scalar: 5
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -4835,7 +4835,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 75b39a9b78ac18c4396931213beca2bf, type: 2}
+  - {fileID: 2100000, guid: 42fdcf55f0327c54a9416c5577063cbb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

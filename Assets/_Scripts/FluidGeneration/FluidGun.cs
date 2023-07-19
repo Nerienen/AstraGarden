@@ -14,8 +14,10 @@ public class FluidGun : MonoBehaviour
 
     [Header("Gun parameters")] 
     [SerializeField] private float shootingPower;
-    [SerializeField] private float ammo;
-    [SerializeField] private float maxAmmo;
+    [SerializeField] private float waterAmmo;
+    [SerializeField] private float energyAmmo;
+    [SerializeField] private float maxWaterAmmo;
+    [SerializeField] private float maxEnergyAmmo;
     [field:SerializeReference] public float attackSpeed { get; private set; }
     [SerializeField] private float cadence;
     private float _lastTimeAttacked;
@@ -31,18 +33,41 @@ public class FluidGun : MonoBehaviour
         _lastTimeAttacked = float.MinValue;
     }
 
+    private void Update()
+    {
+        if (Input.mouseScrollDelta.y != 0 && currentDrop == null) _throwsEnergy = !_throwsEnergy;
+    }
+
     public void ChargeDrop()
     {
-        if(ammo <= 0) return;
-        
-        if (currentDrop == null)
-        {
-            InstantiateDrop();
-            return;
-        }
 
-        if (currentDrop.Grow(cadence)) ammo -= cadence * Time.deltaTime;
-        if (ammo < 0) ammo = 0;
+        if (!_throwsEnergy)
+        {
+            if(waterAmmo <= 0) return;
+        
+            if (currentDrop == null)
+            {
+                InstantiateDrop();
+                return;
+            }
+
+            if (currentDrop.Grow(cadence)) waterAmmo -= cadence * Time.deltaTime;
+            if (waterAmmo < 0) waterAmmo = 0;
+        }
+        else
+        {
+            if(energyAmmo <= 0) return;
+        
+            if (currentDrop == null)
+            {
+                InstantiateDrop();
+                return;
+            }
+
+            if (currentDrop.Grow(cadence)) energyAmmo -= cadence * Time.deltaTime;
+            if (energyAmmo < 0) energyAmmo = 0;
+        }
+       
     }
 
     public void ShootDrop()
@@ -63,7 +88,7 @@ public class FluidGun : MonoBehaviour
         if(Time.time - _lastTimeAttacked < attackSpeed) return;
             
         if (_throwsEnergy) currentDrop = ObjectPool.Instance.InstantiateFromPool(energyDropPrefab, shootPoint.position, Quaternion.identity).GetComponent<Drop>();
-        currentDrop = ObjectPool.Instance.InstantiateFromPool(waterDropPrefab, shootPoint.position, Quaternion.identity).GetComponent<Drop>();
+        else currentDrop = ObjectPool.Instance.InstantiateFromPool(waterDropPrefab, shootPoint.position, Quaternion.identity).GetComponent<Drop>();
         
         currentDrop.Initialize(shootPoint);
     }
