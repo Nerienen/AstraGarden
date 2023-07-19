@@ -8,11 +8,13 @@ public class PlayerInteract : MonoBehaviour
 {
     [SerializeField] private Transform objectGrabPointTransform;
     [SerializeField] private LayerMask interactLayer;
+    [SerializeField] private LayerMask holdersLayer;
 
     [field:SerializeReference] public float interactDistance  { get; private set; }
 
     private Interactable _interactable;
-    public bool interacting { get; private set; }
+    private HoldPoint _holdPoint;
+    public bool interacting { get; set; }
 
     public static PlayerInteract instance;
 
@@ -24,16 +26,25 @@ public class PlayerInteract : MonoBehaviour
 
     private void Update()
     {
-        if (Physics.Raycast(Helpers.Camera.transform.position, Helpers.Camera.transform.forward, out var hit, interactDistance, interactLayer))
+        if (Physics.Raycast(Helpers.Camera.transform.position, Helpers.Camera.transform.forward, out var hit, interactDistance, interacting? holdersLayer:interactLayer))
         {
-            if (hit.transform.TryGetComponent(out _interactable) && !interacting && _interactable.showOutline)
+            if (interacting && hit.transform.TryGetComponent(out _holdPoint))
+            {
+                _holdPoint.GetComponent<Outline>().OutlineWidth = 5;
+            }
+            else if (hit.transform.TryGetComponent(out _interactable) && _interactable.showOutline)
             {
                 _interactable.GetComponent<Outline>().OutlineWidth = 5;
             }
         }
         else
         {
-            if (_interactable != null && !interacting  && _interactable.showOutline)
+            if (interacting && _holdPoint != null)
+            {
+                _holdPoint.GetComponent<Outline>().OutlineWidth = 0;
+                _holdPoint = null;
+            }
+            else if (_interactable != null && !interacting  && _interactable.showOutline)
             {
                 _interactable.GetComponent<Outline>().OutlineWidth = 0;
                 _interactable = null;
@@ -43,8 +54,14 @@ public class PlayerInteract : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && _interactable != null)
         {
             _interactable.GetComponent<Outline>().OutlineWidth = 0;
-            interacting = !interacting;
             _interactable.Interact(objectGrabPointTransform);
+
+            if (_holdPoint != null)
+            {
+                _holdPoint.GetComponent<Outline>().OutlineWidth = 0;
+                _holdPoint.HoldObject(_interactable.transform);
+                _holdPoint = null;
+            }
         }
     }
 }
