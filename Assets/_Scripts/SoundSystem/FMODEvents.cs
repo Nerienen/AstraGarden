@@ -9,8 +9,8 @@ public class FMODEvents : MonoBehaviour
     //[field: SerializeReference] public EventReference ambience { get; private set; }
     
     [field: Header("Music")]
-    [field: SerializeReference] public EventReference drift { get; private set; }
-    [field: SerializeReference] public EventReference ending { get; private set; }
+    [field: SerializeField] public EventReference drift { get; private set; }
+    [field: SerializeField] public EventReference ending { get; private set; }
     
     [field: Header("Water SFX")]
     //[field: SerializeReference] public EventReference inflationSound { get; private set; }
