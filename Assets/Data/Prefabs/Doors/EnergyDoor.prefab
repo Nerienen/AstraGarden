@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 999866843147442457}
   - component: {fileID: 4838258650048124280}
   - component: {fileID: 3104300585721942725}
+  - component: {fileID: 8549484290303423243}
   m_Layer: 0
   m_Name: PF_DoorRight01 (1)
   m_TagString: Untagged
@@ -83,6 +84,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8549484290303423243
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1283349706667920364}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 7268150923408003877, guid: 3e0bc500ff64f234cbf82d53dfa2a9f6, type: 3}
 --- !u!1 &1637451389881094518
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,7 +137,7 @@ Transform:
   - {fileID: 7599032707150560504}
   - {fileID: 4591891579155943311}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2032230408278071300
 GameObject:
@@ -127,6 +150,7 @@ GameObject:
   - component: {fileID: 7484288361049752920}
   - component: {fileID: 7435709834035494696}
   - component: {fileID: 2666864415685121587}
+  - component: {fileID: 6742109618805963304}
   m_Layer: 0
   m_Name: PF_DoorLeft01 (1)
   m_TagString: Untagged
@@ -199,6 +223,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6742109618805963304
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032230408278071300}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -3660538787986770174, guid: 93b026a35e7724c4085ff4d09467465e, type: 3}
 --- !u!1 &2974567650739399254
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,6 +257,7 @@ GameObject:
   - component: {fileID: 5608201843626062890}
   - component: {fileID: 4489929234516519572}
   - component: {fileID: 5686482558043105489}
+  - component: {fileID: 6501752800347892449}
   m_Layer: 0
   m_Name: PF_wallDoor01 (2)
   m_TagString: Untagged
@@ -307,6 +354,28 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!64 &6501752800347892449
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2974567650739399254}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8187157801601322627, guid: 663c55f4db90ad941a819d26bb2e973a, type: 3}
 --- !u!1 &6368569386950069903
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,6 +387,7 @@ GameObject:
   - component: {fileID: 1832714080201237474}
   - component: {fileID: 4059118800761680120}
   - component: {fileID: 7877121467918321926}
+  - component: {fileID: 3669508224361527660}
   m_Layer: 0
   m_Name: wallDoorFrame01
   m_TagString: Untagged
@@ -390,6 +460,28 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3669508224361527660
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6368569386950069903}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 3717583628024243176, guid: 07a5da41e421460458f0af28089dc41c, type: 3}
 --- !u!1 &7872422291799781620
 GameObject:
   m_ObjectHideFlags: 0
