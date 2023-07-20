@@ -47,7 +47,11 @@ MonoBehaviour:
   Path: FMODAssets/levelUpSound/Build/Desktop/Ambient.bank
   Name: Ambient
   StudioPath: bank:/Ambient
+<<<<<<< Updated upstream
   lastModified: 638254318191081910
+=======
+  lastModified: 638254781934951395
+>>>>>>> Stashed changes
   FileSizes:
   - Name: Desktop
     Value: 7085856
@@ -67,7 +71,11 @@ MonoBehaviour:
   Path: FMODAssets/levelUpSound/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
+<<<<<<< Updated upstream
   lastModified: 638254318191091918
+=======
+  lastModified: 638254781935031542
+>>>>>>> Stashed changes
   FileSizes:
   - Name: Desktop
     Value: 1672
@@ -107,7 +115,11 @@ MonoBehaviour:
   Path: FMODAssets/levelUpSound/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
+<<<<<<< Updated upstream
   lastModified: 638254318194442665
+=======
+  lastModified: 638254781936883766
+>>>>>>> Stashed changes
   FileSizes:
   - Name: Desktop
     Value: 51508544
@@ -160,6 +172,30 @@ MonoBehaviour:
   ID:
     data1: 749004909
     data2: 1820173575
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-6420995296439345661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Charge Energy/BubbleGrowth
+  m_EditorClassIdentifier: 
+  Name: BubbleGrowth
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 230036087
+    data2: 2463520131
   Type: 0
   IsGlobal: 0
   Labels: []
@@ -389,6 +425,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 640000
+--- !u!114 &-1318155894515306953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Gun/Charge Energy
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Gun/Charge Energy
+  Guid:
+    Data1: -1681708278
+    Data2: 1309879620
+    Data3: 207494843
+    Data4: -989215442
+  Banks:
+  - {fileID: 1878414804154149626}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: -6420995296439345661}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -406,18 +470,25 @@ MonoBehaviour:
   - {fileID: -8608490991598121373}
   - {fileID: -8314815526676812634}
   - {fileID: -8694070458198138379}
+  - {fileID: 1878414804154149626}
   EditorEvents:
   - {fileID: -1693281759335115784}
   - {fileID: -3883131290339986279}
   - {fileID: -7486877404661933974}
   - {fileID: 362365451105174395}
+  - {fileID: -1318155894515306953}
+  - {fileID: 6590244006134081972}
   EditorParameters:
   - {fileID: 4908963123747501093}
   MasterBanks:
   - {fileID: -8608490991598121373}
   StringsBanks:
   - {fileID: 792988694106373277}
+<<<<<<< Updated upstream
   cacheTime: 638254318194442665
+=======
+  cacheTime: 638254781937759570
+>>>>>>> Stashed changes
   cacheVersion: 131605
 --- !u!114 &362365451105174395
 MonoBehaviour:
@@ -462,10 +533,14 @@ MonoBehaviour:
   Path: FMODAssets/levelUpSound/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
+<<<<<<< Updated upstream
   lastModified: 638254318191091918
+=======
+  lastModified: 638254781935041513
+>>>>>>> Stashed changes
   FileSizes:
   - Name: Desktop
-    Value: 1386
+    Value: 1574
   Exists: 1
 --- !u!114 &991285685204441413
 MonoBehaviour:
@@ -534,6 +609,26 @@ MonoBehaviour:
   FileSizes:
   - Name: Desktop
     Value: 51505952
+  Exists: 1
+--- !u!114 &1878414804154149626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: FMODAssets/levelUpSound/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638254781937759570
+  FileSizes:
+  - Name: Desktop
+    Value: 216000
   Exists: 1
 --- !u!114 &2841649368893325459
 MonoBehaviour:
@@ -631,6 +726,34 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &6590244006134081972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Gun/Charge Water
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Gun/Charge Water
+  Guid:
+    Data1: -510959160
+    Data2: 1127813613
+    Data3: 489244321
+    Data4: 12694694
+  Banks:
+  - {fileID: 1878414804154149626}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 7349734859284771904}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &6914039085295730569
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -651,6 +774,30 @@ MonoBehaviour:
   ID:
     data1: 2349767972
     data2: 3015972118
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &7349734859284771904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Charge Water/BubbleGrowth
+  m_EditorClassIdentifier: 
+  Name: BubbleGrowth
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 230036087
+    data2: 2463520131
   Type: 0
   IsGlobal: 0
   Labels: []
