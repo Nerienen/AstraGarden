@@ -30,11 +30,15 @@ public class PlayerInteract : MonoBehaviour
         {
             if (interacting && hit.transform.TryGetComponent(out _holdPoint))
             {
-                _holdPoint.GetComponent<Outline>().OutlineWidth = 5;
+               Outline outline = _holdPoint.GetComponent<Outline>();
+               outline.OutlineWidth = 5;
+               outline.OutlineColor = Color.white;
             }
-            else if (hit.transform.TryGetComponent(out _interactable) && _interactable.showOutline)
+            else if (hit.transform.TryGetComponent(out _interactable))
             {
-                _interactable.GetComponent<Outline>().OutlineWidth = 5;
+                Outline outline = _interactable.GetComponent<Outline>();
+                outline.OutlineWidth = 5;
+                outline.OutlineColor = _interactable.outlineColor;
             }
         }
         else
@@ -44,7 +48,7 @@ public class PlayerInteract : MonoBehaviour
                 _holdPoint.GetComponent<Outline>().OutlineWidth = 0;
                 _holdPoint = null;
             }
-            else if (_interactable != null && !interacting  && _interactable.showOutline)
+            else if (_interactable != null && !interacting)
             {
                 _interactable.GetComponent<Outline>().OutlineWidth = 0;
                 _interactable = null;
@@ -54,7 +58,8 @@ public class PlayerInteract : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && _interactable != null)
         {
             _interactable.GetComponent<Outline>().OutlineWidth = 0;
-            _interactable.Interact(objectGrabPointTransform);
+            if(!_interactable.Interact(objectGrabPointTransform))
+                _interactable.Interact();
 
             if (_holdPoint != null)
             {

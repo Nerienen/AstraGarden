@@ -8,27 +8,38 @@ public class Grabbable : Interactable
 {
     private Rigidbody _rb;
     private Collider _collider;
-    private bool _interacting;
+    protected bool _grabbing;
     private Transform _grabPoint;
 
+    public bool grabbable { get; protected set; } = true;
+
+    [Header("Grabbable Parameters")]
     [SerializeField] private PhysicMaterial bouncyMaterial;
     [SerializeField] private PhysicMaterial grabbedMaterial;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         _rb = GetComponent<Rigidbody>();
         _collider = GetComponent<Collider>();
-        showOutline = true;
+        if (_collider == null) _collider = GetComponentInChildren<Collider>(); 
+        outlineColor = Color.white;
     }
 
-    public override void Interact(Transform grabPoint)
+    public override bool Interact()
     {
+        return false;
+    }
+
+    public override bool Interact(Transform grabPoint)
+    {
+        if(!grabbable) return false;
+        
         PlayerInteract.instance.interacting = !PlayerInteract.instance.interacting;
         _rb.constraints = RigidbodyConstraints.None;
-        _interacting = !_interacting;
+        _grabbing = !_grabbing;
         _grabPoint = grabPoint;
 
-        if (_interacting)
+        if (_grabbing)
         {
             _rb.constraints = RigidbodyConstraints.FreezeRotation;
             _collider.material = grabbedMaterial;
@@ -38,12 +49,13 @@ public class Grabbable : Interactable
             _rb.constraints = RigidbodyConstraints.None;
             _collider.material = bouncyMaterial;
         }
-        
+
+        return true;
     }
 
     private void FixedUpdate()
     {
-        if(!_interacting) return;
+        if(!_grabbing) return;
 
         Vector3 targetPos = Vector3.Lerp(transform.position, _grabPoint.transform.position, Time.deltaTime * 10f);
         _rb.velocity = (targetPos-transform.position).normalized*Vector3.Distance(transform.position, targetPos) / Time.fixedDeltaTime;

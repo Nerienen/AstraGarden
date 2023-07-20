@@ -1,20 +1,30 @@
 using UnityEngine;
 
-public class Plant : Interactable
+public class Plant : Grabbable
 {
+    [Header("Fruit Parameters")]
     [SerializeField] Transform fruitHolderParent;
 
     [SerializeField] PlantTypes initialPlant = PlantTypes.EnergyPlant;
     
-    public float GrowDuration { get { return growDuration; } }
-    [SerializeField] protected float growDuration = 10f;
+    public float FruitGrowSpeed => fruitGrowSpeed;
+    [Tooltip("Fruit grow percentage increases by the FruitGrowSpeed value each second")]
+    [SerializeField] protected float fruitGrowSpeed = 10f;
+    [SerializeField] protected AnimationCurve fruitGrowFactor;
+    
+    public float GrowSpeed => growSpeed;
+    [Tooltip("Grow percentage increases by the GrowSpeed value each second")]
+    [SerializeField] protected float growSpeed = 10f;
+    [SerializeField] protected AnimationCurve growFactor;
+    
 
     [SerializeField] protected float maxHealthPoints = 100f;
     [SerializeField] protected float healthPoints = 100f;
 
     [Tooltip("By resource we understand the element this plant produce (Oxygen, Water or Energy)")]
     [SerializeField] float resourceCapacity = 10f;
-    public float ResourceCapacity { get { return resourceCapacity; } }
+    
+    public float ResourceCapacity => resourceCapacity;
 
     public enum PlantTypes
     {
@@ -22,19 +32,32 @@ public class Plant : Interactable
         EnergyPlant,
         OxygenPlant
     }
-
+    
+    public enum PlantState
+    {
+        Sprout,
+        FullyGrown
+    }
+    
+    private PlantState _currentPlantState = PlantState.Sprout;
+    
+    float _fruitGrowPercentage = 0;
+    public float FruitGrowPercentage { get => _fruitGrowPercentage; set => _fruitGrowPercentage = value; } 
+    
     float _growPercentage = 0;
-    public float GrowPercentage { get { return _growPercentage; } set { _growPercentage = value; } }
+    public float GrowPercentage { get => _growPercentage; set => _growPercentage = value; }
 
     BasePlant _currentPlant;
-    public BasePlant CurrentPlant { get { return _currentPlant; } set { _currentPlant = value; } }
+    public BasePlant CurrentPlant { get => _currentPlant; set => _currentPlant = value; }
 
     private PlantFactory _factory;
 
     private FruitHolder[] fruitHolders;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+        
         if (fruitHolderParent)
         {
             fruitHolders = fruitHolderParent.GetComponentsInChildren<FruitHolder>();
@@ -43,34 +66,60 @@ public class Plant : Interactable
 
     private void Start()
     {
-        showOutline = true;
         _factory = new PlantFactory(this);
         _currentPlant = _factory.GetConcretePlant(initialPlant);
+        
+        ResetFruitGrowing();
     }
 
     private void Update()
     {
         GrowOverTime();
+        GrowFruitOverTime();
     }
-
+    
     protected virtual void GrowOverTime()
     {
-        _growPercentage += (1f / growDuration) * Time.deltaTime;
-
+        if (_growPercentage >= 1) return;
+        
+        _growPercentage += Time.deltaTime * growSpeed * growFactor.Evaluate(healthPoints/100f) / 100f ;
+        
         if (_growPercentage >= 1)
         {
             _growPercentage = 1;
-            showOutline = true;
+            SetState(PlantState.FullyGrown);
         }
-        else showOutline = false;
+    }
+
+    protected virtual void GrowFruitOverTime()
+    {
+        //Return if the plant is not fully grown
+        if(_growPercentage < 1) return;
+        
+        _fruitGrowPercentage += Time.deltaTime * fruitGrowSpeed * fruitGrowFactor.Evaluate(healthPoints/100f) / 100f ;
+
+        if (_fruitGrowPercentage >= 1)
+        {
+            grabbable = _grabbing;
+            outlineColor = Color.green;
+            _fruitGrowPercentage = 1;
+        }
+        else outlineColor = Color.white;
 
         if (fruitHolders.Length > 0)
         {
             foreach (FruitHolder fruitHolder in fruitHolders)
             {
-                fruitHolder.transform.localScale = new Vector3(_growPercentage, _growPercentage, _growPercentage);
+                fruitHolder.transform.localScale = new Vector3(_fruitGrowPercentage, _fruitGrowPercentage, _fruitGrowPercentage);
             }
         }
+    }
+
+    protected virtual void SetState(PlantState state)
+    {
+        _currentPlantState = state;
+        
+        
     }
 
     protected virtual void DryOverTime()
@@ -78,25 +127,27 @@ public class Plant : Interactable
         
     }
 
-    public override void Interact(Transform grabPoint)
+    public override bool Interact()
     {
-        if (_growPercentage < 1)
-            return;
+        if (_fruitGrowPercentage < 1 || _grabbing)
+            return false;
 
-        ResetGrowing();
+        ResetFruitGrowing();
         _currentPlant.Interact();
+        return true;
     }
 
-    void ResetGrowing()
+    void ResetFruitGrowing()
     {
-        _growPercentage = 0f;
+        _fruitGrowPercentage = 0f;
 
+        grabbable = true;
         if (fruitHolders.Length < 0)
             return;
 
         foreach (FruitHolder fruitHolder in fruitHolders)
         {
-            fruitHolder.transform.localScale = new Vector3(_growPercentage, _growPercentage, _growPercentage);
+            fruitHolder.transform.localScale = new Vector3(_fruitGrowPercentage, _fruitGrowPercentage, _fruitGrowPercentage);
         }
     }
 

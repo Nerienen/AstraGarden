@@ -5,6 +5,7 @@ using UnityEngine.UIElements;
 
 public abstract class Interactable : MonoBehaviour
 {
-    public bool showOutline { get; protected set; }
-    public abstract void Interact(Transform grabPoint);
+    public Color outlineColor { get; protected set; }
+    public abstract bool Interact();
+    public abstract bool Interact(Transform grabPoint);
 }
