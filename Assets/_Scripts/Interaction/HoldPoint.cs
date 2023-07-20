@@ -5,6 +5,7 @@ public class HoldPoint : MonoBehaviour
 {
     [SerializeField] private Transform holdTransform;
     [field: SerializeReference] public bool justForPlants { get; private set; }
+    [field: SerializeReference] public bool isPot { get; private set; }
     private Outline _outline;
     
     [field: SerializeReference] public Grabbable CurrentHoldenObject { get; private set; }
@@ -18,7 +19,7 @@ public class HoldPoint : MonoBehaviour
     public void HoldObject(Transform objectTransform)
     {
         CurrentHoldenObject = objectTransform.GetComponent<Grabbable>();
-        CurrentHoldenObject.SetHolden(true);
+        CurrentHoldenObject.SetHolden(isPot);
         CurrentHoldenObject.onGrabObject += ResetHolden;
 
         objectTransform.position = holdTransform.position;
