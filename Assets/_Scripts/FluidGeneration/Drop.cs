@@ -16,16 +16,16 @@ public abstract class Drop : MonoBehaviour
     
     private Transform _followPoint;
     private Collider _collider;
-    private Rigidbody _rb;
+    protected Rigidbody rb;
     
     private bool _isHolden;
 
-    public void Initialize(Transform followPoint)
+    public virtual void Initialize(Transform followPoint)
     {
-        _rb = GetComponent<Rigidbody>();
+        rb = GetComponent<Rigidbody>();
         _collider = transform.GetChild(0).GetComponent<Collider>();
 
-        _rb.velocity = Vector3.zero;
+        rb.velocity = Vector3.zero;
         _collider.enabled = false;
         _isHolden = true;
         _followPoint = followPoint;
@@ -42,28 +42,29 @@ public abstract class Drop : MonoBehaviour
         }
         else
         {
-            _rb.velocity = Vector3.ClampMagnitude(_rb.velocity, maxDropSpeed);
+            rb.velocity = Vector3.ClampMagnitude(rb.velocity, maxDropSpeed);
         }
     }
 
-    public bool Grow(float scalingFactor)
+    public float Grow(float scalingFactor)
     {
         if (transform.localScale.x < maxDropScale)
         {
-            transform.localScale += (scalingFactor-0.05f) * Time.deltaTime * Vector3.one;
-            return true;
+            float scaleDelta = Mathf.Clamp(transform.localScale.x + (scalingFactor) * Time.deltaTime, 0, maxDropScale) - transform.localScale.x;
+            transform.localScale += scaleDelta * Vector3.one;
+            return scaleDelta;
         }
 
-        return false;
+        return 0;
     }
 
-    public void Throw(Vector3 direction, float force)
+    public virtual void Throw(Vector3 direction, float force)
     {
         _isHolden = false;
 
         _collider.enabled = true;
-        _rb.mass = Mathf.Clamp(transform.localScale.x, 0.5f, 1.5f);
-        _rb.AddForce(direction*force, ForceMode.Impulse);
+        rb.mass = Mathf.Clamp(transform.localScale.x, 0.5f, 1.5f);
+        rb.AddForce(direction*force, ForceMode.Impulse);
     }
 
     protected virtual void OnCollisionEnter(Collision collision)
@@ -98,6 +99,6 @@ public abstract class Drop : MonoBehaviour
     protected void AddScale(Vector3 addition)
     {
         transform.localScale = Vector3.ClampMagnitude(transform.localScale+addition, 3.5f);
-        _rb.mass = Mathf.Clamp(transform.localScale.x, 0.5f, 3f);
+        rb.mass = Mathf.Clamp(transform.localScale.x, 0.5f, 3f);
     }
 }
