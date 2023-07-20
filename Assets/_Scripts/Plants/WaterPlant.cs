@@ -23,6 +23,9 @@ public class WaterPlant : BasePlant
 
     protected override void Recollect()
     {
-        Debug.Log($"Water extracted");
+        if (WaterController.Instance != null)
+        {
+            WaterController.Instance.FillFluidGunBy(_ctx.ResourceCapacity);
+        }
     }
 }

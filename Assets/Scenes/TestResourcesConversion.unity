@@ -154,6 +154,52 @@ Transform:
   m_Father: {fileID: 222908943}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &53251117
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 53251119}
+  - component: {fileID: 53251118}
+  m_Layer: 0
+  m_Name: EnergyController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &53251118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53251117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce0e8937be2c6844190eb5fc56bfcea3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxAmount: 100
+  currentAmount: 30
+--- !u!4 &53251119
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53251117}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &143296821
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,8 +425,8 @@ MonoBehaviour:
   shootingPower: 10
   waterAmmo: 20
   energyAmmo: 20
-  maxWaterAmmo: 0
-  maxEnergyAmmo: 0
+  maxWaterAmmo: 30
+  maxEnergyAmmo: 30
   <attackSpeed>k__BackingField: 0.4
   cadence: 1
   ignoredLayers:
@@ -1188,6 +1234,55 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 662291736}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &808169171
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 808169172}
+  - component: {fileID: 808169173}
+  m_Layer: 0
+  m_Name: OxygenController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &808169172
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808169171}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.0627971, y: 1.2437034, z: 0.8380334}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &808169173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 808169171}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f9655e9aad481c409876fedf773e76a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxAmount: 100
+  currentAmount: 70
+  increasingSpeed: 1
+  decreasingSpeed: 2
+  oxygenRate: 0
 --- !u!1 &836298181
 GameObject:
   m_ObjectHideFlags: 0
@@ -1220,8 +1315,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fruitHolderParent: {fileID: 1571595692}
-  initialPlant: 0
+  initialPlant: 1
   growDuration: 5
+  healthPoints: 100
+  resourceCapacity: 10
 --- !u!4 &836298183
 Transform:
   m_ObjectHideFlags: 0
@@ -2315,6 +2412,55 @@ Transform:
   m_Father: {fileID: 836298183}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1974243392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1974243394}
+  - component: {fileID: 1974243393}
+  m_Layer: 0
+  m_Name: WaterController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1974243393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974243392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 273059859e6e46d44ab218f10ae4a7af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnWaterIncreased:
+    m_PersistentCalls:
+      m_Calls: []
+  maxAmount: 100
+  currentAmount: 50
+--- !u!4 &1974243394
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1974243392}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.0494502, y: 1.9833468, z: 3.266984}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2036446932
 GameObject:
   m_ObjectHideFlags: 0
@@ -2489,6 +2635,11 @@ PrefabInstance:
     - target: {fileID: 5563018666192258203, guid: 88a0a50a81b6fa74e9d17d5d6c285166,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8676637905274384322, guid: 88a0a50a81b6fa74e9d17d5d6c285166,
+        type: 3}
+      propertyPath: initialPlant
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

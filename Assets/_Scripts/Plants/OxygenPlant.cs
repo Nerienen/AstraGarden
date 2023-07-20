@@ -10,10 +10,18 @@ public class OxygenPlant : BasePlant
 
     public override void Enter()
     {
+        if (OxygenController.Instance != null)
+        {
+            OxygenController.Instance.IncreaseOxygenRateBy(_ctx.ResourceCapacity);
+        }
     }
 
     public override void Exit()
     {
+        if (OxygenController.Instance != null)
+        {
+            OxygenController.Instance.DecreaseOxygenRateBy(_ctx.ResourceCapacity);
+        }
     }
 
     public override void CheckSwitchPlant()
@@ -23,6 +31,6 @@ public class OxygenPlant : BasePlant
 
     protected override void Recollect()
     {
-        Debug.Log($"Can't recollect from an oxygen plant");
+        // Not intented to do anything here because Oxygen can't be recollected
     }
 }
