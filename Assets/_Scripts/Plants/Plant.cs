@@ -5,7 +5,16 @@ public class Plant : Interactable
     [SerializeField] Transform fruitHolderParent;
 
     [SerializeField] PlantTypes initialPlant = PlantTypes.EnergyPlant;
+    
+    public float GrowDuration { get { return growDuration; } }
     [SerializeField] protected float growDuration = 10f;
+
+    [SerializeField] protected float maxHealthPoints = 100f;
+    [SerializeField] protected float healthPoints = 100f;
+
+    [Tooltip("By resource we understand the element this plant produce (Oxygen, Water or Energy)")]
+    [SerializeField] float resourceCapacity = 10f;
+    public float ResourceCapacity { get { return resourceCapacity; } }
 
     public enum PlantTypes
     {
@@ -15,7 +24,7 @@ public class Plant : Interactable
     }
 
     float _growPercentage = 0;
-    public float GrowPercentage { get {  return _growPercentage; } set { _growPercentage = value; } }
+    public float GrowPercentage { get { return _growPercentage; } set { _growPercentage = value; } }
 
     BasePlant _currentPlant;
     public BasePlant CurrentPlant { get { return _currentPlant; } set { _currentPlant = value; } }
@@ -64,6 +73,11 @@ public class Plant : Interactable
         }
     }
 
+    protected virtual void DryOverTime()
+    {
+        
+    }
+
     public override void Interact(Transform grabPoint)
     {
         if (_growPercentage < 1)
@@ -84,5 +98,14 @@ public class Plant : Interactable
         {
             fruitHolder.transform.localScale = new Vector3(_growPercentage, _growPercentage, _growPercentage);
         }
+    }
+
+    /// <summary>
+    /// Water the plant, increasing its health points
+    /// </summary>
+    /// <param name="amount">Health points to increase</param>
+    public void Water(float amount)
+    {
+        healthPoints += amount;
     }
 }

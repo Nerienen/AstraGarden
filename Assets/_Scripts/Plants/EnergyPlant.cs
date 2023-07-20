@@ -20,8 +20,12 @@ public class EnergyPlant : BasePlant
     {
         // Process here when the plant should change its type to another one
     }
+
     protected override void Recollect()
     {
-        Debug.Log($"Energy recollected");
+        if (EnergyController.Instance != null)
+        {
+            EnergyController.Instance.FillFluidGunBy(_ctx.ResourceCapacity);
+        }
     }
 }
