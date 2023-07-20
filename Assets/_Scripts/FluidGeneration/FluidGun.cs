@@ -92,4 +92,16 @@ public class FluidGun : MonoBehaviour
         
         currentDrop.Initialize(shootPoint);
     }
+
+    public void ReloadAmmo(AmmoType ammoType, float quantity)
+    {
+        if (ammoType == AmmoType.WaterAmmo)
+            waterAmmo = Mathf.Clamp(waterAmmo + quantity, 0, maxWaterAmmo);
+        else
+            energyAmmo = Mathf.Clamp(energyAmmo + quantity, 0, maxEnergyAmmo);
+    }
+}
+
+public enum AmmoType{
+    WaterAmmo, EnergyAmmo
 }
