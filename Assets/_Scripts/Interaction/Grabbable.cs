@@ -12,17 +12,22 @@ public class Grabbable : Interactable
     private Transform _grabPoint;
 
     public bool grabbable { get; protected set; } = true;
+    protected bool holden;
+
+    public event Action onGrabObject;
 
     [Header("Grabbable Parameters")]
     [SerializeField] private PhysicMaterial bouncyMaterial;
     [SerializeField] private PhysicMaterial grabbedMaterial;
 
-    protected virtual void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+        
         _rb = GetComponent<Rigidbody>();
         _collider = GetComponent<Collider>();
         if (_collider == null) _collider = GetComponentInChildren<Collider>(); 
-        outlineColor = Color.white;
+        outline.OutlineColor = Color.white;
     }
 
     public override bool Interact()
@@ -43,6 +48,8 @@ public class Grabbable : Interactable
         {
             _rb.constraints = RigidbodyConstraints.FreezeRotation;
             _collider.material = grabbedMaterial;
+            onGrabObject?.Invoke();
+            holden = false;
         }
         else
         {
@@ -59,5 +66,10 @@ public class Grabbable : Interactable
 
         Vector3 targetPos = Vector3.Lerp(transform.position, _grabPoint.transform.position, Time.deltaTime * 10f);
         _rb.velocity = (targetPos-transform.position).normalized*Vector3.Distance(transform.position, targetPos) / Time.fixedDeltaTime;
+    }
+
+    public void SetHolden(bool value)
+    {
+        holden = value;
     }
 }

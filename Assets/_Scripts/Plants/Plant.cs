@@ -74,6 +74,8 @@ public class Plant : Grabbable
 
     private void Update()
     {
+        if(!holden) return;
+        
         GrowOverTime();
         GrowFruitOverTime();
     }
@@ -101,10 +103,10 @@ public class Plant : Grabbable
         if (_fruitGrowPercentage >= 1)
         {
             grabbable = _grabbing;
-            outlineColor = Color.green;
+            outline.OutlineColor = Color.green;
             _fruitGrowPercentage = 1;
         }
-        else outlineColor = Color.white;
+        else outline.OutlineColor = Color.white;
 
         if (fruitHolders.Length > 0)
         {

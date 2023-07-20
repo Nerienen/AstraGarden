@@ -24,6 +24,17 @@ public class WaterDrop : Drop
            return;
        }
        
+       Plant plant = collision.gameObject.GetComponent<Plant>();
+       if (plant != null)
+       {
+           foreach (var col in Physics.OverlapSphere(transform.position, transform.localScale.x + transform.localScale.x/maxDropScale))
+           {
+               col.GetComponent<Plant>()?.Water(transform.localScale.x);
+           }
+
+           gameObject.SetActive(false);
+       }
+       
        ReduceScale();
     }
     
@@ -45,6 +56,17 @@ public class WaterDrop : Drop
                 gameObject.SetActive(false);
             }
             return;
+        }
+        
+        Plant plant = collision.gameObject.GetComponent<Plant>();
+        if (plant != null)
+        {
+            foreach (var col in Physics.OverlapSphere(transform.position, transform.localScale.x + transform.localScale.x/maxDropScale))
+            {
+                col.GetComponent<Plant>()?.Water(transform.localScale.x);
+            }
+
+            gameObject.SetActive(false);
         }
         
         ReduceScale();

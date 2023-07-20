@@ -1,11 +1,19 @@
 using System;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.UIElements;
-
+[RequireComponent(typeof(Outline))]
 public abstract class Interactable : MonoBehaviour
 {
-    public Color outlineColor { get; protected set; }
+    protected Outline outline;
+    protected virtual void Awake()
+    {
+        outline = GetComponent<Outline>();
+    }
+
     public abstract bool Interact();
     public abstract bool Interact(Transform grabPoint);
+
+    public void SetOutlineWidth(float value)
+    {
+        outline.OutlineWidth = value;
+    }
 }
