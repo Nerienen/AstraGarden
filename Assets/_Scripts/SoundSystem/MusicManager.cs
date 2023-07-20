@@ -6,7 +6,7 @@ using FMOD.Studio;
 
 public class MusicManager : MonoBehaviour
 {
-    public AudioManager audioManager;
+    private AudioManager _audioManager;
 
     #region Game State Variables
     public bool isIntro = true;
@@ -47,12 +47,11 @@ public class MusicManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        _audioManager = AudioManager.instance;
+        
         //Por ahora se asume que se empieza siempre en el principio
-        backgroundAmbience = audioManager.CreateInstance(FMODEvents.instance.lowHum);
+        backgroundAmbience = _audioManager.CreateInstance(FMODEvents.instance.lowHum);
         backgroundAmbience.start();
-
-
     }
 
     // Update is called once per frame
@@ -65,7 +64,7 @@ public class MusicManager : MonoBehaviour
         if (isBlackout & !hasTriggeredBlackout) { RuntimeManager.StudioSystem.setParameterByName("isBlackout", 1); hasTriggeredBlackout = true; }
         if (!isBlackout & hasTriggeredBlackout) { 
             RuntimeManager.StudioSystem.setParameterByName("isBlackout", 0); 
-            //En teoría solo hay uno, pero lo dejo para que se cambie a falso por si acaso
+            //En teorï¿½a solo hay uno, pero lo dejo para que se cambie a falso por si acaso
             hasTriggeredBlackout = false; 
         }
 
@@ -75,7 +74,7 @@ public class MusicManager : MonoBehaviour
 
     private void playTrack(EventReference[] tracks, int trackNumber)
     {
-        music = audioManager.CreateInstance(tracks[trackNumber]);
+        music = _audioManager.CreateInstance(tracks[trackNumber]);
         music.start();
     }
 

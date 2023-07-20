@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{3f957362-930a-4a40-97c5-cea4f974fbb0}">
+		<property name="name">
+			<value>BubbleGrowth</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f0af9975-7b5f-4776-8131-fff472b1751a}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{03c12d65-a31d-4336-90f3-180200a06c86}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{03c12d65-a31d-4336-90f3-180200a06c86}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>

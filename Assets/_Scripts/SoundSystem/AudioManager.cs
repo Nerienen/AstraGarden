@@ -7,15 +7,21 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    [Header("Volume")] 
-    [Range(0,1)]
-    public float masterVolume = 1;
-    [Range(0,1)]
-    public float musicVolume = 1; 
-    [Range(0,1)]
-    public float sfxVolume = 1; 
-    [Range(0,1)]
-    public float ambienceVolume = 1;
+    [field: Header("Volume")] 
+    [field: Range(0,1)]
+    [field: SerializeReference] 
+    public float masterVolume { get; private set; } = 1;
+    [field: Range(0,1)]
+    [field: SerializeReference] 
+    public float musicVolume { get; private set; } = 1 ;
+
+    [field: Range(0, 1)]
+    [field: SerializeReference]
+    public float sfxVolume { get; private set; } = 1;
+
+    [field: Range(0, 1)]
+    [field: SerializeReference]
+    public float ambienceVolume { get; private set; } = 1;
 
     private Bus _masterBus;
     private Bus _musicBus;
@@ -55,12 +61,21 @@ public class AudioManager : MonoBehaviour
         //InitializeMusic(FMODEvents.instance.drift);
     }
 
-    private void Update()
+    public void SetMasterVolume(float value)
     {
-        _masterBus.setVolume(masterVolume);
-        _musicBus.setVolume(musicVolume);
-        _ambienceBus.setVolume(ambienceVolume);
-        _sfxBus.setVolume(sfxVolume);
+        masterVolume = value;
+    }  
+    public void SetMusicVolume(float value)
+    {
+        musicVolume = value;
+    } 
+    public void SetSFXVolume(float value)
+    {
+        sfxVolume = value;
+    }  
+    public void SetAmbienceVolume(float value)
+    {
+        ambienceVolume = value;
     }
 
     private void InitializeAmbience(EventReference instanceAmbience)

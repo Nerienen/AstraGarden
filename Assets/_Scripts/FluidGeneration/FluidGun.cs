@@ -51,8 +51,8 @@ public class FluidGun : MonoBehaviour
                 return;
             }
 
-            if (currentDrop.Grow(cadence)) waterAmmo -= cadence * Time.deltaTime;
-            if (waterAmmo < 0) waterAmmo = 0;
+            waterAmmo -= currentDrop.Grow(cadence);
+            if (waterAmmo < 0.01f) waterAmmo = 0;
         }
         else
         {
@@ -64,8 +64,8 @@ public class FluidGun : MonoBehaviour
                 return;
             }
 
-            if (currentDrop.Grow(cadence)) energyAmmo -= cadence * Time.deltaTime;
-            if (energyAmmo < 0) energyAmmo = 0;
+            energyAmmo -= currentDrop.Grow(cadence);
+            if (energyAmmo < 0.01f) energyAmmo = 0;
         }
        
     }
@@ -86,10 +86,23 @@ public class FluidGun : MonoBehaviour
     private void InstantiateDrop()
     {
         if(Time.time - _lastTimeAttacked < attackSpeed) return;
-            
+        waterAmmo -= 0.1f;
+
         if (_throwsEnergy) currentDrop = ObjectPool.Instance.InstantiateFromPool(energyDropPrefab, shootPoint.position, Quaternion.identity).GetComponent<Drop>();
         else currentDrop = ObjectPool.Instance.InstantiateFromPool(waterDropPrefab, shootPoint.position, Quaternion.identity).GetComponent<Drop>();
         
         currentDrop.Initialize(shootPoint);
     }
+
+    public void ReloadAmmo(AmmoType ammoType, float quantity)
+    {
+        if (ammoType == AmmoType.WaterAmmo)
+            waterAmmo = Mathf.Clamp(waterAmmo + quantity, 0, maxWaterAmmo);
+        else
+            energyAmmo = Mathf.Clamp(energyAmmo + quantity, 0, maxEnergyAmmo);
+    }
+}
+
+public enum AmmoType{
+    WaterAmmo, EnergyAmmo
 }
