@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2543989520247722959}
   - component: {fileID: 2746421804067767818}
   - component: {fileID: 6688969165514980607}
+  - component: {fileID: 6973123046749216098}
   m_Layer: 7
   m_Name: Energyball
   m_TagString: Untagged
@@ -26,13 +27,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2279402026520296736}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.0289787, y: 2.9820743, z: 0.05033298}
+  m_LocalPosition: {x: 0.9438645, y: 3.0998576, z: 0.26809317}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2494354936033403654}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &2746421804067767818
 Rigidbody:
@@ -75,8 +76,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   splashEffect: {fileID: 2173310209236607822, guid: a0baf26f36961864fb3d2b1d513ae1fb,
     type: 3}
-  maxDropScale: 1.5
+  maxDropScale: 1
   maxDropSpeed: 8
+  regularMaterial: {fileID: 2100000, guid: 792a0e647578f654cb484fb07195fa4d, type: 2}
+  suctionMaterial: {fileID: 2100000, guid: a87b3d6f61f493f47a4efb5df64ee2b9, type: 2}
+--- !u!135 &6973123046749216098
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2279402026520296736}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 3
+  m_Center: {x: 0, y: 0, z: 0.45}
 --- !u!1 &5584115658814872378
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,7 +163,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 42fdcf55f0327c54a9416c5577063cbb, type: 2}
+  - {fileID: 2100000, guid: 792a0e647578f654cb484fb07195fa4d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
