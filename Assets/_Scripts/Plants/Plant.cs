@@ -48,7 +48,12 @@ public class Plant : Interactable
     {
         _growPercentage += (1f / growDuration) * Time.deltaTime;
 
-        _growPercentage = Mathf.Clamp01(_growPercentage);
+        if (_growPercentage >= 1)
+        {
+            _growPercentage = 1;
+            showOutline = true;
+        }
+        else showOutline = false;
 
         if (fruitHolders.Length > 0)
         {
@@ -61,8 +66,6 @@ public class Plant : Interactable
 
     public override void Interact(Transform grabPoint)
     {
-        PlayerInteract.instance.interacting = !PlayerInteract.instance.interacting;
-
         if (_growPercentage < 1)
             return;
 
