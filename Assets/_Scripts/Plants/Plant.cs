@@ -69,10 +69,6 @@ public class Plant : Grabbable
         base.Awake();
 
         _plantInspector = GetComponent<PlantInspector>();
-        if (fruitHolderParent)
-        {
-            fruitHolders = fruitHolderParent.GetComponentsInChildren<FruitHolder>();
-        }
 
         _fruitHolders = GetComponentsInChildren<FruitHolder>();
     }
