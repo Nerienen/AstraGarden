@@ -13,6 +13,7 @@ public class EnergyReceiver : MonoBehaviour
    private void OpenDoor()
    {
       door.GetComponent<Animator>().SetBool("Opened", true);
+      gameObject.SetActive(false);
       tag = "Untagged";
    }
 
