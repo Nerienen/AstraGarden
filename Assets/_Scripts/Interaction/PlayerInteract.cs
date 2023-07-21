@@ -14,6 +14,7 @@ public class PlayerInteract : MonoBehaviour
 
     private Interactable _interactable;
     private HoldPoint _holdPoint;
+    private IInspectable _inspectable;
     public bool interacting { get; set; }
 
     public static PlayerInteract instance;
@@ -28,23 +29,47 @@ public class PlayerInteract : MonoBehaviour
     {
         if (Physics.Raycast(Helpers.Camera.transform.position, Helpers.Camera.transform.forward, out var hit, interactDistance, interacting? holdersLayer:interactLayer))
         {
-            if (interacting && hit.transform.TryGetComponent(out _holdPoint))
-            {
-               _holdPoint.SetOutlineWidth(5, _interactable);
-            }
-            else if (hit.transform.TryGetComponent(out _interactable))
+            ManageInspectable(hit);
+
+            var lastHoldPoint = _holdPoint;
+            var lastInteractable = _interactable;
+            
+            var hold = hit.transform.GetComponent<HoldPoint>();
+            bool holdIsNull = hold == null || hold.IsHoldingObject;
+            if (!holdIsNull) _holdPoint = hold;
+            
+            //Display outline if watching to an object
+            if (!interacting && hit.transform.TryGetComponent(out _interactable))
             {
                 _interactable.SetOutlineWidth(5);
+            }
+
+            if(lastHoldPoint != null && lastHoldPoint != _holdPoint) lastHoldPoint.SetOutlineWidth(0);
+            if (lastInteractable != null && lastInteractable != _interactable)
+            {
+                lastInteractable.SetOutlineWidth(0);
+                if(!holdIsNull) _holdPoint = null;
+            }
+            
+            if (interacting && !holdIsNull)
+            {
+                _holdPoint.SetOutlineWidth(5, _interactable);
             }
         }
         else
         {
-            if (interacting && _holdPoint != null)
+            if (_inspectable != null)
+            {
+             _inspectable.StopInspecting();
+             _inspectable = null;
+            }
+            
+            if (_holdPoint != null)
             {
                 _holdPoint.SetOutlineWidth(0);
                 _holdPoint = null;
             }
-            else if (_interactable != null && !interacting)
+            if (!interacting && _interactable != null)
             {
                 _interactable.SetOutlineWidth(0);
                 _interactable = null;
@@ -67,5 +92,49 @@ public class PlayerInteract : MonoBehaviour
                 _holdPoint = null;
             }
         }
+    }
+
+    private void ManageInspectable(RaycastHit hit)
+    {
+        IInspectable inspectable = hit.transform.GetComponent<IInspectable>();
+        if (Input.GetKey(KeyCode.Tab))
+        {
+            if (_inspectable != null && inspectable != null && inspectable != _inspectable)
+            {
+                _inspectable.StopInspecting();
+                _inspectable = inspectable;
+            }
+            else if (inspectable != null)
+            {
+                _inspectable = inspectable;
+                _inspectable.Inspect(-Helpers.Camera.transform.forward);
+            }
+        }
+        else if (_inspectable != null)
+        {
+            _inspectable.StopInspecting();
+            _inspectable = null;
+        }
+    }
+
+    private bool CheckIfInteracting(bool hold, bool interact)
+    {
+        if (interacting) return false;
+        bool res = false;
+        
+        if (hold)
+        {
+            _holdPoint.SetOutlineWidth(0);
+            _holdPoint = null;
+            res = true;
+        }
+        if (interact)
+        {
+            _interactable.SetOutlineWidth(0);
+            _interactable = null;
+            res = true;
+        }
+
+        return res;
     }
 }

@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using ProjectUtils.Helpers;
 using TMPro;
 using UnityEngine;
 
@@ -8,6 +10,11 @@ public class PlantStatsUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text nameTypeStatus;
     [SerializeField] private TMP_Text percentages;
+
+    private void Start()
+    {
+        gameObject.SetActive(false);
+    }
 
     public void SetData(PlantData plantData)
     {
@@ -29,10 +36,10 @@ public class PlantStatsUI : MonoBehaviour
     {
         return health switch
         {
-            >= 75 => $"<colo={GetColorHex(new Color(0f, 1f, 0.3f))}>Perfect</color>",
+            >= 75 => $"<color={GetColorHex(new Color(0f, 1f, 0.3f))}>Perfect</color>",
             >= 50 => $"<color={GetColorHex(new Color(1f, 0.6f, 0))}>Needs Water</color>",
             >= 25 => $"<color={GetColorHex(new Color(1, 0.1f, 0))}>Dehydrated</color>",
-            _ => $"<color = {new Color(0.2f, 0.2f, 0.2f)}>Dead</color>"
+            _ => $"<color={GetColorHex(new Color(0.2f, 0.2f, 0.2f))}>Dead</color>"
         };
     }
 
@@ -63,5 +70,20 @@ public class PlantStatsUI : MonoBehaviour
                 _ => value + ""
             };
         }
+    }
+
+    public async Task ShowStatsAsync()
+    {
+        transform.localScale = Vector3.zero;
+      
+        gameObject.SetActive(true);
+        await transform.DoScaleAsync(Vector3.one*0.8f, 0.15f, Transitions.TimeScales.Scaled);
+    }
+
+    public async Task DisableAsync()
+    {
+        await transform.DoScaleAsync(Vector3.zero, 0.15f, Transitions.TimeScales.Scaled);
+        gameObject.SetActive(false);
+        
     }
 }
