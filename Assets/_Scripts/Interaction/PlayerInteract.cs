@@ -27,7 +27,7 @@ public class PlayerInteract : MonoBehaviour
 
     private void Update()
     {
-        if (Physics.SphereCast(Helpers.Camera.transform.position, 0.05f,Helpers.Camera.transform.forward ,out var hit, interactDistance, interacting? holdersLayer:interactLayer))
+        if (Physics.SphereCast(Helpers.Camera.transform.position, 0.1f,Helpers.Camera.transform.forward ,out var hit, interactDistance, interacting? holdersLayer:interactLayer))
         {
             ManageInspectable(hit);
 
