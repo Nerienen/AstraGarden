@@ -43,6 +43,8 @@ public class Plant : Grabbable
     }
     
     private PlantState _currentPlantState = PlantState.Sprout;
+
+    private PlantInspector _plantInspector;
     
     float _fruitGrowPercentage = 0;
     public float FruitGrowPercentage { get => _fruitGrowPercentage; set => _fruitGrowPercentage = value; } 
@@ -57,10 +59,13 @@ public class Plant : Grabbable
 
     private FruitHolder[] fruitHolders;
 
+    public PlantData PlantData => new PlantData("name", healthPoints, _growPercentage, _fruitGrowPercentage, PlantTypes.EnergyPlant);
+
     protected override void Awake()
     {
         base.Awake();
         
+        _plantInspector = GetComponent<PlantInspector>();
         if (fruitHolderParent)
         {
             fruitHolders = fruitHolderParent.GetComponentsInChildren<FruitHolder>();
@@ -78,6 +83,8 @@ public class Plant : Grabbable
     private void Update()
     {
         DryOverTime();
+
+        _plantInspector.IsInspectable = holden;
         if(!holden) return;
         
         GrowOverTime();
@@ -159,7 +166,7 @@ public class Plant : Grabbable
             fruitHolder.transform.localScale = new Vector3(_fruitGrowPercentage, _fruitGrowPercentage, _fruitGrowPercentage);
         }
     }
-
+    
     /// <summary>
     /// Water the plant, increasing its health points
     /// </summary>

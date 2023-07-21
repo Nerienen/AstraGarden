@@ -14,6 +14,7 @@ public class PlayerInteract : MonoBehaviour
 
     private Interactable _interactable;
     private HoldPoint _holdPoint;
+    private IInspectable _inspectable;
     public bool interacting { get; set; }
 
     public static PlayerInteract instance;
@@ -28,6 +29,26 @@ public class PlayerInteract : MonoBehaviour
     {
         if (Physics.Raycast(Helpers.Camera.transform.position, Helpers.Camera.transform.forward, out var hit, interactDistance, interacting? holdersLayer:interactLayer))
         {
+            
+            IInspectable inspectable = hit.transform.GetComponent<IInspectable>();
+            if (Input.GetKey(KeyCode.Tab))
+            {
+                if (_inspectable != null && inspectable != null && inspectable != _inspectable)
+                {
+                    _inspectable.StopInspecting();
+                    _inspectable = inspectable;
+                }
+                else if (inspectable != null)
+                {
+                    _inspectable = inspectable;
+                    _inspectable.Inspect(-Helpers.Camera.transform.forward);
+                }
+            }else if (_inspectable != null)
+            {
+                _inspectable.StopInspecting();
+                _inspectable = null;
+            }
+
             if (interacting && hit.transform.TryGetComponent(out _holdPoint))
             {
                _holdPoint.SetOutlineWidth(5, _interactable);
@@ -39,6 +60,12 @@ public class PlayerInteract : MonoBehaviour
         }
         else
         {
+            if (_inspectable != null)
+            {
+             _inspectable.StopInspecting();
+             _inspectable = null;
+            }
+            
             if (interacting && _holdPoint != null)
             {
                 _holdPoint.SetOutlineWidth(0);
