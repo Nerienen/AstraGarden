@@ -29,7 +29,7 @@ public class PlantInspector : MonoBehaviour, IInspectable
     {
         if(!_isInspectable) return;
         
-        _pivot.forward =  inspectorPivotForward;
+        _pivot.forward =  Vector3.Slerp(_pivot.forward, inspectorPivotForward, Time.deltaTime*10f);
         
         _plantStatsUI.SetData(_plant.PlantData);
         if (!_plantStatsUI.gameObject.activeInHierarchy)

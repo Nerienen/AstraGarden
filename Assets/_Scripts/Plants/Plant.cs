@@ -6,9 +6,10 @@ public class Plant : Grabbable
     public event Action OnPlantHasBeenHolden;
     public event Action OnPlantHasStoppedBeenHolden;
     public event Action<PlantTypes> OnChangeTypeReceived;
+    public event Action OnPlantFullyGrown;
 
     [Header("Plant parameters")]
-    [SerializeField] PlantTypes initialPlant = PlantTypes.EnergyPlant;
+    [SerializeField] PlantTypes initialPlant = PlantTypes.OxygenPlant;
     [SerializeField] PlantGroup[] plantGroups;
 
     [Header("Fruit Parameters")]
@@ -40,6 +41,7 @@ public class Plant : Grabbable
     public PlantGroup[] PlantGroups { get { return plantGroups; } }
     private PlantTypes _currentType;
     public PlantTypes CurrentType { get => _currentType; }
+    public bool Holden { get => holden; }
 
     public enum PlantTypes
     {
@@ -134,7 +136,8 @@ public class Plant : Grabbable
     {
         foreach (PlantGroup plantGroup in plantGroups)
         {
-            plantGroup.plantHolder.gameObject.SetActive(false);
+            plantGroup.grownPlantHolder.gameObject.SetActive(false);
+            plantGroup.sproutPlantHolder.gameObject.SetActive(false);
         }
     }
 
@@ -159,6 +162,7 @@ public class Plant : Grabbable
         {
             _growPercentage = 1;
             SetState(PlantState.FullyGrown);
+            OnPlantFullyGrown?.Invoke();
         }
     }
 

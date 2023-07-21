@@ -16,15 +16,19 @@ public class OxygenPlant : BasePlant
         _ctx.OnPlantHasBeenHolden += OnStartProducingOxygen;
         _ctx.OnPlantHasStoppedBeenHolden += OnStopProducingOxygen;
         _ctx.OnChangeTypeReceived += OnChangeTypeReceived;
+        _ctx.OnPlantFullyGrown += OnFullyGrown;
 
         foreach (PlantGroup plantGroup in _ctx.PlantGroups)
         {
             if (plantGroup.plantType == Plant.PlantTypes.OxygenPlant)
             {
-                plantGroup.plantHolder.gameObject.SetActive(true);
+                plantGroup.sproutPlantHolder.gameObject.SetActive(true);
                 break;
             }
         }
+
+        _ctx.GrowPercentage = 0;
+        _ctx.FruitGrowPercentage = 0;
     }
 
     public override void UpdateState()
@@ -37,12 +41,14 @@ public class OxygenPlant : BasePlant
         _ctx.OnPlantHasBeenHolden -= OnStartProducingOxygen;
         _ctx.OnPlantHasStoppedBeenHolden -= OnStopProducingOxygen;
         _ctx.OnChangeTypeReceived -= OnChangeTypeReceived;
+        _ctx.OnPlantFullyGrown -= OnFullyGrown;
 
         foreach (PlantGroup plantGroup in _ctx.PlantGroups)
         {
             if (plantGroup.plantType == Plant.PlantTypes.OxygenPlant)
             {
-                plantGroup.plantHolder.gameObject.SetActive(false);
+                plantGroup.sproutPlantHolder.gameObject.SetActive(false);
+                plantGroup.grownPlantHolder.gameObject.SetActive(false);
                 break;
             }
         }
@@ -66,7 +72,7 @@ public class OxygenPlant : BasePlant
     
     void OnStartProducingOxygen()
     {
-        if (OxygenController.Instance != null)
+        if (OxygenController.Instance != null && _ctx.GrowPercentage >= 1)
         {
             OxygenController.Instance.IncreaseOxygenRateBy(_ctx.ResourceCapacity);
         }
@@ -74,7 +80,7 @@ public class OxygenPlant : BasePlant
 
     void OnStopProducingOxygen()
     {
-        if (OxygenController.Instance != null)
+        if (OxygenController.Instance != null && _ctx.GrowPercentage >= 1)
         {
             OxygenController.Instance.DecreaseOxygenRateBy(_ctx.ResourceCapacity);
         }
@@ -84,5 +90,23 @@ public class OxygenPlant : BasePlant
     {
         typeToSwitch = newType;
         needToChangeType = true;
+    }
+
+    void OnFullyGrown()
+    {
+        foreach (PlantGroup plantGroup in _ctx.PlantGroups)
+        {
+            if (plantGroup.plantType == Plant.PlantTypes.OxygenPlant)
+            {
+                plantGroup.sproutPlantHolder.gameObject.SetActive(false);
+                plantGroup.grownPlantHolder.gameObject.SetActive(true);
+                break;
+            }
+        }
+
+        if(_ctx.Holden)
+        {
+            OnStartProducingOxygen();
+        }
     }
 }
