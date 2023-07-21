@@ -1,19 +1,22 @@
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class Plant : Grabbable
 {
-    [Header("Fruit Parameters")]
-    [SerializeField] Transform fruitHolderParent;
+    public event Action OnPlantHasBeenHolden;
+    public event Action OnPlantHasStoppedBeenHolden;
+    public event Action<PlantTypes> OnChangeTypeReceived;
 
+    [Header("Plant parameters")]
     [SerializeField] PlantTypes initialPlant = PlantTypes.EnergyPlant;
-
     [SerializeField] PlantGroup[] plantGroups;
 
-    public float FruitGrowSpeed => fruitGrowSpeed;
-    [Tooltip("Fruit grow percentage increases by the FruitGrowSpeed value each second")]
-    [SerializeField] protected float fruitGrowSpeed = 10f;
+    [Header("Fruit Parameters")]
+
     [SerializeField] protected AnimationCurve fruitGrowFactor;
+    public float FruitGrowSpeed => fruitGrowSpeed;
+    [SerializeField] protected float fruitGrowSpeed = 10f;
+    [Tooltip("Fruit grow percentage increases by the FruitGrowSpeed value each second")]
 
     public float GrowSpeed => growSpeed;
     [Tooltip("Grow percentage increases by the GrowSpeed value each second")]
@@ -29,7 +32,14 @@ public class Plant : Grabbable
     [Tooltip("By resource we understand the element this plant produce (Oxygen, Water or Energy)")]
     [SerializeField] float resourceCapacity = 10f;
 
+    [Header("Debug - Change plant type")]
+    [SerializeField] bool changeType;
+    [SerializeField] PlantTypes type;
+
     public float ResourceCapacity => resourceCapacity;
+    public PlantGroup[] PlantGroups { get { return plantGroups; } }
+    public PlantTypes CurrentType { get => _currentType; }
+    private PlantTypes _currentType;
 
     public enum PlantTypes
     {
@@ -62,7 +72,18 @@ public class Plant : Grabbable
 
     private FruitHolder[] _fruitHolders;
 
-    public PlantData PlantData => new PlantData("name", healthPoints, _growPercentage, _fruitGrowPercentage, PlantTypes.EnergyPlant);
+    private bool _previousHolden;
+
+    public PlantData PlantData => new PlantData("name", healthPoints, _growPercentage, _fruitGrowPercentage, _currentType);
+
+    private void OnValidate()
+    {
+        if (changeType)
+        {
+            ChangeType(type);
+            changeType = false;
+        }
+    }
 
     protected override void Awake()
     {
@@ -76,7 +97,11 @@ public class Plant : Grabbable
     private void Start()
     {
         _factory = new PlantFactory(this);
+
+        HideAllPlantGroups();
+
         _currentPlant = _factory.GetConcretePlant(initialPlant);
+        _currentPlant.Enter();
 
         _plantInspector.IsInspectable = true;
         ResetFruitGrowing();
@@ -84,12 +109,33 @@ public class Plant : Grabbable
 
     private void Update()
     {
+        _currentPlant.UpdateState();
         DryOverTime();
+        CheckHoldenStatusChanges();
 
         if(!holden) return;
 
         GrowOverTime();
         GrowFruitOverTime();
+    }
+
+    private void HideAllPlantGroups()
+    {
+        foreach (PlantGroup plantGroup in plantGroups)
+        {
+            plantGroup.plantHolder.gameObject.SetActive(false);
+        }
+    }
+
+    private void CheckHoldenStatusChanges()
+    {
+        if (_previousHolden != holden)
+        {
+            if (holden) OnPlantHasBeenHolden?.Invoke();
+            else OnPlantHasStoppedBeenHolden?.Invoke();
+        }
+
+        _previousHolden = holden;
     }
 
     protected virtual void GrowOverTime()
@@ -167,7 +213,7 @@ public class Plant : Grabbable
             fruitHolder.transform.localScale = new Vector3(_fruitGrowPercentage, _fruitGrowPercentage, _fruitGrowPercentage);
         }
     }
-    
+
     /// <summary>
     /// Water the plant, increasing its health points
     /// </summary>
@@ -176,5 +222,23 @@ public class Plant : Grabbable
     {
         healthPoints += amount * waterSensitivity;
         healthPoints = Mathf.Min(healthPoints, maxHealthPoints);
+    }
+
+    public void ChangeType(PlantTypes newType)
+    {
+        OnChangeTypeReceived?.Invoke(newType);
+        _currentType = newType;
+        PlantData.UpdatePlantData("name", healthPoints, _growPercentage, _fruitGrowPercentage, _currentType);
+    }
+    public void GetCurrentTypeGroup()
+    {
+        foreach (PlantGroup plantGroup in PlantGroups)
+        {
+            if (plantGroup.plantType == _currentType)
+            {
+                plantGroup.plantHolder.gameObject.SetActive(false);
+                break;
+            }
+        }
     }
 }

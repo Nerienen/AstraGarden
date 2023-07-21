@@ -18,4 +18,13 @@ public class PlantData
         this.fruitsGrowPercentage = fruitsGrowPercentage;
         this.type = type;
     }
+
+    public void UpdatePlantData(string name, float health, float growPercentage, float fruitsGrowPercentage, Plant.PlantTypes type)
+    {
+        this.name = name;
+        this.health = health;
+        this.growPercentage = growPercentage;
+        this.fruitsGrowPercentage = fruitsGrowPercentage;
+        this.type = type;
+    }
 }

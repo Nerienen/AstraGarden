@@ -6,8 +6,6 @@ public class OxygenController : MonoBehaviour
 
     [SerializeField] float maxAmount = 100f;
     [SerializeField] float currentAmount = 70f;
-    [SerializeField] float increasingSpeed = 1f;
-    [SerializeField] float decreasingSpeed = 2f;
 
     [SerializeField] float oxygenRate = 0f;
 

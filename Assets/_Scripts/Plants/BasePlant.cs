@@ -13,6 +13,8 @@ public abstract class BasePlant
 
     public abstract void Enter();
 
+    public abstract void UpdateState();
+
     protected virtual void GrowOverTime()
     {
         _ctx.FruitGrowPercentage += (1f / _ctx.FruitGrowPercentage) * Time.deltaTime;

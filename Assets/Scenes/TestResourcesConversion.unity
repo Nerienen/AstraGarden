@@ -232,51 +232,6 @@ Transform:
   m_Father: {fileID: 836298183}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &147503469
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 147503470}
-  - component: {fileID: 147503471}
-  m_Layer: 0
-  m_Name: FruitHolder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &147503470
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 147503469}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 9061566357233793648}
-  m_Father: {fileID: 5422259571869748357}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &147503471
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 147503469}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b06a2e53fa0c76c41bc51e83a933e706, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &222908942
 GameObject:
   m_ObjectHideFlags: 0
@@ -434,7 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attenuationObject: {fileID: 0}
+  attenuationObject: {fileID: 1540205887}
 --- !u!1 &238289429
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,7 +675,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 349701934}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1162,7 +1117,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 605265572}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1442,6 +1397,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 662291736}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &678662090
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 678662091}
+  - component: {fileID: 678662092}
+  m_Layer: 11
+  m_Name: FruitHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &678662091
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678662090}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.82908076, y: 3.2535033, z: -0.00022691338}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 7631906886076026737}
+  m_Father: {fileID: 4662952655227020066}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &678662092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678662090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b06a2e53fa0c76c41bc51e83a933e706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &808169171
 GameObject:
   m_ObjectHideFlags: 0
@@ -1488,9 +1488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxAmount: 100
   currentAmount: 70
-  increasingSpeed: 1
-  decreasingSpeed: 2
-  oxygenRate: 0
+  oxygenRate: -3
 --- !u!1 &836298181
 GameObject:
   m_ObjectHideFlags: 0
@@ -1524,7 +1522,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bouncyMaterial: {fileID: 0}
   grabbedMaterial: {fileID: 0}
-  fruitHolderParent: {fileID: 1571595692}
   initialPlant: 1
   plantGroups: []
   fruitGrowSpeed: 10
@@ -1546,6 +1543,8 @@ MonoBehaviour:
   dryingSpeed: 2
   waterSensitivity: 10
   resourceCapacity: 10
+  changeType: 0
+  type: 0
 --- !u!4 &836298183
 Transform:
   m_ObjectHideFlags: 0
@@ -1561,7 +1560,7 @@ Transform:
   - {fileID: 143296822}
   - {fileID: 1571595692}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &836298184
 Rigidbody:
@@ -1940,6 +1939,51 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1122291946}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1151566062
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1151566063}
+  - component: {fileID: 1151566064}
+  m_Layer: 11
+  m_Name: FruitHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1151566063
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151566062}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.4800923, y: 3.1224365, z: 1.6874194}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 9061566357233793648}
+  m_Father: {fileID: 5422259571869748357}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1151566064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151566062}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b06a2e53fa0c76c41bc51e83a933e706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1164002735
 GameObject:
   m_ObjectHideFlags: 0
@@ -2048,53 +2092,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1314158772
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1314158773}
-  - component: {fileID: 1314158774}
-  m_Layer: 0
-  m_Name: FruitHolder
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1314158773
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1314158772}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2241631086047353010}
-  m_Father: {fileID: 5422259571869748357}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1314158774
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1314158772}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b06a2e53fa0c76c41bc51e83a933e706, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1335150320
 GameObject:
   m_ObjectHideFlags: 0
@@ -2296,13 +2295,58 @@ RectTransform:
   m_Children:
   - {fileID: 2066346201}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1422729245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1422729246}
+  - component: {fileID: 1422729247}
+  m_Layer: 11
+  m_Name: FruitHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1422729246
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422729245}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.0548437, y: 3.1840575, z: -1.6281165}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
+  m_Children:
+  - {fileID: 2241631086047353010}
+  m_Father: {fileID: 5422259571869748357}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1422729247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422729245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b06a2e53fa0c76c41bc51e83a933e706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1456168890
 GameObject:
   m_ObjectHideFlags: 0
@@ -2516,7 +2560,7 @@ MonoBehaviour:
   objectGrabPointTransform: {fileID: 26613014}
   interactLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 2304
   holdersLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -2601,7 +2645,7 @@ Transform:
   - {fileID: 222908943}
   - {fileID: 238289431}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1551836726
 GameObject:
@@ -2613,7 +2657,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1551836727}
   - component: {fileID: 1551836728}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FruitHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2628,9 +2672,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1551836726}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1.8859876, y: 3.5310998, z: 0.056878626}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 2233742407448822635}
   m_Father: {fileID: 5422259571869748357}
@@ -2802,6 +2846,51 @@ Transform:
   m_Father: {fileID: 836298183}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1611546456
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1611546457}
+  - component: {fileID: 1611546458}
+  m_Layer: 11
+  m_Name: FruitHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1611546457
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611546456}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.977925, y: 3.279941, z: 0.027442586}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8254617875664017960}
+  m_Father: {fileID: 4662952655227020066}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1611546458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611546456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b06a2e53fa0c76c41bc51e83a933e706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1679908252
 GameObject:
   m_ObjectHideFlags: 0
@@ -2811,7 +2900,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1679908253}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: WaterPlantHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2826,8 +2915,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1679908252}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -0.072, z: 0}
+  m_LocalScale: {x: 0.11978015, y: 0.11978015, z: 0.11978015}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4662952655227020066}
@@ -2847,6 +2936,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlantStats
+      objectReference: {fileID: 0}
+    - target: {fileID: 543709241603847523, guid: 07860439467141444a226c6fe238b781,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 543709241603847523, guid: 07860439467141444a226c6fe238b781,
         type: 3}
@@ -2958,10 +3052,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3360641420215659775, guid: 07860439467141444a226c6fe238b781,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4759259855171330927, guid: 07860439467141444a226c6fe238b781,
         type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5019626581172340711, guid: 07860439467141444a226c6fe238b781,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6839905440588563975, guid: 07860439467141444a226c6fe238b781,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3065,8 +3174,53 @@ Transform:
   m_Children:
   - {fileID: 1001506974}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2040431071
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2040431072}
+  - component: {fileID: 2040431073}
+  m_Layer: 11
+  m_Name: FruitHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2040431072
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040431071}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.057215016, y: 3.7646973, z: -0.041454487}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5120439303469710746}
+  m_Father: {fileID: 4662952655227020066}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2040431073
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040431071}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b06a2e53fa0c76c41bc51e83a933e706, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2066346200
 GameObject:
   m_ObjectHideFlags: 0
@@ -3152,7 +3306,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2080615003}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PlantStatsPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3187,7 +3341,9 @@ GameObject:
   - component: {fileID: 2135716134}
   - component: {fileID: 2135716133}
   - component: {fileID: 2135716135}
-  m_Layer: 0
+  - component: {fileID: 2135716136}
+  - component: {fileID: 2135716137}
+  m_Layer: 11
   m_Name: Plant
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3201,17 +3357,17 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135716131}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.6479285, y: 3.253503, z: 24.739773}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.622, y: 0.285, z: 1.1499999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1679908253}
   - {fileID: 3354733198015860355}
   - {fileID: 9132907853628012196}
+  - {fileID: 1679908253}
   - {fileID: 2080615003}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2135716133
 MonoBehaviour:
@@ -3227,8 +3383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bouncyMaterial: {fileID: 13400000, guid: e3228409fb203654d9cec8d17860754d, type: 2}
   grabbedMaterial: {fileID: 13400000, guid: 6960ff0d77e1b5e439aaf917678fbdf5, type: 2}
-  fruitHolderParent: {fileID: 0}
-  initialPlant: 1
+  initialPlant: 2
   plantGroups:
   - plantType: 0
     plantHolder: {fileID: 1679908253}
@@ -3291,6 +3446,8 @@ MonoBehaviour:
   dryingSpeed: 2
   waterSensitivity: 10
   resourceCapacity: 10
+  changeType: 0
+  type: 0
 --- !u!114 &2135716134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3322,6 +3479,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plantStatsUI: {fileID: 1885385025}
+--- !u!65 &2135716136
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135716131}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.38158178, y: 0.6961173, z: 0.41270733}
+  m_Center: {x: 0.01758933, y: 0.07497603, z: -0.0018277168}
+--- !u!54 &2135716137
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2135716131}
+  serializedVersion: 4
+  m_Mass: 5
+  m_Drag: 5
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!33 &180941589939592147
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3391,7 +3596,7 @@ GameObject:
   - component: {fileID: 4415815965697082254}
   - component: {fileID: 1434089021331669424}
   - component: {fileID: 4501341270034889974}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Icosphere.035
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3451,7 +3656,7 @@ GameObject:
   - component: {fileID: 3349985763173135183}
   - component: {fileID: 2154604109353747038}
   - component: {fileID: 4920118817409091715}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Icosphere.033
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3561,7 +3766,7 @@ GameObject:
   - component: {fileID: 8885492569714723837}
   - component: {fileID: 7563227128655933223}
   - component: {fileID: 6649920337075958452}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cactus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3689,7 +3894,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5422259571869748357}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FruitsHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3723,7 +3928,7 @@ GameObject:
   - component: {fileID: 9061566357233793648}
   - component: {fileID: 8685877019803077173}
   - component: {fileID: 693611696522973352}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FrutaEnergy2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3820,8 +4025,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4662952655227020066}
-  m_Layer: 0
-  m_Name: FruitHolder
+  m_Layer: 11
+  m_Name: FruitsHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3876,14 +4081,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5553587019521532195}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -1.885988, y: 3.5310998, z: 0.056879044}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1551836727}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!4 &2241631086047353010
 Transform:
   m_ObjectHideFlags: 0
@@ -3892,11 +4097,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3626403042745405697}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 1.0548441, y: 3.1840575, z: -1.6281166}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1314158773}
+  m_Father: {fileID: 1422729246}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2607087284171587015
@@ -3925,7 +4130,7 @@ GameObject:
   - component: {fileID: 1049099885477906521}
   - component: {fileID: 5770288036742488660}
   - component: {fileID: 8618723297583136758}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube.003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3993,7 +4198,7 @@ GameObject:
   - component: {fileID: 5394213813083727799}
   - component: {fileID: 297783250243297829}
   - component: {fileID: 8524754493003568646}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Icosphere.030
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4017,7 +4222,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9132907853628012196}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: OxygenPlantHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4099,9 +4304,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4996947575871418366}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.73, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.11978015, y: 0.11978015, z: 0.11978015}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5422259571869748357}
@@ -8874,7 +9079,7 @@ GameObject:
   - component: {fileID: 2241631086047353010}
   - component: {fileID: 7002604472311471393}
   - component: {fileID: 2618320185106050353}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FrutaEnergy3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9105,7 +9310,7 @@ GameObject:
   - component: {fileID: 6345353026425809724}
   - component: {fileID: 3515759484445680497}
   - component: {fileID: 4510619532446474351}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9123,7 +9328,7 @@ GameObject:
   - component: {fileID: 3528033667912553125}
   - component: {fileID: 3194838362880693506}
   - component: {fileID: 6513725410609739135}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Tallo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9141,7 +9346,7 @@ GameObject:
   - component: {fileID: 7631906886076026737}
   - component: {fileID: 1597243088648395643}
   - component: {fileID: 8532695643852339010}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FrutaAgua3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9165,7 +9370,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8277521355711742802}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9282,7 +9487,7 @@ GameObject:
   - component: {fileID: 5120439303469710746}
   - component: {fileID: 4321732599536883165}
   - component: {fileID: 6915157266895065353}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FrutaAgua1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9301,9 +9506,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5120439303469710746}
-  - {fileID: 8254617875664017960}
-  - {fileID: 7631906886076026737}
+  - {fileID: 2040431072}
+  - {fileID: 1611546457}
+  - {fileID: 678662091}
   m_Father: {fileID: 1679908253}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9400,7 +9605,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3354733198015860355}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: EnergyLettuceHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9418,7 +9623,7 @@ GameObject:
   - component: {fileID: 8259205312396419251}
   - component: {fileID: 730598855634858986}
   - component: {fileID: 9080404240277283820}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Icosphere.040
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9436,7 +9641,7 @@ GameObject:
   - component: {fileID: 8091020384856142500}
   - component: {fileID: 6503845960022594429}
   - component: {fileID: 544232949232518626}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Icosphere.041
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9454,7 +9659,7 @@ GameObject:
   - component: {fileID: 8254617875664017960}
   - component: {fileID: 2808469067852122820}
   - component: {fileID: 9002701713928561976}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FrutaAgua2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9469,11 +9674,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4627718801005174100}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.057214737, y: 3.764697, z: -0.04145476}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4662952655227020066}
+  m_Father: {fileID: 2040431072}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &5394213813083727799
@@ -9504,8 +9709,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1551836727}
-  - {fileID: 147503470}
-  - {fileID: 1314158773}
+  - {fileID: 1151566063}
+  - {fileID: 1422729246}
   m_Father: {fileID: 3354733198015860355}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -9554,7 +9759,7 @@ GameObject:
   - component: {fileID: 2233742407448822635}
   - component: {fileID: 180941589939592147}
   - component: {fileID: 2184753525799341403}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: FrutaEnergy1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9572,7 +9777,7 @@ GameObject:
   - component: {fileID: 9097750837991579864}
   - component: {fileID: 7691151307574560810}
   - component: {fileID: 8397248783876181749}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Icosphere.029
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9634,6 +9839,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SmallPlant_PLACEHOLDER
+      objectReference: {fileID: 0}
+    - target: {fileID: 3688702781488129792, guid: 88a0a50a81b6fa74e9d17d5d6c285166,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5563018666192258203, guid: 88a0a50a81b6fa74e9d17d5d6c285166,
         type: 3}
@@ -9853,7 +10063,7 @@ GameObject:
   - component: {fileID: 944390477388233230}
   - component: {fileID: 5507707133991994368}
   - component: {fileID: 3930724269799055715}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Icosphere.037
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9871,7 +10081,7 @@ GameObject:
   - component: {fileID: 2607087284171587015}
   - component: {fileID: 8408786145803917436}
   - component: {fileID: 744268051341657278}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Icosphere.028
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9954,7 +10164,7 @@ GameObject:
   - component: {fileID: 3221835466619568002}
   - component: {fileID: 1174555224982352878}
   - component: {fileID: 3672212061178936181}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Icosphere.034
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10014,7 +10224,7 @@ GameObject:
   - component: {fileID: 5807586619187632017}
   - component: {fileID: 1144839273287404891}
   - component: {fileID: 686092729857967063}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Spikes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10032,13 +10242,13 @@ GameObject:
   - component: {fileID: 3720097416462549599}
   - component: {fileID: 3498720972075480392}
   - component: {fileID: 3880060700111484042}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &6915157266895065353
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -10100,7 +10310,7 @@ GameObject:
   - component: {fileID: 1833901658773110249}
   - component: {fileID: 2614346729023108918}
   - component: {fileID: 8151810074997348907}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Raiz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10118,7 +10328,7 @@ GameObject:
   - component: {fileID: 3338725259695299239}
   - component: {fileID: 7730225921514762181}
   - component: {fileID: 7293817242768231431}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10193,7 +10403,7 @@ GameObject:
   - component: {fileID: 3058003617715633195}
   - component: {fileID: 1832328065354946916}
   - component: {fileID: 4710571230724583595}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Icosphere.027
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10215,14 +10425,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4281047517733552740}
-  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0.82908106, y: 3.253503, z: -0.00022722119}
+  m_LocalRotation: {x: -0.7069834, y: 0, z: 0, w: 0.7072302}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 4662952655227020066}
+  m_Father: {fileID: 678662091}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -89.98, y: 0, z: 0}
 --- !u!33 &7691151307574560810
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10248,7 +10458,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5481718695637388682}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Hojas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10266,7 +10476,7 @@ GameObject:
   - component: {fileID: 8680642188663347613}
   - component: {fileID: 8569086480852293091}
   - component: {fileID: 2107318241717867732}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Raiz
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10353,11 +10563,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5101551371967708445}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0.97792506, y: 3.279941, z: 0.027442493}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4662952655227020066}
+  m_Father: {fileID: 1611546457}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &8259205312396419251
@@ -10404,7 +10614,7 @@ GameObject:
   - component: {fileID: 7986467415859486770}
   - component: {fileID: 1516849813572207023}
   - component: {fileID: 4034982281430367920}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Icosphere.031
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10556,7 +10766,7 @@ GameObject:
   - component: {fileID: 7347305296597712713}
   - component: {fileID: 1933595080971207773}
   - component: {fileID: 9143167429997639361}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cube.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10647,7 +10857,7 @@ GameObject:
   - component: {fileID: 1288638812945066729}
   - component: {fileID: 3587222295083948212}
   - component: {fileID: 459042355845429653}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Icosphere.038
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10719,11 +10929,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1662661399916610648}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 1.4800923, y: 3.1224358, z: 1.6874199}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 147503470}
+  m_Father: {fileID: 1151566063}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &9080404240277283820
@@ -10790,9 +11000,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2951877699372418571}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.97, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.265, z: 0}
+  m_LocalScale: {x: 0.11978015, y: 0.11978015, z: 0.11978015}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 349701934}
