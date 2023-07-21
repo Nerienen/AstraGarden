@@ -5,5 +5,6 @@ public struct PlantGroup
 {
     public Plant.PlantTypes plantType;
     public string plantName;
-    public Transform plantHolder;
+    public Transform grownPlantHolder;
+    public Transform sproutPlantHolder;
 }
