@@ -27,7 +27,7 @@ public class PlayerInteract : MonoBehaviour
 
     private void Update()
     {
-        if (Physics.Raycast(Helpers.Camera.transform.position, Helpers.Camera.transform.forward, out var hit, interactDistance, interacting? holdersLayer:interactLayer))
+        if (Physics.SphereCast(Helpers.Camera.transform.position, 0.05f,Helpers.Camera.transform.forward ,out var hit, interactDistance, interacting? holdersLayer:interactLayer))
         {
             ManageInspectable(hit);
 
@@ -41,7 +41,20 @@ public class PlayerInteract : MonoBehaviour
             //Display outline if watching to an object
             if (!interacting && hit.transform.TryGetComponent(out _interactable))
             {
-                _interactable.SetOutlineWidth(5);
+                if (_interactable.TryGetComponent(out MachineButton button))
+                {
+                    var holder = _interactable.GetComponentInParent<HoldPoint>();
+                    if (holder != null && !holder.IsHoldingObject)
+                        _interactable.SetOutlineWidth(0);
+                    else
+                    {
+                        _interactable.SetOutlineWidth(5);
+                        Plant plant = holder.CurrentHoldenObject.GetComponent<Plant>();
+                        _interactable.SetOutlineColor(plant.CurrentType == button.buttonType || plant.PlantData.health <= 0? Color.red : Color.green);
+                    }
+                }
+                else _interactable.SetOutlineWidth(5);
+                
             }
 
             if(lastHoldPoint != null && lastHoldPoint != _holdPoint) lastHoldPoint.SetOutlineWidth(0);
@@ -53,7 +66,11 @@ public class PlayerInteract : MonoBehaviour
             
             if (interacting && !holdIsNull)
             {
-                _holdPoint.SetOutlineWidth(5, _interactable);
+                if (HandleMachineColor())
+                {
+                    _holdPoint.SetOutlineWidth(5);
+                }
+                else _holdPoint.SetOutlineWidth(5, _interactable);
             }
         }
         else
@@ -84,14 +101,53 @@ public class PlayerInteract : MonoBehaviour
 
             if (_holdPoint != null)
             {
-                Plant plant = _interactable.GetComponent<Plant>();
-                if(plant == null && _holdPoint.justForPlants) return;
+                if(HandleTank()) return;
+                if(!_interactable.TryGetComponent(out Plant _) && _holdPoint.justForPlants) return;
                 
                 _holdPoint.SetOutlineWidth(0);
                 _holdPoint.HoldObject(_interactable.transform);
                 _holdPoint = null;
             }
         }
+    }
+
+    private bool HandleTank()
+    {
+        if (_interactable.TryGetComponent(out Tank tank))
+        {
+            if (_holdPoint.TryGetComponent(out Machine machine))
+            {
+                switch (tank.liquidType)
+                {
+                    case Plant.PlantTypes.EnergyPlant:
+                        machine.EnergyAmount += tank.GetLiquid();
+                        break;
+                    case Plant.PlantTypes.OxygenPlant:
+                        machine.OxygenAmount += tank.GetLiquid();
+                        break;
+                    case Plant.PlantTypes.WaterPlant:
+                        machine.WaterAmount += tank.GetLiquid();
+                        break;
+                }
+                
+                _holdPoint.SetOutlineColor(Color.white);
+                return true;
+            }
+        }
+
+        return false;
+    }
+    
+    private bool HandleMachineColor()
+    {
+        if (!_interactable.TryGetComponent(out Tank _)) return false;
+        
+        if (_holdPoint.TryGetComponent(out Machine _))
+        {
+            _holdPoint.SetOutlineColor(Color.green);
+        }
+
+        return true;
     }
 
     private void ManageInspectable(RaycastHit hit)

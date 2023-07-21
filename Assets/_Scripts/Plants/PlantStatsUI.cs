@@ -36,10 +36,10 @@ public class PlantStatsUI : MonoBehaviour
     {
         return health switch
         {
-            >= 75 => $"<color={GetColorHex(new Color(0f, 1f, 0.3f))}>Perfect</color>",
+            >= 85 => $"<color={GetColorHex(new Color(0f, 1f, 0.3f))}>Perfect</color>",
             >= 50 => $"<color={GetColorHex(new Color(1f, 0.6f, 0))}>Needs Water</color>",
-            >= 25 => $"<color={GetColorHex(new Color(1, 0.1f, 0))}>Dehydrated</color>",
-            _ => $"<color={GetColorHex(new Color(0.2f, 0.2f, 0.2f))}>Dead</color>"
+            > 0 => $"<color={GetColorHex(new Color(1, 0.1f, 0))}>Dehydrated</color>",
+            <= 0 => $"<color={GetColorHex(new Color(0.2f, 0.2f, 0.2f))}>Dead</color>"
         };
     }
 

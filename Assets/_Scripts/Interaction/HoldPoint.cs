@@ -36,6 +36,11 @@ public class HoldPoint : MonoBehaviour
         _outline.enabled = value != 0;
         _outline.OutlineWidth = value;
     }
+    
+    public void SetOutlineColor(Color value)
+    {
+        _outline.OutlineColor = value;
+    }
 
     public void SetOutlineWidth(float value)
     {

@@ -18,4 +18,9 @@ public abstract class Interactable : MonoBehaviour
 
         outline.OutlineWidth = value;
     }
+    
+    public void SetOutlineColor(Color value)
+    {
+        outline.OutlineColor = value;
+    }
 }
