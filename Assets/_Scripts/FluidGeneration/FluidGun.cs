@@ -11,6 +11,13 @@ public class FluidGun : MonoBehaviour
     [SerializeField] private GameObject waterDropPrefab;
     [SerializeField] private GameObject energyDropPrefab;
     [SerializeField] private Transform shootPoint;
+    
+    [Header("Display")]
+    [SerializeField] private Liquid energyDisplay;
+    [SerializeField] private Liquid waterDisplay;
+    [SerializeField] private Material waterModeMaterial;
+    [SerializeField] private Material energyModeMaterial;
+    [SerializeField] private MeshRenderer[] weaponModeDisplays;
 
     [Header("Gun parameters")] 
     [SerializeField] private float shootingPower;
@@ -31,11 +38,21 @@ public class FluidGun : MonoBehaviour
     private void Start()
     {
         _lastTimeAttacked = float.MinValue;
+        waterDisplay.fillAmount = 0.61f - 0.21f * waterAmmo / maxWaterAmmo;
+        energyDisplay.fillAmount = 0.61f - 0.21f * energyAmmo / maxEnergyAmmo;
+
+        if (energyDisplay.fillAmount >= 0.61f) energyDisplay.fillAmount = 10;
+        if (waterDisplay.fillAmount >= 0.61f) waterDisplay.fillAmount = 10;
+        DisplayMode();
     }
 
     private void Update()
     {
-        if (Input.mouseScrollDelta.y != 0 && currentDrop == null) _throwsEnergy = !_throwsEnergy;
+        if (Input.mouseScrollDelta.y != 0 && currentDrop == null && Time.timeScale > 0)
+        {
+            _throwsEnergy = !_throwsEnergy;
+            DisplayMode();
+        }
     }
 
     public void ChargeDrop()
@@ -53,6 +70,9 @@ public class FluidGun : MonoBehaviour
 
             waterAmmo -= currentDrop.Grow(cadence);
             if (waterAmmo < 0.01f) waterAmmo = 0;
+            
+            waterDisplay.fillAmount = 0.6f - 0.2f * waterAmmo / maxWaterAmmo;
+            if (waterDisplay.fillAmount >= 0.6f) waterDisplay.fillAmount = 10;
         }
         else
         {
@@ -66,8 +86,9 @@ public class FluidGun : MonoBehaviour
 
             energyAmmo -= currentDrop.Grow(cadence);
             if (energyAmmo < 0.01f) energyAmmo = 0;
+            energyDisplay.fillAmount = 0.6f - 0.2f * energyAmmo / maxEnergyAmmo;
+            if (energyDisplay.fillAmount >= 0.6f) energyDisplay.fillAmount = 10;
         }
-       
     }
 
     public void ShootDrop()
@@ -86,10 +107,26 @@ public class FluidGun : MonoBehaviour
     private void InstantiateDrop()
     {
         if(Time.time - _lastTimeAttacked < attackSpeed) return;
-        waterAmmo -= 0.1f;
 
-        if (_throwsEnergy) currentDrop = ObjectPool.Instance.InstantiateFromPool(energyDropPrefab, shootPoint.position, Quaternion.identity).GetComponent<Drop>();
-        else currentDrop = ObjectPool.Instance.InstantiateFromPool(waterDropPrefab, shootPoint.position, Quaternion.identity).GetComponent<Drop>();
+        if (_throwsEnergy)
+        { 
+            energyAmmo -= 0.1f;
+            if (energyAmmo < 0.01f) energyAmmo = 0;
+            
+            energyDisplay.fillAmount = 0.6f - 0.2f * energyAmmo / maxEnergyAmmo;
+            if (energyDisplay.fillAmount >= 0.6f) energyDisplay.fillAmount = 10;
+            currentDrop = ObjectPool.Instance.InstantiateFromPool(energyDropPrefab, shootPoint.position, Quaternion.identity).GetComponent<Drop>();
+        }
+        else
+        {
+            waterAmmo -= 0.1f;
+            if (waterAmmo < 0.01f) waterAmmo = 0;
+            
+            waterDisplay.fillAmount = 0.6f - 0.2f * waterAmmo / maxWaterAmmo;
+            if (waterDisplay.fillAmount >= 0.6f) waterDisplay.fillAmount = 10;
+            
+            currentDrop = ObjectPool.Instance.InstantiateFromPool(waterDropPrefab, shootPoint.position, Quaternion.identity).GetComponent<Drop>();
+        }
         
         currentDrop.Initialize(shootPoint);
     }
@@ -97,9 +134,23 @@ public class FluidGun : MonoBehaviour
     public void ReloadAmmo(AmmoType ammoType, float quantity)
     {
         if (ammoType == AmmoType.WaterAmmo)
+        {
             waterAmmo = Mathf.Clamp(waterAmmo + quantity, 0, maxWaterAmmo);
+            waterDisplay.fillAmount = 0.6f - 0.2f * waterAmmo / maxWaterAmmo;
+        }
         else
+        {
             energyAmmo = Mathf.Clamp(energyAmmo + quantity, 0, maxEnergyAmmo);
+            energyDisplay.fillAmount = 0.6f - 0.2f * energyAmmo / maxEnergyAmmo;
+        }
+    }
+
+    private void DisplayMode()
+    {
+        foreach (var display in weaponModeDisplays)
+        {
+            display.material = _throwsEnergy ? energyModeMaterial : waterModeMaterial;
+        }
     }
 }
 

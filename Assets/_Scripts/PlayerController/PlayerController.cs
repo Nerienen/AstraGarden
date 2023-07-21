@@ -19,6 +19,8 @@ public class PlayerController : CharacterMovement
 
     private void Update()
     {
+        if(Time.timeScale <= 0) return;
+        
         _input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
 
         if (Input.GetMouseButton(0) && !_playerInteract.interacting)

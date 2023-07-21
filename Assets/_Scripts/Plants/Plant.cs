@@ -74,8 +74,18 @@ public class Plant : Grabbable
 
     private bool _previousHolden;
 
-    public PlantData PlantData => new PlantData("name", healthPoints, _growPercentage, _fruitGrowPercentage, _currentType);
+    public PlantData PlantData
+    {
+        get
+        {
+            if(_plantData == null) _plantData = new PlantData("name", healthPoints, _growPercentage, _fruitGrowPercentage, _currentType);
+            else _plantData.UpdatePlantData("name", healthPoints, _growPercentage, _fruitGrowPercentage, _currentType);
+            return _plantData;
+        }
+    }
 
+    private PlantData _plantData;
+    
     private void OnValidate()
     {
         if (changeType)
@@ -228,7 +238,6 @@ public class Plant : Grabbable
     {
         OnChangeTypeReceived?.Invoke(newType);
         _currentType = newType;
-        PlantData.UpdatePlantData("name", healthPoints, _growPercentage, _fruitGrowPercentage, _currentType);
     }
     public void GetCurrentTypeGroup()
     {

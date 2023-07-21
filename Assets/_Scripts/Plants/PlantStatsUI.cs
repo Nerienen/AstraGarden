@@ -77,7 +77,7 @@ public class PlantStatsUI : MonoBehaviour
         transform.localScale = Vector3.zero;
       
         gameObject.SetActive(true);
-        await transform.DoScaleAsync(Vector3.one*0.8f, 0.15f, Transitions.TimeScales.Scaled);
+        await transform.DoScaleAsync(Vector3.one, 0.15f, Transitions.TimeScales.Scaled);
     }
 
     public async Task DisableAsync()
