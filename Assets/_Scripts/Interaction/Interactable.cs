@@ -14,6 +14,8 @@ public abstract class Interactable : MonoBehaviour
 
     public void SetOutlineWidth(float value)
     {
+        outline.enabled = value != 0;
+
         outline.OutlineWidth = value;
     }
 }

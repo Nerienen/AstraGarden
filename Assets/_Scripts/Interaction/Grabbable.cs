@@ -10,6 +10,8 @@ public class Grabbable : Interactable
     private Collider _collider;
     protected bool _grabbing;
     private Transform _grabPoint;
+    
+    private bool _isPlant;
 
     public bool grabbable { get; protected set; } = true;
     protected bool holden;
@@ -28,6 +30,7 @@ public class Grabbable : Interactable
         _collider = GetComponent<Collider>();
         if (_collider == null) _collider = GetComponentInChildren<Collider>(); 
         outline.OutlineColor = Color.white;
+        if (GetComponent<Plant>() != null) _isPlant = true;
     }
 
     public override bool Interact()
@@ -49,10 +52,12 @@ public class Grabbable : Interactable
             _rb.constraints = RigidbodyConstraints.FreezeRotation;
             _collider.material = grabbedMaterial;
             onGrabObject?.Invoke();
+            SetCollisions(true);
             holden = false;
         }
         else
         {
+            SetCollisions(false);
             _rb.constraints = RigidbodyConstraints.None;
             _collider.material = bouncyMaterial;
         }
@@ -60,10 +65,23 @@ public class Grabbable : Interactable
         return true;
     }
 
+    private void SetCollisions(bool ignore)
+    {
+        if (_isPlant)
+        {
+            Physics.IgnoreLayerCollision(11, 10, ignore);
+            Physics.IgnoreLayerCollision(11, 6, ignore);
+        }
+        else
+        {
+            Physics.IgnoreLayerCollision(12, 6, ignore);
+        }
+    }
+
     private void FixedUpdate()
     {
         if(!_grabbing) return;
-
+        
         Vector3 targetPos = Vector3.Lerp(transform.position, _grabPoint.transform.position, Time.deltaTime * 10f);
         _rb.velocity = (targetPos-transform.position).normalized*Vector3.Distance(transform.position, targetPos) / Time.fixedDeltaTime;
     }

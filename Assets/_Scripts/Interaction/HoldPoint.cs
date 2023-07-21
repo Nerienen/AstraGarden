@@ -33,11 +33,14 @@ public class HoldPoint : MonoBehaviour
         Plant plant = interactable.GetComponent<Plant>();
         if(plant == null && justForPlants) return;
                 
+        _outline.enabled = value != 0;
         _outline.OutlineWidth = value;
     }
 
     public void SetOutlineWidth(float value)
     {
+        _outline.enabled = value != 0;
+
         _outline.OutlineWidth = value;
     }
 
@@ -46,4 +49,6 @@ public class HoldPoint : MonoBehaviour
         CurrentHoldenObject.onGrabObject -= ResetHolden;
         CurrentHoldenObject = null;
     }
+
+    public bool IsHoldingObject => CurrentHoldenObject != null;
 }

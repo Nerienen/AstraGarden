@@ -39,7 +39,7 @@ public class PlantStatsUI : MonoBehaviour
             >= 75 => $"<color={GetColorHex(new Color(0f, 1f, 0.3f))}>Perfect</color>",
             >= 50 => $"<color={GetColorHex(new Color(1f, 0.6f, 0))}>Needs Water</color>",
             >= 25 => $"<color={GetColorHex(new Color(1, 0.1f, 0))}>Dehydrated</color>",
-            _ => $"<color = {new Color(0.2f, 0.2f, 0.2f)}>Dead</color>"
+            _ => $"<color={GetColorHex(new Color(0.2f, 0.2f, 0.2f))}>Dead</color>"
         };
     }
 

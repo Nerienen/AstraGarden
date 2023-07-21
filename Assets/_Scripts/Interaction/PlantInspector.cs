@@ -15,6 +15,8 @@ public class PlantInspector : MonoBehaviour, IInspectable
     {
         _plant = GetComponent<Plant>();
         _pivot = _plantStatsUI.transform.parent;
+        _plantStatsUI.transform.position = _pivot.position+_pivot.forward*0.5f;
+        _plantStatsUI.transform.forward = _pivot.forward;
     }
 
     public bool IsInspectable
@@ -27,9 +29,7 @@ public class PlantInspector : MonoBehaviour, IInspectable
     {
         if(!_isInspectable) return;
         
-        _pivot.forward = inspectorPivotForward;
-        _plantStatsUI.transform.forward = inspectorPivotForward;
-        _plantStatsUI.transform.position = Vector3.Lerp( _plantStatsUI.transform.position, _pivot.position+inspectorPivotForward, Time.deltaTime*20f);
+        _pivot.forward =  inspectorPivotForward;
         
         _plantStatsUI.SetData(_plant.PlantData);
         if (!_plantStatsUI.gameObject.activeInHierarchy)

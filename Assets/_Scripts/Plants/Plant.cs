@@ -78,6 +78,7 @@ public class Plant : Grabbable
         _factory = new PlantFactory(this);
         _currentPlant = _factory.GetConcretePlant(initialPlant);
 
+        _plantInspector.IsInspectable = true;
         ResetFruitGrowing();
     }
 
@@ -85,7 +86,6 @@ public class Plant : Grabbable
     {
         DryOverTime();
 
-        _plantInspector.IsInspectable = holden;
         if(!holden) return;
 
         GrowOverTime();
