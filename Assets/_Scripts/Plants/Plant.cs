@@ -169,7 +169,7 @@ public class Plant : Grabbable
     protected virtual void GrowFruitOverTime()
     {
         //Return if the plant is not fully grown
-        if (_growPercentage < 1) return;
+        if (_growPercentage < 1 || _currentType == PlantTypes.OxygenPlant) return;
 
         _fruitGrowPercentage += Time.deltaTime * fruitGrowSpeed * fruitGrowFactor.Evaluate(healthPoints / 100f) / 100f;
 
@@ -177,6 +177,7 @@ public class Plant : Grabbable
         {
             grabbable = _grabbing;
             outline.OutlineColor = Color.green;
+
             _fruitGrowPercentage = 1;
         }
         else outline.OutlineColor = Color.white;
@@ -207,7 +208,7 @@ public class Plant : Grabbable
 
     public override bool Interact()
     {
-        if (_fruitGrowPercentage < 1 || _grabbing)
+        if (_fruitGrowPercentage < 1 || _grabbing || _currentType == PlantTypes.OxygenPlant)
             return false;
 
         ResetFruitGrowing();

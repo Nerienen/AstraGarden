@@ -50,5 +50,14 @@ public class Machine : MonoBehaviour
         OxygenAmount = oxygenAmount;
         EnergyAmount = energyAmount;
     }
-    
+
+    public float GetFillAmount(Plant.PlantTypes types)
+    {
+        return types switch
+        {
+            Plant.PlantTypes.WaterPlant => WaterAmount,
+            Plant.PlantTypes.OxygenPlant => OxygenAmount,
+            Plant.PlantTypes.EnergyPlant => EnergyAmount,
+        };
+    }
 }
