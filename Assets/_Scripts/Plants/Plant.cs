@@ -38,8 +38,8 @@ public class Plant : Grabbable
 
     public float ResourceCapacity => resourceCapacity;
     public PlantGroup[] PlantGroups { get { return plantGroups; } }
-    public PlantTypes CurrentType { get => _currentType; }
     private PlantTypes _currentType;
+    public PlantTypes CurrentType { get => _currentType; }
 
     public enum PlantTypes
     {
@@ -78,8 +78,8 @@ public class Plant : Grabbable
     {
         get
         {
-            if(_plantData == null) _plantData = new PlantData("name", healthPoints, _growPercentage, _fruitGrowPercentage, _currentType);
-            else _plantData.UpdatePlantData("name", healthPoints, _growPercentage, _fruitGrowPercentage, _currentType);
+            if(_plantData == null) _plantData = new PlantData(GetCurrentPlantName(), healthPoints, _growPercentage, _fruitGrowPercentage, _currentType);
+            else _plantData.UpdatePlantData(GetCurrentPlantName(), healthPoints, _growPercentage, _fruitGrowPercentage, _currentType);
             return _plantData;
         }
     }
@@ -112,6 +112,7 @@ public class Plant : Grabbable
 
         _currentPlant = _factory.GetConcretePlant(initialPlant);
         _currentPlant.Enter();
+        _currentType = initialPlant;
 
         _plantInspector.IsInspectable = true;
         ResetFruitGrowing();
@@ -239,15 +240,17 @@ public class Plant : Grabbable
         OnChangeTypeReceived?.Invoke(newType);
         _currentType = newType;
     }
-    public void GetCurrentTypeGroup()
+
+    public string GetCurrentPlantName()
     {
         foreach (PlantGroup plantGroup in PlantGroups)
         {
             if (plantGroup.plantType == _currentType)
             {
-                plantGroup.plantHolder.gameObject.SetActive(false);
-                break;
+                return plantGroup.plantName;
             }
         }
+
+        return "Unknown plant";
     }
 }
