@@ -789,6 +789,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6186254081098831646, guid: 49b014e5d17ea094292e4c4c66f550ce,
         type: 3}
+      propertyPath: <isPot>k__BackingField
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6186254081098831646, guid: 49b014e5d17ea094292e4c4c66f550ce,
+        type: 3}
       propertyPath: <justForPlants>k__BackingField
       value: 1
       objectReference: {fileID: 0}
@@ -1422,6 +1427,8 @@ MonoBehaviour:
     m_RotationOrder: 4
   maxHealthPoints: 100
   healthPoints: 100
+  dryingSpeed: 2
+  waterSensitivity: 10
   resourceCapacity: 10
 --- !u!4 &836298183
 Transform:
@@ -1927,6 +1934,33 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1306032978 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3688702781488129792, guid: 88a0a50a81b6fa74e9d17d5d6c285166,
+    type: 3}
+  m_PrefabInstance: {fileID: 6028538238649849814}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1306032983
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1306032978}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.29026368, y: 0.7131635, z: 0.29761863}
+  m_Center: {x: 0.001838699, y: 0.20593387, z: -0.0055160522}
 --- !u!1 &1335150320
 GameObject:
   m_ObjectHideFlags: 0
@@ -2757,11 +2791,21 @@ PrefabInstance:
     - target: {fileID: 232797297824673850, guid: 88a0a50a81b6fa74e9d17d5d6c285166,
         type: 3}
       propertyPath: m_Drag
-      value: 1
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 232797297824673850, guid: 88a0a50a81b6fa74e9d17d5d6c285166,
+        type: 3}
+      propertyPath: m_Mass
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 232797297824673850, guid: 88a0a50a81b6fa74e9d17d5d6c285166,
         type: 3}
       propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2790112613007792232, guid: 88a0a50a81b6fa74e9d17d5d6c285166,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3688702781488129792, guid: 88a0a50a81b6fa74e9d17d5d6c285166,
@@ -2827,7 +2871,7 @@ PrefabInstance:
     - target: {fileID: 8676637905274384322, guid: 88a0a50a81b6fa74e9d17d5d6c285166,
         type: 3}
       propertyPath: growSpeed
-      value: 1000
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 8676637905274384322, guid: 88a0a50a81b6fa74e9d17d5d6c285166,
         type: 3}
@@ -2979,5 +3023,9 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3688702781488129792, guid: 88a0a50a81b6fa74e9d17d5d6c285166,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1306032983}
   m_SourcePrefab: {fileID: 100100000, guid: 88a0a50a81b6fa74e9d17d5d6c285166, type: 3}

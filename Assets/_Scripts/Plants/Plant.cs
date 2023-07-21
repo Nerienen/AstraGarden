@@ -20,6 +20,8 @@ public class Plant : Grabbable
 
     [SerializeField] protected float maxHealthPoints = 100f;
     [SerializeField] protected float healthPoints = 100f;
+    [SerializeField] protected float dryingSpeed = 2f;
+    [SerializeField] protected float waterSensitivity = 10f;
 
     [Tooltip("By resource we understand the element this plant produce (Oxygen, Water or Energy)")]
     [SerializeField] float resourceCapacity = 10f;
@@ -36,7 +38,8 @@ public class Plant : Grabbable
     public enum PlantState
     {
         Sprout,
-        FullyGrown
+        FullyGrown,
+        Dead,
     }
     
     private PlantState _currentPlantState = PlantState.Sprout;
@@ -74,6 +77,7 @@ public class Plant : Grabbable
 
     private void Update()
     {
+        DryOverTime();
         if(!holden) return;
         
         GrowOverTime();
@@ -126,7 +130,10 @@ public class Plant : Grabbable
 
     protected virtual void DryOverTime()
     {
-        
+        healthPoints -= dryingSpeed * Time.deltaTime;
+        healthPoints = Mathf.Max(0, healthPoints);
+
+        if (healthPoints == 0) { _currentPlantState = PlantState.Dead; }
     }
 
     public override bool Interact()
@@ -159,6 +166,7 @@ public class Plant : Grabbable
     /// <param name="amount">Health points to increase</param>
     public void Water(float amount)
     {
-        healthPoints += amount;
+        healthPoints += amount * waterSensitivity;
+        healthPoints = Mathf.Min(healthPoints, maxHealthPoints);
     }
 }
