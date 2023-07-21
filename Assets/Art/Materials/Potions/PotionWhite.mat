@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: PotionWhite
+  m_Shader: {fileID: 4800000, guid: 3b6b273fb92013241b9f472237268f39, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Alpha: 1
+    - _Amplitude: 0.474
+    - _Freq: 1.26
+    - _Line: 0.0379
+    - _LineSmooth: 0.0227
+    - _RimPower: 1.7
+    m_Colors:
+    - _FoamColor: {r: 1, g: 1, b: 1, a: 1}
+    - _RimColor: {r: 0.8584906, g: 0.3280082, b: 0.3280082, a: 1}
+    - _Tint: {r: 4.0541654, g: 4.0541654, b: 4.0541654, a: 0.7372549}
+    - _TopColor: {r: 0.8301887, g: 0.7802023, b: 0.747953, a: 1}
+  m_BuildTextureStacks: []
