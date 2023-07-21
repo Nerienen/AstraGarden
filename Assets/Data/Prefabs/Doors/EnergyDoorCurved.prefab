@@ -137,7 +137,7 @@ Transform:
   - {fileID: 5590166954001382434}
   - {fileID: 1884851907053710652}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &308485101017947726
 GameObject:
@@ -1029,7 +1029,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e5440c25e45f08741a38beaf5257a91e, type: 2}
+  - {fileID: 2100000, guid: c15c2a50406136547a545e048bea016a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1117,7 +1117,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e942489d26fba449ae56c70a7730a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oxygenRateToDecrease: 3
   door: {fileID: 2696438404793913106}
+  _liquid: {fileID: 1943524616135348616}
   energyNeeded: 5
 --- !u!65 &5812857075321286973
 BoxCollider:
