@@ -11,7 +11,7 @@ public abstract class Drop : MonoBehaviour
     [SerializeField] private GameObject splashEffect;
     
     [Header("Drop Settings")]
-    [SerializeField] private float maxDropScale;
+    [SerializeField] protected float maxDropScale;
     [SerializeField] private float maxDropSpeed;
     
     private Transform _followPoint;

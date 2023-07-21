@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7061075281467901398}
   - component: {fileID: 4759259855171330927}
   - component: {fileID: 6103971941769093172}
+  - component: {fileID: 4667214073363570575}
   m_Layer: 5
   m_Name: PlantStats
   m_TagString: Untagged
@@ -31,15 +32,15 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1824211205917703036}
   - {fileID: 6893409387161664165}
   - {fileID: 3310460156539282958}
-  - {fileID: 1824211205917703036}
   m_Father: {fileID: 0}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 9.159973, y: 4.8462}
+  m_AnchoredPosition: {x: 9.159973, y: 4.8461914}
   m_SizeDelta: {x: 0.5, y: 0.5277}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7061075281467901398
@@ -105,6 +106,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &4667214073363570575
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 543709241603847523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aebcd423cfe71884aa12ee7e722187fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameTypeStatus: {fileID: 4982069808682633892}
+  percentages: {fileID: 2229510689907818985}
 --- !u!1 &3360641420215659775
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,8 +206,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4211081215
-  m_fontColor: {r: 1, g: 1, b: 1, a: 0.98039216}
+    rgba: 2533359615
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -326,8 +341,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4211081215
-  m_fontColor: {r: 1, g: 1, b: 1, a: 0.98039216}
+    rgba: 2533359615
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0.5882353}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

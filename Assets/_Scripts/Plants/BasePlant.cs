@@ -15,11 +15,11 @@ public abstract class BasePlant
 
     protected virtual void GrowOverTime()
     {
-        _ctx.GrowPercentage += (1f / _ctx.GrowPercentage) * Time.deltaTime;
+        _ctx.FruitGrowPercentage += (1f / _ctx.FruitGrowPercentage) * Time.deltaTime;
 
-        _ctx.GrowPercentage = Mathf.Clamp01(_ctx.GrowPercentage);
+        _ctx.FruitGrowPercentage = Mathf.Clamp01(_ctx.FruitGrowPercentage);
 
-        if (_ctx.GrowPercentage < 1) Debug.Log($"GrowPercentage: {_ctx.GrowPercentage}");
+        if (_ctx.FruitGrowPercentage < 1) Debug.Log($"GrowPercentage: {_ctx.FruitGrowPercentage}");
     }
 
     public abstract void Exit();

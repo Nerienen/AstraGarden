@@ -30,35 +30,39 @@ public class PlayerInteract : MonoBehaviour
         {
             if (interacting && hit.transform.TryGetComponent(out _holdPoint))
             {
-                _holdPoint.GetComponent<Outline>().OutlineWidth = 5;
+               _holdPoint.SetOutlineWidth(5, _interactable);
             }
-            else if (hit.transform.TryGetComponent(out _interactable) && _interactable.showOutline)
+            else if (hit.transform.TryGetComponent(out _interactable))
             {
-                _interactable.GetComponent<Outline>().OutlineWidth = 5;
+                _interactable.SetOutlineWidth(5);
             }
         }
         else
         {
             if (interacting && _holdPoint != null)
             {
-                _holdPoint.GetComponent<Outline>().OutlineWidth = 0;
+                _holdPoint.SetOutlineWidth(0);
                 _holdPoint = null;
             }
-            else if (_interactable != null && !interacting  && _interactable.showOutline)
+            else if (_interactable != null && !interacting)
             {
-                _interactable.GetComponent<Outline>().OutlineWidth = 0;
+                _interactable.SetOutlineWidth(0);
                 _interactable = null;
             }
         }
         
         if (Input.GetKeyDown(KeyCode.E) && _interactable != null)
         {
-            _interactable.GetComponent<Outline>().OutlineWidth = 0;
-            _interactable.Interact(objectGrabPointTransform);
+            _interactable.SetOutlineWidth(0);
+            if(!_interactable.Interact(objectGrabPointTransform))
+                _interactable.Interact();
 
             if (_holdPoint != null)
             {
-                _holdPoint.GetComponent<Outline>().OutlineWidth = 0;
+                Plant plant = _interactable.GetComponent<Plant>();
+                if(plant == null && _holdPoint.justForPlants) return;
+                
+                _holdPoint.SetOutlineWidth(0);
                 _holdPoint.HoldObject(_interactable.transform);
                 _holdPoint = null;
             }
