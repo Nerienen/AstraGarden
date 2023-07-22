@@ -58,7 +58,7 @@
 			<destination>{87a7b7e0-ef3e-4f3e-8715-fac8212b568a}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{c6f11d09-3887-492f-a2e6-714a975f9ab8}</destination>
+			<destination>{c87656e2-f839-43d2-817e-bee5016f0231}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{79349251-b017-4a5f-addf-a14d4bbe662f}" />
@@ -300,6 +300,7 @@
 		<relationship name="effects">
 			<destination>{f6e5a21d-85bb-441d-94cc-91bfcc24b852}</destination>
 			<destination>{0781aed5-928f-4fc8-b381-a81fc046e438}</destination>
+			<destination>{067c0fb0-34cf-4773-8f6a-4f45431c2f6c}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{79ed6655-af32-46dc-ae90-3d518a0c8127}" />
@@ -392,6 +393,17 @@
 	<object class="MixerBusPanner" id="{9a76b6e5-6359-4d89-867d-36e9ca99915a}" />
 	<object class="MixerBusFader" id="{f6e5a21d-85bb-441d-94cc-91bfcc24b852}" />
 	<object class="SpatialiserEffect" id="{0781aed5-928f-4fc8-b381-a81fc046e438}" />
+	<object class="SFXReverbEffect" id="{067c0fb0-34cf-4773-8f6a-4f45431c2f6c}">
+		<property name="decayTime">
+			<value>950</value>
+		</property>
+		<property name="earlyLateMix">
+			<value>47</value>
+		</property>
+		<property name="wetLevel">
+			<value>-11.5</value>
+		</property>
+	</object>
 	<object class="AutomationCurve" id="{33c4a55c-7847-4f90-8450-fe4db06de4a6}">
 		<relationship name="parameter">
 			<destination>{03c12d65-a31d-4336-90f3-180200a06c86}</destination>
