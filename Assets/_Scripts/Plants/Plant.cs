@@ -32,9 +32,6 @@ public class Plant : Grabbable
     [SerializeField] protected float dryingSpeed = 2f;
     [SerializeField] protected float waterSensitivity = 10f;
 
-    [Tooltip("By resource we understand the element this plant produce (Oxygen, Water or Energy)")]
-    [SerializeField] float resourceCapacity = 10f;
-
     [Header("Debug - Change plant type")]
     [SerializeField] bool changeType;
     [SerializeField] PlantTypes type;
@@ -42,7 +39,6 @@ public class Plant : Grabbable
     [Header("VFX-related parameters")]
     [SerializeField] float dissolveDuration = 1f;
 
-    public float ResourceCapacity => resourceCapacity;
     public PlantGroup[] PlantGroups { get { return plantGroups; } }
     private PlantTypes _currentType;
     public PlantTypes CurrentType { get => _currentType; }

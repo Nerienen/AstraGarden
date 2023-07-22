@@ -63,7 +63,13 @@ public class WaterPlant : BasePlant
     {
         if (WaterController.Instance != null)
         {
-            WaterController.Instance.FillFluidGunBy(_ctx.ResourceCapacity);
+            foreach (PlantGroup plantGroup in _ctx.PlantGroups)
+            {
+                if (plantGroup.plantType == Plant.PlantTypes.WaterPlant)
+                {
+                    WaterController.Instance.FillFluidGunBy(plantGroup.resourceCapacity);
+                }
+            }
         }
     }
 

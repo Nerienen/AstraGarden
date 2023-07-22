@@ -74,7 +74,13 @@ public class OxygenPlant : BasePlant
     {
         if (OxygenController.Instance != null && _ctx.GrowPercentage >= 1)
         {
-            OxygenController.Instance.IncreaseOxygenRateBy(_ctx.ResourceCapacity);
+            foreach (PlantGroup plantGroup in _ctx.PlantGroups)
+            {
+                if (plantGroup.plantType == Plant.PlantTypes.OxygenPlant)
+                {
+                    OxygenController.Instance.IncreaseOxygenRateBy(plantGroup.resourceCapacity);
+                }
+            }
         }
     }
 
@@ -82,7 +88,13 @@ public class OxygenPlant : BasePlant
     {
         if (OxygenController.Instance != null && _ctx.GrowPercentage >= 1)
         {
-            OxygenController.Instance.DecreaseOxygenRateBy(_ctx.ResourceCapacity);
+            foreach (PlantGroup plantGroup in _ctx.PlantGroups)
+            {
+                if (plantGroup.plantType == Plant.PlantTypes.OxygenPlant)
+                {
+                    OxygenController.Instance.DecreaseOxygenRateBy(plantGroup.resourceCapacity);
+                }
+            }
         }
     }
 

@@ -62,7 +62,13 @@ public class EnergyPlant : BasePlant
     {
         if (EnergyController.Instance != null)
         {
-            EnergyController.Instance.FillFluidGunBy(_ctx.ResourceCapacity);
+            foreach (PlantGroup plantGroup in _ctx.PlantGroups)
+            {
+                if (plantGroup.plantType == Plant.PlantTypes.EnergyPlant)
+                {
+                    EnergyController.Instance.FillFluidGunBy(plantGroup.resourceCapacity);
+                }
+            }
         }
     }
 

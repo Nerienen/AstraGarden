@@ -6782,14 +6782,17 @@ MonoBehaviour:
     plantName: Water Cactus
     grownPlantHolder: {fileID: 4485803905288797941}
     sproutPlantHolder: {fileID: 7979254649901213864}
+    resourceCapacity: 30
   - plantType: 1
     plantName: Energy Lettuce
     grownPlantHolder: {fileID: 4752990996006806680}
     sproutPlantHolder: {fileID: 5869509488571032324}
+    resourceCapacity: 10
   - plantType: 2
     plantName: Oxygen Fungus
     grownPlantHolder: {fileID: 3247234081790641148}
     sproutPlantHolder: {fileID: 8569222820442706828}
+    resourceCapacity: 3
   fruitGrowFactor:
     serializedVersion: 2
     m_Curve:
@@ -6844,7 +6847,6 @@ MonoBehaviour:
   healthPoints: 100
   dryingSpeed: 2
   waterSensitivity: 30
-  resourceCapacity: 5
   changeType: 0
   type: 0
   dissolveDuration: 1
@@ -6880,8 +6882,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.16995144, y: 0.25905433, z: 0.09066093}
-  m_Center: {x: 0.0022537708, y: -0.0040020198, z: -0.009495556}
+  m_Size: {x: 0.6774988, y: 1.1149079, z: 0.72615814}
+  m_Center: {x: -0.0027813911, y: 0.1535204, z: -0.0072803497}
 --- !u!54 &2827221390086981154
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6924,11 +6926,11 @@ MonoBehaviour:
   plant: {fileID: 4775915195663004287}
   boxCollider: {fileID: 207476948667938856}
   sproutColliderValues:
-    center: {x: 0.002253771, y: -0.0040020198, z: -0.009495556}
-    size: {x: 0.16995144, y: 0.25905433, z: 0.09066093}
+    center: {x: -0.025479794, y: -0.010605395, z: -0.005534172}
+    size: {x: 0.41559696, y: 0.60507023, z: 0.3944149}
   grownColliderValues:
-    center: {x: 0.01758933, y: 0.07497603, z: -0.0018277168}
-    size: {x: 0.38158178, y: 0.6961173, z: 0.41270733}
+    center: {x: -0.0027813911, y: 0.1535204, z: -0.0072803497}
+    size: {x: 0.6774988, y: 1.1149079, z: 0.72615814}
 --- !u!1 &5791348135024758197
 GameObject:
   m_ObjectHideFlags: 0
