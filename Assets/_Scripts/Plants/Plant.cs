@@ -84,6 +84,8 @@ public class Plant : Grabbable
     private MeshRenderer[] _renderers;
     private float _dissolvePercentage;
 
+    private bool _isIlluminated = true;
+
     public PlantData PlantData
     {
         get
@@ -127,6 +129,21 @@ public class Plant : Grabbable
 
         _plantInspector.IsInspectable = true;
         ResetFruitGrowing();
+
+        if (FuseBox.Instance != null)
+        {
+            FuseBox.Instance.OnPowerDown += OnLightsOff;
+            FuseBox.Instance.OnPowerUp += OnLightsOn;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (FuseBox.Instance != null)
+        {
+            FuseBox.Instance.OnPowerDown -= OnLightsOff;
+            FuseBox.Instance.OnPowerUp -= OnLightsOn;
+        }
     }
 
     private void Update()
@@ -170,6 +187,7 @@ public class Plant : Grabbable
 
     protected virtual void GrowOverTime()
     {
+        if (!_isIlluminated) return;
         if (_growPercentage >= 1) return;
 
         _growPercentage += Time.deltaTime * growSpeed * growFactor.Evaluate(healthPoints / 100f) / 100f;
@@ -300,5 +318,15 @@ public class Plant : Grabbable
         }
 
         return "Unknown plant";
+    }
+
+    void OnLightsOn()
+    {
+        _isIlluminated = true;
+    }
+
+    void OnLightsOff()
+    {
+        _isIlluminated = false;
     }
 }

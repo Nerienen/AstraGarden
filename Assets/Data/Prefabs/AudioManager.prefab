@@ -237,13 +237,13 @@ MonoBehaviour:
       Data3: -10225508
       Data4: -1988169325
     Path: event:/SFX/Water/ReboundWater
-  <waterDisipate>k__BackingField:
+  <waterPlant>k__BackingField:
     Guid:
-      Data1: 872493698
-      Data2: 1302280285
-      Data3: -1529068400
-      Data4: -1363960138
-    Path: event:/SFX/Water/WaterPlant
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
   <waterFloatingSound>k__BackingField:
     Guid:
       Data1: -444798956
@@ -258,7 +258,7 @@ MonoBehaviour:
       Data3: -930108280
       Data4: -1283132879
     Path: event:/SFX/Energy/ReboundEnergy
-  <energyDisipate>k__BackingField:
+  <energyEnergize>k__BackingField:
     Guid:
       Data1: 0
       Data2: 0
@@ -288,18 +288,25 @@ MonoBehaviour:
     Path: event:/SFX/Energy/BatteryFull
   <doorOpen>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1059247931
+      Data2: 1107412813
+      Data3: -1513459053
+      Data4: 2037831720
+    Path: event:/SFX/Door/DoorOpen
   <doorBroken>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 801141788
+      Data2: 1267852799
+      Data3: -641907053
+      Data4: -957319202
+    Path: event:/SFX/Door/DoorSparks
+  <doorBang>k__BackingField:
+    Guid:
+      Data1: -106554427
+      Data2: 1335375823
+      Data3: -2060324188
+      Data4: -1942277149
+    Path: event:/SFX/Door/DoorBang
   <openData>k__BackingField:
     Guid:
       Data1: 0
@@ -372,11 +379,11 @@ MonoBehaviour:
     Path: 
   <waterAbsorb>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 872493698
+      Data2: 1302280285
+      Data3: -1529068400
+      Data4: -1363960138
+    Path: event:/SFX/Water/WaterPlant
   <oxyPlantBubble>k__BackingField:
     Guid:
       Data1: 0
