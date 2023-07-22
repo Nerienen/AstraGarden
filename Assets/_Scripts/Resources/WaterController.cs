@@ -3,7 +3,6 @@ using UnityEngine.Events;
 
 public class WaterController : MonoBehaviour
 {
-    public UnityEvent<AmmoType, float> OnWaterIncreased;
     public static WaterController Instance { get; private set; }
 
     [SerializeField] float maxAmount = 100f;

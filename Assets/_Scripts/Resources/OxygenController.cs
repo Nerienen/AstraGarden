@@ -9,6 +9,7 @@ public class OxygenController : MonoBehaviour
 
     [SerializeField] float oxygenRate = 0f;
 
+    public float MaxAmount {  get { return maxAmount; } }
     public float CurrentAmount {  get { return currentAmount; } set {  currentAmount = value; } }
 
     private void Awake()

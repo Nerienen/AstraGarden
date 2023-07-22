@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -43,6 +44,17 @@ public class MusicManager : MonoBehaviour
 
     #endregion
 
+    public static MusicManager Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -50,8 +62,8 @@ public class MusicManager : MonoBehaviour
         _audioManager = AudioManager.instance;
         
         //Por ahora se asume que se empieza siempre en el principio
-        backgroundAmbience = _audioManager.CreateInstance(FMODEvents.instance.lowHum);
-        backgroundAmbience.start();
+        music = _audioManager.InitializeMusic(FMODEvents.instance.drift);
+        backgroundAmbience = _audioManager.InitializeAmbience(FMODEvents.instance.lowHum);
     }
 
     // Update is called once per frame
@@ -70,18 +82,23 @@ public class MusicManager : MonoBehaviour
 
         if (isEnding & !hasTriggeredTransitionToEnd) { }
 
+
+
     }
 
     private void playTrack(EventReference[] tracks, int trackNumber)
     {
-        music = _audioManager.CreateInstance(tracks[trackNumber]);
-        music.start();
+        _audioManager.InitializeMusic(tracks[trackNumber]);
     }
 
-    private void changeToEnding()
+    public void SetMusicParameter(string parameterName, float value)
     {
-
-
+        music.setParameterByName(parameterName, value);
+    }
+    
+    public void SetAmbienceParameter(string parameterName, float value)
+    {
+        backgroundAmbience.setParameterByName(parameterName, value);
     }
 
     

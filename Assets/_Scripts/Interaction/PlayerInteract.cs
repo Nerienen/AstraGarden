@@ -50,7 +50,8 @@ public class PlayerInteract : MonoBehaviour
                     {
                         _interactable.SetOutlineWidth(5);
                         Plant plant = holder.CurrentHoldenObject.GetComponent<Plant>();
-                        _interactable.SetOutlineColor(plant.CurrentType == button.buttonType || plant.PlantData.health <= 0? Color.red : Color.green);
+                        Machine machine = _interactable.GetComponentInParent<Machine>();
+                        _interactable.SetOutlineColor(plant.CurrentType == button.buttonType || plant.PlantData.health <= 0 || machine.GetFillAmount(button.buttonType) <= 0 ? Color.red : Color.green);
                     }
                 }
                 else _interactable.SetOutlineWidth(5);

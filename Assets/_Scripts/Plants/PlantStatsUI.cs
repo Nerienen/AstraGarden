@@ -18,7 +18,7 @@ public class PlantStatsUI : MonoBehaviour
 
     public void SetData(PlantData plantData)
     {
-        nameTypeStatus.text = $"Plant name: {plantData.name}\n\n• Type:   {GetType(plantData.type)}\n\n• Status: {GetStatus(plantData.health)}";
+        nameTypeStatus.text = $"Name: {plantData.name}\n\n• Type:   {GetType(plantData.type)}\n\n• Status: {GetStatus(plantData.health)}";
         percentages.text = $"---------------------------\nGrown Percentage\n{GetPercentage(plantData.growPercentage)}\n---------------------------\nFruits Grown Percentage\n{GetPercentage(plantData.fruitsGrowPercentage)}";
     }
 
