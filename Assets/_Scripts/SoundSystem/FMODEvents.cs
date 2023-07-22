@@ -31,13 +31,7 @@ public class FMODEvents : MonoBehaviour
     //Play on press change mode, disable change mode for the duration of the sound
     [field: SerializeField] public EventReference changeMode { get; private set; }
 
-    //Play when plant data visualizer is opened
-    [field: SerializeField] public EventReference openData { get; private set; }
-    //Play while data visualizer is open
-    [field: SerializeField] public EventReference dataViewerSound { get; private set; }
-    //Play when data visualizer is closed
-    [field: SerializeField] public EventReference closeData { get; private set; }
-
+ 
 
     [field: Header("Water SFX")]
     //Play on water rebound
@@ -65,6 +59,15 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference doorGetMaxEnergy { get; private set; }
     //Play on door open
     [field: SerializeField] public EventReference doorOpen { get; private set; }
+
+
+    //Play when plant data visualizer is opened
+    [field: SerializeField] public EventReference openData { get; private set; }
+    //Play while data visualizer is open
+    [field: SerializeField] public EventReference dataViewerSound { get; private set; }
+    //Play when data visualizer is closed
+    [field: SerializeField] public EventReference closeData { get; private set; }
+
 
     #endregion
 

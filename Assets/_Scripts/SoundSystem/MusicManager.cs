@@ -82,6 +82,8 @@ public class MusicManager : MonoBehaviour
 
         if (isEnding & !hasTriggeredTransitionToEnd) { }
 
+
+
     }
 
     private void playTrack(EventReference[] tracks, int trackNumber)
