@@ -114,6 +114,7 @@
 		<relationship name="effects">
 			<destination>{e6f50b7e-59df-4617-87aa-bd0bbecd85a8}</destination>
 			<destination>{ab04f26f-028e-491f-9f2d-0f2f03c28df3}</destination>
+			<destination>{ba6242cb-537f-4ea6-ae57-62cac38ab3a3}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{4a0b3c38-b744-480b-9922-afc362375a13}" />
@@ -137,6 +138,17 @@
 		</property>
 		<property name="overrideRange">
 			<value>true</value>
+		</property>
+	</object>
+	<object class="SFXReverbEffect" id="{ba6242cb-537f-4ea6-ae57-62cac38ab3a3}">
+		<property name="decayTime">
+			<value>950</value>
+		</property>
+		<property name="earlyLateMix">
+			<value>47</value>
+		</property>
+		<property name="wetLevel">
+			<value>-11.5</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{9998b61a-1a1f-43ab-a41d-dbaef1c6b9b9}" />

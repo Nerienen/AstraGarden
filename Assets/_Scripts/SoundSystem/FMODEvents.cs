@@ -37,8 +37,6 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Water SFX")]
     //Play on water rebound
     [field: SerializeField] public EventReference waterReboundOnWall { get; private set; }
-    //Play on blob disappear
-    [field: SerializeField] public EventReference waterDisipate { get; private set; }
     //Play while blob is active
     [field: SerializeField] public EventReference waterFloatingSound { get; private set; }
 
@@ -46,8 +44,6 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Energy SFX")]
     //Play on energy rebound
     [field: SerializeField] public EventReference energyReboundOnWall { get; private set; }
-    //Play on blob disappear
-    [field: SerializeField] public EventReference energyDisipate { get; private set; }
     //Play while blob is active
     [field: SerializeField] public EventReference energyFloatingSound { get; private set; }
 
@@ -64,6 +60,7 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference doorOpen { get; private set; }
     //
     [field: SerializeField] public EventReference doorBroken { get; private set; } //Done, plays by emmitter
+    [field: SerializeField] public EventReference doorBang{ get; private set; } //Done, plays by emmitter
 
 
     [field: Header("Data viewer SFX")]
@@ -78,7 +75,6 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Machine SFX")]
     [field: SerializeField] public EventReference buttonPress { get; private set; }
     [field: SerializeField] public EventReference processingMachine { get; private set; }
-    [field: SerializeField] public EventReference changePlant { get; private set; }
     [field: SerializeField] public EventReference placePlant { get; private set; }
     #endregion
 
