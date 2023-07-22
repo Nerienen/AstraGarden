@@ -119,6 +119,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7345758437061929446, guid: a5f45bbe10a4fdc4482f006970aee1cd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -162,50 +167,36 @@ MonoBehaviour:
   colorSensitiveImages:
   - {fileID: 2090366516837443740}
   - {fileID: 7999484161352866995}
-  highOxygenColor: {r: 0.27171594, g: 0.80629486, b: 0.8113208, a: 1}
-  lowOxygenColor: {r: 0.7735849, g: 0.12771447, b: 0.12771447, a: 1}
-  colorCurve:
+  gradient:
     serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0.003142794
-      outSlope: 0.003142794
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 0.29952207
-      value: 0.00094133615
-      inSlope: -0.017402971
-      outSlope: -0.017402971
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.07504628
-    - serializedVersion: 3
-      time: 0.64180803
-      value: 0.9985723
-      inSlope: 0.010322773
-      outSlope: 0.010322773
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.22516812
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0.0039858795
-      outSlope: 0.0039858795
-      tangentMode: 34
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+    key0: {r: 0.9528302, g: 0, b: 0, a: 1}
+    key1: {r: 0.55892754, g: 0, b: 1, a: 1}
+    key2: {r: 0, g: 0.55357337, b: 0.990566, a: 0}
+    key3: {r: 0, g: 0, b: 0, a: 0}
+    key4: {r: 0, g: 0, b: 0, a: 0}
+    key5: {r: 0, g: 0, b: 0, a: 0}
+    key6: {r: 0, g: 0, b: 0, a: 0}
+    key7: {r: 0, g: 0, b: 0, a: 0}
+    ctime0: 17324
+    ctime1: 35226
+    ctime2: 65535
+    ctime3: 0
+    ctime4: 0
+    ctime5: 0
+    ctime6: 0
+    ctime7: 0
+    atime0: 0
+    atime1: 65535
+    atime2: 0
+    atime3: 0
+    atime4: 0
+    atime5: 0
+    atime6: 0
+    atime7: 0
+    m_Mode: 0
+    m_ColorSpace: -1
+    m_NumColorKeys: 3
+    m_NumAlphaKeys: 2
 --- !u!114 &7999484161352866995 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2760932800798659859, guid: a5f45bbe10a4fdc4482f006970aee1cd,

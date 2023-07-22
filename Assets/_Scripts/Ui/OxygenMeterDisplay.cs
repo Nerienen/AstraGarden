@@ -6,10 +6,7 @@ public class OxygenMeterDisplay : MonoBehaviour
     [SerializeField] Image progressBarFill;
     [SerializeField] Image[] colorSensitiveImages;
 
-    [SerializeField] Color highOxygenColor = Color.cyan;
-    [SerializeField] Color lowOxygenColor = Color.red;
-
-    [SerializeField] AnimationCurve colorCurve;
+    [SerializeField, GradientUsage(false)] private Gradient gradient;
 
     float percentage;
 
@@ -34,7 +31,7 @@ public class OxygenMeterDisplay : MonoBehaviour
     {
         foreach (Image image in colorSensitiveImages)
         {
-            image.color = Color.Lerp(lowOxygenColor, highOxygenColor, colorCurve.Evaluate(percentage));
+            image.color = gradient.Evaluate(percentage);
         }
     }
 }

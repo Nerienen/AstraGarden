@@ -64,30 +64,36 @@ public class AudioManager : MonoBehaviour
     public void SetMasterVolume(float value)
     {
         masterVolume = value;
+        _masterBus.setVolume(masterVolume);
     }  
     public void SetMusicVolume(float value)
     {
         musicVolume = value;
+        _musicBus.setVolume(musicVolume);
     } 
     public void SetSFXVolume(float value)
     {
         sfxVolume = value;
+        _sfxBus.setVolume(sfxVolume);
     }  
     public void SetAmbienceVolume(float value)
     {
         ambienceVolume = value;
+        _ambienceBus.setVolume(ambienceVolume);
     }
 
-    private void InitializeAmbience(EventReference instanceAmbience)
+    public EventInstance InitializeAmbience(EventReference instanceAmbience)
     {
         _ambienceEventInstance = CreateInstance(instanceAmbience);
         _ambienceEventInstance.start();
+        return _ambienceEventInstance;
     }
     
-    private void InitializeMusic(EventReference instanceMusic)
+    public EventInstance InitializeMusic(EventReference instanceMusic)
     {
         _musicEventInstance = CreateInstance(instanceMusic);
         _musicEventInstance.start();
+        return _musicEventInstance;
     }
 
     public void SetMusicArea(MusicArea area)

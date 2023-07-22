@@ -8,10 +8,19 @@ public class PlayerController : CharacterMovement
     private Vector3 _input;
     private PlayerInteract _playerInteract;
     
+    public static PlayerController Instance { get; private set; }
+    
     protected override void Awake()
     {
         base.Awake();
 
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+        Instance = this;
+        
         _playerInteract = GetComponent<PlayerInteract>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
