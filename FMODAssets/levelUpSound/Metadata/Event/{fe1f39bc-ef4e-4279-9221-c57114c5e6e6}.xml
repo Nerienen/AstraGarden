@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{fe1f39bc-ef4e-4279-9221-c57114c5e6e6}">
 		<property name="name">
-			<value>WaterOxygenPlant</value>
+			<value>OxygenPlantTutorial</value>
 		</property>
 		<property name="outputFormat">
 			<value>1</value>
@@ -53,7 +53,7 @@
 			<destination>{f9946dff-9195-44e6-b20e-7b19e9bc4230}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{c6f11d09-3887-492f-a2e6-714a975f9ab8}</destination>
+			<destination>{3f90814d-81a0-4a1d-8b2c-68a21f0d98f6}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{05ca4035-0df9-4fd7-8d6f-9ea978bf203a}" />

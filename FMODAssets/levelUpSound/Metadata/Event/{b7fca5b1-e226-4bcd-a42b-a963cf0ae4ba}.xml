@@ -183,6 +183,7 @@
 		<relationship name="effects">
 			<destination>{c25e406b-aefb-4582-8913-9c7d66ae5bfa}</destination>
 			<destination>{37dda27d-0c59-4054-a0ff-cee89c07b2f9}</destination>
+			<destination>{543b697a-f512-4cdf-8dfe-2e0b4e2b46c4}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{f67ddef0-a4ca-44c3-86e5-dce1c35f1d85}" />
@@ -235,7 +236,40 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{c25e406b-aefb-4582-8913-9c7d66ae5bfa}" />
-	<object class="SpatialiserEffect" id="{37dda27d-0c59-4054-a0ff-cee89c07b2f9}" />
+	<object class="SpatialiserEffect" id="{37dda27d-0c59-4054-a0ff-cee89c07b2f9}">
+		<property name="distanceRolloffType">
+			<value>2</value>
+		</property>
+		<property name="minimumDistance">
+			<value>2.4000001</value>
+		</property>
+		<property name="maximumDistance">
+			<value>6</value>
+		</property>
+		<property name="overrideRange">
+			<value>true</value>
+		</property>
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>17.5</value>
+		</property>
+		<property name="minimumExtent">
+			<value>142</value>
+		</property>
+	</object>
+	<object class="SFXReverbEffect" id="{543b697a-f512-4cdf-8dfe-2e0b4e2b46c4}">
+		<property name="decayTime">
+			<value>950</value>
+		</property>
+		<property name="earlyLateMix">
+			<value>47</value>
+		</property>
+		<property name="wetLevel">
+			<value>-11.5</value>
+		</property>
+	</object>
 	<object class="AutomationPoint" id="{c64b6e38-d77f-489a-abf5-77411a503601}">
 		<property name="position">
 			<value>0</value>

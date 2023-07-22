@@ -57,7 +57,7 @@
 			<destination>{55463c3d-7c12-4a14-9adf-c25b1e20ab96}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{c87656e2-f839-43d2-817e-bee5016f0231}</destination>
+			<destination>{c5191d02-2857-41a7-9d22-ef0aeef47c11}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{d51bbc5d-f0cc-4131-bae8-1d58d7122929}" />
@@ -134,7 +134,6 @@
 		<property name="length">
 			<value>2</value>
 		</property>
-		<property name="name" />
 		<property name="volume">
 			<value>-10</value>
 		</property>
@@ -145,10 +144,10 @@
 			<value>20</value>
 		</property>
 		<property name="minimumTimeBetweenSounds">
-			<value>94</value>
+			<value>350</value>
 		</property>
 		<property name="maximumTimeBetweenSounds">
-			<value>96</value>
+			<value>350</value>
 		</property>
 		<property name="spawnRate">
 			<value>88</value>

@@ -10,7 +10,8 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference lowHum { get; private set; } //Done, plays by code
     [field: SerializeField] public EventReference fan { get; private set; } //Done, plays by emmitter
     [field: SerializeField] public EventReference rattlingAC { get; private set; } //Done, plays by emmitter
-
+    [field: SerializeField] public EventReference machine { get; private set; } //Done, plays by emmitter
+    [field: SerializeField] public EventReference alarm { get; private set; } //Done, plays by emmitter
 
     [field: Header("Music")]
     [field: SerializeField] public EventReference drift { get; private set; } //Done, plays by code, code pending
@@ -42,7 +43,7 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference waterFloatingSound { get; private set; }
 
 
-    [field: Header("Water SFX")]
+    [field: Header("Energy SFX")]
     //Play on energy rebound
     [field: SerializeField] public EventReference energyReboundOnWall { get; private set; }
     //Play on blob disappear
@@ -61,6 +62,8 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference doorGetMaxEnergy { get; private set; }
     //Play on door open
     [field: SerializeField] public EventReference doorOpen { get; private set; }
+    //
+    [field: SerializeField] public EventReference doorBroken { get; private set; } //Done, plays by emmitter
 
 
     [field: Header("Data viewer SFX")]
@@ -77,6 +80,13 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference processingMachine { get; private set; }
     [field: SerializeField] public EventReference changePlant { get; private set; }
     [field: SerializeField] public EventReference placePlant { get; private set; }
+    #endregion
+
+    #region Player
+
+    [field: Header("Player SFX")]
+    [field: SerializeField] public EventReference footSteps { get; private set; }
+    [field: SerializeField] public EventReference pickUpPlant { get; private set; }
     #endregion
 
     #region Plant sounds
@@ -110,8 +120,7 @@ public class FMODEvents : MonoBehaviour
 
     #endregion
 
-    [field: Header("Player SFX")]
-    [field: SerializeField] public EventReference footSteps { get; private set; }
+   
 
     
 

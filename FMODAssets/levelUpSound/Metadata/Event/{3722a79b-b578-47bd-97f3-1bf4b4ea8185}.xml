@@ -54,7 +54,7 @@
 			<destination>{a9c5c176-dde1-427d-93e8-c1227f325c0b}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{c87656e2-f839-43d2-817e-bee5016f0231}</destination>
+			<destination>{c5191d02-2857-41a7-9d22-ef0aeef47c11}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{714099e2-229f-4567-8851-375059aac710}" />
@@ -102,13 +102,16 @@
 		<property name="length">
 			<value>1.6875056689342403</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{71be5078-97bf-448e-84a3-f4af29770e2f}</destination>
+		</relationship>
 		<relationship name="audioFile">
 			<destination>{5ec907c7-147d-428d-ba9d-da3bd0a88475}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{7038e72e-b56c-4c6e-b631-bf8bed8b3c3d}">
 		<property name="volume">
-			<value>-2.5</value>
+			<value>-5.5</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
@@ -139,7 +142,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{caeeb936-a6c6-46fa-aac8-fde790399d9c}">
 		<property name="volume">
-			<value>-9</value>
+			<value>-12</value>
 		</property>
 		<property name="name">
 			<value>Audio 2</value>
@@ -163,6 +166,20 @@
 	</object>
 	<object class="MixerBusPanner" id="{00708f09-e933-4e5d-9e19-429281d8edd2}" />
 	<object class="MixerBusFader" id="{b68108c5-fe40-48fe-87be-0f809b814ee9}" />
+	<object class="ADSRModulator" id="{71be5078-97bf-448e-84a3-f4af29770e2f}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="attackTime">
+			<value>40</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
+	</object>
 	<object class="MixerBusEffectChain" id="{ed50930c-f1c4-4440-9117-a4006f0a55c5}">
 		<relationship name="effects">
 			<destination>{24e204c7-992e-4916-92cd-10c75184ab5f}</destination>
