@@ -1,12 +1,17 @@
 using ProjectUtils.Helpers;
+using System;
 using UnityEngine;
 
 public class PlayerController : CharacterMovement
 {
+    public event Action OnHasDied;
+
     [Header("Bindings")]
     [SerializeField] private FluidGun fluidGun;
     private Vector3 _input;
     private PlayerInteract _playerInteract;
+
+    private bool _isDead;
     
     public static PlayerController Instance { get; private set; }
     
@@ -26,9 +31,26 @@ public class PlayerController : CharacterMovement
         Cursor.visible = false;
     }
 
+    private void Start()
+    {
+        if (OxygenController.Instance != null)
+        {
+            OxygenController.Instance.OnOxygenFinished += OnDead;
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (OxygenController.Instance != null)
+        {
+            OxygenController.Instance.OnOxygenFinished -= OnDead;
+        }
+    }
+
     private void Update()
     {
         if(Time.timeScale <= 0) return;
+        if (_isDead) return;
         
         _input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
 
@@ -49,6 +71,13 @@ public class PlayerController : CharacterMovement
     
     private void FixedUpdate()
     {
+        if (_isDead) return;
         MovementUpdate(_input);
+    }
+
+    void OnDead()
+    {
+        _isDead = true;
+        OnHasDied?.Invoke();
     }
 }

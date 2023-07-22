@@ -1,8 +1,11 @@
+using System;
 using UnityEngine;
 
 public class OxygenController : MonoBehaviour
 {
     public static OxygenController Instance { get; private set; }
+
+    public event Action OnOxygenFinished;
 
     [SerializeField] float maxAmount = 100f;
     [SerializeField] float currentAmount = 70f;
@@ -40,6 +43,7 @@ public class OxygenController : MonoBehaviour
     {
         currentAmount += oxygenRate * Time.deltaTime;
         currentAmount = Mathf.Clamp(currentAmount, 0, maxAmount);
+        CheckOxygenFinished();
         
         if (MusicManager.Instance != null)
         {
@@ -47,16 +51,26 @@ public class OxygenController : MonoBehaviour
         }
     }
 
+    void CheckOxygenFinished()
+    {
+        if (currentAmount <= 0)
+        {
+            OnOxygenFinished?.Invoke();
+        }
+    }
+
     public void IncreaseBy(float amount)
     {
         currentAmount += amount;
         currentAmount = Mathf.Clamp(currentAmount, 0, maxAmount);
+        CheckOxygenFinished();
     }
 
     public void DecreaseBy(float amount)
     {
         currentAmount -= amount;
         currentAmount = Mathf.Clamp(currentAmount, 0, maxAmount);
+        CheckOxygenFinished();
     }
 
     public void IncreaseOxygenRateBy(float amount)
