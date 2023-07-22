@@ -8,6 +8,8 @@ public class Plant : Grabbable
     public event Action<PlantTypes> OnChangeTypeReceived;
     public event Action OnPlantFullyGrown;
 
+    public event Action OnPlantDissolve;
+
     [Header("Plant parameters")]
     [SerializeField] PlantTypes initialPlant = PlantTypes.OxygenPlant;
     [SerializeField] PlantGroup[] plantGroups;
@@ -266,6 +268,7 @@ public class Plant : Grabbable
 
         if (_dissolvePercentage == 1)
         {
+            OnPlantDissolve?.Invoke();
             gameObject.SetActive(false);
         }
     }

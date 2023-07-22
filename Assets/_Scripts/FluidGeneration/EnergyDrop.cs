@@ -113,4 +113,5 @@ public class EnergyDrop : Drop
             rb.velocity = (_target - transform.position).normalized * Mathf.Clamp(rb.velocity.magnitude, 5, 20);
         }
     }
+    
 }

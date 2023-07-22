@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using FMODUnity;
 using ProjectUtils.Helpers;
 using ProjectUtils.ObjectPooling;
 using UnityEngine;
@@ -25,9 +26,13 @@ public class FluidGun : MonoBehaviour
     [SerializeField] private float energyAmmo;
     [SerializeField] private float maxWaterAmmo;
     [SerializeField] private float maxEnergyAmmo;
+
+    [SerializeField] private float changeSpeed;
+    private float _lastChange;
     [field:SerializeReference] public float attackSpeed { get; private set; }
     [SerializeField] private float cadence;
     private float _lastTimeAttacked;
+    private FMODUnity.StudioEventEmitter _emitter;
 
     [Header("Physics")] 
     [SerializeField] private LayerMask ignoredLayers;
@@ -37,6 +42,8 @@ public class FluidGun : MonoBehaviour
 
     private void Start()
     {
+        _emitter = GetComponent<StudioEventEmitter>();
+        _lastChange = float.MinValue;
         _lastTimeAttacked = float.MinValue;
         waterDisplay.fillAmount = 0.61f - 0.21f * waterAmmo / maxWaterAmmo;
         energyDisplay.fillAmount = 0.61f - 0.21f * energyAmmo / maxEnergyAmmo;
@@ -48,8 +55,10 @@ public class FluidGun : MonoBehaviour
 
     private void Update()
     {
-        if (Input.mouseScrollDelta.y != 0 && currentDrop == null && Time.timeScale > 0)
+        if (Input.mouseScrollDelta.y != 0 && currentDrop == null && Time.timeScale > 0 && Time.time - _lastChange >= changeSpeed)
         {
+            _lastChange = Time.time;
+            _emitter.Play();
             _throwsEnergy = !_throwsEnergy;
             DisplayMode();
         }
@@ -69,7 +78,6 @@ public class FluidGun : MonoBehaviour
             }
 
             waterAmmo -= currentDrop.Grow(cadence);
-            //Sonido
             if (waterAmmo < 0.01f) waterAmmo = 0;
             
             waterDisplay.fillAmount = 0.6f - 0.2f * waterAmmo / maxWaterAmmo;
@@ -92,7 +100,7 @@ public class FluidGun : MonoBehaviour
             if (energyDisplay.fillAmount >= 0.6f) energyDisplay.fillAmount = 10;
         }
     }
-
+    
     public void ShootDrop()
     {
         if(Physics.Raycast(Helpers.Camera.transform.position, Helpers.Camera.transform.forward, out var hit,Mathf.Infinity, ~ignoredLayers))
@@ -101,7 +109,11 @@ public class FluidGun : MonoBehaviour
             Vector3 dir = hit.point - shootPoint.position;
             dir.Normalize();
             
+            Debug.DrawLine(shootPoint.position, hit.point, Color.red, 10);
+            Debug.DrawLine(Helpers.Camera.transform.position, hit.point, Color.green, 10);
             currentDrop.Throw(dir, shootingPower);
+            if(_throwsEnergy) AudioManager.instance.PlayOneShot(FMODEvents.instance.shootEnergy, transform.position);
+            else AudioManager.instance.PlayOneShot(FMODEvents.instance.shootWater, transform.position);
             currentDrop = null;
         }
     }

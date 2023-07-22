@@ -12,6 +12,7 @@ public class PlayerInteract : MonoBehaviour
 
     [field:SerializeReference] public float interactDistance  { get; private set; }
 
+    private Plant _currentPlant;
     private Interactable _interactable;
     private HoldPoint _holdPoint;
     private IInspectable _inspectable;
@@ -99,6 +100,10 @@ public class PlayerInteract : MonoBehaviour
             _interactable.SetOutlineWidth(0);
             if(!_interactable.Interact(objectGrabPointTransform))
                 _interactable.Interact();
+            
+            if (!interacting && _currentPlant != null) _currentPlant = null;
+            if (interacting && _interactable.TryGetComponent(out _currentPlant))
+                _currentPlant.OnPlantDissolve += ResetInteraction;
 
             if (_holdPoint != null)
             {
@@ -110,6 +115,14 @@ public class PlayerInteract : MonoBehaviour
                 _holdPoint = null;
             }
         }
+    }
+
+    private void ResetInteraction()
+    {
+        _currentPlant.OnPlantDissolve -= ResetInteraction;
+
+        interacting = false;
+        _currentPlant = null;
     }
 
     private bool HandleTank()

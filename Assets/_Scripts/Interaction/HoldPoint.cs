@@ -9,6 +9,7 @@ public class HoldPoint : MonoBehaviour
     private Outline _outline;
     
     [field: SerializeReference] public Grabbable CurrentHoldenObject { get; private set; }
+    private Plant _currentPlant;
 
     private void Start()
     {
@@ -26,6 +27,9 @@ public class HoldPoint : MonoBehaviour
         objectTransform.rotation = holdTransform.rotation;
 
         objectTransform.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+
+        _currentPlant = objectTransform.GetComponent<Plant>();
+        if (_currentPlant != null) _currentPlant.OnPlantDissolve += ResetHolden;
     }
 
     public void SetOutlineWidth(float value, Interactable interactable)
@@ -51,8 +55,10 @@ public class HoldPoint : MonoBehaviour
 
     private void ResetHolden()
     {
+        if (_currentPlant != null) _currentPlant.OnPlantDissolve -= ResetHolden;
         CurrentHoldenObject.onGrabObject -= ResetHolden;
         CurrentHoldenObject = null;
+        _currentPlant = null;
     }
 
     public bool IsHoldingObject => CurrentHoldenObject != null;
