@@ -15,7 +15,7 @@ public class PlantInspector : MonoBehaviour, IInspectable
     {
         _plant = GetComponent<Plant>();
         _pivot = _plantStatsUI.transform.parent;
-        _plantStatsUI.transform.position = _pivot.position+_pivot.forward*0.5f;
+        _plantStatsUI.transform.position = _pivot.position+_pivot.forward;
         _plantStatsUI.transform.forward = _pivot.forward;
     }
 

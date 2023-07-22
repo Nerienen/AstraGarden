@@ -6,19 +6,32 @@ using UnityEngine;
 public class EnergyReceiver : MonoBehaviour
 {
    [SerializeField] float oxygenRateToDecrease = 3f;
-
    [SerializeField] private GameObject door;
-
    [SerializeField] private Liquid _liquid;
-   
    [SerializeField] private float energyNeeded;
+   [SerializeField] private bool isFinalDoor;
+
+   [SerializeField] private MeshRenderer renderer;
+   [SerializeField] private Material OnMaterial;
+   [SerializeField] private Material OffMaterial;
    public float currentEnergy { get; private set; }
+
+   private void Start()
+   {
+      if (isFinalDoor)
+      {
+         renderer.materials[5] = OffMaterial;
+         GetComponent<Collider>().enabled = false;
+      }
+      renderer.materials[5] = OnMaterial;
+   }
 
    private void OpenDoor()
    {
       door.GetComponent<Animator>().SetBool("Opened", true);
       GetComponent<Collider>().enabled = false;
       tag = "Untagged";
+      if(isFinalDoor) MusicManager.Instance.SetMusicParameter("endPiece", 1);
       
         if (OxygenController.Instance != null)
         {
