@@ -164,7 +164,7 @@ namespace FMODUnity
             }
         }
 
-        private void Lookup()
+        public void Lookup()
         {
             eventDescription = RuntimeManager.GetEventDescription(EventReference);
 

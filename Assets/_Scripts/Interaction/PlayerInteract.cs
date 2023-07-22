@@ -158,7 +158,7 @@ public class PlayerInteract : MonoBehaviour
     
     private bool HandleMachineColor()
     {
-        if (!_interactable.TryGetComponent(out Tank _)) return false;
+        if (!_interactable.TryGetComponent(out Tank t) || t.liquidQuantity <= 0) return false;
         
         if (_holdPoint.TryGetComponent(out Machine _))
         {

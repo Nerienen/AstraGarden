@@ -18,11 +18,10 @@ public class MachineButton : Interactable
 
     public override bool Interact()
     {
-        if(!_holdPoint.IsHoldingObject) return false;
-
         _animator.ResetTrigger("Press");
         _animator.SetTrigger("Press");
         AudioManager.instance.PlayOneShot(FMODEvents.instance.buttonPress, transform.position);
+        if(!_holdPoint.IsHoldingObject) return false;
 
         Plant plant = _holdPoint.CurrentHoldenObject.GetComponent<Plant>();
         if (plant.CurrentType == buttonType || plant.PlantData.health <= 0) return false;

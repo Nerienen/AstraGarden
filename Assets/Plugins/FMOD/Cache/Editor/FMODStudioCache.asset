@@ -289,13 +289,13 @@ MonoBehaviour:
     Data4: -371092318
   Banks:
   - {fileID: -2142996206620129426}
-  IsStream: 0
+  IsStream: 1
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 8165
+  Length: 12125
 --- !u!114 &-7719687841678126801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -620,10 +620,10 @@ MonoBehaviour:
   Path: FMODAssets/levelUpSound/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638256522227797819
+  lastModified: 638256573697789812
   FileSizes:
   - Name: Desktop
-    Value: 3490
+    Value: 3618
   Exists: 1
 --- !u!114 &-5394241840388170260
 MonoBehaviour:
@@ -721,10 +721,10 @@ MonoBehaviour:
   Path: FMODAssets/levelUpSound/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638256522227827833
+  lastModified: 638256573697839827
   FileSizes:
   - Name: Desktop
-    Value: 504512
+    Value: 581664
   Exists: 1
 --- !u!114 &-4984822835735785246
 MonoBehaviour:
@@ -1349,10 +1349,10 @@ MonoBehaviour:
   Path: FMODAssets/levelUpSound/Build/Desktop/Voicelines.bank
   Name: Voicelines
   StudioPath: bank:/Voicelines
-  lastModified: 638256522227867851
+  lastModified: 638256573697909842
   FileSizes:
   - Name: Desktop
-    Value: 871264
+    Value: 871488
   Exists: 1
 --- !u!114 &-2124231537487223762
 MonoBehaviour:
@@ -1693,13 +1693,16 @@ MonoBehaviour:
   - {fileID: -2862427886810228837}
   - {fileID: 5824855351527035076}
   - {fileID: -8654680311376867715}
+  - {fileID: 6994405178608686701}
+  - {fileID: 6216410958983015294}
+  - {fileID: 1978365855865671615}
   EditorParameters:
   - {fileID: 5264945487593214032}
   MasterBanks:
   - {fileID: 5557488700519620531}
   StringsBanks:
   - {fileID: -5810728482997011465}
-  cacheTime: 638256522227867851
+  cacheTime: 638256573697909842
   cacheVersion: 131605
 --- !u!114 &219697887168532390
 MonoBehaviour:
@@ -1983,6 +1986,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4000
+--- !u!114 &1978365855865671615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Door/DoorBang
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Door/DoorBang
+  Guid:
+    Data1: -106554427
+    Data2: 1335375823
+    Data3: -2060324188
+    Data4: -1942277149
+  Banks:
+  - {fileID: -4996618272496481432}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 750
 --- !u!114 &2028061292522411866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2708,6 +2738,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 5254
+--- !u!114 &6216410958983015294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Door/DoorOpen
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Door/DoorOpen
+  Guid:
+    Data1: 1059247931
+    Data2: 1107412813
+    Data3: -1513459053
+    Data4: 2037831720
+  Banks:
+  - {fileID: -4996618272496481432}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1625
 --- !u!114 &6322267482381874979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2808,6 +2865,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 7700032
   Exists: 1
+--- !u!114 &6994405178608686701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Door/DoorSparks
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Door/DoorSparks
+  Guid:
+    Data1: 801141788
+    Data2: 1267852799
+    Data3: -641907053
+    Data4: -957319202
+  Banks:
+  - {fileID: -4996618272496481432}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
 --- !u!114 &7301120831501213478
 MonoBehaviour:
   m_ObjectHideFlags: 0

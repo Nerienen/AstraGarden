@@ -6,7 +6,7 @@ public class Tank : Grabbable
 {
     [SerializeField] private Liquid _liquid;
     [field: SerializeReference] public Plant.PlantTypes liquidType { get; private set; }
-    [SerializeField] private float liquidQuantity;
+    public float liquidQuantity;
 
     public float GetLiquid()
     {

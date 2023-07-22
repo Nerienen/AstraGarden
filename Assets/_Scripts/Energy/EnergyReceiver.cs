@@ -28,6 +28,8 @@ public class EnergyReceiver : MonoBehaviour
 
    private void OpenDoor()
    {
+      AudioManager.instance.PlayOneShot(FMODEvents.instance.doorGetMaxEnergy, transform.position);
+      AudioManager.instance.PlayOneShot(FMODEvents.instance.doorOpen, transform.position);
       door.GetComponent<Animator>().SetBool("Opened", true);
       GetComponent<Collider>().enabled = false;
       tag = "Untagged";
@@ -46,6 +48,7 @@ public class EnergyReceiver : MonoBehaviour
 
    public void AddEnergy(float quantity)
    {
+      AudioManager.instance.PlayOneShot(FMODEvents.instance.energyAbsorb, transform.position);
       currentEnergy += quantity;
 
       if (currentEnergy >= energyNeeded)
