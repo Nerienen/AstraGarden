@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 using FMOD.Studio;
+using STOP_MODE = FMOD.Studio.STOP_MODE;
 
 public class MusicManager : MonoBehaviour
 {
@@ -33,8 +34,8 @@ public class MusicManager : MonoBehaviour
     #region Sound Instances
     private EventInstance music;
     private EventInstance backgroundAmbience;
-
-
+    private EventInstance chargeWater;
+    private EventInstance chargeEnergy;
     #endregion
 
     #region Event References
@@ -65,6 +66,10 @@ public class MusicManager : MonoBehaviour
         //Por ahora se asume que se empieza siempre en el principio
         music = _audioManager.InitializeMusic(FMODEvents.instance.drift);
         backgroundAmbience = _audioManager.InitializeAmbience(FMODEvents.instance.lowHum);
+        chargeEnergy = _audioManager.CreateInstance(FMODEvents.instance.chargeEnergy);
+        chargeWater = _audioManager.CreateInstance(FMODEvents.instance.chargeWater);
+        chargeEnergy.start();
+        chargeWater.start();
     }
 
     // Update is called once per frame
@@ -100,6 +105,21 @@ public class MusicManager : MonoBehaviour
     public void SetAmbienceParameter(string parameterName, float value)
     {
         backgroundAmbience.setParameterByName(parameterName, value);
+    }
+    
+    public void SetChargeWaterParameter(string parameterName, float value)
+    {
+        //chargeWater.getPaused(out bool paused);
+        //if (paused && value > 0) chargeWater.start();
+        //else if (value <= 0) chargeWater.stop(STOP_MODE.ALLOWFADEOUT);
+        chargeWater.setParameterByName(parameterName, value);
+    }
+    public void SetChargeEnergyParameter(string parameterName, float value)
+    {
+        //chargeEnergy.getPaused(out bool paused);
+        //if (paused && value > 0) chargeEnergy.start();
+        //else if (value <= 0) chargeEnergy.stop(STOP_MODE.ALLOWFADEOUT);
+        chargeEnergy.setParameterByName(parameterName, value);
     }
 
     

@@ -36,7 +36,7 @@ public class PlantDistanceChecker : MonoBehaviour
 
         try
         {
-            Vector3 closestPoint = _points.First(pointPos => SqrDist(pointPos.position, playerPos) <= _radius).position;
+            Vector3 closestPoint = _points.First(pointPos => pointPos.gameObject.activeInHierarchy && SqrDist(pointPos.position, playerPos) <= _radius).position;
             float sqrDist = SqrDist(closestPoint, playerPos);
             _value = Mathf.Lerp(_value, sqrDist / _radius, Time.deltaTime * changingSmoothness);
         

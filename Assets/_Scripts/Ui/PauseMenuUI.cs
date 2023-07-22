@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -30,6 +31,7 @@ public class PauseMenuUI : MonoBehaviour
          Cursor.visible = true;
          Cursor.lockState = CursorLockMode.None;
          
+          FindObjectOfType<EventSystem>().SetSelectedGameObject(null);
          Time.timeScale = 0;
          pauseMenu.SetActive(true);
      }

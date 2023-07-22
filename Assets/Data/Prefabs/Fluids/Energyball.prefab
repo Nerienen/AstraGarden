@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2746421804067767818}
   - component: {fileID: 6688969165514980607}
   - component: {fileID: 6973123046749216098}
+  - component: {fileID: 8454123414295406845}
   m_Layer: 7
   m_Name: Energyball
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2279402026520296736}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.181135, y: -1.9449067, z: 1.6806364}
+  m_LocalPosition: {x: -15.967602, y: 1.9026556, z: 3.2132668}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -101,6 +102,37 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 3
   m_Center: {x: 0, y: 0, z: 0.45}
+--- !u!114 &8454123414295406845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2279402026520296736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1681708278
+      Data2: 1309879620
+      Data3: 207494843
+      Data4: -989215442
+    Path: event:/SFX/Gun/Charge Energy
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &5584115658814872378
 GameObject:
   m_ObjectHideFlags: 0

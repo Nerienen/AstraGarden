@@ -22,6 +22,7 @@ public class MachineButton : Interactable
 
         _animator.ResetTrigger("Press");
         _animator.SetTrigger("Press");
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.buttonPress, transform.position);
 
         Plant plant = _holdPoint.CurrentHoldenObject.GetComponent<Plant>();
         if (plant.CurrentType == buttonType || plant.PlantData.health <= 0) return false;

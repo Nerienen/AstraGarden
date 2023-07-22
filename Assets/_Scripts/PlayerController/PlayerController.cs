@@ -36,6 +36,10 @@ public class PlayerController : CharacterMovement
         {
             fluidGun.ChargeDrop();
         }
+        if (Input.GetMouseButtonUp(0) && fluidGun.currentDrop != null)
+        {
+            fluidGun.currentDrop.emitter.Stop();
+        }
 
         if (Input.GetMouseButton(1) && fluidGun.currentDrop != null)
         {
