@@ -40,7 +40,7 @@ public class MusicManager : MonoBehaviour
     #region Event References
     //private EventReference drift = FMODEvents.instance.drift;
     //private EventReference ending = FMODEvents.instance.drift;
-    private EventReference[] tracks = { FMODEvents.instance.drift, FMODEvents.instance.ending };
+    private EventReference[] tracks;
 
     #endregion
 
@@ -61,6 +61,7 @@ public class MusicManager : MonoBehaviour
     {
         _audioManager = AudioManager.instance;
         
+        tracks = new [] { FMODEvents.instance.drift, FMODEvents.instance.ending };
         //Por ahora se asume que se empieza siempre en el principio
         music = _audioManager.InitializeMusic(FMODEvents.instance.drift);
         backgroundAmbience = _audioManager.InitializeAmbience(FMODEvents.instance.lowHum);
