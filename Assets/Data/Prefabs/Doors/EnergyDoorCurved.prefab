@@ -1121,6 +1121,10 @@ MonoBehaviour:
   door: {fileID: 2696438404793913106}
   _liquid: {fileID: 1943524616135348616}
   energyNeeded: 5
+  isFinalDoor: 1
+  renderer: {fileID: 7437707132869330839}
+  OnMaterial: {fileID: 0}
+  OffMaterial: {fileID: 0}
 --- !u!65 &5812857075321286973
 BoxCollider:
   m_ObjectHideFlags: 0

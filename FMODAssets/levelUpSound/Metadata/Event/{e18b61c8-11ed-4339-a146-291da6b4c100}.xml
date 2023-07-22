@@ -57,7 +57,7 @@
 			<destination>{55463c3d-7c12-4a14-9adf-c25b1e20ab96}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{c6f11d09-3887-492f-a2e6-714a975f9ab8}</destination>
+			<destination>{c87656e2-f839-43d2-817e-bee5016f0231}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{d51bbc5d-f0cc-4131-bae8-1d58d7122929}" />
@@ -101,6 +101,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{9609c787-3abd-4606-919e-701e30d5a4ff}">
+		<property name="volume">
+			<value>4</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{6b514b18-89b4-4fc8-b5d1-570a68de1df5}</destination>
 		</relationship>
@@ -131,6 +134,7 @@
 		<property name="length">
 			<value>2</value>
 		</property>
+		<property name="name" />
 		<property name="volume">
 			<value>-10</value>
 		</property>
@@ -138,16 +142,19 @@
 			<value>-1.20000005</value>
 		</property>
 		<property name="polyphony">
-			<value>7</value>
+			<value>20</value>
 		</property>
 		<property name="minimumTimeBetweenSounds">
-			<value>650</value>
+			<value>94</value>
 		</property>
 		<property name="maximumTimeBetweenSounds">
-			<value>700</value>
+			<value>96</value>
 		</property>
 		<property name="spawnRate">
 			<value>88</value>
+		</property>
+		<property name="maximumScatterDistance">
+			<value>9.40000057</value>
 		</property>
 		<relationship name="automators">
 			<destination>{a329b271-ab52-4ba6-aab4-0b4769c0e993}</destination>
@@ -227,6 +234,7 @@
 		<relationship name="effects">
 			<destination>{fb094efc-5cd5-44ed-aa48-c77965667fe6}</destination>
 			<destination>{8ccf6206-40ea-4304-9e22-982bf6bbc2cd}</destination>
+			<destination>{11a313ab-1b57-4b4a-91df-d8f8c4333e47}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{8b63ea22-d4b8-4ea6-b3e0-a3f95fe03efc}" />
@@ -256,6 +264,7 @@
 	<object class="MixerBusEffectChain" id="{aa30a6b0-5cb9-4be4-b9c7-80294bab241d}">
 		<relationship name="effects">
 			<destination>{d98dc961-1cb3-4dc1-ac02-d319ebb8b8fd}</destination>
+			<destination>{706984fd-d084-414c-91f8-6c58c28d0c15}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{bbd490d7-d144-460f-9c12-00d500af5132}" />
@@ -276,6 +285,17 @@
 	<object class="MixerBusPanner" id="{e9440fde-fa61-47c1-895b-117bb7afc6ee}" />
 	<object class="MixerBusFader" id="{fb094efc-5cd5-44ed-aa48-c77965667fe6}" />
 	<object class="SpatialiserEffect" id="{8ccf6206-40ea-4304-9e22-982bf6bbc2cd}" />
+	<object class="SFXReverbEffect" id="{11a313ab-1b57-4b4a-91df-d8f8c4333e47}">
+		<property name="decayTime">
+			<value>950</value>
+		</property>
+		<property name="earlyLateMix">
+			<value>47</value>
+		</property>
+		<property name="wetLevel">
+			<value>-11.5</value>
+		</property>
+	</object>
 	<object class="AutomationCurve" id="{73422c74-4b4a-4105-9c12-6f9c7acd09e0}">
 		<relationship name="parameter">
 			<destination>{03c12d65-a31d-4336-90f3-180200a06c86}</destination>
@@ -306,6 +326,17 @@
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{d98dc961-1cb3-4dc1-ac02-d319ebb8b8fd}" />
+	<object class="MultibandEqEffect" id="{706984fd-d084-414c-91f8-6c58c28d0c15}">
+		<property name="filterTypeA">
+			<value>2</value>
+		</property>
+		<property name="frequencyA">
+			<value>3073.21704</value>
+		</property>
+		<property name="qualityA">
+			<value>1.01910341</value>
+		</property>
+	</object>
 	<object class="AutomationCurve" id="{9df4c917-37ec-4fa0-98f7-e5cd3021995a}">
 		<relationship name="parameter">
 			<destination>{03c12d65-a31d-4336-90f3-180200a06c86}</destination>
@@ -381,7 +412,7 @@
 			<value>0</value>
 		</property>
 		<property name="value">
-			<value>-35</value>
+			<value>-31.5</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{1e984e55-cf04-43c8-899f-77b432b69699}">
@@ -389,7 +420,7 @@
 			<value>0.99293785310734461</value>
 		</property>
 		<property name="value">
-			<value>-28</value>
+			<value>-25.5</value>
 		</property>
 	</object>
 	<object class="Automator" id="{70d1cd01-f6a0-4716-a7d9-0ec7b733ea6b}">
@@ -414,7 +445,7 @@
 			<value>0.0042372881355932203</value>
 		</property>
 		<property name="value">
-			<value>13946.4014</value>
+			<value>7000</value>
 		</property>
 		<property name="curveShape">
 			<value>-0.266543835</value>

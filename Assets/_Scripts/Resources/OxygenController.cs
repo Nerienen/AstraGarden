@@ -9,6 +9,7 @@ public class OxygenController : MonoBehaviour
 
     [SerializeField] float oxygenRate = 0f;
 
+    public float MaxAmount {  get { return maxAmount; } }
     public float CurrentAmount {  get { return currentAmount; } set {  currentAmount = value; } }
 
     private void Awake()
@@ -39,6 +40,8 @@ public class OxygenController : MonoBehaviour
     {
         currentAmount += oxygenRate * Time.deltaTime;
         currentAmount = Mathf.Clamp(currentAmount, 0, maxAmount);
+        
+        MusicManager.Instance.SetMusicParameter("Oxygen",currentAmount/maxAmount);
     }
 
     public void IncreaseBy(float amount)
