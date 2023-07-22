@@ -69,6 +69,7 @@ public class FluidGun : MonoBehaviour
             }
 
             waterAmmo -= currentDrop.Grow(cadence);
+            //Sonido
             if (waterAmmo < 0.01f) waterAmmo = 0;
             
             waterDisplay.fillAmount = 0.6f - 0.2f * waterAmmo / maxWaterAmmo;
@@ -85,6 +86,7 @@ public class FluidGun : MonoBehaviour
             }
 
             energyAmmo -= currentDrop.Grow(cadence);
+            //Sonido
             if (energyAmmo < 0.01f) energyAmmo = 0;
             energyDisplay.fillAmount = 0.6f - 0.2f * energyAmmo / maxEnergyAmmo;
             if (energyDisplay.fillAmount >= 0.6f) energyDisplay.fillAmount = 10;
