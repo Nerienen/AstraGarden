@@ -41,7 +41,10 @@ public class OxygenController : MonoBehaviour
         currentAmount += oxygenRate * Time.deltaTime;
         currentAmount = Mathf.Clamp(currentAmount, 0, maxAmount);
         
-        MusicManager.Instance.SetMusicParameter("Oxygen",currentAmount/maxAmount);
+        if (MusicManager.Instance != null)
+        {
+            MusicManager.Instance.SetMusicParameter("Oxygen",currentAmount/maxAmount);
+        }
     }
 
     public void IncreaseBy(float amount)

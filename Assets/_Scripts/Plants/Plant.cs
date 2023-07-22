@@ -37,6 +37,9 @@ public class Plant : Grabbable
     [SerializeField] bool changeType;
     [SerializeField] PlantTypes type;
 
+    [Header("VFX-related parameters")]
+    [SerializeField] float dissolveDuration = 1f;
+
     public float ResourceCapacity => resourceCapacity;
     public PlantGroup[] PlantGroups { get { return plantGroups; } }
     private PlantTypes _currentType;
@@ -76,6 +79,9 @@ public class Plant : Grabbable
 
     private bool _previousHolden;
 
+    private MeshRenderer[] _renderers;
+    private float _dissolvePercentage;
+
     public PlantData PlantData
     {
         get
@@ -104,6 +110,7 @@ public class Plant : Grabbable
         _plantInspector = GetComponent<PlantInspector>();
 
         _fruitHolders = GetComponentsInChildren<FruitHolder>();
+        _renderers = GetComponentsInChildren<MeshRenderer>();
     }
 
     private void Start()
@@ -122,8 +129,15 @@ public class Plant : Grabbable
 
     private void Update()
     {
-        _currentPlant.UpdateState();
         DryOverTime();
+        if (_currentPlantState == PlantState.Dead)
+        {
+            outline.OutlineWidth = 0;
+            Dissolve();
+            return;
+        }
+
+        _currentPlant.UpdateState();
         CheckHoldenStatusChanges();
 
         if(!holden) return;
@@ -203,12 +217,20 @@ public class Plant : Grabbable
         healthPoints -= dryingSpeed * Time.deltaTime;
         healthPoints = Mathf.Max(0, healthPoints);
 
-        if (healthPoints == 0) { _currentPlantState = PlantState.Dead; }
+        foreach (MeshRenderer renderer in _renderers)
+        {
+            renderer.material.SetFloat("_RotAmount", 1 - (healthPoints / maxHealthPoints));
+        }
+
+        if (healthPoints <= 0) 
+        { 
+            _currentPlantState = PlantState.Dead; 
+        }
     }
 
     public override bool Interact()
     {
-        if (_fruitGrowPercentage < 1 || _grabbing || _currentType == PlantTypes.OxygenPlant)
+        if (_fruitGrowPercentage < 1 || _grabbing || _currentType == PlantTypes.OxygenPlant || _currentPlantState == PlantState.Dead)
             return false;
 
         ResetFruitGrowing();
@@ -227,6 +249,24 @@ public class Plant : Grabbable
         foreach (FruitHolder fruitHolder in _fruitHolders)
         {
             fruitHolder.transform.localScale = new Vector3(_fruitGrowPercentage, _fruitGrowPercentage, _fruitGrowPercentage);
+        }
+    }
+
+    void Dissolve()
+    {
+        _dissolvePercentage += (1f / dissolveDuration) * Time.deltaTime;
+        _dissolvePercentage = Mathf.Clamp(_dissolvePercentage, 0, 1);
+
+        float dissolveValue = Mathf.Lerp(0, 1, _dissolvePercentage);
+
+        foreach (MeshRenderer renderer in _renderers)
+        {
+            renderer.material.SetFloat("_DissolveStrength", dissolveValue);
+        }
+
+        if (_dissolvePercentage == 1)
+        {
+            gameObject.SetActive(false);
         }
     }
 

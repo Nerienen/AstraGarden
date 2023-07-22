@@ -32,12 +32,12 @@ public class PlayerController : CharacterMovement
         
         _input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
 
-        if (Input.GetMouseButton(0) && !_playerInteract.interacting)
+        if (Input.GetMouseButton(0))
         {
             fluidGun.ChargeDrop();
         }
 
-        if (Input.GetMouseButton(1) && fluidGun.currentDrop != null && !_playerInteract.interacting)
+        if (Input.GetMouseButton(1) && fluidGun.currentDrop != null)
         {
            fluidGun.ShootDrop();
         }

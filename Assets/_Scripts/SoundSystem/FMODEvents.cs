@@ -127,7 +127,6 @@ public class FMODEvents : MonoBehaviour
             return;
         }
         instance = this;
-        DontDestroyOnLoad(gameObject);
     }
     
     
