@@ -218,18 +218,18 @@ MonoBehaviour:
     Path: event:/SFX/Gun/Transform Mode
   <waterReboundOnWall>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -75989220
+      Data2: 1252275636
+      Data3: -10225508
+      Data4: -1988169325
+    Path: event:/SFX/Water/ReboundWater
   <waterDisipate>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 872493698
+      Data2: 1302280285
+      Data3: -1529068400
+      Data4: -1363960138
+    Path: event:/SFX/Water/DisipateWater
   <waterFloatingSound>k__BackingField:
     Guid:
       Data1: 0
@@ -349,27 +349,97 @@ MonoBehaviour:
       Data3: 0
       Data4: 0
     Path: 
-  <voiceWarningLowOxygen>k__BackingField:
+  <voiceRebootingSystem>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <voiceWarningVeryLowOxygen>k__BackingField:
+      Data1: -1888023638
+      Data2: 1277845001
+      Data3: -635243104
+      Data4: 128026760
+    Path: event:/Voicelines/Dialogue/RebootingSystem
+  <voiceLifeSignsDetected>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <voiceNormalSystemsRestablished>k__BackingField:
+      Data1: -1080904814
+      Data2: 1171566041
+      Data3: 1972570558
+      Data4: -1743405180
+    Path: event:/Voicelines/Dialogue/LifeSignsDetected
+  <voiceHelloGardener>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 1339609314
+      Data2: 1108462390
+      Data3: 20643462
+      Data4: 1895912700
+    Path: event:/Voicelines/Dialogue/HelloGardener
+  <voiceOxyPlantTutorial>k__BackingField:
+    Guid:
+      Data1: -31508036
+      Data2: 1115287374
+      Data3: 1908744594
+      Data4: -421083884
+    Path: event:/Voicelines/Dialogue/OxygenPlantTutorial
+  <voiceGunTutorial>k__BackingField:
+    Guid:
+      Data1: -1965952307
+      Data2: 1233488568
+      Data3: -469814628
+      Data4: -1550364245
+    Path: event:/Voicelines/Dialogue/GunTutorial
+  <voiceWaterPlantTutorial>k__BackingField:
+    Guid:
+      Data1: -1303119163
+      Data2: 1296420391
+      Data3: -453806686
+      Data4: -371092318
+    Path: event:/Voicelines/Dialogue/WaterPlantTutorial
+  <voiceOpenMaintenance>k__BackingField:
+    Guid:
+      Data1: 2108407858
+      Data2: 1265215873
+      Data3: -289372795
+      Data4: -1484146428
+    Path: event:/Voicelines/Dialogue/OpenMaintenance
+  <voiceGeneticManipulator>k__BackingField:
+    Guid:
+      Data1: -1896107221
+      Data2: 1091956959
+      Data3: -845327468
+      Data4: 1275698999
+    Path: event:/Voicelines/Dialogue/GeneticManipulator
+  <voiceCriticalSituation>k__BackingField:
+    Guid:
+      Data1: -1476749879
+      Data2: 1076346611
+      Data3: -237659519
+      Data4: 164506555
+    Path: event:/Voicelines/Warnings/CriticalSituation
+  <voiceSystemsNominal>k__BackingField:
+    Guid:
+      Data1: 1920003445
+      Data2: 1174062092
+      Data3: -1254872681
+      Data4: 426033330
+    Path: event:/Voicelines/Warnings/SystemsNominal
+  <voiceOxygenLow>k__BackingField:
+    Guid:
+      Data1: 468621700
+      Data2: 1300752572
+      Data3: 207367102
+      Data4: 219812858
+    Path: event:/Voicelines/Warnings/OxygenLow
+  <voiceEnergyLow>k__BackingField:
+    Guid:
+      Data1: 144943497
+      Data2: 1231729030
+      Data3: -721580920
+      Data4: -934051872
+    Path: event:/Voicelines/Warnings/EnergyLow
+  <voiceEnergySystemsEmpty>k__BackingField:
+    Guid:
+      Data1: 1654030935
+      Data2: 1321405261
+      Data3: 866837406
+      Data4: -309269980
+    Path: event:/Voicelines/Warnings/EnergySystemsEmpty
   <footSteps>k__BackingField:
     Guid:
       Data1: 0

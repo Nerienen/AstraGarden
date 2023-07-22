@@ -91,16 +91,22 @@ public class FMODEvents : MonoBehaviour
     #endregion
 
     #region Voices
-    [field: Header("Voicelines")]
-    //
-    [field: SerializeField] public EventReference voiceWarningLowOxygen { get; private set; }
-    //
-    [field: SerializeField] public EventReference voiceWarningVeryLowOxygen { get; private set; }
-    //
-    [field: SerializeField] public EventReference voiceNormalSystemsRestablished { get; private set; }
-    //
-    
+    [field: Header("Voicelines - Scripted")]
+    [field: SerializeField] public EventReference voiceRebootingSystem { get; private set; }
+    [field: SerializeField] public EventReference voiceLifeSignsDetected { get; private set; }
+    [field: SerializeField] public EventReference voiceHelloGardener { get; private set; }
+    [field: SerializeField] public EventReference voiceOxyPlantTutorial { get; private set; }
+    [field: SerializeField] public EventReference voiceGunTutorial { get; private set; }
+    [field: SerializeField] public EventReference voiceWaterPlantTutorial { get; private set; }
+    [field: SerializeField] public EventReference voiceOpenMaintenance { get; private set; }
+    [field: SerializeField] public EventReference voiceGeneticManipulator { get; private set; }
 
+    [field: Header("Voicelines - Not Scripted")]
+    [field: SerializeField] public EventReference voiceCriticalSituation { get; private set; }
+    [field: SerializeField] public EventReference voiceSystemsNominal { get; private set; }
+    [field: SerializeField] public EventReference voiceOxygenLow { get; private set; }
+    [field: SerializeField] public EventReference voiceEnergyLow { get; private set; }
+    [field: SerializeField] public EventReference voiceEnergySystemsEmpty{ get; private set; }
 
     #endregion
 
