@@ -53,6 +53,8 @@ public class FMODEvents : MonoBehaviour
     #endregion
 
     #region Interactable Sounds
+
+    [field: Header("Door SFX")]
     //Play when energy is absorbed
     [field: SerializeField] public EventReference energyAbsorb { get; private set; }
     //Play when max energy needed to open a door is reached
@@ -61,6 +63,8 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference doorOpen { get; private set; }
 
 
+    [field: Header("Data viewer SFX")]
+
     //Play when plant data visualizer is opened
     [field: SerializeField] public EventReference openData { get; private set; }
     //Play while data visualizer is open
@@ -68,10 +72,15 @@ public class FMODEvents : MonoBehaviour
     //Play when data visualizer is closed
     [field: SerializeField] public EventReference closeData { get; private set; }
 
-
+    [field: Header("Machine SFX")]
+    [field: SerializeField] public EventReference buttonPress { get; private set; }
+    [field: SerializeField] public EventReference processingMachine { get; private set; }
+    [field: SerializeField] public EventReference changePlant { get; private set; }
+    [field: SerializeField] public EventReference placePlant { get; private set; }
     #endregion
 
     #region Plant sounds
+    [field: Header("Plant SFX")]
     //On plant growth, send a parameter "Plant Type" 0, 1, 2 (oxy, water, energy), then play
     [field: SerializeField] public EventReference plantGrow { get; private set; }
     //On water absorb, send a parameter "Plant Type" 0, 1, 2 (oxy, water, energy), then play
@@ -82,6 +91,7 @@ public class FMODEvents : MonoBehaviour
     #endregion
 
     #region Voices
+    [field: Header("Voicelines")]
     //
     [field: SerializeField] public EventReference voiceWarningLowOxygen { get; private set; }
     //

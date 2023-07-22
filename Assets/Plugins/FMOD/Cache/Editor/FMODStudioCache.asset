@@ -1,447 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8891210996775275664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Drift
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Drift
-  Guid:
-    Data1: 146540823
-    Data2: 1322592475
-    Data3: 1244116125
-    Data4: -1888551160
-  Banks:
-  - {fileID: 1655383145919270845}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -3078632344979745908}
-  - {fileID: -5241861373131807682}
-  - {fileID: 6914039085295730569}
-  - {fileID: -4288428349483923571}
-  - {fileID: 3130033966987237105}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 640000
---- !u!114 &-8863133215746353054
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Ambient.bank
-  m_EditorClassIdentifier: 
-  Path: FMODAssets/levelUpSound/Build/Desktop/Ambient.bank
-  Name: Ambient
-  StudioPath: bank:/Ambient
-  lastModified: 638256126129277115
-  FileSizes:
-  - Name: Desktop
-    Value: 7085856
-  Exists: 1
---- !u!114 &-8770753094216046820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Low Fan/isBlackout
-  m_EditorClassIdentifier: 
-  Name: isBlackout
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 739971066
-    data2: 1534347243
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &-8694070458198138379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Ambient.bank
-  m_EditorClassIdentifier: 
-  Path: FMODAssets/levelUpSound/Build/Desktop/Ambient.bank
-  Name: Ambient
-  StudioPath: bank:/Ambient
-  lastModified: 638254318191081910
-  FileSizes:
-  - Name: Desktop
-    Value: 7085856
-  Exists: 1
---- !u!114 &-8608490991598121373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: FMODAssets/levelUpSound/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638254318191091918
-  FileSizes:
-  - Name: Desktop
-    Value: 1672
-  Exists: 1
---- !u!114 &-8403107467871874435
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: FMODAssets/levelUpSound/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638253938681779301
-  FileSizes:
-  - Name: Desktop
-    Value: 1030
-  Exists: 1
---- !u!114 &-8314815526676812634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Music.bank
-  m_EditorClassIdentifier: 
-  Path: FMODAssets/levelUpSound/Build/Desktop/Music.bank
-  Name: Music
-  StudioPath: bank:/Music
-  lastModified: 638254318194442665
-  FileSizes:
-  - Name: Desktop
-    Value: 51508544
-  Exists: 1
---- !u!114 &-8124296890570884810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Charge Energy/BubbleGrowth
-  m_EditorClassIdentifier: 
-  Name: BubbleGrowth
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 230036087
-    data2: 2463520131
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-7687145443626154485
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Charge Energy/BubbleGrowth
-  m_EditorClassIdentifier: 
-  Name: BubbleGrowth
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 230036087
-    data2: 2463520131
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-7631606539058134236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Ambient.bank
-  m_EditorClassIdentifier: 
-  Path: FMODAssets/levelUpSound/Build/Desktop/Ambient.bank
-  Name: Ambient
-  StudioPath: bank:/Ambient
-  lastModified: 638254173551038317
-  FileSizes:
-  - Name: Desktop
-    Value: 7085856
-  Exists: 1
---- !u!114 &-7486877404661933974
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambient/Rattling AC
-  m_EditorClassIdentifier: 
-  Path: event:/Ambient/Rattling AC
-  Guid:
-    Data1: -1208179279
-    Data2: 1271783974
-    Data3: 1672031140
-    Data4: -1159460145
-  Banks:
-  - {fileID: -8694070458198138379}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -5932218532930665544}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 196625
---- !u!114 &-6488182869926142585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Drift/Bass
-  m_EditorClassIdentifier: 
-  Name: Bass
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 749004909
-    data2: 1820173575
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
-<<<<<<< Updated upstream
---- !u!114 &-6039027524976863226
-=======
---- !u!114 &-6479064371139430959
->>>>>>> Stashed changes
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-<<<<<<< Updated upstream
-  m_Name: parameter:/Rattling AC/isBlackout
-  m_EditorClassIdentifier: 
-  Name: isBlackout
-=======
-  m_Name: parameter:/Charge Energy/BubbleGrowth
-  m_EditorClassIdentifier: 
-  Name: BubbleGrowth
->>>>>>> Stashed changes
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-<<<<<<< Updated upstream
-    data1: 739971066
-    data2: 1534347243
-  Type: 0
-  IsGlobal: 1
-=======
-    data1: 230036087
-    data2: 2463520131
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-6464986004147751964
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Drift/Bass
-  m_EditorClassIdentifier: 
-  Name: Bass
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 749004909
-    data2: 1820173575
-  Type: 0
-  IsGlobal: 0
->>>>>>> Stashed changes
-  Labels: []
-  Exists: 1
---- !u!114 &-5932218532930665544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Rattling AC/isBlackout
-  m_EditorClassIdentifier: 
-  Name: isBlackout
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 739971066
-    data2: 1534347243
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &-5692586494972619975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Music.bank
-  m_EditorClassIdentifier: 
-  Path: FMODAssets/levelUpSound/Build/Desktop/Music.bank
-  Name: Music
-  StudioPath: bank:/Music
-  lastModified: 638254173554259043
-  FileSizes:
-  - Name: Desktop
-    Value: 51508544
-  Exists: 1
---- !u!114 &-5555774530638318102
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Gun/Charge Water
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Gun/Charge Water
-  Guid:
-    Data1: -510959160
-    Data2: 1127813613
-    Data3: 489244321
-    Data4: 12694694
-  Banks:
-  - {fileID: 1777500853178386874}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -994352207205529092}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2000
---- !u!114 &-5490711059868767532
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambient/Rattling AC
-  m_EditorClassIdentifier: 
-  Path: event:/Ambient/Rattling AC
-  Guid:
-    Data1: -1208179279
-    Data2: 1271783974
-    Data3: 1672031140
-    Data4: -1159460145
-  Banks:
-  - {fileID: -8863133215746353054}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 7859259872284110235}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 196625
---- !u!114 &-5413340147087205966
+--- !u!114 &-8427884868426321834
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -465,7 +24,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-5241861373131807682
+--- !u!114 &-8360432595438692603
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -475,224 +34,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Drift/Pad
-  m_EditorClassIdentifier: 
-  Name: Pad
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 1867351229
-    data2: 890077320
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-4560728026081931004
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Drift/Pad
-  m_EditorClassIdentifier: 
-  Name: Pad
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 1867351229
-    data2: 890077320
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-4288428349483923571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Drift/CloseToWindow
-  m_EditorClassIdentifier: 
-  Name: CloseToWindow
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 4023649408
-    data2: 3423391192
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-4239113572201005522
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Drift
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Drift
-  Guid:
-    Data1: 146540823
-    Data2: 1322592475
-    Data3: 1244116125
-    Data4: -1888551160
-  Banks:
-  - {fileID: -5692586494972619975}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -423319580562822618}
-  - {fileID: -4560728026081931004}
-  - {fileID: 6155944171474371879}
-  - {fileID: 7601306400477226959}
-  - {fileID: -3479137972757394699}
-  - {fileID: -2443963355857216012}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 640000
---- !u!114 &-4032018942902548812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: FMODAssets/levelUpSound/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638253938681769289
-  FileSizes:
-  - Name: Desktop
-    Value: 1036
-  Exists: 1
---- !u!114 &-3883131290339986279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambient/Computer Hum
-  m_EditorClassIdentifier: 
-  Path: event:/Ambient/Computer Hum
-  Guid:
-    Data1: -1588442621
-    Data2: 1219344935
-    Data3: 1392129685
-    Data4: 768309754
-  Banks:
-  - {fileID: -8694070458198138379}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 991285685204441413}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 196625
-<<<<<<< Updated upstream
---- !u!114 &-3479137972757394699
-=======
---- !u!114 &-3647773850819709029
->>>>>>> Stashed changes
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-<<<<<<< Updated upstream
-  m_Name: parameter:/Drift/CloseToWindow
-  m_EditorClassIdentifier: 
-  Name: CloseToWindow
-=======
-  m_Name: parameter:/Drift/CloseToPiano
-  m_EditorClassIdentifier: 
-  Name: CloseToPiano
->>>>>>> Stashed changes
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-<<<<<<< Updated upstream
-    data1: 4023649408
-    data2: 3423391192
-=======
-    data1: 2349767972
-    data2: 3015972118
->>>>>>> Stashed changes
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
-<<<<<<< Updated upstream
---- !u!114 &-3412102700976008366
-=======
---- !u!114 &-3139082969633895529
->>>>>>> Stashed changes
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-<<<<<<< Updated upstream
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Gun/Charge Water
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Gun/Charge Water
-  Guid:
-    Data1: -510959160
-    Data2: 1127813613
-    Data3: 489244321
-    Data4: 12694694
-  Banks:
-  - {fileID: 8616053673987279118}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -963899618459387683}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 2000
-=======
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Drift/isBlackout
+  m_Name: parameter:/Computer Hum/isBlackout
   m_EditorClassIdentifier: 
   Name: isBlackout
   StudioPath: 
@@ -706,32 +48,7 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
->>>>>>> Stashed changes
---- !u!114 &-3078632344979745908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Drift/endPiece
-  m_EditorClassIdentifier: 
-  Name: endPiece
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 2518897963
-    data2: 1053559129
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-3075275809380916139
+--- !u!114 &-8013448705058871324
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -741,25 +58,76 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Gun/Charge Water
+  m_Name: event:/Ambient/Low Fan
   m_EditorClassIdentifier: 
-  Path: event:/SFX/Gun/Charge Water
+  Path: event:/Ambient/Low Fan
   Guid:
-    Data1: -510959160
-    Data2: 1127813613
-    Data3: 489244321
-    Data4: 12694694
+    Data1: 1557707493
+    Data2: 1241288065
+    Data3: 1481028775
+    Data4: 1421692828
   Banks:
-  - {fileID: 616278840947004587}
-  IsStream: 0
+  - {fileID: 846501172833651492}
+  IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -5413340147087205966}
+  - {fileID: -5384772351373604139}
   MinDistance: 1
   MaxDistance: 20
-  Length: 2000
---- !u!114 &-2879134208480270008
+  Length: 196625
+--- !u!114 &-7850785760174196915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Gun/Transform Mode
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Gun/Transform Mode
+  Guid:
+    Data1: 925018011
+    Data2: 1203615096
+    Data3: -199494761
+    Data4: -2055083340
+  Banks:
+  - {fileID: -2065028344296655426}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1854
+--- !u!114 &-5729910162629869134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Drift/Pad
+  m_EditorClassIdentifier: 
+  Name: Pad
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1867351229
+    data2: 890077320
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &-5384772351373604139
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -783,7 +151,102 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
---- !u!114 &-2545007135724813468
+--- !u!114 &-5201123738286426099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambient/Rattling AC
+  m_EditorClassIdentifier: 
+  Path: event:/Ambient/Rattling AC
+  Guid:
+    Data1: -1208179279
+    Data2: 1271783974
+    Data3: 1672031140
+    Data4: -1159460145
+  Banks:
+  - {fileID: 846501172833651492}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 1156442843416890351}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 196625
+--- !u!114 &-3598887417297859689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Gun/Shoot Water
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Gun/Shoot Water
+  Guid:
+    Data1: -1873703675
+    Data2: 1213095702
+    Data3: 1259831190
+    Data4: -393746415
+  Banks:
+  - {fileID: -2065028344296655426}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &-3258020938555126803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMODAssets/levelUpSound/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638256307206476766
+  FileSizes:
+  - Name: Desktop
+    Value: 1964
+  Exists: 1
+--- !u!114 &-2065028344296655426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/SFX.bank
+  m_EditorClassIdentifier: 
+  Path: FMODAssets/levelUpSound/Build/Desktop/SFX.bank
+  Name: SFX
+  StudioPath: bank:/SFX
+  lastModified: 638256307573985629
+  FileSizes:
+  - Name: Desktop
+    Value: 282656
+  Exists: 1
+--- !u!114 &-1556636882978022939
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -793,45 +256,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Drift/Pad
+  m_Name: parameter:/Drift/CloseToWindow
   m_EditorClassIdentifier: 
-  Name: Pad
+  Name: CloseToWindow
   StudioPath: 
   Min: 0
   Max: 1
   Default: 0
   ID:
-    data1: 1867351229
-    data2: 890077320
+    data1: 4023649408
+    data2: 3423391192
   Type: 0
   IsGlobal: 0
   Labels: []
   Exists: 1
---- !u!114 &-2443963355857216012
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Drift/Bass
-  m_EditorClassIdentifier: 
-  Name: Bass
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 749004909
-    data2: 1820173575
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-2349243824640909026
+--- !u!114 &-347846828574769292
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -850,137 +289,15 @@ MonoBehaviour:
     Data3: 207494843
     Data4: -989215442
   Banks:
-  - {fileID: 1777500853178386874}
+  - {fileID: -2065028344296655426}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -7687145443626154485}
+  - {fileID: 1369582204561732763}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-1693281759335115784
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/Drift
-  m_EditorClassIdentifier: 
-  Path: event:/Music/Drift
-  Guid:
-    Data1: 146540823
-    Data2: 1322592475
-    Data3: 1244116125
-    Data4: -1888551160
-  Banks:
-  - {fileID: -8314815526676812634}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 1550218396980523529}
-  - {fileID: -2545007135724813468}
-  - {fileID: 2841649368893325459}
-  - {fileID: 8367850168535774715}
-  - {fileID: -6488182869926142585}
-  - {fileID: 4521170151641143097}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 640000
---- !u!114 &-994352207205529092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Charge Water/BubbleGrowth
-  m_EditorClassIdentifier: 
-  Name: BubbleGrowth
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 230036087
-    data2: 2463520131
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
-<<<<<<< Updated upstream
---- !u!114 &-963899618459387683
-=======
---- !u!114 &-170745857544658124
->>>>>>> Stashed changes
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-<<<<<<< Updated upstream
-  m_Name: parameter:/Charge Water/BubbleGrowth
-  m_EditorClassIdentifier: 
-  Name: BubbleGrowth
-=======
-  m_Name: parameter:/Computer Hum/isBlackout
-  m_EditorClassIdentifier: 
-  Name: isBlackout
->>>>>>> Stashed changes
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-<<<<<<< Updated upstream
-    data1: 230036087
-    data2: 2463520131
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &-423319580562822618
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Drift/endPiece
-  m_EditorClassIdentifier: 
-  Name: endPiece
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 2518897963
-    data2: 1053559129
-  Type: 0
-  IsGlobal: 0
-=======
-    data1: 739971066
-    data2: 1534347243
-  Type: 0
-  IsGlobal: 1
->>>>>>> Stashed changes
-  Labels: []
-  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -994,49 +311,143 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-<<<<<<< Updated upstream
-  - {fileID: 8935406283570040947}
-  - {fileID: -7631606539058134236}
-  - {fileID: 8609201817423437510}
-  - {fileID: -5692586494972619975}
-  - {fileID: 8616053673987279118}
+  - {fileID: 7189635808357573765}
+  - {fileID: 846501172833651492}
+  - {fileID: -3258020938555126803}
+  - {fileID: 1038021249910106761}
+  - {fileID: -2065028344296655426}
   EditorEvents:
-  - {fileID: 8856108370743770935}
-  - {fileID: 4787375763804448630}
-  - {fileID: 4053279179312221295}
-  - {fileID: -4239113572201005522}
-  - {fileID: 1243487704134761896}
-  - {fileID: -3412102700976008366}
+  - {fileID: 1797407901042044495}
+  - {fileID: -5201123738286426099}
+  - {fileID: -8013448705058871324}
+  - {fileID: 4632945248353878252}
+  - {fileID: -347846828574769292}
+  - {fileID: 5120268138815414078}
+  - {fileID: -3598887417297859689}
+  - {fileID: 8212070765539335984}
+  - {fileID: -7850785760174196915}
+  - {fileID: 5128744405326230691}
   EditorParameters:
-  - {fileID: 412612576472821992}
+  - {fileID: 5543871716065265884}
   MasterBanks:
-  - {fileID: 8609201817423437510}
+  - {fileID: -3258020938555126803}
   StringsBanks:
-  - {fileID: 8935406283570040947}
-  cacheTime: 638254806386146952
-=======
-  - {fileID: 609964979113037222}
-  - {fileID: -8863133215746353054}
-  - {fileID: 1020175439854542194}
-  - {fileID: 6002033088972568421}
-  - {fileID: 616278840947004587}
-  EditorEvents:
-  - {fileID: 6145419357649867810}
-  - {fileID: -5490711059868767532}
-  - {fileID: 3315452983503067774}
-  - {fileID: 1564659751487119035}
-  - {fileID: 6863785806521689347}
-  - {fileID: -3075275809380916139}
-  EditorParameters:
-  - {fileID: 1978850381703639948}
-  MasterBanks:
-  - {fileID: 1020175439854542194}
-  StringsBanks:
-  - {fileID: 609964979113037222}
-  cacheTime: 638256126134371371
->>>>>>> Stashed changes
+  - {fileID: 7189635808357573765}
+  cacheTime: 638256307573985629
   cacheVersion: 131605
---- !u!114 &362365451105174395
+--- !u!114 &846501172833651492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Ambient.bank
+  m_EditorClassIdentifier: 
+  Path: FMODAssets/levelUpSound/Build/Desktop/Ambient.bank
+  Name: Ambient
+  StudioPath: bank:/Ambient
+  lastModified: 638256307206416907
+  FileSizes:
+  - Name: Desktop
+    Value: 7085856
+  Exists: 1
+--- !u!114 &1038021249910106761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: FMODAssets/levelUpSound/Build/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 638256307570472340
+  FileSizes:
+  - Name: Desktop
+    Value: 51509184
+  Exists: 1
+--- !u!114 &1061565610620215426
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Drift/CloseToPiano
+  m_EditorClassIdentifier: 
+  Name: CloseToPiano
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 2349767972
+    data2: 3015972118
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &1156442843416890351
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Rattling AC/isBlackout
+  m_EditorClassIdentifier: 
+  Name: isBlackout
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 739971066
+    data2: 1534347243
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
+--- !u!114 &1369582204561732763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Charge Energy/BubbleGrowth
+  m_EditorClassIdentifier: 
+  Name: BubbleGrowth
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 230036087
+    data2: 2463520131
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &1797407901042044495
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1046,106 +457,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambient/Low Fan
+  m_Name: event:/Ambient/Computer Hum
   m_EditorClassIdentifier: 
-  Path: event:/Ambient/Low Fan
+  Path: event:/Ambient/Computer Hum
   Guid:
-    Data1: 1557707493
-    Data2: 1241288065
-    Data3: 1481028775
-    Data4: 1421692828
+    Data1: -1588442621
+    Data2: 1219344935
+    Data3: 1392129685
+    Data4: 768309754
   Banks:
-  - {fileID: -8694070458198138379}
+  - {fileID: 846501172833651492}
   IsStream: 1
-  Is3D: 1
+  Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: -2879134208480270008}
+  - {fileID: -8360432595438692603}
   MinDistance: 1
   MaxDistance: 20
   Length: 196625
-<<<<<<< Updated upstream
---- !u!114 &412612576472821992
-=======
---- !u!114 &609964979113037222
->>>>>>> Stashed changes
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-<<<<<<< Updated upstream
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/isBlackout
-  m_EditorClassIdentifier: 
-  Name: isBlackout
-  StudioPath: parameter:/isBlackout
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 739971066
-    data2: 1534347243
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-=======
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: FMODAssets/levelUpSound/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638256126129287089
-  FileSizes:
-  - Name: Desktop
-    Value: 1574
-  Exists: 1
---- !u!114 &616278840947004587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/SFX.bank
-  m_EditorClassIdentifier: 
-  Path: FMODAssets/levelUpSound/Build/Desktop/SFX.bank
-  Name: SFX
-  StudioPath: bank:/SFX
-  lastModified: 638256126134371371
-  FileSizes:
-  - Name: Desktop
-    Value: 216000
->>>>>>> Stashed changes
-  Exists: 1
---- !u!114 &792988694106373277
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: FMODAssets/levelUpSound/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638254815814693802
-  FileSizes:
-  - Name: Desktop
-    Value: 1574
-  Exists: 1
---- !u!114 &884378912614426074
+--- !u!114 &2525563775222755575
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1155,31 +485,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Drift/Pad
-  m_EditorClassIdentifier: 
-  Name: Pad
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 1867351229
-    data2: 890077320
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &991285685204441413
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Computer Hum/isBlackout
+  m_Name: parameter:/Drift/isBlackout
   m_EditorClassIdentifier: 
   Name: isBlackout
   StudioPath: 
@@ -1193,77 +499,7 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
-<<<<<<< Updated upstream
---- !u!114 &1243487704134761896
-=======
---- !u!114 &1020175439854542194
->>>>>>> Stashed changes
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-<<<<<<< Updated upstream
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Gun/Charge Energy
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Gun/Charge Energy
-  Guid:
-    Data1: -1681708278
-    Data2: 1309879620
-    Data3: 207494843
-    Data4: -989215442
-  Banks:
-  - {fileID: 8616053673987279118}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -8124296890570884810}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
-=======
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: FMODAssets/levelUpSound/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638256126129287089
-  FileSizes:
-  - Name: Desktop
-    Value: 1672
-  Exists: 1
->>>>>>> Stashed changes
---- !u!114 &1550218396980523529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Drift/endPiece
-  m_EditorClassIdentifier: 
-  Name: endPiece
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 2518897963
-    data2: 1053559129
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &1564659751487119035
+--- !u!114 &4632945248353878252
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1282,161 +518,21 @@ MonoBehaviour:
     Data3: 1244116125
     Data4: -1888551160
   Banks:
-  - {fileID: 6002033088972568421}
+  - {fileID: 1038021249910106761}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 8337158379996707536}
-  - {fileID: 884378912614426074}
-  - {fileID: -3139082969633895529}
-  - {fileID: -3647773850819709029}
-  - {fileID: 8530238666953044010}
-  - {fileID: -6464986004147751964}
+  - {fileID: 6158552500121667655}
+  - {fileID: -5729910162629869134}
+  - {fileID: 2525563775222755575}
+  - {fileID: 1061565610620215426}
+  - {fileID: -1556636882978022939}
+  - {fileID: 8969787735720096281}
   MinDistance: 1
   MaxDistance: 20
   Length: 640000
---- !u!114 &1655383145919270845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Music.bank
-  m_EditorClassIdentifier: 
-  Path: FMODAssets/levelUpSound/Build/Desktop/Music.bank
-  Name: Music
-  StudioPath: bank:/Music
-  lastModified: 638253961469425900
-  FileSizes:
-  - Name: Desktop
-    Value: 51505952
-  Exists: 1
---- !u!114 &1777500853178386874
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/SFX.bank
-  m_EditorClassIdentifier: 
-  Path: FMODAssets/levelUpSound/Build/Desktop/SFX.bank
-  Name: SFX
-  StudioPath: bank:/SFX
-  lastModified: 638254815814713804
-  FileSizes:
-  - Name: Desktop
-    Value: 216000
-  Exists: 1
---- !u!114 &1978850381703639948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/isBlackout
-  m_EditorClassIdentifier: 
-  Name: isBlackout
-  StudioPath: parameter:/isBlackout
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 739971066
-    data2: 1534347243
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &2841649368893325459
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Drift/CloseToPiano
-  m_EditorClassIdentifier: 
-  Name: CloseToPiano
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 2349767972
-    data2: 3015972118
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &2984477669819327792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Computer Hum/isBlackout
-  m_EditorClassIdentifier: 
-  Name: isBlackout
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 739971066
-    data2: 1534347243
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &3130033966987237105
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Drift/Bass
-  m_EditorClassIdentifier: 
-  Name: Bass
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 749004909
-    data2: 1820173575
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
-<<<<<<< Updated upstream
---- !u!114 &4053279179312221295
-=======
---- !u!114 &3315452983503067774
->>>>>>> Stashed changes
+--- !u!114 &5120268138815414078
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1446,207 +542,25 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambient/Low Fan
+  m_Name: event:/SFX/Gun/Charge Water
   m_EditorClassIdentifier: 
-  Path: event:/Ambient/Low Fan
+  Path: event:/SFX/Gun/Charge Water
   Guid:
-    Data1: 1557707493
-    Data2: 1241288065
-    Data3: 1481028775
-    Data4: 1421692828
+    Data1: -510959160
+    Data2: 1127813613
+    Data3: 489244321
+    Data4: 12694694
   Banks:
-<<<<<<< Updated upstream
-  - {fileID: -7631606539058134236}
-=======
-  - {fileID: -8863133215746353054}
->>>>>>> Stashed changes
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-<<<<<<< Updated upstream
-  - {fileID: 8221646243875897602}
-=======
-  - {fileID: -8770753094216046820}
->>>>>>> Stashed changes
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 196625
---- !u!114 &4521170151641143097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Drift/isBlackout
-  m_EditorClassIdentifier: 
-  Name: isBlackout
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 739971066
-    data2: 1534347243
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
---- !u!114 &4787375763804448630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambient/Rattling AC
-  m_EditorClassIdentifier: 
-  Path: event:/Ambient/Rattling AC
-  Guid:
-    Data1: -1208179279
-    Data2: 1271783974
-    Data3: 1672031140
-    Data4: -1159460145
-  Banks:
-  - {fileID: -7631606539058134236}
-  IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -6039027524976863226}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 196625
---- !u!114 &4908963123747501093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/isBlackout
-  m_EditorClassIdentifier: 
-  Name: isBlackout
-  StudioPath: parameter:/isBlackout
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 739971066
-    data2: 1534347243
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
-<<<<<<< Updated upstream
---- !u!114 &6155944171474371879
-=======
---- !u!114 &6002033088972568421
->>>>>>> Stashed changes
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-<<<<<<< Updated upstream
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Drift/isBlackout
-  m_EditorClassIdentifier: 
-  Name: isBlackout
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 739971066
-    data2: 1534347243
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
-=======
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Music.bank
-  m_EditorClassIdentifier: 
-  Path: FMODAssets/levelUpSound/Build/Desktop/Music.bank
-  Name: Music
-  StudioPath: bank:/Music
-  lastModified: 638256126134271646
-  FileSizes:
-  - Name: Desktop
-    Value: 51508544
-  Exists: 1
---- !u!114 &6145419357649867810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambient/Computer Hum
-  m_EditorClassIdentifier: 
-  Path: event:/Ambient/Computer Hum
-  Guid:
-    Data1: -1588442621
-    Data2: 1219344935
-    Data3: 1392129685
-    Data4: 768309754
-  Banks:
-  - {fileID: -8863133215746353054}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: -170745857544658124}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 196625
---- !u!114 &6863785806521689347
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Gun/Charge Energy
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Gun/Charge Energy
-  Guid:
-    Data1: -1681708278
-    Data2: 1309879620
-    Data3: 207494843
-    Data4: -989215442
-  Banks:
-  - {fileID: 616278840947004587}
+  - {fileID: -2065028344296655426}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters:
-  - {fileID: -6479064371139430959}
+  - {fileID: -8427884868426321834}
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
->>>>>>> Stashed changes
---- !u!114 &6914039085295730569
+  Length: 2000
+--- !u!114 &5128744405326230691
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1655,26 +569,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Drift/CloseToPiano
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Button
   m_EditorClassIdentifier: 
-  Name: CloseToPiano
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 2349767972
-    data2: 3015972118
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
-<<<<<<< Updated upstream
---- !u!114 &7601306400477226959
-=======
---- !u!114 &7859259872284110235
->>>>>>> Stashed changes
+  Path: event:/SFX/Button
+  Guid:
+    Data1: 1308854962
+    Data2: 1245489415
+    Data3: -746290546
+    Data4: 58266665
+  Banks:
+  - {fileID: -2065028344296655426}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 500
+--- !u!114 &5543871716065265884
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1684,38 +597,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-<<<<<<< Updated upstream
-  m_Name: parameter:/Drift/CloseToPiano
-  m_EditorClassIdentifier: 
-  Name: CloseToPiano
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 2349767972
-    data2: 3015972118
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
---- !u!114 &8221646243875897602
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Low Fan/isBlackout
-=======
-  m_Name: parameter:/Rattling AC/isBlackout
->>>>>>> Stashed changes
+  m_Name: parameter:/isBlackout
   m_EditorClassIdentifier: 
   Name: isBlackout
-  StudioPath: 
+  StudioPath: parameter:/isBlackout
   Min: 0
   Max: 1
   Default: 0
@@ -1726,9 +611,7 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
-<<<<<<< Updated upstream
-=======
---- !u!114 &8337158379996707536
+--- !u!114 &6158552500121667655
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1752,105 +635,7 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
->>>>>>> Stashed changes
---- !u!114 &8367850168535774715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Drift/CloseToWindow
-  m_EditorClassIdentifier: 
-  Name: CloseToWindow
-  StudioPath: 
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 4023649408
-    data2: 3423391192
-  Type: 0
-  IsGlobal: 0
-  Labels: []
-  Exists: 1
-<<<<<<< Updated upstream
---- !u!114 &8609201817423437510
-=======
---- !u!114 &8530238666953044010
->>>>>>> Stashed changes
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-<<<<<<< Updated upstream
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: FMODAssets/levelUpSound/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638254173551048319
-  FileSizes:
-  - Name: Desktop
-    Value: 1672
-  Exists: 1
---- !u!114 &8616053673987279118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/SFX.bank
-  m_EditorClassIdentifier: 
-  Path: FMODAssets/levelUpSound/Build/Desktop/SFX.bank
-  Name: SFX
-  StudioPath: bank:/SFX
-  lastModified: 638254806386146952
-  FileSizes:
-  - Name: Desktop
-    Value: 216000
-  Exists: 1
---- !u!114 &8856108370743770935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambient/Computer Hum
-  m_EditorClassIdentifier: 
-  Path: event:/Ambient/Computer Hum
-  Guid:
-    Data1: -1588442621
-    Data2: 1219344935
-    Data3: 1392129685
-    Data4: 768309754
-  Banks:
-  - {fileID: -7631606539058134236}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters:
-  - {fileID: 2984477669819327792}
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 196625
---- !u!114 &8935406283570040947
+--- !u!114 &7189635808357573765
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1865,24 +650,59 @@ MonoBehaviour:
   Path: FMODAssets/levelUpSound/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638254806386126959
+  lastModified: 638256307206506662
   FileSizes:
   - Name: Desktop
-    Value: 1574
-=======
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Drift/CloseToWindow
+    Value: 1866
+  Exists: 1
+--- !u!114 &8212070765539335984
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Gun/Shoot Energy
   m_EditorClassIdentifier: 
-  Name: CloseToWindow
+  Path: event:/SFX/Gun/Shoot Energy
+  Guid:
+    Data1: -790259435
+    Data2: 1108329292
+    Data3: 1738242734
+    Data4: 950438988
+  Banks:
+  - {fileID: -2065028344296655426}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 531
+--- !u!114 &8969787735720096281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Drift/Oxygen
+  m_EditorClassIdentifier: 
+  Name: Oxygen
   StudioPath: 
   Min: 0
   Max: 1
   Default: 0
   ID:
-    data1: 4023649408
-    data2: 3423391192
+    data1: 749004909
+    data2: 1820173575
   Type: 0
   IsGlobal: 0
   Labels: []
->>>>>>> Stashed changes
   Exists: 1
