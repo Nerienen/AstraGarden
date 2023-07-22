@@ -94,14 +94,18 @@ public class PlayerInteract : MonoBehaviour
                 _interactable = null;
             }
         }
-        
+
         if (Input.GetKeyDown(KeyCode.E) && _interactable != null)
         {
             _interactable.SetOutlineWidth(0);
             if(!_interactable.Interact(objectGrabPointTransform))
                 _interactable.Interact();
-            
-            if (!interacting && _currentPlant != null) _currentPlant = null;
+
+            if (!interacting && _currentPlant != null)
+            {
+                _currentPlant.OnPlantDissolve -= ResetInteraction;
+                _currentPlant = null;
+            }
             if (interacting && _interactable.TryGetComponent(out _currentPlant))
                 _currentPlant.OnPlantDissolve += ResetInteraction;
 
