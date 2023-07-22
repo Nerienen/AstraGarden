@@ -15,8 +15,7 @@ public class FuseBox : MonoBehaviour
 
     bool canBePoweredOn;
     bool hasGoneDown;
-
-
+    
     private void OnValidate()
     {
         if (powerOn)

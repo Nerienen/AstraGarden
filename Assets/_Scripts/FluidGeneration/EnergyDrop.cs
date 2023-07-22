@@ -56,8 +56,10 @@ public class EnergyDrop : Drop
 
        if (collision.collider.CompareTag("EnergyPoint"))
        {
+           EnergyReceiver energyReceiver = collision.collider.GetComponent<EnergyReceiver>();
+           if(energyReceiver != null) energyReceiver.AddEnergy(transform.localScale.x);
+           else collision.collider.GetComponent<FuseBoxEnergyReceiver>().AddEnergy();
            gameObject.SetActive(false);
-           collision.collider.GetComponent<EnergyReceiver>().AddEnergy(transform.localScale.x);
            return;
        }
        
@@ -87,6 +89,9 @@ public class EnergyDrop : Drop
         
         if (collision.collider.CompareTag("EnergyPoint"))
         {
+            EnergyReceiver energyReceiver = collision.collider.GetComponent<EnergyReceiver>();
+            if(energyReceiver != null) energyReceiver.AddEnergy(transform.localScale.x);
+            else collision.collider.GetComponent<FuseBoxEnergyReceiver>().AddEnergy();
             gameObject.SetActive(false);
             return;
         }
@@ -98,6 +103,7 @@ public class EnergyDrop : Drop
     {
         if (_target == Vector3.zero && other.CompareTag("EnergyPoint"))
         {
+            Debug.Log("VAR");
             _target = other.transform.position;
             _renderer.sharedMaterial.SetVector("_SuctionPosition", new Vector4(_target.x, _target.y, _target.z));
             rb.velocity = (_target - transform.position).normalized * Mathf.Clamp(rb.velocity.magnitude, 5, 20);

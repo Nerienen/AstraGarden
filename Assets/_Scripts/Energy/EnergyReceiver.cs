@@ -11,19 +11,33 @@ public class EnergyReceiver : MonoBehaviour
    [SerializeField] private float energyNeeded;
    [SerializeField] private bool isFinalDoor;
 
-   [SerializeField] private MeshRenderer renderer;
-   [SerializeField] private Material OnMaterial;
-   [SerializeField] private Material OffMaterial;
+   [SerializeField] protected MeshRenderer renderer;
+   [SerializeField] protected Material OnMaterial;
+   [SerializeField] protected Material OffMaterial;
    public float currentEnergy { get; private set; }
+   private List<Material> _materials;
 
    private void Start()
    {
+      _materials = new List<Material>();
+      _materials.AddRange(renderer.materials);
+      
       if (isFinalDoor)
       {
-         renderer.materials[5] = OffMaterial;
+         _materials[5] = OffMaterial;
          GetComponent<Collider>().enabled = false;
+         
+         FuseBox.Instance.OnPowerUp += () =>
+         {
+            _materials[5] = OnMaterial;
+            GetComponent<Collider>().enabled = true;
+            renderer.SetMaterials(_materials);
+         };
       }
-      renderer.materials[5] = OnMaterial;
+      _materials[5] = OnMaterial;
+      renderer.SetMaterials(_materials);
+
+
    }
 
    private void OpenDoor()
