@@ -34,7 +34,7 @@ public class EnergyReceiver : MonoBehaviour
             renderer.SetMaterials(_materials);
          };
       }
-      _materials[5] = OnMaterial;
+      else _materials[5] = OnMaterial;
       renderer.SetMaterials(_materials);
 
 

@@ -69,7 +69,6 @@ public class EnergyDrop : Drop
        {
            EnergyReceiver energyReceiver = collision.collider.GetComponent<EnergyReceiver>();
            if(energyReceiver != null) energyReceiver.AddEnergy(transform.localScale.x);
-           else collision.collider.GetComponent<FuseBoxEnergyReceiver>().AddEnergy();
            gameObject.SetActive(false);
            return;
        }
@@ -102,7 +101,6 @@ public class EnergyDrop : Drop
         {
             EnergyReceiver energyReceiver = collision.collider.GetComponent<EnergyReceiver>();
             if(energyReceiver != null) energyReceiver.AddEnergy(transform.localScale.x);
-            else collision.collider.GetComponent<FuseBoxEnergyReceiver>().AddEnergy();
             gameObject.SetActive(false);
             return;
         }
