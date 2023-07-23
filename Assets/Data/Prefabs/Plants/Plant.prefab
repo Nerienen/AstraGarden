@@ -6735,7 +6735,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5656469501118774270}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -1.056, y: 0.26159, z: 1.896}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -6743,7 +6743,7 @@ Transform:
   - {fileID: 7582436307970382744}
   - {fileID: 6532262537280233892}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2625952889867595681
 MonoBehaviour:
@@ -6809,8 +6809,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: 2
+      outSlope: 2
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -6818,8 +6818,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  fruitGrowSpeed: 10
-  growSpeed: 10
+  fruitGrowSpeed: 2.5
+  growSpeed: 5
   growFactor:
     serializedVersion: 2
     m_Curve:
@@ -6835,8 +6835,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: 2
+      outSlope: 2
       tangentMode: 0
       weightedMode: 0
       inWeight: 0
@@ -6846,13 +6846,14 @@ MonoBehaviour:
     m_RotationOrder: 4
   maxHealthPoints: 100
   healthPoints: 100
-  dryingSpeed: 2
+  dryingSpeed: 0.5
   waterSensitivity: 30
   changeType: 0
   type: 0
   dissolveDuration: 1
   oxygenParticles: {fileID: 1471111809962855004}
   emitter: {fileID: 8476055608702803126}
+  _fruitGrowPercentage: 0
 --- !u!114 &645206282926566912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8223,6 +8224,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 0.5277
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402873474052308079, guid: 07860439467141444a226c6fe238b781,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402873474052308079, guid: 07860439467141444a226c6fe238b781,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2402873474052308079, guid: 07860439467141444a226c6fe238b781,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2402873474052308079, guid: 07860439467141444a226c6fe238b781,
         type: 3}

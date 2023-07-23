@@ -1661,7 +1661,7 @@ MonoBehaviour:
   holdersLayer:
     serializedVersion: 2
     m_Bits: 513
-  <interactDistance>k__BackingField: 4
+  <interactDistance>k__BackingField: 3.75
 --- !u!1 &8231090818006064100
 GameObject:
   m_ObjectHideFlags: 0
@@ -1737,10 +1737,10 @@ MonoBehaviour:
   - {fileID: 7763945400030654654}
   - {fileID: 7953534020910022236}
   shootingPower: 10
-  waterAmmo: 6
-  energyAmmo: 6
-  maxWaterAmmo: 9
-  maxEnergyAmmo: 6
+  waterAmmo: 5
+  energyAmmo: 0
+  maxWaterAmmo: 10
+  maxEnergyAmmo: 5
   changeSpeed: 1
   <attackSpeed>k__BackingField: 0.4
   cadence: 1
