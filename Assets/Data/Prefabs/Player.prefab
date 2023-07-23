@@ -41,6 +41,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7901888881510703228}
   - component: {fileID: 8680075568638555449}
+  - component: {fileID: 2854337295973402273}
   m_Layer: 6
   m_Name: GunHolder
   m_TagString: Untagged
@@ -77,6 +78,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swaySoftness: 15
+--- !u!95 &2854337295973402273
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 661017755014567878}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1025920920371367795
 GameObject:
   m_ObjectHideFlags: 0
@@ -670,6 +692,7 @@ GameObject:
   - component: {fileID: 5469638744726661863}
   - component: {fileID: 117361747429709471}
   - component: {fileID: 7502693052131905371}
+  - component: {fileID: 8678089256123678535}
   m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -816,6 +839,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attenuationObject: {fileID: 8148942797581835539}
+--- !u!95 &8678089256123678535
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2427600094349725241}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3138414618287831775
 GameObject:
   m_ObjectHideFlags: 0
@@ -1432,7 +1476,8 @@ GameObject:
   - component: {fileID: 2035655548063069164}
   - component: {fileID: 5690186757674484756}
   - component: {fileID: 682679222044484194}
-  - component: {fileID: 5847904295279059182}
+  - component: {fileID: 9128023895771302182}
+  - component: {fileID: 4559103212328658823}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -1456,7 +1501,7 @@ Transform:
   - {fileID: 8964697831851641350}
   - {fileID: 7901888881510703228}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &3237762382837949220
 CapsuleCollider:
@@ -1665,7 +1710,7 @@ MonoBehaviour:
   <interactDistance>k__BackingField: 3.75
   seenPlant: 0
   seenInteract: 0
---- !u!114 &5847904295279059182
+--- !u!114 &9128023895771302182
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1698,6 +1743,27 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!95 &4559103212328658823
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8148942797581835539}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8231090818006064100
 GameObject:
   m_ObjectHideFlags: 0
@@ -1709,6 +1775,7 @@ GameObject:
   - component: {fileID: 734477785575406726}
   - component: {fileID: 1349612204628578312}
   - component: {fileID: 4841819541062357213}
+  - component: {fileID: 3959262780375804051}
   m_Layer: 6
   m_Name: FluidGun
   m_TagString: Untagged
@@ -1814,6 +1881,27 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!95 &3959262780375804051
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8231090818006064100}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &8435921616839615944
 GameObject:
   m_ObjectHideFlags: 0

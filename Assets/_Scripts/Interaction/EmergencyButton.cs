@@ -19,6 +19,8 @@ public class EmergencyButton : Interactable
 
         if (CutsceneController.Instance != null && FMODEvents.instance != null)
         {
+            MusicManager.Instance.music.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.openBlindEnding, transform.position);
             AudioManager.instance.PlayOneShot(FMODEvents.instance.ending, transform.position);
             CutsceneController.Instance.PreparePlayer();
         }
