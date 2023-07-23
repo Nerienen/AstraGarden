@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{3847d29f-dfa4-4a83-9d0b-321a0d5b7696}">
+		<property name="name">
+			<value>BreathRelief</value>
+		</property>
+		<relationship name="folder">
+			<destination>{f0af9975-7b5f-4776-8131-fff472b1751a}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{a6976707-2dba-47ef-b390-f7ec8053b817}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{a6976707-2dba-47ef-b390-f7ec8053b817}">
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+		<property name="seekSpeedDescending">
+			<value>0.079999998211860657</value>
+		</property>
+		<property name="seekSpeedAsymmetric">
+			<value>true</value>
+		</property>
+	</object>
+</objects>
