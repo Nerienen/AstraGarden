@@ -462,6 +462,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 4534651741793899330}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 67d1bc0ce8de20744892fb4263e077d5,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -2925153462449573122}
     - targetCorrespondingSourceObject: {fileID: 8485173162082002552, guid: 67d1bc0ce8de20744892fb4263e077d5,
         type: 3}
       insertIndex: -1
@@ -807,6 +811,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &-2925153462449573122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626970473017297139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1588442621
+      Data2: 1219344935
+      Data3: 1392129685
+      Data4: 768309754
+    Path: event:/Ambient/Computer Hum
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!23 &2030271782828722037 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 466608246689542871, guid: 67d1bc0ce8de20744892fb4263e077d5,

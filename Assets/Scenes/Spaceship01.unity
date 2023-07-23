@@ -495,6 +495,43 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4b485908f9ea9649af91fcbf73196e9, type: 3}
+--- !u!1 &127151148 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4971395449014571415, guid: b6137dccb72ee7d4fbaa237f6f03b272,
+    type: 3}
+  m_PrefabInstance: {fileID: 353862390}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &127151150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 127151148}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1208179279
+      Data2: 1271783974
+      Data3: 1672031140
+      Data4: -1159460145
+    Path: event:/Ambient/Rattling AC
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &156357321
 GameObject:
   m_ObjectHideFlags: 0
@@ -833,6 +870,43 @@ Transform:
   m_Father: {fileID: 1899915427}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &183667080 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f9fff6817d79270439965fc8e1424d33,
+    type: 3}
+  m_PrefabInstance: {fileID: 2129592228}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &183667082
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183667080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1588442621
+      Data2: 1219344935
+      Data3: 1392129685
+      Data4: 768309754
+    Path: event:/Ambient/Computer Hum
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &204104311
 GameObject:
   m_ObjectHideFlags: 0
@@ -940,6 +1014,43 @@ Transform:
   m_Father: {fileID: 6715225}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &223611690 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5332923654990038417, guid: b6137dccb72ee7d4fbaa237f6f03b272,
+    type: 3}
+  m_PrefabInstance: {fileID: 353862390}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &223611692
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223611690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1208179279
+      Data2: 1271783974
+      Data3: 1672031140
+      Data4: -1159460145
+    Path: event:/Ambient/Rattling AC
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &239567123
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1353,6 +1464,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BuildingMeshesSpaceship
       objectReference: {fileID: 0}
+    - target: {fileID: 1529488583375158359, guid: b6137dccb72ee7d4fbaa237f6f03b272,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4427608066781371707, guid: b6137dccb72ee7d4fbaa237f6f03b272,
         type: 3}
       propertyPath: m_RootOrder
@@ -1442,7 +1558,23 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 2988959484617175704, guid: b6137dccb72ee7d4fbaa237f6f03b272, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6118522422711433186, guid: b6137dccb72ee7d4fbaa237f6f03b272,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1602902475}
+    - targetCorrespondingSourceObject: {fileID: 5332923654990038417, guid: b6137dccb72ee7d4fbaa237f6f03b272,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 223611692}
+    - targetCorrespondingSourceObject: {fileID: 1258867360938956230, guid: b6137dccb72ee7d4fbaa237f6f03b272,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1077065556}
+    - targetCorrespondingSourceObject: {fileID: 4971395449014571415, guid: b6137dccb72ee7d4fbaa237f6f03b272,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 127151150}
   m_SourcePrefab: {fileID: 100100000, guid: b6137dccb72ee7d4fbaa237f6f03b272, type: 3}
 --- !u!1 &379758182
 GameObject:
@@ -4659,6 +4791,43 @@ Transform:
   m_Father: {fileID: 6715225}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1077065554 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1258867360938956230, guid: b6137dccb72ee7d4fbaa237f6f03b272,
+    type: 3}
+  m_PrefabInstance: {fileID: 353862390}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1077065556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1077065554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1208179279
+      Data2: 1271783974
+      Data3: 1672031140
+      Data4: -1159460145
+    Path: event:/Ambient/Rattling AC
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1095968799
 GameObject:
   m_ObjectHideFlags: 0
@@ -6629,6 +6798,43 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30da756f0e2a1034f88cf417bece680e, type: 3}
+--- !u!1 &1602902473 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6118522422711433186, guid: b6137dccb72ee7d4fbaa237f6f03b272,
+    type: 3}
+  m_PrefabInstance: {fileID: 353862390}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1602902475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602902473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1208179279
+      Data2: 1271783974
+      Data3: 1672031140
+      Data4: -1159460145
+    Path: event:/Ambient/Rattling AC
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1655990880
 GameObject:
   m_ObjectHideFlags: 0
@@ -8241,6 +8447,10 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f9fff6817d79270439965fc8e1424d33,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 183667082}
     - targetCorrespondingSourceObject: {fileID: 8513859187771203891, guid: f9fff6817d79270439965fc8e1424d33,
         type: 3}
       insertIndex: -1
