@@ -46,7 +46,7 @@ public class OxygenController : MonoBehaviour
 
     private void Update()
     {
-        UpdateOxygenOverTime();
+        if(!CutsceneController.Instance.isPlayingCutscene) UpdateOxygenOverTime();
     }
 
     void UpdateOxygenOverTime()
