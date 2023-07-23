@@ -5,7 +5,7 @@
 			<value>PlacePlant</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<relationship name="folder">
 			<destination>{887f9dad-7d32-4c93-bca3-26793363752e}</destination>
@@ -115,6 +115,8 @@
 		<relationship name="effects">
 			<destination>{c038026d-39ee-4dea-9336-f98c52b4fb1d}</destination>
 			<destination>{957b9aa1-a482-4e28-9e7c-e2c762d0c6cb}</destination>
+			<destination>{3f85b2d4-f5c6-4b74-809b-4126df6f1d25}</destination>
+			<destination>{3085a639-7846-40b1-8c1b-534d2fde75e4}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{836cd731-297c-4fc3-8c01-be07b0aa8191}" />
@@ -154,6 +156,18 @@
 		</property>
 		<property name="releaseTime">
 			<value>48</value>
+		</property>
+	</object>
+	<object class="SpatialiserEffect" id="{3f85b2d4-f5c6-4b74-809b-4126df6f1d25}" />
+	<object class="SFXReverbEffect" id="{3085a639-7846-40b1-8c1b-534d2fde75e4}">
+		<property name="decayTime">
+			<value>950</value>
+		</property>
+		<property name="earlyLateMix">
+			<value>47</value>
+		</property>
+		<property name="wetLevel">
+			<value>-11.5</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{d696faea-95d6-4b6c-a6c0-7a3c0583d677}" />

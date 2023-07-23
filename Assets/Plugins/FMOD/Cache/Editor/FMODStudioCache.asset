@@ -543,10 +543,10 @@ MonoBehaviour:
   Path: FMODAssets/levelUpSound/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638256573697839827
+  lastModified: 638256801098618459
   FileSizes:
   - Name: Desktop
-    Value: 581664
+    Value: 812672
   Exists: 1
 --- !u!114 &-6575326305889026837
 MonoBehaviour:
@@ -611,7 +611,7 @@ MonoBehaviour:
   Path: FMODAssets/levelUpSound/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638256522227797819
+  lastModified: 638256801087428565
   FileSizes:
   - Name: Desktop
     Value: 2694
@@ -789,10 +789,10 @@ MonoBehaviour:
   Path: FMODAssets/levelUpSound/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638256573697789812
+  lastModified: 638256801087468423
   FileSizes:
   - Name: Desktop
-    Value: 3618
+    Value: 3994
   Exists: 1
 --- !u!114 &-5844705268256851223
 MonoBehaviour:
@@ -931,11 +931,38 @@ MonoBehaviour:
   Path: FMODAssets/levelUpSound/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638256320400837814
+  lastModified: 638256801092100621
   FileSizes:
   - Name: Desktop
     Value: 51509184
   Exists: 1
+--- !u!114 &-5469770785858956942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Plant/Plant Growth
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Plant/Plant Growth
+  Guid:
+    Data1: -1046886318
+    Data2: 1123483978
+    Data3: 946038926
+    Data4: -1551005550
+  Banks:
+  - {fileID: -6576875511789539087}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 875
 --- !u!114 &-5439409087576653194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1119,6 +1146,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 8455
+--- !u!114 &-5049871096921054507
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Menu/HoverOption
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Menu/HoverOption
+  Guid:
+    Data1: 178745038
+    Data2: 1279692253
+    Data3: 247195297
+    Data4: -808673777
+  Banks:
+  - {fileID: -6576875511789539087}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8448
 --- !u!114 &-4996618272496481432
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1516,7 +1570,7 @@ MonoBehaviour:
   Banks:
   - {fileID: -6576875511789539087}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -1561,7 +1615,7 @@ MonoBehaviour:
   Path: FMODAssets/levelUpSound/Build/Desktop/Voicelines.bank
   Name: Voicelines
   StudioPath: bank:/Voicelines
-  lastModified: 638256573697909842
+  lastModified: 638256801099814990
   FileSizes:
   - Name: Desktop
     Value: 871488
@@ -1692,6 +1746,33 @@ MonoBehaviour:
   IsGlobal: 1
   Labels: []
   Exists: 1
+--- !u!114 &-3442519763060084330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/DataLog/DataLogOn
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/DataLog/DataLogOn
+  Guid:
+    Data1: 654823758
+    Data2: 1222159154
+    Data3: -629229431
+    Data4: -63367114
+  Banks:
+  - {fileID: -6576875511789539087}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1065
 --- !u!114 &-3362820228144220928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1767,6 +1848,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-3145270602127100162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Menu/SelectOption
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Menu/SelectOption
+  Guid:
+    Data1: 166799532
+    Data2: 1341270664
+    Data3: -1654868578
+    Data4: -1060872881
+  Banks:
+  - {fileID: -6576875511789539087}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
 --- !u!114 &-3099738844482636317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2141,6 +2249,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-2307943882696588902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Plant/Plant Death
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Plant/Plant Death
+  Guid:
+    Data1: 1196407285
+    Data2: 1306480801
+    Data3: -1030988893
+    Data4: 1185337124
+  Banks:
+  - {fileID: -6576875511789539087}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
 --- !u!114 &-2292972638375053707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2375,6 +2510,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2125
+--- !u!114 &-1406122542340028955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Plant/OxyBubbles
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Plant/OxyBubbles
+  Guid:
+    Data1: -607081895
+    Data2: 1166636730
+    Data3: -1478731841
+    Data4: 1846715015
+  Banks:
+  - {fileID: -6576875511789539087}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &-1382769297373481625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2742,13 +2904,20 @@ MonoBehaviour:
   - {fileID: 1260454581209956411}
   - {fileID: -3359624210739574974}
   - {fileID: 4536416825634803956}
+  - {fileID: -3442519763060084330}
+  - {fileID: -5469770785858956942}
+  - {fileID: -1406122542340028955}
+  - {fileID: -3145270602127100162}
+  - {fileID: 6383613998924346822}
+  - {fileID: -5049871096921054507}
+  - {fileID: -2307943882696588902}
   EditorParameters:
   - {fileID: -5421787644606140931}
   MasterBanks:
   - {fileID: -6491299444696057616}
   StringsBanks:
   - {fileID: -5958261393281892907}
-  cacheTime: 638256573697909842
+  cacheTime: 638256801099814990
   cacheVersion: 131605
 --- !u!114 &26521949490686972
 MonoBehaviour:
@@ -3813,7 +3982,7 @@ MonoBehaviour:
   Path: FMODAssets/levelUpSound/Build/Desktop/Ambient.bank
   Name: Ambient
   StudioPath: bank:/Ambient
-  lastModified: 638256522227787816
+  lastModified: 638256801087388640
   FileSizes:
   - Name: Desktop
     Value: 7700032
@@ -4255,6 +4424,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 750
+--- !u!114 &6383613998924346822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/DataLog/DataLogOff
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/DataLog/DataLogOff
+  Guid:
+    Data1: -537167160
+    Data2: 1099106950
+    Data3: -13708157
+    Data4: 1811429338
+  Banks:
+  - {fileID: -6576875511789539087}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1055
 --- !u!114 &6480823905310321220
 MonoBehaviour:
   m_ObjectHideFlags: 0

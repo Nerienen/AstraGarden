@@ -68,7 +68,7 @@ public class FMODEvents : MonoBehaviour
     //Play when plant data visualizer is opened
     [field: SerializeField] public EventReference openData { get; private set; }
     //Play while data visualizer is open
-    [field: SerializeField] public EventReference dataViewerSound { get; private set; }
+    //[field: SerializeField] public EventReference dataViewerSound { get; private set; }
     //Play when data visualizer is closed
     [field: SerializeField] public EventReference closeData { get; private set; }
 
@@ -93,6 +93,7 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference waterAbsorb { get; private set; } //Planta absorbe agua
     //On bubble spawn, play sound
     [field: SerializeField] public EventReference oxyPlantBubble { get; private set; }
+    [field: SerializeField] public EventReference plantDeath { get; private set; }
 
     #endregion
 
@@ -116,12 +117,15 @@ public class FMODEvents : MonoBehaviour
 
     #endregion
 
-   
+    [field: Header("Menu and UI")]
+    [field: SerializeField] public EventReference menuHover { get; private set; }
+    [field: SerializeField] public EventReference menuSelect { get; private set; }
 
-    
 
-    
-    
+
+
+
+
     public static FMODEvents instance { get; private set; }
     
     void Awake()
