@@ -76,6 +76,10 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference buttonPress { get; private set; }
     [field: SerializeField] public EventReference processingMachine { get; private set; }
     [field: SerializeField] public EventReference placePlant { get; private set; }
+
+    [field: Header("Misc SFX")]
+    [field: SerializeField] public EventReference openBlindEnding { get; private set; }
+
     #endregion
 
     #region Player
@@ -83,6 +87,10 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Player SFX")]
     [field: SerializeField] public EventReference footSteps { get; private set; }
     [field: SerializeField] public EventReference pickUpPlant { get; private set; }
+
+    [field: Header("Breathing SFX")]
+    [field: SerializeField] public EventReference breath { get; private set; }
+
     #endregion
 
     #region Plant sounds
@@ -116,6 +124,8 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference voiceEnergySystemsEmpty{ get; private set; }
 
     #endregion
+
+    
 
     [field: Header("Menu and UI")]
     [field: SerializeField] public EventReference menuHover { get; private set; }

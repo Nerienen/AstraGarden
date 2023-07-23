@@ -272,6 +272,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 8165
+--- !u!114 &-8349405658201273170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Final Breath
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Final Breath
+  Guid:
+    Data1: 257415360
+    Data2: 1106990711
+    Data3: -1404303943
+    Data4: -524275454
+  Banks:
+  - {fileID: 190009142165165512}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters:
+  - {fileID: 5130245508558380563}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &-8335656280601461617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -374,6 +402,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1500
+--- !u!114 &-8196408500983500530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Breathing/Oxygen
+  m_EditorClassIdentifier: 
+  Name: Oxygen
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 749004909
+    data2: 1820173575
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-8144477354573282286
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -666,6 +718,33 @@ MonoBehaviour:
   - Name: Desktop
     Value: 2694
   Exists: 1
+--- !u!114 &-6955778288600967996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Blind
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Blind
+  Guid:
+    Data1: -1989172487
+    Data2: 1190504749
+    Data3: -406906692
+    Data4: -1240355093
+  Banks:
+  - {fileID: 190009142165165512}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9250
 --- !u!114 &-6869385507787457650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -717,6 +796,35 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 8000
+--- !u!114 &-6623920751449198021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Breathing
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Breathing
+  Guid:
+    Data1: -833994901
+    Data2: 1324656620
+    Data3: 1048013956
+    Data4: 1308856892
+  Banks:
+  - {fileID: 190009142165165512}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 8331597180586065658}
+  - {fileID: -8196408500983500530}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &-6599458745325551320
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1052,10 +1160,10 @@ MonoBehaviour:
   Path: FMODAssets/levelUpSound/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638257046657160940
+  lastModified: 638257132906091520
   FileSizes:
   - Name: Desktop
-    Value: 3994
+    Value: 4296
   Exists: 1
 --- !u!114 &-5844705268256851223
 MonoBehaviour:
@@ -2075,6 +2183,30 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-3862315264450860144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Oxygen
+  m_EditorClassIdentifier: 
+  Name: Oxygen
+  StudioPath: parameter:/Oxygen
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 749004909
+    data2: 1820173575
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &-3861768417748333612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2110,10 +2242,10 @@ MonoBehaviour:
   Path: FMODAssets/levelUpSound/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638256320400837814
+  lastModified: 638257132910273787
   FileSizes:
   - Name: Desktop
-    Value: 51509184
+    Value: 51509408
   Exists: 1
 --- !u!114 &-3690614286299939623
 MonoBehaviour:
@@ -2658,11 +2790,11 @@ MonoBehaviour:
   - {fileID: 190009142165165512}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 8448
+  Length: 474
 --- !u!114 &-2822872936346782570
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2814,7 +2946,7 @@ MonoBehaviour:
     data1: 749004909
     data2: 1820173575
   Type: 0
-  IsGlobal: 0
+  IsGlobal: 1
   Labels: []
   Exists: 1
 --- !u!114 &-2603812102319825646
@@ -3099,10 +3231,10 @@ MonoBehaviour:
   Path: FMODAssets/levelUpSound/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638256522227797819
+  lastModified: 638257132906036517
   FileSizes:
   - Name: Desktop
-    Value: 2694
+    Value: 5086
   Exists: 1
 --- !u!114 &-2142996206620129426
 MonoBehaviour:
@@ -3842,7 +3974,7 @@ MonoBehaviour:
   Path: FMODAssets/levelUpSound/Build/Desktop/Ambient.bank
   Name: Ambient
   StudioPath: bank:/Ambient
-  lastModified: 638257046657150940
+  lastModified: 638257132905926834
   FileSizes:
   - Name: Desktop
     Value: 7700032
@@ -3913,13 +4045,17 @@ MonoBehaviour:
   - {fileID: 1740335698068737097}
   - {fileID: 4658674193230325218}
   - {fileID: 9100517512949704392}
+  - {fileID: -6623920751449198021}
+  - {fileID: -8349405658201273170}
+  - {fileID: -6955778288600967996}
   EditorParameters:
   - {fileID: -4245281829682316920}
+  - {fileID: -3862315264450860144}
   MasterBanks:
   - {fileID: -2149045936168612461}
   StringsBanks:
   - {fileID: -5950972124812038812}
-  cacheTime: 638257046657220955
+  cacheTime: 638257132931057437
   cacheVersion: 131605
 --- !u!114 &26521949490686972
 MonoBehaviour:
@@ -3990,10 +4126,10 @@ MonoBehaviour:
   Path: FMODAssets/levelUpSound/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638257046657220955
+  lastModified: 638257132928827029
   FileSizes:
   - Name: Desktop
-    Value: 812672
+    Value: 2971456
   Exists: 1
 --- !u!114 &207237363382093437
 MonoBehaviour:
@@ -4473,7 +4609,7 @@ MonoBehaviour:
   Path: FMODAssets/levelUpSound/Build/Desktop/Voicelines.bank
   Name: Voicelines
   StudioPath: bank:/Voicelines
-  lastModified: 638256573697909842
+  lastModified: 638257132931057437
   FileSizes:
   - Name: Desktop
     Value: 871488
@@ -5323,6 +5459,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2031
+--- !u!114 &5130245508558380563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Final Breath/Oxygen
+  m_EditorClassIdentifier: 
+  Name: Oxygen
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 749004909
+    data2: 1820173575
+  Type: 0
+  IsGlobal: 1
+  Labels: []
+  Exists: 1
 --- !u!114 &5138306525382166152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6519,6 +6679,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 750
+--- !u!114 &8331597180586065658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Breathing/BreathRelief
+  m_EditorClassIdentifier: 
+  Name: BreathRelief
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 3866854201
+    data2: 1075837734
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &8341901174522760216
 MonoBehaviour:
   m_ObjectHideFlags: 0
