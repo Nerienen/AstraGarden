@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6624966631413685807}
   - component: {fileID: 54153150136542722}
   - component: {fileID: 341779674815525704}
+  - component: {fileID: 4200821775299504687}
   m_Layer: 0
   m_Name: Light
   m_TagString: Untagged
@@ -34,7 +35,7 @@ Transform:
   m_Children:
   - {fileID: 7979791009547513341}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7660207258171765746
 MeshFilter:
@@ -123,6 +124,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightSource: {fileID: 8349067165979266982}
   _emissiveMeshRenderer: {fileID: 6624966631413685807}
+--- !u!114 &4200821775299504687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8560092638220589386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -221137024
+      Data2: 1110819185
+      Data3: 1631992765
+      Data4: 1535153329
+    Path: event:/Ambient/Machine
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params:
+  - Name: trackVolume
+    Value: 0.33
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &2792629714987083776
 PrefabInstance:
   m_ObjectHideFlags: 0
