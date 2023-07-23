@@ -16,6 +16,7 @@ public class FMODEvents : MonoBehaviour
     [field: Header("Music")]
     [field: SerializeField] public EventReference drift { get; private set; } //Done, plays by code, code pending
     [field: SerializeField] public EventReference ending { get; private set; } //Pending, plays by code, code pending
+    [field: SerializeField] public EventReference menu { get; private set; } //Pending, plays by code, code pending
 
 
     #region Gun and blob sounds
