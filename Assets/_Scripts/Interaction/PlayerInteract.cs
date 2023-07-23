@@ -62,12 +62,12 @@ public class PlayerInteract : MonoBehaviour
                 
             }
 
-            if (_interactable != null && !seenInteract)
+            if (_interactable != null && !seenInteract && UiController.instance != null)
             {
                 seenInteract = true;
                 UiController.instance.DisplayInteract();
             }
-            if (!seenPlant && _interactable.TryGetComponent(out Plant _) && UiController.instance.eDisplayed)
+            if (!seenPlant && _interactable.TryGetComponent(out Plant _) && UiController.instance != null && UiController.instance.eDisplayed)
             {
                 seenPlant = true;
                 UiController.instance.DisplayInspectPlant();

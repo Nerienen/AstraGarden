@@ -1,5 +1,7 @@
+using System.Collections;
 using ProjectUtils.Helpers;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class BlackScreenController : MonoBehaviour
@@ -17,6 +19,13 @@ public class BlackScreenController : MonoBehaviour
 
     void Show()
     {
-        Transitions.DoChangeColor(image, Color.black, fadeOutDuration, Transitions.TimeScales.Fixed);
+        Transitions.DoChangeColorAsync(image, Color.black, fadeOutDuration, Transitions.TimeScales.Fixed);
+        StartCoroutine(MovetoMenu());
+    }
+
+    private IEnumerator MovetoMenu()
+    {
+        yield return new WaitForSeconds(fadeOutDuration * 2);
+        SceneManager.LoadScene(0);
     }
 }
