@@ -1,4 +1,5 @@
 using System;
+using FMODUnity;
 using UnityEngine;
 
 public class Plant : Grabbable
@@ -38,6 +39,10 @@ public class Plant : Grabbable
 
     [Header("VFX-related parameters")]
     [SerializeField] float dissolveDuration = 1f;
+    public ParticleSystem oxygenParticles;
+
+    [Header("Sound Emitter")] 
+    public StudioEventEmitter emitter;
 
     public PlantGroup[] PlantGroups { get { return plantGroups; } }
     private PlantTypes _currentType;
@@ -198,6 +203,7 @@ public class Plant : Grabbable
             _growPercentage = 1;
             SetState(PlantState.FullyGrown);
             OnPlantFullyGrown?.Invoke();
+            if(AudioManager.instance != null) AudioManager.instance.PlayOneShot(FMODEvents.instance.plantGrow, transform.position);
         }
     }
 
@@ -287,6 +293,7 @@ public class Plant : Grabbable
 
         if (_dissolvePercentage == 1)
         {
+            if(AudioManager.instance != null) AudioManager.instance.PlayOneShot(FMODEvents.instance.plantDeath, transform.position);
             OnPlantDissolve?.Invoke();
             gameObject.SetActive(false);
         }
@@ -300,11 +307,14 @@ public class Plant : Grabbable
     {
         healthPoints += amount * waterSensitivity;
         healthPoints = Mathf.Min(healthPoints, maxHealthPoints);
+        
+        if(AudioManager.instance != null) AudioManager.instance.PlayOneShot(FMODEvents.instance.waterAbsorb, transform.position);
     }
 
     public void ChangeType(PlantTypes newType)
     {
         OnChangeTypeReceived?.Invoke(newType);
+        transform.localScale = Vector3.one;
         _currentType = newType;
     }
 

@@ -33,6 +33,10 @@ public class HoldPoint : MonoBehaviour
         {
             AudioManager.instance.PlayOneShot(FMODEvents.instance.placePlant, transform.position);
             _currentPlant.OnPlantDissolve += ResetHolden;
+            if (TryGetComponent(out Machine _) && _currentPlant.GrowPercentage >= 1)
+            {
+                CurrentHoldenObject.transform.localScale = Vector3.one*0.4f;
+            }
         }
     }
 
@@ -61,6 +65,10 @@ public class HoldPoint : MonoBehaviour
     {
         if (_currentPlant != null) _currentPlant.OnPlantDissolve -= ResetHolden;
         CurrentHoldenObject.onGrabObject -= ResetHolden;
+        if (TryGetComponent(out Machine _))
+        {
+            CurrentHoldenObject.transform.localScale = Vector3.one;
+        }
         CurrentHoldenObject = null;
         _currentPlant = null;
     }

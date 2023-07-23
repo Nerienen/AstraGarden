@@ -26,7 +26,7 @@ public class PlayerInteract : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    private void Update()
+    private void LateUpdate()
     {
         if (Physics.Raycast(Helpers.Camera.transform.position, Helpers.Camera.transform.forward ,out var hit, interactDistance, interacting? holdersLayer:interactLayer))
         {
@@ -58,7 +58,7 @@ public class PlayerInteract : MonoBehaviour
                 else _interactable.SetOutlineWidth(5);
                 
             }
-
+            
             if(lastHoldPoint != null && lastHoldPoint != _holdPoint) lastHoldPoint.SetOutlineWidth(0);
             if (lastInteractable != null && lastInteractable != _interactable)
             {

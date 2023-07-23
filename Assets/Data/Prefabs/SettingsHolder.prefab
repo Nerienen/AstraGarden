@@ -49,6 +49,7 @@ GameObject:
   - component: {fileID: 5778354951553894060}
   - component: {fileID: 7231195662935860799}
   - component: {fileID: 3628143944661280823}
+  - component: {fileID: 5048073309200104260}
   m_Layer: 5
   m_Name: ScreenModeDropdown
   m_TagString: Untagged
@@ -174,6 +175,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_AlphaFadeSpeed: 0.15
+--- !u!114 &5048073309200104260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 213486398852073689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583a34bbb2c80c441ab424fa7ee46b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &508151857459759237
 GameObject:
   m_ObjectHideFlags: 0
@@ -535,6 +548,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4128132609362525519}
   - component: {fileID: 8899764788308205161}
+  - component: {fileID: 8231021042575950712}
   m_Layer: 5
   m_Name: AmbienceVolumeSlider
   m_TagString: Untagged
@@ -617,6 +631,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8231021042575950712
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1528983514408291887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583a34bbb2c80c441ab424fa7ee46b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1661623623346116040
 GameObject:
   m_ObjectHideFlags: 0
@@ -723,6 +749,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3590513871307791390}
   - component: {fileID: 2955656983216124563}
+  - component: {fileID: 3099877453279055759}
   m_Layer: 5
   m_Name: MasterVolumeSlider
   m_TagString: Untagged
@@ -805,6 +832,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &3099877453279055759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918099887612835080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583a34bbb2c80c441ab424fa7ee46b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2023034371881620567
 GameObject:
   m_ObjectHideFlags: 0
@@ -1747,6 +1786,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1512370976881910676}
   - component: {fileID: 7625870789052756753}
+  - component: {fileID: 1979456519395256271}
   m_Layer: 5
   m_Name: MusicVolumeSlider
   m_TagString: Untagged
@@ -1829,6 +1869,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1979456519395256271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3675891716344743714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583a34bbb2c80c441ab424fa7ee46b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3768567121922427048
 GameObject:
   m_ObjectHideFlags: 0
@@ -2430,6 +2482,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8488544868039190050}
   - component: {fileID: 2998966668199742296}
+  - component: {fileID: 2137084703081980819}
   m_Layer: 5
   m_Name: SfxVolumeSlider
   m_TagString: Untagged
@@ -2512,6 +2565,18 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2137084703081980819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4683713592898575460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583a34bbb2c80c441ab424fa7ee46b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4793579860828614857
 GameObject:
   m_ObjectHideFlags: 0
@@ -4393,6 +4458,7 @@ GameObject:
   - component: {fileID: 4064939810986065751}
   - component: {fileID: 7642712218458591100}
   - component: {fileID: 3220622985232756249}
+  - component: {fileID: 4111275514049205219}
   m_Layer: 5
   m_Name: AcceptButton
   m_TagString: Untagged
@@ -4503,6 +4569,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4111275514049205219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7384883817874226492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583a34bbb2c80c441ab424fa7ee46b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7609330211401439638
 GameObject:
   m_ObjectHideFlags: 0
@@ -4651,6 +4729,7 @@ GameObject:
   - component: {fileID: 5076241539329012384}
   - component: {fileID: 4386532277610738674}
   - component: {fileID: 2385979651931556005}
+  - component: {fileID: 6283850897531447812}
   m_Layer: 5
   m_Name: ResolutionDropdown
   m_TagString: Untagged
@@ -4776,6 +4855,18 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_AlphaFadeSpeed: 0.15
+--- !u!114 &6283850897531447812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7807128958783406091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 583a34bbb2c80c441ab424fa7ee46b34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8005493522160907670
 GameObject:
   m_ObjectHideFlags: 0
