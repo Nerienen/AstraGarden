@@ -24,7 +24,7 @@ public class EnergyPlant : BasePlant
             }
         }
 
-        _ctx.GrowPercentage = 0;
+        if(_ctx.hasGrownInitially)_ctx.GrowPercentage = 0;
         _ctx.FruitGrowPercentage = 0;
     }
 

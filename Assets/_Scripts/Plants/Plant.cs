@@ -63,14 +63,16 @@ public class Plant : Grabbable
         Dead,
     }
 
+    [HideInInspector] public bool hasGrownInitially;
+
     private PlantState _currentPlantState = PlantState.Sprout;
 
     private PlantInspector _plantInspector;
-
+    
     float _fruitGrowPercentage = 0;
     public float FruitGrowPercentage { get => _fruitGrowPercentage; set => _fruitGrowPercentage = value; }
 
-    float _growPercentage = 0;
+    [SerializeField] float _growPercentage = 0;
     public float GrowPercentage { get => _growPercentage; set => _growPercentage = value; }
 
     BasePlant _currentPlant;
@@ -141,6 +143,8 @@ public class Plant : Grabbable
         {
             AudioManager.instance.PlayOneShot(FMODEvents.instance.pickUpPlant, transform.position);
         };
+
+        hasGrownInitially = true;
     }
 
     private void OnDestroy()
