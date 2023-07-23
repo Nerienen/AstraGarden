@@ -13,7 +13,7 @@ public class Grabbable : Interactable
     
     private bool _isPlant;
 
-    public bool grabbable { get; protected set; } = true;
+    public bool grabbable { get;  set; } = true;
     protected bool holden;
 
     public event Action onGrabObject;
@@ -71,6 +71,7 @@ public class Grabbable : Interactable
         {
             Physics.IgnoreLayerCollision(11, 10, ignore);
             Physics.IgnoreLayerCollision(11, 6, ignore);
+            Physics.IgnoreLayerCollision(11, 14, ignore);
         }
         else
         {

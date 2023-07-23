@@ -32,8 +32,11 @@ public abstract class Drop : MonoBehaviour
         _followPoint = followPoint;
 
         transform.localScale = 0.1f*Vector3.one;
-        emitter = GetComponent<FMODUnity.StudioEventEmitter>();
-        emitter.Play();
+    }
+
+    private void OnDisable()
+    {
+        if(emitter != null && emitter.IsPlaying()) emitter.Stop();
     }
 
     private void LateUpdate()

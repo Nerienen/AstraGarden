@@ -7,6 +7,7 @@ public class MachineButton : Interactable
     private HoldPoint _holdPoint;
     private Machine _machine;
     private Animator _animator;
+    [SerializeField] private Animator animator;
     [field: SerializeField] public Plant.PlantTypes buttonType { get; private set; }
     
     private void Start()
@@ -21,7 +22,7 @@ public class MachineButton : Interactable
         _animator.ResetTrigger("Press");
         _animator.SetTrigger("Press");
         AudioManager.instance.PlayOneShot(FMODEvents.instance.buttonPress, transform.position);
-        if(!_holdPoint.IsHoldingObject) return false;
+        if(!_holdPoint.IsHoldingObject || _machine.InAnimation) return false;
 
         Plant plant = _holdPoint.CurrentHoldenObject.GetComponent<Plant>();
         if (plant.CurrentType == buttonType || plant.PlantData.health <= 0) return false;
@@ -44,10 +45,15 @@ public class MachineButton : Interactable
                 if (_machine.OxygenAmount <= 0) SetOutlineColor(Color.red);
                 break;
         }
-        
-        _holdPoint.CurrentHoldenObject.GetComponent<Plant>().ChangeType(buttonType);
+
+        plant.grabbable = false;
+        animator.ResetTrigger("Open");
+        animator.SetTrigger("Open");
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.processingMachine, _machine.transform.position);
         return true;
     }
+
+
 
     public override bool Interact(Transform grabPoint)
     {

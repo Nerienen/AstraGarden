@@ -174,7 +174,7 @@ namespace ProjectUtils.Helpers
         private static IEnumerator DoShakeEnumerator(Transform transform, float magnitude, float time, bool moveZ, TimeScales timeScale)
         {
             float duration = GetTime(timeScale) + time;
-            Vector3 initialPosition = transform.position;
+            Vector3 initialPosition = transform.localPosition;
             Vector3 newPosition = initialPosition;
 
             while (GetTime(timeScale) < duration)
@@ -182,10 +182,27 @@ namespace ProjectUtils.Helpers
                 newPosition.x = initialPosition.x + Random.value * magnitude;
                 newPosition.y = initialPosition.y + Random.value * magnitude;
                 if(moveZ) newPosition.z = initialPosition.z + Random.value * magnitude;
-                transform.position = newPosition;
+                transform.localPosition = newPosition;
                 yield return null;
             }
-            transform.position = initialPosition;
+            transform.localPosition = initialPosition;
+        }
+        
+        public static void DoJiggle(this Transform transform, float magnitude,AnimationCurve x, AnimationCurve y, AnimationCurve z, float time, TimeScales timeScale = TimeScales.Unscaled) => 
+            CoroutineController.Start(DoJiggleEnumerator(transform, magnitude, x, y, z, time, timeScale));
+        private static IEnumerator DoJiggleEnumerator(Transform transform, float magnitude, AnimationCurve x, AnimationCurve y, AnimationCurve z, float time, TimeScales timeScale)
+        {
+            float timer = 0;
+            Vector3 initialPosition = transform.localPosition;
+
+            while (timer < time)
+            {
+                transform.localPosition = initialPosition + Vector3.right * (x.Evaluate(timer/time) * magnitude) + Vector3.up * (y.Evaluate(timer/time) * magnitude) + Vector3.forward * (z.Evaluate(timer/time) * magnitude);
+                yield return null;
+                timer += GetDeltaTime(timeScale);
+            }
+
+            transform.localPosition = initialPosition;
         }
         
         /// <summary>

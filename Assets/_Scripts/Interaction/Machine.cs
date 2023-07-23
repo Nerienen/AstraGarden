@@ -13,12 +13,15 @@ public class Machine : MonoBehaviour
     [SerializeField] private float oxygenAmount;
     [SerializeField] private float energyAmount;
 
+    private Plant.PlantTypes _currentType;
+
     public float WaterAmount
     {
         get => waterAmount;
         set
         {
             waterAmount = value;
+            _currentType = Plant.PlantTypes.WaterPlant;
             _waterLiquid.fillAmount = 0.7f - 0.5f * value / 20;
             if (_waterLiquid.fillAmount >= 0.7f) _waterLiquid.fillAmount = 10;
         }
@@ -29,6 +32,7 @@ public class Machine : MonoBehaviour
         set
         {
             oxygenAmount = value;
+            _currentType = Plant.PlantTypes.OxygenPlant;
             _oxygenLiquid.fillAmount = 0.7f - 0.5f * value / 20;
             if (_oxygenLiquid.fillAmount >= 0.7f) _oxygenLiquid.fillAmount = 10;
         }
@@ -39,9 +43,25 @@ public class Machine : MonoBehaviour
         set
         {
             energyAmount = value;
+            _currentType = Plant.PlantTypes.EnergyPlant;
             _energyLiquid.fillAmount = 0.7f - 0.5f * value / 20;
             if (_energyLiquid.fillAmount >= 0.7f) _energyLiquid.fillAmount = 10;
         } 
+    }
+
+    public bool InAnimation { get; private set; }
+    public void SetInAnimation()
+    {
+        InAnimation = true;
+    }public void SetOutAnimation()
+    {
+        InAnimation = false;
+        GetComponent<HoldPoint>().CurrentHoldenObject.grabbable = true;
+    }
+    
+    public void ChangePlantType()
+    {
+        GetComponent<HoldPoint>().CurrentHoldenObject.GetComponent<Plant>().ChangeType(_currentType);
     }
 
     private void Start()

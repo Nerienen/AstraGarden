@@ -18,6 +18,8 @@ public class PlantCollider : MonoBehaviour
     {
         plant.OnChangeTypeReceived += OnChangedToSprout;
         plant.OnPlantFullyGrown += OnChangedToGrown;
+        if(GetComponent<Plant>().PlantData.growPercentage < 1) OnChangedToSprout(Plant.PlantTypes.WaterPlant);
+        else OnChangedToGrown();
     }
 
     private void OnDestroy()

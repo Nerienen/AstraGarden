@@ -31,6 +31,8 @@ public class BrokenDoor : MonoBehaviour
     private void FixDoor()
     {
         _animator.SetBool("Opened", true);
+        AudioManager.instance.PlayOneShot(FMODEvents.instance.doorOpen, transform.position);
+
         foreach (var particle in _particle)
         {
             particle.gameObject.SetActive(false);

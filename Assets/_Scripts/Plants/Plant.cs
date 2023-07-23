@@ -131,6 +131,11 @@ public class Plant : Grabbable
             FuseBox.Instance.OnPowerDown += OnLightsOff;
             FuseBox.Instance.OnPowerUp += OnLightsOn;
         }
+
+        onGrabObject += () =>
+        {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.pickUpPlant, transform.position);
+        };
     }
 
     private void OnDestroy()
@@ -144,7 +149,7 @@ public class Plant : Grabbable
 
     private void Update()
     {
-        DryOverTime();
+        if(grabbable) DryOverTime();
         if (_currentPlantState == PlantState.Dead)
         {
             outline.OutlineWidth = 0;

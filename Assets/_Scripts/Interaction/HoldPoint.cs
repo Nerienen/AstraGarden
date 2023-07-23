@@ -29,7 +29,11 @@ public class HoldPoint : MonoBehaviour
         objectTransform.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
 
         _currentPlant = objectTransform.GetComponent<Plant>();
-        if (_currentPlant != null) _currentPlant.OnPlantDissolve += ResetHolden;
+        if (_currentPlant != null)
+        {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.placePlant, transform.position);
+            _currentPlant.OnPlantDissolve += ResetHolden;
+        }
     }
 
     public void SetOutlineWidth(float value, Interactable interactable)

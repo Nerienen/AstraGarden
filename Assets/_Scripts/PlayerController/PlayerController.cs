@@ -1,5 +1,6 @@
 using ProjectUtils.Helpers;
 using System;
+using FMODUnity;
 using UnityEngine;
 
 public class PlayerController : CharacterMovement
