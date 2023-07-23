@@ -59,10 +59,10 @@ public class OxygenController : MonoBehaviour
 
         if (count > 25)
         {
-            UnityEngine.Debug.Log("Current Oxygen Calc: " + currentAmount / maxAmount);
+//            UnityEngine.Debug.Log("Current Oxygen Calc: " + currentAmount / maxAmount);
             emitter.setParameterByName("Oxygen", currentAmount / maxAmount);
             emitter.getParameterByName("Oxygen", out float check);
-            UnityEngine.Debug.Log("Current Oxygen Parameter: " + check);
+//            UnityEngine.Debug.Log("Current Oxygen Parameter: " + check);
             if (MusicManager.Instance != null)
             {
                 MusicManager.Instance.SetMusicParameter("Oxygen",currentAmount/maxAmount);
