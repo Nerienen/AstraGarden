@@ -34,6 +34,7 @@ public class PlantInspector : MonoBehaviour, IInspectable
         _plantStatsUI.SetData(_plant.PlantData);
         if (!_plantStatsUI.gameObject.activeInHierarchy)
         {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.openData, transform.position);
             await _plantStatsUI.ShowStatsAsync();
         }
     }
@@ -42,6 +43,7 @@ public class PlantInspector : MonoBehaviour, IInspectable
     {
         if (_plantStatsUI.gameObject.activeInHierarchy)
         {
+            AudioManager.instance.PlayOneShot(FMODEvents.instance.closeData, transform.position);
             _plantStatsUI.DisableAsync();
         }
     }

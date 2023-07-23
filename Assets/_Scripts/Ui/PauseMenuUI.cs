@@ -1,3 +1,4 @@
+using ProjectUtils.Helpers;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -19,7 +20,7 @@ public class PauseMenuUI : MonoBehaviour
      
      private void Start()
      {
-         if (resumeButton != null) resumeButton.onClick.AddListener(Resume);
+         if (resumeButton != null) resumeButton.onClick.AddListener(Resume); 
          if (settingsButton != null) settingsButton.onClick.AddListener(Settings);
          if (quitButton != null) quitButton.onClick.AddListener(HomeButtonAction);
          if (restartButton != null) restartButton.onClick.AddListener(RestartButtonAction);
