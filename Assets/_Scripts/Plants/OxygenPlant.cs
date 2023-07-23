@@ -78,6 +78,8 @@ public class OxygenPlant : BasePlant
             {
                 if (plantGroup.plantType == Plant.PlantTypes.OxygenPlant)
                 {
+                    _ctx.emitter.Play();
+                    _ctx.oxygenParticles.gameObject.SetActive(true);
                     OxygenController.Instance.IncreaseOxygenRateBy(plantGroup.resourceCapacity);
                 }
             }
@@ -92,6 +94,8 @@ public class OxygenPlant : BasePlant
             {
                 if (plantGroup.plantType == Plant.PlantTypes.OxygenPlant)
                 {
+                    _ctx.emitter.Stop();
+                    _ctx.oxygenParticles.gameObject.SetActive(false);
                     OxygenController.Instance.DecreaseOxygenRateBy(plantGroup.resourceCapacity);
                 }
             }

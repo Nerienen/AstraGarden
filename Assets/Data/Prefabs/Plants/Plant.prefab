@@ -1462,7 +1462,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5532416607865394375
 Transform:
   m_ObjectHideFlags: 0
@@ -1560,9 +1560,9 @@ ParticleSystem:
     enabled: 1
     startLifetime:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 0.6
-      minScalar: 5
+      minScalar: 0.3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1613,9 +1613,9 @@ ParticleSystem:
         m_RotationOrder: 4
     startSpeed:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 5
-      minScalar: 5
+      minScalar: 3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1731,9 +1731,9 @@ ParticleSystem:
         m_NumAlphaKeys: 2
     startSize:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 1
-      minScalar: 1
+      minMaxState: 3
+      scalar: 0.25
+      minScalar: 0.1
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1784,7 +1784,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeY:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -1837,7 +1837,7 @@ ParticleSystem:
         m_RotationOrder: 4
     startSizeZ:
       serializedVersion: 2
-      minMaxState: 0
+      minMaxState: 3
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -2196,7 +2196,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.31
+      value: 0.2
       mode: 0
       spread: 0
       speed:
@@ -2314,8 +2314,8 @@ ParticleSystem:
     serializedVersion: 4
     rateOverTime:
       serializedVersion: 2
-      minMaxState: 0
-      scalar: 10
+      minMaxState: 3
+      scalar: 15
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -6720,6 +6720,7 @@ GameObject:
   - component: {fileID: 207476948667938856}
   - component: {fileID: 2827221390086981154}
   - component: {fileID: 6754779273499281818}
+  - component: {fileID: 8476055608702803126}
   m_Layer: 11
   m_Name: Plant
   m_TagString: Untagged
@@ -6850,6 +6851,8 @@ MonoBehaviour:
   changeType: 0
   type: 0
   dissolveDuration: 1
+  oxygenParticles: {fileID: 1471111809962855004}
+  emitter: {fileID: 8476055608702803126}
 --- !u!114 &645206282926566912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6931,6 +6934,37 @@ MonoBehaviour:
   grownColliderValues:
     center: {x: -0.0027813911, y: 0.1535204, z: -0.0072803497}
     size: {x: 0.6774988, y: 1.1149079, z: 0.72615814}
+--- !u!114 &8476055608702803126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5656469501118774270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -607081895
+      Data2: 1166636730
+      Data3: -1478731841
+      Data4: 1846715015
+    Path: event:/SFX/Plant/OxyBubbles
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &5791348135024758197
 GameObject:
   m_ObjectHideFlags: 0
