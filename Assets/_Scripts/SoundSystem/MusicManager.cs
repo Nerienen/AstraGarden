@@ -75,16 +75,16 @@ public class MusicManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //If is in normal conditions and it's not playing music, play track 0 (Drift)
-        if (isNormal && !isPlayingMusic) { playTrack(tracks, 0); isPlayingMusic = true; }
-
-        //If blackout occurs, modify music and ambience accordingly
-        if (isBlackout && !hasTriggeredBlackout) { RuntimeManager.StudioSystem.setParameterByName("isBlackout", 1); hasTriggeredBlackout = true; }
-        if (!isBlackout && hasTriggeredBlackout) { 
-            RuntimeManager.StudioSystem.setParameterByName("isBlackout", 0); 
-            //En teor�a solo hay uno, pero lo dejo para que se cambie a falso por si acaso
-            hasTriggeredBlackout = false; 
-        }
+        // //If is in normal conditions and it's not playing music, play track 0 (Drift)
+        // if (isNormal && !isPlayingMusic) { playTrack(tracks, 0); isPlayingMusic = true; }
+        //
+        // //If blackout occurs, modify music and ambience accordingly
+        // if (isBlackout && !hasTriggeredBlackout) { RuntimeManager.StudioSystem.setParameterByName("isBlackout", 1); hasTriggeredBlackout = true; }
+        // if (!isBlackout && hasTriggeredBlackout) { 
+        //     RuntimeManager.StudioSystem.setParameterByName("isBlackout", 0); 
+        //     //En teor�a solo hay uno, pero lo dejo para que se cambie a falso por si acaso
+        //     hasTriggeredBlackout = false; 
+        // }
 
         if (isEnding & !hasTriggeredTransitionToEnd) { }
 

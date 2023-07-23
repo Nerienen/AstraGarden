@@ -1,4 +1,5 @@
 using System;
+using FMODUnity;
 using UnityEngine;
 
 public class FuseBox : MonoBehaviour
@@ -48,6 +49,7 @@ public class FuseBox : MonoBehaviour
             if (oxygenController.CurrentAmount >= oxygenLimit)
             {
                 OnPowerDown?.Invoke();
+                RuntimeManager.StudioSystem.setParameterByName("isBlackOut", 1);
                 canBePoweredOn = true;
                 hasGoneDown = true;
             }
@@ -57,5 +59,6 @@ public class FuseBox : MonoBehaviour
     public void PowerOn()
     {
         OnPowerUp?.Invoke();
+        RuntimeManager.StudioSystem.setParameterByName("isBlackOut", 0);
     }
 }
