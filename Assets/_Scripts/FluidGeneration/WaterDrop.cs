@@ -4,16 +4,6 @@ using UnityEngine;
 
 public class WaterDrop : Drop
 {
-    public override void Initialize(Transform followPoint)
-    {
-        base.Initialize(followPoint);
-        emitter = GetComponent<FMODUnity.StudioEventEmitter>();
-        emitter.EventReference = FMODEvents.instance.chargeWater;
-        emitter.Stop();
-        emitter.Lookup();
-        emitter.Play();
-    }
-
     protected override void OnCollisionEnter(Collision collision)
     {
        base.OnCollisionEnter(collision);
@@ -112,14 +102,5 @@ public class WaterDrop : Drop
         
         ReduceScale();
     }
-
-    public override void Throw(Vector3 direction, float force)
-    {
-        base.Throw(direction, force);
-        
-        emitter.EventReference = FMODEvents.instance.waterFloatingSound;
-        emitter.Stop();
-        emitter.Lookup();
-        emitter.Play();
-    }
+    
 }

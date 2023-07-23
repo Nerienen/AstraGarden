@@ -17,7 +17,8 @@ public abstract class Drop : MonoBehaviour
     private Transform _followPoint;
     private Collider _collider;
     protected Rigidbody rb;
-    public FMODUnity.StudioEventEmitter emitter;
+    public FMODUnity.StudioEventEmitter emitterCharge;
+    public FMODUnity.StudioEventEmitter emitterFloating;
     
     private bool _isHolden;
 
@@ -36,7 +37,8 @@ public abstract class Drop : MonoBehaviour
 
     private void OnDisable()
     {
-        if(emitter != null && emitter.IsPlaying()) emitter.Stop();
+        emitterCharge.Stop();
+        emitterFloating.Stop();
     }
 
     private void LateUpdate()
@@ -56,23 +58,25 @@ public abstract class Drop : MonoBehaviour
     {
         if (transform.localScale.x < maxDropScale)
         {
-            if(!emitter.IsPlaying())emitter.Play();
+            if(!emitterCharge.IsPlaying())emitterCharge.Play();
             float scaleDelta = Mathf.Clamp(transform.localScale.x + (scalingFactor) * Time.deltaTime, 0, maxDropScale) - transform.localScale.x;
             transform.localScale += scaleDelta * Vector3.one;
             
-            emitter.SetParameter("BubbleGrowth", transform.localScale.x/maxDropScale);
+            emitterCharge.SetParameter("BubbleGrowth", transform.localScale.x/maxDropScale);
           
             return scaleDelta;
         }
-        emitter.Stop();
+        emitterCharge.Stop();
         return 0;
     }
 
     public virtual void Throw(Vector3 direction, float force)
     {
-        emitter.Stop();
+        emitterFloating.Play();
+        emitterCharge.Stop();
+        emitterFloating.SetParameter("Size", transform.localScale.x/maxDropScale);
         _isHolden = false;
-
+        
         rb.velocity = Vector3.zero;
         transform.forward = direction;
         _collider.enabled = true;

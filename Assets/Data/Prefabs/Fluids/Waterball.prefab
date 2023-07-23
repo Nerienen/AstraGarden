@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2746421804067767818}
   - component: {fileID: 7165477435074508467}
   - component: {fileID: 1947261433664791468}
+  - component: {fileID: 9220771891481340228}
   m_Layer: 7
   m_Name: Waterball
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2279402026520296736}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.73045796, y: 3.047638, z: 0.6641956}
+  m_LocalPosition: {x: -14.185127, y: 2.2473326, z: 9.327376}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -78,6 +79,8 @@ MonoBehaviour:
     type: 3}
   maxDropScale: 1.5
   maxDropSpeed: 8
+  emitterCharge: {fileID: 1947261433664791468}
+  emitterFloating: {fileID: 9220771891481340228}
 --- !u!114 &1947261433664791468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98,6 +101,37 @@ MonoBehaviour:
       Data3: 489244321
       Data4: 12694694
     Path: event:/SFX/Gun/Charge Water
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &9220771891481340228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2279402026520296736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -444798956
+      Data2: 1333724420
+      Data3: -705429103
+      Data4: -415060753
+    Path: event:/SFX/Water/FloatWater
   Event: 
   PlayEvent: 0
   StopEvent: 0

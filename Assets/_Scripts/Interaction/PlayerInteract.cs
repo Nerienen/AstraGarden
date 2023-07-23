@@ -20,6 +20,9 @@ public class PlayerInteract : MonoBehaviour
 
     public static PlayerInteract instance;
 
+    public bool seenPlant;
+    public bool seenInteract;
+
     private void Awake()
     {
         if(instance == null) instance = this;
@@ -57,6 +60,17 @@ public class PlayerInteract : MonoBehaviour
                 }
                 else _interactable.SetOutlineWidth(5);
                 
+            }
+
+            if (_interactable != null && !seenInteract)
+            {
+                seenInteract = true;
+                UiController.instance.DisplayInteract();
+            }
+            if (!seenPlant && _interactable.TryGetComponent(out Plant _) && UiController.instance.eDisplayed)
+            {
+                seenPlant = true;
+                UiController.instance.DisplayInspectPlant();
             }
             
             if(lastHoldPoint != null && lastHoldPoint != _holdPoint) lastHoldPoint.SetOutlineWidth(0);

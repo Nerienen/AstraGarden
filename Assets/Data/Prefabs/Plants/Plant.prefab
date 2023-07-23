@@ -6718,6 +6718,7 @@ GameObject:
   - component: {fileID: 4775915195663004287}
   - component: {fileID: 645206282926566912}
   - component: {fileID: 207476948667938856}
+  - component: {fileID: 653728099603191215}
   - component: {fileID: 2827221390086981154}
   - component: {fileID: 6754779273499281818}
   - component: {fileID: 8476055608702803126}
@@ -6743,7 +6744,7 @@ Transform:
   - {fileID: 7582436307970382744}
   - {fileID: 6532262537280233892}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2625952889867595681
 MonoBehaviour:
@@ -6775,6 +6776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f1308d68d5932a4bad3365ab9161a3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasBeenHolded: 0
   bouncyMaterial: {fileID: 13400000, guid: e3228409fb203654d9cec8d17860754d, type: 2}
   grabbedMaterial: {fileID: 13400000, guid: 6960ff0d77e1b5e439aaf917678fbdf5, type: 2}
   initialPlant: 2
@@ -6783,17 +6785,17 @@ MonoBehaviour:
     plantName: Water Cactus
     grownPlantHolder: {fileID: 4485803905288797941}
     sproutPlantHolder: {fileID: 7979254649901213864}
-    resourceCapacity: 30
+    resourceCapacity: 1
   - plantType: 1
     plantName: Energy Lettuce
     grownPlantHolder: {fileID: 4752990996006806680}
     sproutPlantHolder: {fileID: 5869509488571032324}
-    resourceCapacity: 10
+    resourceCapacity: 1
   - plantType: 2
     plantName: Oxygen Fungus
     grownPlantHolder: {fileID: 3247234081790641148}
     sproutPlantHolder: {fileID: 8569222820442706828}
-    resourceCapacity: 3
+    resourceCapacity: 1.5
   fruitGrowFactor:
     serializedVersion: 2
     m_Curve:
@@ -6846,14 +6848,15 @@ MonoBehaviour:
     m_RotationOrder: 4
   maxHealthPoints: 100
   healthPoints: 100
-  dryingSpeed: 0.5
+  dryingSpeed: 1.5
   waterSensitivity: 30
   changeType: 0
   type: 0
   dissolveDuration: 1
   oxygenParticles: {fileID: 1471111809962855004}
   emitter: {fileID: 8476055608702803126}
-  _fruitGrowPercentage: 0
+  hasGrownInitially: 0
+  _growPercentage: 0
 --- !u!114 &645206282926566912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6888,6 +6891,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.6774988, y: 1.1149079, z: 0.72615814}
   m_Center: {x: -0.0027813911, y: 0.1535204, z: -0.0072803497}
+--- !u!114 &653728099603191215
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5656469501118774270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f519679bb87f798448d8dbeff61ac6bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &2827221390086981154
 Rigidbody:
   m_ObjectHideFlags: 0

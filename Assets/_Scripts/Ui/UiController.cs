@@ -1,10 +1,26 @@
 using System;
+using System.Collections;
 using TMPro;
 using UnityEngine;
 
 public class UiController : MonoBehaviour
     {
         [SerializeField] private PauseMenuUI pauseMenu;
+        [SerializeField] private GameObject displayTab;
+        [SerializeField] private GameObject displayE;
+        public static UiController instance;
+        public bool eDisplayed;
+
+        private void Awake()
+        {
+            if (instance != null)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+            instance = this;
+        }
 
         private void Start()
         {
@@ -22,6 +38,32 @@ public class UiController : MonoBehaviour
                 else pauseMenu.Resume();
             }
         }
-}
+
+        public void DisplayInspectPlant()
+        {
+            displayTab.SetActive(true);
+            StartCoroutine(DisableTab());
+        }
+
+        private IEnumerator DisableTab()
+        {
+            yield return new WaitForSeconds(2);
+            displayTab.SetActive(false);
+        }
+        
+        public void DisplayInteract()
+        {
+            displayE.SetActive(true);
+            StartCoroutine(DisableE());
+        }
+
+        private IEnumerator DisableE()
+        {
+            yield return new WaitForSeconds(2);
+            displayE.SetActive(false);
+            yield return new WaitForSeconds(2);
+            eDisplayed = true;
+        }
+    }
 
 

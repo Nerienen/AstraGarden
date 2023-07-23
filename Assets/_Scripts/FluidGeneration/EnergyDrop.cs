@@ -20,21 +20,12 @@ public class EnergyDrop : Drop
         _triggerCollider = GetComponent<SphereCollider>();
 
         _renderer.material = regularMaterial;
-        emitter = GetComponent<FMODUnity.StudioEventEmitter>();
-        emitter.EventReference = FMODEvents.instance.chargeEnergy;
-        emitter.Stop();
-        emitter.Lookup();
-        emitter.Play();
     }
 
     public override void Throw(Vector3 direction, float force)
     {
         base.Throw(direction, force);
-        emitter.EventReference = FMODEvents.instance.energyFloatingSound;
-        emitter.Stop();
-        emitter.Lookup();
-        emitter.Play();
-        
+
         _renderer.material = suctionMaterial;
         _triggerCollider.radius = 2.75f/transform.localScale.x;
         

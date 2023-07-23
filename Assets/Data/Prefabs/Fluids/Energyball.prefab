@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6688969165514980607}
   - component: {fileID: 6973123046749216098}
   - component: {fileID: 8454123414295406845}
+  - component: {fileID: 5513093488398147697}
   m_Layer: 7
   m_Name: Energyball
   m_TagString: Untagged
@@ -79,6 +80,8 @@ MonoBehaviour:
     type: 3}
   maxDropScale: 1
   maxDropSpeed: 8
+  emitterCharge: {fileID: 8454123414295406845}
+  emitterFloating: {fileID: 5513093488398147697}
   regularMaterial: {fileID: 2100000, guid: 792a0e647578f654cb484fb07195fa4d, type: 2}
   suctionMaterial: {fileID: 2100000, guid: a87b3d6f61f493f47a4efb5df64ee2b9, type: 2}
 --- !u!135 &6973123046749216098
@@ -122,6 +125,37 @@ MonoBehaviour:
       Data3: 207494843
       Data4: -989215442
     Path: event:/SFX/Gun/Charge Energy
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &5513093488398147697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2279402026520296736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 247167754
+      Data2: 1296671555
+      Data3: 852314774
+      Data4: 1212799672
+    Path: event:/SFX/Energy/FloatEnergy
   Event: 
   PlayEvent: 0
   StopEvent: 0

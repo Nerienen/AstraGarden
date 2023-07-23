@@ -148,7 +148,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 67d1bc0ce8de20744892fb4263e077d5,
         type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 67d1bc0ce8de20744892fb4263e077d5,
         type: 3}
@@ -787,8 +787,8 @@ MonoBehaviour:
   _energyLiquid: {fileID: 728504665149654489}
   _waterLiquid: {fileID: 329684144000828779}
   _oxygenLiquid: {fileID: 5484324144945437076}
-  waterAmount: 10
-  oxygenAmount: 10
+  waterAmount: 8
+  oxygenAmount: 8
   energyAmount: 0
 --- !u!95 &4534651741793899330
 Animator:

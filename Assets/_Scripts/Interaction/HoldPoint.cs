@@ -14,7 +14,11 @@ public class HoldPoint : MonoBehaviour
     private void Start()
     {
         _outline = GetComponent<Outline>();
-        if(CurrentHoldenObject != null) HoldObject(CurrentHoldenObject.transform);
+        if (CurrentHoldenObject != null)
+        {
+            CurrentHoldenObject.GetComponent<Grabbable>().hasBeenHolded = true;
+            HoldObject(CurrentHoldenObject.transform);
+        }
     }
 
     public void HoldObject(Transform objectTransform)
