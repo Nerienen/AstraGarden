@@ -158,7 +158,7 @@ public class Plant : Grabbable
 
     private void Update()
     {
-        if(grabbable) DryOverTime();
+        if(grabbable && hasBeenHolded) DryOverTime();
         if (_currentPlantState == PlantState.Dead)
         {
             outline.OutlineWidth = 0;

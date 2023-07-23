@@ -100,11 +100,7 @@ public class AudioManager : MonoBehaviour
         _musicEventInstance.start();
         return _musicEventInstance;
     }
-
-    public void SetMusicArea(MusicArea area)
-    {
-        _musicEventInstance.setParameterByName("area", (float)area);
-    }
+    
 
     public void PlayOneShot(EventReference sound, Vector3 worldPos)
     { 

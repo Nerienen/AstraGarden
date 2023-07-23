@@ -15,6 +15,7 @@ public class Grabbable : Interactable
 
     public bool grabbable { get;  set; } = true;
     protected bool holden;
+    public bool hasBeenHolded;
 
     public event Action onGrabObject;
 
@@ -49,6 +50,7 @@ public class Grabbable : Interactable
 
         if (_grabbing)
         {
+            hasBeenHolded = true;
             _rb.constraints = RigidbodyConstraints.FreezeRotation;
             _collider.material = grabbedMaterial;
             onGrabObject?.Invoke();

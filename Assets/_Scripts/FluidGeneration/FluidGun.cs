@@ -66,19 +66,17 @@ public class FluidGun : MonoBehaviour
 
     public void ChargeDrop()
     {
-
+        if(currentDrop == null)return;
         if (!_throwsEnergy)
         {
             if(waterAmmo <= 0) return;
-        
-            if (currentDrop == null)
-            {
-                InstantiateDrop();
-                return;
-            }
 
             waterAmmo -= currentDrop.Grow(cadence);
-            if (waterAmmo < 0.01f) waterAmmo = 0;
+            if (waterAmmo < 0.01f)
+            {
+                waterAmmo = 0;
+                currentDrop.emitterCharge.Stop();
+            }
             
             waterDisplay.fillAmount = 0.6f - 0.2f * waterAmmo / maxWaterAmmo;
             if (waterDisplay.fillAmount >= 0.6f) waterDisplay.fillAmount = 10;
@@ -86,16 +84,13 @@ public class FluidGun : MonoBehaviour
         else
         {
             if(energyAmmo <= 0) return;
-        
-            if (currentDrop == null)
-            {
-                InstantiateDrop();
-                return;
-            }
 
             energyAmmo -= currentDrop.Grow(cadence);
             //Sonido
-            if (energyAmmo < 0.01f) energyAmmo = 0;
+            if (energyAmmo < 0.01f)    {
+                energyAmmo = 0;
+                currentDrop.emitterCharge.Stop();
+            }
             energyDisplay.fillAmount = 0.6f - 0.2f * energyAmmo / maxEnergyAmmo;
             if (energyDisplay.fillAmount >= 0.6f) energyDisplay.fillAmount = 10;
         }
@@ -118,12 +113,13 @@ public class FluidGun : MonoBehaviour
         }
     }
 
-    private void InstantiateDrop()
+    public void InstantiateDrop()
     {
         if(Time.time - _lastTimeAttacked < attackSpeed) return;
 
         if (_throwsEnergy)
         { 
+            if(energyAmmo <= 0) return;
             energyAmmo -= 0.1f;
             if (energyAmmo < 0.01f) energyAmmo = 0;
             
@@ -133,6 +129,7 @@ public class FluidGun : MonoBehaviour
         }
         else
         {
+            if(waterAmmo <= 0) return;
             waterAmmo -= 0.1f;
             if (waterAmmo < 0.01f) waterAmmo = 0;
             

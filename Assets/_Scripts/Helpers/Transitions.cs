@@ -87,11 +87,10 @@ namespace ProjectUtils.Helpers
         {
             float timer = GetDeltaTime(timeScale);
             Vector3 initialPosition = transform.position;
-            Vector3 moveDelta = targetPosition - initialPosition;
 
             while (timer < time)
             {
-                transform.position = initialPosition + moveDelta * (timer/time);
+                transform.position = Vector3.Lerp(transform.position,targetPosition, (timer/time));
                 yield return null;
                 timer += GetDeltaTime(timeScale);
             }

@@ -13,6 +13,8 @@ public class PlayerController : CharacterMovement
     private PlayerInteract _playerInteract;
 
     private bool _isDead;
+
+    private StudioEventEmitter _emitter;
     
     public static PlayerController Instance { get; private set; }
     
@@ -30,6 +32,9 @@ public class PlayerController : CharacterMovement
         _playerInteract = GetComponent<PlayerInteract>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        _emitter = GetComponent<StudioEventEmitter>();
+       // _emitter.Play();
     }
 
     private void Start()
@@ -50,23 +55,31 @@ public class PlayerController : CharacterMovement
 
     private void Update()
     {
-        if(Time.timeScale <= 0) return;
+        if (Time.timeScale <= 0)
+        {
+            //_emitter.EventInstance.setPaused(true);
+            return;
+        }
+       // else _emitter.EventInstance.setPaused(false);
         if (_isDead) return;
         
+        //_emitter.EventInstance.setParameterByName("Oxygen", OxygenController.Instance.CurrentAmount/OxygenController.Instance.MaxAmount);
         _input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-
+        
         if (Input.GetMouseButton(0))
         {
+            if(fluidGun.currentDrop == null)fluidGun.InstantiateDrop();
             fluidGun.ChargeDrop();
         }
         if (Input.GetMouseButtonUp(0) && fluidGun.currentDrop != null)
         {
-            fluidGun.currentDrop.emitter.Stop();
+            fluidGun.currentDrop.emitterCharge.Stop();
         }
 
+       
         if (Input.GetMouseButton(1) && fluidGun.currentDrop != null)
         {
-           fluidGun.ShootDrop();
+            fluidGun.ShootDrop();
         }
     }
     
