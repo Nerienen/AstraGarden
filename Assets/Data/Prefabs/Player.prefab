@@ -1432,6 +1432,7 @@ GameObject:
   - component: {fileID: 2035655548063069164}
   - component: {fileID: 5690186757674484756}
   - component: {fileID: 682679222044484194}
+  - component: {fileID: 9128023895771302182}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -1455,7 +1456,7 @@ Transform:
   - {fileID: 8964697831851641350}
   - {fileID: 7901888881510703228}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &3237762382837949220
 CapsuleCollider:
@@ -1662,6 +1663,39 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 513
   <interactDistance>k__BackingField: 3.75
+--- !u!114 &9128023895771302182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8148942797581835539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -833994901
+      Data2: 1324656620
+      Data3: 1048013956
+      Data4: 1308856892
+    Path: event:/SFX/Player/Breathing
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params:
+  - Name: BreathRelief
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &8231090818006064100
 GameObject:
   m_ObjectHideFlags: 0
