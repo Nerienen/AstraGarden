@@ -1,5 +1,9 @@
 using System;
+using System.IO;
 using UnityEngine;
+using FMOD.Studio;
+using FMODUnity;
+using System.Diagnostics;
 
 public class OxygenController : MonoBehaviour
 {
@@ -15,12 +19,15 @@ public class OxygenController : MonoBehaviour
     public float MaxAmount {  get { return maxAmount; } }
     public float CurrentAmount {  get { return currentAmount; } set {  currentAmount = value; } }
 
+    public EventInstance emitter;
+    private int count = 1;
+
     private void Awake()
     {
         #region Singleton declaration
         if (Instance != null)
         {
-            Debug.LogWarning($"Another instance of {nameof(OxygenController)} exists. This one has been eliminated");
+            UnityEngine.Debug.LogWarning($"Another instance of {nameof(OxygenController)} exists. This one has been eliminated");
             Destroy(gameObject);
             return;
         }
@@ -32,6 +39,9 @@ public class OxygenController : MonoBehaviour
     private void Start()
     {
         currentAmount = Mathf.Clamp(currentAmount, 0, maxAmount);
+        emitter = RuntimeManager.CreateInstance(FMODEvents.instance.breath);
+        emitter.start();
+
     }
 
     private void Update()
@@ -45,12 +55,21 @@ public class OxygenController : MonoBehaviour
         currentAmount = Mathf.Clamp(currentAmount, 0, maxAmount);
         CheckOxygenFinished();
 
+        count += 1;
 
-
-        if (MusicManager.Instance != null)
+        if (count > 25)
         {
-            MusicManager.Instance.SetMusicParameter("Oxygen",currentAmount/maxAmount);
+            UnityEngine.Debug.Log("Current Oxygen Calc: " + currentAmount / maxAmount);
+            emitter.setParameterByName("Oxygen", currentAmount / maxAmount);
+            emitter.getParameterByName("Oxygen", out float check);
+            UnityEngine.Debug.Log("Current Oxygen Parameter: " + check);
+            if (MusicManager.Instance != null)
+            {
+                MusicManager.Instance.SetMusicParameter("Oxygen",currentAmount/maxAmount);
+            }
+            count = 0;
         }
+        
     }
 
     void CheckOxygenFinished()
