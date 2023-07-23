@@ -237,13 +237,6 @@ MonoBehaviour:
       Data3: -10225508
       Data4: -1988169325
     Path: event:/SFX/Water/ReboundWater
-  <waterPlant>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
   <waterFloatingSound>k__BackingField:
     Guid:
       Data1: -444798956
@@ -258,13 +251,6 @@ MonoBehaviour:
       Data3: -930108280
       Data4: -1283132879
     Path: event:/SFX/Energy/ReboundEnergy
-  <energyEnergize>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
   <energyFloatingSound>k__BackingField:
     Guid:
       Data1: 247167754
@@ -309,25 +295,18 @@ MonoBehaviour:
     Path: event:/SFX/Door/DoorBang
   <openData>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <dataViewerSound>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: 654823758
+      Data2: 1222159154
+      Data3: -629229431
+      Data4: -63367114
+    Path: event:/SFX/DataLog/DataLogOn
   <closeData>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -537167160
+      Data2: 1099106950
+      Data3: -13708157
+      Data4: 1811429338
+    Path: event:/SFX/DataLog/DataLogOff
   <buttonPress>k__BackingField:
     Guid:
       Data1: 1308854962
@@ -342,13 +321,6 @@ MonoBehaviour:
       Data3: 1815999620
       Data4: 1552161020
     Path: event:/SFX/Machine/Operate
-  <changePlant>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
   <placePlant>k__BackingField:
     Guid:
       Data1: -2137186723
@@ -372,11 +344,11 @@ MonoBehaviour:
     Path: event:/SFX/Player/PickUpPlant
   <plantGrow>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -1046886318
+      Data2: 1123483978
+      Data3: 946038926
+      Data4: -1551005550
+    Path: event:/SFX/Plant/Plant Growth
   <waterAbsorb>k__BackingField:
     Guid:
       Data1: 872493698
@@ -386,11 +358,18 @@ MonoBehaviour:
     Path: event:/SFX/Water/WaterPlant
   <oxyPlantBubble>k__BackingField:
     Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
+      Data1: -607081895
+      Data2: 1166636730
+      Data3: -1478731841
+      Data4: 1846715015
+    Path: event:/SFX/Plant/OxyBubbles
+  <plantDeath>k__BackingField:
+    Guid:
+      Data1: 1196407285
+      Data2: 1306480801
+      Data3: -1030988893
+      Data4: 1185337124
+    Path: event:/SFX/Plant/Plant Death
   <voiceRebootingSystem>k__BackingField:
     Guid:
       Data1: -1888023638
@@ -482,3 +461,17 @@ MonoBehaviour:
       Data3: 866837406
       Data4: -309269980
     Path: event:/Voicelines/Warnings/EnergySystemsEmpty
+  <menuHover>k__BackingField:
+    Guid:
+      Data1: 178745038
+      Data2: 1279692253
+      Data3: 247195297
+      Data4: -808673777
+    Path: event:/SFX/Menu/HoverOption
+  <menuSelect>k__BackingField:
+    Guid:
+      Data1: 166799532
+      Data2: 1341270664
+      Data3: -1654868578
+      Data4: -1060872881
+    Path: event:/SFX/Menu/SelectOption
