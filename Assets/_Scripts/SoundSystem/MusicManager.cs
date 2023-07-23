@@ -32,7 +32,7 @@ public class MusicManager : MonoBehaviour
     #endregion
 
     #region Sound Instances
-    private EventInstance music;
+    public EventInstance music;
     private EventInstance backgroundAmbience;
     private EventInstance chargeWater;
     private EventInstance chargeEnergy;
