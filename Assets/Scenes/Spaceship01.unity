@@ -2582,6 +2582,16 @@ PrefabInstance:
       propertyPath: initialPlant
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 4775915195663004287, guid: 134d6415d414c11498187de368feddbc,
+        type: 3}
+      propertyPath: plantGroups.Array.data[0].resourceCapacity
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4775915195663004287, guid: 134d6415d414c11498187de368feddbc,
+        type: 3}
+      propertyPath: plantGroups.Array.data[1].resourceCapacity
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5656469501118774270, guid: 134d6415d414c11498187de368feddbc,
         type: 3}
       propertyPath: m_Name
@@ -9774,6 +9784,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -31.83
       objectReference: {fileID: 0}
+    - target: {fileID: 4775915195663004287, guid: 134d6415d414c11498187de368feddbc,
+        type: 3}
+      propertyPath: _growPercentage
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5656469501118774270, guid: 134d6415d414c11498187de368feddbc,
         type: 3}
       propertyPath: m_Name
@@ -10876,7 +10891,7 @@ PrefabInstance:
     - target: {fileID: 4775915195663004287, guid: 134d6415d414c11498187de368feddbc,
         type: 3}
       propertyPath: initialPlant
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5656469501118774270, guid: 134d6415d414c11498187de368feddbc,
         type: 3}

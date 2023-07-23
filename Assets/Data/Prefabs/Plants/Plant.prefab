@@ -6744,7 +6744,7 @@ Transform:
   - {fileID: 7582436307970382744}
   - {fileID: 6532262537280233892}
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2625952889867595681
 MonoBehaviour:
@@ -6785,17 +6785,17 @@ MonoBehaviour:
     plantName: Water Cactus
     grownPlantHolder: {fileID: 4485803905288797941}
     sproutPlantHolder: {fileID: 7979254649901213864}
-    resourceCapacity: 1
+    resourceCapacity: 3
   - plantType: 1
     plantName: Energy Lettuce
     grownPlantHolder: {fileID: 4752990996006806680}
     sproutPlantHolder: {fileID: 5869509488571032324}
-    resourceCapacity: 1
+    resourceCapacity: 2.25
   - plantType: 2
     plantName: Oxygen Fungus
     grownPlantHolder: {fileID: 3247234081790641148}
     sproutPlantHolder: {fileID: 8569222820442706828}
-    resourceCapacity: 1.5
+    resourceCapacity: 1
   fruitGrowFactor:
     serializedVersion: 2
     m_Curve:
@@ -6856,7 +6856,7 @@ MonoBehaviour:
   oxygenParticles: {fileID: 1471111809962855004}
   emitter: {fileID: 8476055608702803126}
   hasGrownInitially: 0
-  _growPercentage: 0.99
+  _growPercentage: 0
 --- !u!114 &645206282926566912
 MonoBehaviour:
   m_ObjectHideFlags: 0
