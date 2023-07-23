@@ -41,7 +41,7 @@ public class FuseBox : MonoBehaviour
 
     private void Update()
     {
-        if (FuseBox.Instance != null && !hasGoneDown)
+        if (FuseBox.Instance != null && !hasGoneDown && OxygenController.Instance != null)
         {
             OxygenController oxygenController = OxygenController.Instance;
             
