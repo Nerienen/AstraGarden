@@ -153,7 +153,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 16d3d3d8b5eabc241a211f48e3588df9,
         type: 3}
       propertyPath: m_RootOrder
-      value: -1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 16d3d3d8b5eabc241a211f48e3588df9,
         type: 3}
@@ -310,6 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0b6749952b286740aa2437f6851459d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hasBeenHolded: 0
   bouncyMaterial: {fileID: 13400000, guid: e3228409fb203654d9cec8d17860754d, type: 2}
   grabbedMaterial: {fileID: 13400000, guid: 6960ff0d77e1b5e439aaf917678fbdf5, type: 2}
 --- !u!65 &5212164317264700860
@@ -331,7 +332,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.13191023, y: 0.18751156, z: 0.13090858}
+  m_Size: {x: 0.11, y: 0.17, z: 0.12}
   m_Center: {x: 0.0055329353, y: 0.00084367394, z: -0.0027553067}
 --- !u!54 &6778830556466470785
 Rigidbody:
