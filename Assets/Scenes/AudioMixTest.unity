@@ -266,12 +266,22 @@ PrefabInstance:
     - target: {fileID: 9128023895771302182, guid: d5f5aa753e6023240a761dcc3e7d4ba7,
         type: 3}
       propertyPath: Params.Array.size
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9128023895771302182, guid: d5f5aa753e6023240a761dcc3e7d4ba7,
+        type: 3}
+      propertyPath: Params.Array.data[0].Name
+      value: Oxygen
       objectReference: {fileID: 0}
     - target: {fileID: 9128023895771302182, guid: d5f5aa753e6023240a761dcc3e7d4ba7,
         type: 3}
       propertyPath: Params.Array.data[1].Name
       value: Oxygen
+      objectReference: {fileID: 0}
+    - target: {fileID: 9128023895771302182, guid: d5f5aa753e6023240a761dcc3e7d4ba7,
+        type: 3}
+      propertyPath: Params.Array.data[0].Value
+      value: 0.03
       objectReference: {fileID: 0}
     - target: {fileID: 9128023895771302182, guid: d5f5aa753e6023240a761dcc3e7d4ba7,
         type: 3}
@@ -1336,6 +1346,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4064001394089168552, guid: 892d8f4e3a4714c498630603e97970a4,
+        type: 3}
+      propertyPath: <ending>k__BackingField.Path
+      value: event:/Music/Ending
+      objectReference: {fileID: 0}
+    - target: {fileID: 4064001394089168552, guid: 892d8f4e3a4714c498630603e97970a4,
+        type: 3}
+      propertyPath: <ending>k__BackingField.Guid.Data1
+      value: -25298280
+      objectReference: {fileID: 0}
+    - target: {fileID: 4064001394089168552, guid: 892d8f4e3a4714c498630603e97970a4,
+        type: 3}
+      propertyPath: <ending>k__BackingField.Guid.Data2
+      value: 1296038818
+      objectReference: {fileID: 0}
+    - target: {fileID: 4064001394089168552, guid: 892d8f4e3a4714c498630603e97970a4,
+        type: 3}
+      propertyPath: <ending>k__BackingField.Guid.Data3
+      value: 1103473046
+      objectReference: {fileID: 0}
+    - target: {fileID: 4064001394089168552, guid: 892d8f4e3a4714c498630603e97970a4,
+        type: 3}
+      propertyPath: <ending>k__BackingField.Guid.Data4
+      value: 371237450
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
