@@ -1,11 +1,11 @@
 using ProjectUtils.Helpers;
-using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Playables;
+using UnityEngine.SceneManagement;
 
 public class CutsceneController : MonoBehaviour
 {
     public static CutsceneController Instance {  get; private set; }
+    public bool isPlayingCutscene;
 
     [SerializeField] Transform playerTransform;
     [SerializeField] Transform cameraTransform;
@@ -31,9 +31,20 @@ public class CutsceneController : MonoBehaviour
         _timelinePlayer = GetComponent<TimelinePlayer>();
     }
 
+    private void Start()
+    {
+        _timelinePlayer.OnFinished += ChangeScene;
+    }
+
     void PlayCutscene()
     {
         _timelinePlayer.Play();
+        isPlayingCutscene = true;
+    }
+
+    void ChangeScene()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void PreparePlayer()

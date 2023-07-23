@@ -29,7 +29,7 @@ public class UiController : MonoBehaviour
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape) && !CutsceneController.Instance.isPlayingCutscene)
             {
                 if (Time.timeScale == 1)
                 {
