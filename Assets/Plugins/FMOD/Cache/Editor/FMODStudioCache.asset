@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: FMODAssets/levelUpSound/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638257205676317919
+  lastModified: 638257220987533928
   FileSizes:
   - Name: Desktop
-    Value: 5394
+    Value: 5236
   Exists: 1
 --- !u!114 &-8726445210309387935
 MonoBehaviour:
@@ -90,10 +90,10 @@ MonoBehaviour:
   Path: FMODAssets/levelUpSound/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638257145264374612
+  lastModified: 638257286702681645
   FileSizes:
   - Name: Desktop
-    Value: 51509408
+    Value: 51853856
   Exists: 1
 --- !u!114 &-8311412458178652327
 MonoBehaviour:
@@ -247,12 +247,12 @@ MonoBehaviour:
   StudioPath: 
   Min: 0
   Max: 1
-  Default: 0
+  Default: 1
   ID:
     data1: 749004909
     data2: 1820173575
   Type: 0
-  IsGlobal: 1
+  IsGlobal: 0
   Labels: []
   Exists: 1
 --- !u!114 &-7543440711655701124
@@ -784,6 +784,33 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-2600510082137088684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Ending
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Ending
+  Guid:
+    Data1: -25298280
+    Data2: 1296038818
+    Data3: 1103473046
+    Data4: 371237450
+  Banks:
+  - {fileID: -8351615120437938042}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 26000
 --- !u!114 &-2442136187547728500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -812,30 +839,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2000
---- !u!114 &-2359869655039140989
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
-  m_Name: parameter:/Oxygen
-  m_EditorClassIdentifier: 
-  Name: Oxygen
-  StudioPath: parameter:/Oxygen
-  Min: 0
-  Max: 1
-  Default: 0
-  ID:
-    data1: 749004909
-    data2: 1820173575
-  Type: 0
-  IsGlobal: 1
-  Labels: []
-  Exists: 1
 --- !u!114 &-2184529767060287750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -993,7 +996,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1854
+  Length: 468
 --- !u!114 &-1011692775478894335
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1147,14 +1150,14 @@ MonoBehaviour:
   - {fileID: 1924428531877038527}
   - {fileID: 624449966776037987}
   - {fileID: 5777225399959265680}
+  - {fileID: -2600510082137088684}
   EditorParameters:
   - {fileID: -4875648938486300269}
-  - {fileID: -2359869655039140989}
   MasterBanks:
   - {fileID: -8829425955405026271}
   StringsBanks:
   - {fileID: 714164571416786371}
-  cacheTime: 638257205676525064
+  cacheTime: 638257286703180117
   cacheVersion: 131605
 --- !u!114 &326048675924775343
 MonoBehaviour:
@@ -1252,10 +1255,10 @@ MonoBehaviour:
   Path: FMODAssets/levelUpSound/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638257205676327922
+  lastModified: 638257286696506426
   FileSizes:
   - Name: Desktop
-    Value: 4490
+    Value: 4540
   Exists: 1
 --- !u!114 &1110346049329282481
 MonoBehaviour:
@@ -1431,7 +1434,7 @@ MonoBehaviour:
   Path: FMODAssets/levelUpSound/Build/Desktop/Voicelines.bank
   Name: Voicelines
   StudioPath: bank:/Voicelines
-  lastModified: 638256724884419223
+  lastModified: 638257179128085900
   FileSizes:
   - Name: Desktop
     Value: 871488
@@ -1562,10 +1565,10 @@ MonoBehaviour:
   Path: FMODAssets/levelUpSound/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638257205676525064
+  lastModified: 638257286703180117
   FileSizes:
   - Name: Desktop
-    Value: 3011744
+    Value: 3000160
   Exists: 1
 --- !u!114 &3095951996289736798
 MonoBehaviour:
@@ -1639,12 +1642,12 @@ MonoBehaviour:
   StudioPath: 
   Min: 0
   Max: 1
-  Default: 0
+  Default: 1
   ID:
     data1: 749004909
     data2: 1820173575
   Type: 0
-  IsGlobal: 1
+  IsGlobal: 0
   Labels: []
   Exists: 1
 --- !u!114 &4674852579294931842
@@ -1768,7 +1771,7 @@ MonoBehaviour:
   Path: FMODAssets/levelUpSound/Build/Desktop/Ambient.bank
   Name: Ambient
   StudioPath: bank:/Ambient
-  lastModified: 638257205676307919
+  lastModified: 638257179122861235
   FileSizes:
   - Name: Desktop
     Value: 7701120
@@ -1843,12 +1846,12 @@ MonoBehaviour:
   StudioPath: 
   Min: 0
   Max: 1
-  Default: 0
+  Default: 1
   ID:
     data1: 749004909
     data2: 1820173575
   Type: 0
-  IsGlobal: 1
+  IsGlobal: 0
   Labels: []
   Exists: 1
 --- !u!114 &5737361752189237200
