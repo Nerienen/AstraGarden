@@ -44,7 +44,9 @@ public class OxygenController : MonoBehaviour
         currentAmount += oxygenRate * Time.deltaTime;
         currentAmount = Mathf.Clamp(currentAmount, 0, maxAmount);
         CheckOxygenFinished();
-        
+
+
+
         if (MusicManager.Instance != null)
         {
             MusicManager.Instance.SetMusicParameter("Oxygen",currentAmount/maxAmount);

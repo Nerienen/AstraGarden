@@ -169,9 +169,6 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{02cc6634-bfaa-4bb9-972b-74272a020676}">
-		<property name="volume">
-			<value>-6.5</value>
-		</property>
 		<relationship name="effectChain">
 			<destination>{f56ddef6-1fe0-4b62-bd67-e92315baea8e}</destination>
 		</relationship>
@@ -351,6 +348,9 @@
 		</property>
 		<property name="length">
 			<value>0.16999999999999998</value>
+		</property>
+		<property name="volume">
+			<value>-3</value>
 		</property>
 		<property name="minimumTimeBetweenSounds">
 			<value>8500</value>
