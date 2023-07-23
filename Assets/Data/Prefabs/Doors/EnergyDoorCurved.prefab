@@ -137,7 +137,7 @@ Transform:
   - {fileID: 5590166954001382434}
   - {fileID: 1884851907053710652}
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &308485101017947726
 GameObject:
@@ -1117,7 +1117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e942489d26fba449ae56c70a7730a73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  oxygenRateToDecrease: 3
+  oxygenRateToDecrease: 1
   door: {fileID: 2696438404793913106}
   _liquid: {fileID: 1943524616135348616}
   energyNeeded: 5

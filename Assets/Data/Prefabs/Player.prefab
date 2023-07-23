@@ -1432,7 +1432,7 @@ GameObject:
   - component: {fileID: 2035655548063069164}
   - component: {fileID: 5690186757674484756}
   - component: {fileID: 682679222044484194}
-  - component: {fileID: 9128023895771302182}
+  - component: {fileID: 5847904295279059182}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -1456,7 +1456,7 @@ Transform:
   - {fileID: 8964697831851641350}
   - {fileID: 7901888881510703228}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &3237762382837949220
 CapsuleCollider:
@@ -1663,7 +1663,9 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 513
   <interactDistance>k__BackingField: 3.75
---- !u!114 &9128023895771302182
+  seenPlant: 0
+  seenInteract: 0
+--- !u!114 &5847904295279059182
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
