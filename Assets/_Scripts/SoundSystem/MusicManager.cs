@@ -12,6 +12,7 @@ public class MusicManager : MonoBehaviour
 
     #region Game State Variables
     public bool isIntro = true;
+    public bool isMENU;
     public bool hasTriggeredIntro = false;
 
     public bool isNormal = false;
@@ -64,7 +65,8 @@ public class MusicManager : MonoBehaviour
         
         tracks = new [] { FMODEvents.instance.drift, FMODEvents.instance.ending };
         //Por ahora se asume que se empieza siempre en el principio
-        music = _audioManager.InitializeMusic(FMODEvents.instance.drift);
+        if(isMENU)  music = _audioManager.InitializeMusic(FMODEvents.instance.menu);
+        else music = _audioManager.InitializeMusic(FMODEvents.instance.drift);
         backgroundAmbience = _audioManager.InitializeAmbience(FMODEvents.instance.lowHum);
         chargeEnergy = _audioManager.CreateInstance(FMODEvents.instance.chargeEnergy);
         chargeWater = _audioManager.CreateInstance(FMODEvents.instance.chargeWater);
