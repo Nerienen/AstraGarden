@@ -47,7 +47,7 @@ public class UiController : MonoBehaviour
 
         private IEnumerator DisableTab()
         {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(3.5F);
             displayTab.SetActive(false);
         }
         
@@ -59,7 +59,7 @@ public class UiController : MonoBehaviour
 
         private IEnumerator DisableE()
         {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(3.5f);
             displayE.SetActive(false);
             yield return new WaitForSeconds(2);
             eDisplayed = true;

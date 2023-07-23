@@ -197,7 +197,7 @@ public class Plant : Grabbable
 
     protected virtual void GrowOverTime()
     {
-        if (!_isIlluminated) return;
+        if (!_isIlluminated && _currentType != PlantTypes.EnergyPlant) return;
         if (_growPercentage >= 1) return;
 
         _growPercentage += Time.deltaTime * growSpeed * growFactor.Evaluate(healthPoints / 100f) / 100f;
