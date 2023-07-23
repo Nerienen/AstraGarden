@@ -815,7 +815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attenuationObject: {fileID: 0}
+  attenuationObject: {fileID: 8148942797581835539}
 --- !u!1 &3138414618287831775
 GameObject:
   m_ObjectHideFlags: 0
@@ -1455,7 +1455,7 @@ Transform:
   - {fileID: 8964697831851641350}
   - {fileID: 7901888881510703228}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &3237762382837949220
 CapsuleCollider:
@@ -1477,7 +1477,7 @@ CapsuleCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
-  m_Height: 2.5239756
+  m_Height: 2.5
   m_Direction: 1
   m_Center: {x: 0, y: -0.2619878, z: 0}
 --- !u!54 &2035655548063069164
@@ -1521,6 +1521,126 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 100
   maxSpeed: 7
+  walkSoundTime: 0.5
+  walkDisplayTime: 0.5
+  jiggleMagnitude: 0.005
+  jiggleX:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.29909834
+      value: 0.42970127
+      inSlope: 0.002568135
+      outSlope: 0.002568135
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.6892693
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.73599935
+      value: -0.18074399
+      inSlope: -0.01447117
+      outSlope: -0.01447117
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 1
+    - serializedVersion: 3
+      time: 1.0125158
+      value: 0.0009559598
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  jiggleY:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.24903539
+      value: 0.9991361
+      inSlope: 0.002568135
+      outSlope: 0.002568135
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.6892693
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.77682763
+      value: -0.9987645
+      inSlope: -0.01447117
+      outSlope: -0.01447117
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 1
+      outWeight: 1
+    - serializedVersion: 3
+      time: 1.0125158
+      value: 0.0009559598
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  jiggleZ:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.50753844
+      value: 0.99826497
+      inSlope: 0.0012779887
+      outSlope: 0.0012779887
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.46062562
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1.0083438
+      value: 0.0050088763
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   fluidGun: {fileID: 1349612204628578312}
 --- !u!114 &682679222044484194
 MonoBehaviour:
