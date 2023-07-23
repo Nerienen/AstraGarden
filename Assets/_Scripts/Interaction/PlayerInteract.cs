@@ -62,7 +62,7 @@ public class PlayerInteract : MonoBehaviour
                 
             }
 
-            if (_interactable != null && !seenInteract && UiController.instance != null)
+            if (!seenInteract && _interactable != null && UiController.instance != null)
             {
                 seenInteract = true;
                 UiController.instance.DisplayInteract();
