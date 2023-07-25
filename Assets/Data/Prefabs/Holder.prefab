@@ -66,7 +66,7 @@ Transform:
   m_Children:
   - {fileID: 8015970649121103937}
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4298361460565677987
 MeshFilter:
@@ -146,7 +146,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4823297921078549616}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
   m_Name: 
@@ -170,3 +170,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   holdTransform: {fileID: 8015970649121103937}
+  <justForPlants>k__BackingField: 0
+  <isPot>k__BackingField: 0
+  <CurrentHoldenObject>k__BackingField: {fileID: 0}
