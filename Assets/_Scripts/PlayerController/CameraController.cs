@@ -20,7 +20,7 @@ public class CameraController : MonoBehaviour
 
         sensitivityX = PlayerPrefs.GetFloat("SensX", 100);
         sensitivityY = PlayerPrefs.GetFloat("SensY", 100);
-        Helpers.Camera.fieldOfView =  PlayerPrefs.GetFloat("Fov", 60);
+        Helpers.Camera.fieldOfView =  PlayerPrefs.GetFloat("Fov", 70);
     }
 
     private void LateUpdate()
