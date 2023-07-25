@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
     [field: Header("Volume")] 
     [field: Range(0, 1)] 
     [SerializeField]
-    private float masterVolume;
+    private float masterVolume = 0.8f;
     public float MasterVolume {
         get => PlayerPrefs.GetFloat("MasterVolume", masterVolume);
         set 
@@ -23,7 +23,7 @@ public class AudioManager : MonoBehaviour
     
     [field: Range(0,1)]
     [SerializeField] 
-    private float musicVolume;
+    private float musicVolume = 0.8f;
     public float MusicVolume {
         get => PlayerPrefs.GetFloat("MusicVolume", musicVolume);
         set 
@@ -35,7 +35,7 @@ public class AudioManager : MonoBehaviour
 
     [field: Range(0, 1)]
     [field: SerializeReference]
-    private float sfxVolume;
+    private float sfxVolume = 0.8f;
     public float SfxVolume {
         get => PlayerPrefs.GetFloat("SfxVolume", sfxVolume);
         set 
@@ -47,7 +47,7 @@ public class AudioManager : MonoBehaviour
 
     [field: Range(0, 1)]
     [field: SerializeReference]
-    private float ambienceVolume;
+    private float ambienceVolume = 0.8f;
     public float AmbienceVolume {
         get => PlayerPrefs.GetFloat("AmbienceVolume", ambienceVolume);
         set 
@@ -87,17 +87,17 @@ public class AudioManager : MonoBehaviour
         _ambienceBus = RuntimeManager.GetBus("bus:/Ambience");
         _sfxBus = RuntimeManager.GetBus("bus:/SFX");
         
-        #if UNITY_EDITOR
-            MasterVolume = masterVolume;
-            AmbienceVolume = ambienceVolume;
-            SfxVolume = sfxVolume;
-            MusicVolume = musicVolume;
-        #else
+        // #if UNITY_EDITOR
+        //     MasterVolume = masterVolume;
+        //     AmbienceVolume = ambienceVolume;
+        //     SfxVolume = sfxVolume;
+        //     MusicVolume = musicVolume;
+        // #else
             MasterVolume = MasterVolume;
             AmbienceVolume = AmbienceVolume;
             SfxVolume = SfxVolume;
             MusicVolume = MusicVolume;
-        #endif
+        //#endif
         
         DontDestroyOnLoad(gameObject);
     }

@@ -53,6 +53,7 @@ public class MusicManager : MonoBehaviour
     
     public void InitializeMusic()
     {
+        _audioManager = AudioManager.instance;
         if (FindObjectOfType<MainMenuUI>())
         {
             music = _audioManager.InitializeMusic(FMODEvents.instance.menu);

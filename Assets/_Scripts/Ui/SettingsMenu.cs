@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using ProjectUtils.Helpers;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,6 +20,11 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] private Slider ambienceVolume;
     [SerializeField] private Slider sfxVolume;
     [SerializeField] private Slider musicVolume;
+    
+    [Header("Camera")]
+    [SerializeField] private Slider sensitivityX;
+    [SerializeField] private Slider sensitivityY;
+    [SerializeField] private Slider fov;
     
     [Header("Resolution")]
     [SerializeField] private TMP_Dropdown resolution;
@@ -55,6 +61,25 @@ public class SettingsMenu : MonoBehaviour
         {
             musicVolume.SetValueWithoutNotify(audioManager.MusicVolume);
             musicVolume.onValueChanged.AddListener(audioManager.SetMusicVolume);
+        }
+
+        CameraController cameraController = Helpers.Camera.GetComponent<CameraController>();
+        if (sensitivityX != null &&  cameraController != null)
+        {
+            sensitivityX.SetValueWithoutNotify(cameraController.sensitivityX);
+            sensitivityX.onValueChanged.AddListener(cameraController.SetSensX);
+        }
+        
+        if (sensitivityY != null &&  cameraController != null)
+        {
+            sensitivityY.SetValueWithoutNotify(cameraController.sensitivityY);
+            sensitivityY.onValueChanged.AddListener(cameraController.SetSensY);
+        }
+        
+        if (fov != null &&  cameraController != null)
+        {
+            fov.SetValueWithoutNotify(Helpers.Camera.fieldOfView);
+            fov.onValueChanged.AddListener(cameraController.SetFov);
         }
 
         if (resolution != null)
