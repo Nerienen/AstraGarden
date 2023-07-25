@@ -23,7 +23,7 @@ public class CameraController : MonoBehaviour
         Helpers.Camera.fieldOfView =  PlayerPrefs.GetFloat("Fov", 70);
     }
 
-    private void LateUpdate()
+    private void Update()
     {
         if (!_isMainCamera)
         {

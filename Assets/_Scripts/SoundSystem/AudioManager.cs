@@ -169,8 +169,4 @@ public class AudioManager : MonoBehaviour
         }
     }
     
-    private void OnDisable()
-    {
-        CleanUp(); 
-    }
 }
