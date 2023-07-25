@@ -4,24 +4,58 @@ using System.Collections.Generic;
 using FMOD.Studio;
 using FMODUnity;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
     [field: Header("Volume")] 
+    [field: Range(0, 1)] 
+    [SerializeField]
+    private float masterVolume;
+    public float MasterVolume {
+        get => PlayerPrefs.GetFloat("MasterVolume", masterVolume);
+        set 
+        {   
+            PlayerPrefs.SetFloat("MasterVolume", value);
+            _masterBus.setVolume(value); 
+        }
+    }
+    
     [field: Range(0,1)]
-    [field: SerializeReference] 
-    public float masterVolume { get; private set; } = 1;
-    [field: Range(0,1)]
-    [field: SerializeReference] 
-    public float musicVolume { get; private set; } = 1 ;
+    [SerializeField] 
+    private float musicVolume;
+    public float MusicVolume {
+        get => PlayerPrefs.GetFloat("MusicVolume", musicVolume);
+        set 
+        {   
+            PlayerPrefs.SetFloat("MusicVolume", value);
+            _musicBus.setVolume(value); 
+        }
+    }
 
     [field: Range(0, 1)]
     [field: SerializeReference]
-    public float sfxVolume { get; private set; } = 1;
+    private float sfxVolume;
+    public float SfxVolume {
+        get => PlayerPrefs.GetFloat("SfxVolume", sfxVolume);
+        set 
+        {   
+            PlayerPrefs.SetFloat("SfxVolume", value);
+            _sfxBus.setVolume(value); 
+        }
+    }
 
     [field: Range(0, 1)]
     [field: SerializeReference]
-    public float ambienceVolume { get; private set; } = 1;
+    private float ambienceVolume;
+    public float AmbienceVolume {
+        get => PlayerPrefs.GetFloat("AmbienceVolume", ambienceVolume);
+        set 
+        {   
+            PlayerPrefs.SetFloat("AmbienceVolume", value);
+            _ambienceBus.setVolume(value); 
+        }
+    }
 
     private Bus _masterBus;
     private Bus _musicBus;
@@ -40,11 +74,10 @@ public class AudioManager : MonoBehaviour
     {
         if(instance != null)
         {
-            Destroy(gameObject);
-            return;
+          Destroy(gameObject);
+          return;
         }
         instance = this;
-       // DontDestroyOnLoad(gameObject);
 
         _eventEmitters = new List<StudioEventEmitter>();
         _eventInstances = new List<EventInstance>();
@@ -54,38 +87,40 @@ public class AudioManager : MonoBehaviour
         _ambienceBus = RuntimeManager.GetBus("bus:/Ambience");
         _sfxBus = RuntimeManager.GetBus("bus:/SFX");
         
-        SetMasterVolume(masterVolume);
-        SetAmbienceVolume(ambienceVolume);
-        SetSFXVolume(sfxVolume);
-        SetMusicVolume(musicVolume);
+        #if UNITY_EDITOR
+            MasterVolume = masterVolume;
+            AmbienceVolume = ambienceVolume;
+            SfxVolume = sfxVolume;
+            MusicVolume = musicVolume;
+        #else
+            MasterVolume = MasterVolume;
+            AmbienceVolume = AmbienceVolume;
+            SfxVolume = SfxVolume;
+            MusicVolume = MusicVolume;
+        #endif
+        
+        DontDestroyOnLoad(gameObject);
+    }
+
+    private void Initialize(Scene arg0, Scene arg1)
+    {
+        CleanUp();
+        MusicManager.Instance.InitializeMusic();
     }
 
     private void Start()
     {
+        CleanUp();
+        MusicManager.Instance.InitializeMusic();
+        SceneManager.activeSceneChanged += Initialize;
         //InitializeAmbience(FMODEvents.instance.ambience);
         //InitializeMusic(FMODEvents.instance.drift);
     }
 
-    public void SetMasterVolume(float value)
-    {
-        masterVolume = value;
-        _masterBus.setVolume(masterVolume);
-    }  
-    public void SetMusicVolume(float value)
-    {
-        musicVolume = value;
-        _musicBus.setVolume(musicVolume);
-    } 
-    public void SetSFXVolume(float value)
-    {
-        sfxVolume = value;
-        _sfxBus.setVolume(sfxVolume);
-    }  
-    public void SetAmbienceVolume(float value)
-    {
-        ambienceVolume = value;
-        _ambienceBus.setVolume(ambienceVolume);
-    }
+    public void SetMasterVolume(float value) { MasterVolume = value; }  
+    public void SetMusicVolume(float value) { MusicVolume = value; } 
+    public void SetSfxVolume(float value) { SfxVolume = value; }  
+    public void SetAmbienceVolume(float value) { AmbienceVolume = value; }
 
     public EventInstance InitializeAmbience(EventReference instanceAmbience)
     {
@@ -110,6 +145,7 @@ public class AudioManager : MonoBehaviour
     public EventInstance CreateInstance(EventReference eventReference)
     {
         EventInstance eventInstance = RuntimeManager.CreateInstance(eventReference);
+        _eventInstances ??= new List<EventInstance>();
         _eventInstances.Add(eventInstance);
         return eventInstance;
     }
@@ -118,17 +154,22 @@ public class AudioManager : MonoBehaviour
     {
         foreach (var eventInstance in _eventInstances)
         {
+            _musicEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            _ambienceEventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             eventInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
             eventInstance.release();
+            _musicEventInstance.release();
+            _ambienceEventInstance.release();
         }
 
+        _eventEmitters.AddRange(FindObjectsOfType<StudioEventEmitter>());
         foreach (var eventEmitter in _eventEmitters)
         {
             eventEmitter.Stop();
         }
     }
     
-    private void OnDestroy()
+    private void OnDisable()
     {
         CleanUp(); 
     }

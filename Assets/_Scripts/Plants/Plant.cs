@@ -239,8 +239,6 @@ public class Plant : Grabbable
     protected virtual void SetState(PlantState state)
     {
         _currentPlantState = state;
-
-
     }
 
     protected virtual void DryOverTime()

@@ -885,7 +885,7 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 1327511542}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 10
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -895,7 +895,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 30
   m_TargetDisplay: 0
 --- !u!224 &1174303262
 RectTransform:
@@ -1480,11 +1480,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8908402663223587583, guid: 892d8f4e3a4714c498630603e97970a4,
-        type: 3}
-      propertyPath: isMENU
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4227,26 +4222,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &2699542091075880419
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8273540969191633646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1f575e1554f9534bb44173c71afc1a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 8738161854904053961}
-  settingsMenu: {fileID: 7826034541223644900}
-  settingsMenuWebGL: {fileID: 4228847421319083208}
-  startButton: {fileID: 3005158294757527388}
-  resumeButton: {fileID: 0}
-  settingsButton: {fileID: 6261693257836062667}
-  restartButton: {fileID: 0}
-  quitButton: {fileID: 3497306707577173096}
 --- !u!224 &2717278641794066897
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10952,7 +10927,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8131045048632070309}
-  - component: {fileID: 2699542091075880419}
+  - component: {fileID: 8273540969191633647}
   m_Layer: 5
   m_Name: MainMenuHolder
   m_TagString: Untagged
@@ -10960,6 +10935,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &8273540969191633647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8273540969191633646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30e0cbca5655bad4facd04fb1eb75580, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settingsMenu: {fileID: 7826034541223644900}
+  settingsMenuWebGL: {fileID: 4228847421319083208}
+  startButton: {fileID: 3005158294757527388}
+  settingsButton: {fileID: 6261693257836062667}
+  quitButton: {fileID: 3497306707577173096}
 --- !u!114 &8279918759391319231
 MonoBehaviour:
   m_ObjectHideFlags: 0

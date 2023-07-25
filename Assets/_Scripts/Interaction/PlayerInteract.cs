@@ -67,7 +67,7 @@ public class PlayerInteract : MonoBehaviour
                 seenInteract = true;
                 UiController.instance.DisplayInteract();
             }
-            if (!seenPlant && _interactable.TryGetComponent(out Plant _) && UiController.instance != null && UiController.instance.eDisplayed)
+            if (!seenPlant && _inspectable != null && _interactable.TryGetComponent(out Plant _) && UiController.instance != null && UiController.instance.eDisplayed)
             {
                 seenPlant = true;
                 UiController.instance.DisplayInspectPlant();
@@ -185,7 +185,7 @@ public class PlayerInteract : MonoBehaviour
     private void ManageInspectable(RaycastHit hit)
     {
         IInspectable inspectable = hit.transform.GetComponent<IInspectable>();
-        if (Input.GetKey(KeyCode.Tab))
+        if (Input.GetKey(KeyCode.Tab) || Input.GetKey(KeyCode.Q))
         {
             if (_inspectable != null && inspectable != null && inspectable != _inspectable)
             {

@@ -9,22 +9,7 @@ using STOP_MODE = FMOD.Studio.STOP_MODE;
 public class MusicManager : MonoBehaviour
 {
     private AudioManager _audioManager;
-
-    #region Game State Variables
-    public bool isIntro = true;
-    public bool isMENU;
-    public bool hasTriggeredIntro = false;
-
-    public bool isNormal = false;
-
-    public bool isBlackout = false;
-    public bool hasTriggeredBlackout = false;
-
-    public bool isEnding = false;
-    public bool hasTriggeredTransitionToEnd = false;
-    public bool hasTriggeredEndingSequence = false;
-    #endregion
-
+    
     #region Music State Variables
     private int currentTrack = -1;
     private bool isPlayingMusic = false;
@@ -64,19 +49,28 @@ public class MusicManager : MonoBehaviour
         _audioManager = AudioManager.instance;
         
         tracks = new [] { FMODEvents.instance.drift, FMODEvents.instance.ending };
-        //Por ahora se asume que se empieza siempre en el principio
-        if(isMENU)  music = _audioManager.InitializeMusic(FMODEvents.instance.menu);
-        else music = _audioManager.InitializeMusic(FMODEvents.instance.drift);
+    }
+    
+    public void InitializeMusic()
+    {
+        if (FindObjectOfType<MainMenuUI>())
+        {
+            music = _audioManager.InitializeMusic(FMODEvents.instance.menu);
+            return;
+        }
+        
+        music = _audioManager.InitializeMusic(FMODEvents.instance.drift);
         backgroundAmbience = _audioManager.InitializeAmbience(FMODEvents.instance.lowHum);
         chargeEnergy = _audioManager.CreateInstance(FMODEvents.instance.chargeEnergy);
         chargeWater = _audioManager.CreateInstance(FMODEvents.instance.chargeWater);
         chargeEnergy.start();
         chargeWater.start();
     }
+    
 
     // Update is called once per frame
-    void Update()
-    {
+    //void Update()
+    //{
         // //If is in normal conditions and it's not playing music, play track 0 (Drift)
         // if (isNormal && !isPlayingMusic) { playTrack(tracks, 0); isPlayingMusic = true; }
         //
@@ -88,11 +82,8 @@ public class MusicManager : MonoBehaviour
         //     hasTriggeredBlackout = false; 
         // }
 
-        if (isEnding & !hasTriggeredTransitionToEnd) { }
-
-
-
-    }
+        //if (isEnding & !hasTriggeredTransitionToEnd) { }
+    //}
 
     private void playTrack(EventReference[] tracks, int trackNumber)
     {
@@ -124,5 +115,6 @@ public class MusicManager : MonoBehaviour
         chargeEnergy.setParameterByName(parameterName, value);
     }
 
-    
+
+
 }

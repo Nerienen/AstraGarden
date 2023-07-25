@@ -35,25 +35,25 @@ public class SettingsMenu : MonoBehaviour
 
         if (masterVolume != null && audioManager != null)
         {
-            masterVolume.SetValueWithoutNotify(audioManager.masterVolume);
+            masterVolume.SetValueWithoutNotify(audioManager.MasterVolume);
             masterVolume.onValueChanged.AddListener(audioManager.SetMasterVolume);
         }
 
         if (ambienceVolume != null && audioManager != null)
         {
-            ambienceVolume.SetValueWithoutNotify(audioManager.ambienceVolume);
+            ambienceVolume.SetValueWithoutNotify(audioManager.AmbienceVolume);
             ambienceVolume.onValueChanged.AddListener(audioManager.SetAmbienceVolume);
         }
 
         if (sfxVolume != null && audioManager != null)
         {
-            sfxVolume.SetValueWithoutNotify(audioManager.sfxVolume);
-            sfxVolume.onValueChanged.AddListener(audioManager.SetSFXVolume);
+            sfxVolume.SetValueWithoutNotify(audioManager.SfxVolume);
+            sfxVolume.onValueChanged.AddListener(audioManager.SetSfxVolume);
         }
 
         if (musicVolume != null && audioManager != null)
         {
-            musicVolume.SetValueWithoutNotify(audioManager.musicVolume);
+            musicVolume.SetValueWithoutNotify(audioManager.MusicVolume);
             musicVolume.onValueChanged.AddListener(audioManager.SetMusicVolume);
         }
 

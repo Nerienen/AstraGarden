@@ -12,7 +12,6 @@ public class PauseMenuUI : MonoBehaviour
      [SerializeField] private SettingsMenu settingsMenuWebGL;
 
      [Header("Buttons")]
-     [SerializeField] private Button startButton;
      [SerializeField] private Button resumeButton;
      [SerializeField] private Button settingsButton;
      [SerializeField] private Button restartButton;
@@ -24,7 +23,6 @@ public class PauseMenuUI : MonoBehaviour
          if (settingsButton != null) settingsButton.onClick.AddListener(Settings);
          if (quitButton != null) quitButton.onClick.AddListener(HomeButtonAction);
          if (restartButton != null) restartButton.onClick.AddListener(RestartButtonAction);
-         if (startButton != null) startButton.onClick.AddListener(StartGame);
      }
 
      public void PauseGame()

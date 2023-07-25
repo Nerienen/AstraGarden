@@ -39,7 +39,6 @@ public class CutsceneController : MonoBehaviour
     void PlayCutscene()
     {
         _timelinePlayer.Play();
-        isPlayingCutscene = true;
     }
 
     void ChangeScene()
@@ -51,6 +50,7 @@ public class CutsceneController : MonoBehaviour
     {
         if (playerTransform != null && cameraTransform != null && targetTransform != null)
         {
+            isPlayingCutscene = true;
             Rigidbody playerRigidbody = playerTransform.GetComponent<Rigidbody>();
 
             playerTransform.GetComponent<PlayerController>().enabled = false;
@@ -60,6 +60,7 @@ public class CutsceneController : MonoBehaviour
 
             playerTransform.DoMove(targetTransform.position, placingDuration, Transitions.TimeScales.Scaled);
             playerTransform.RotateTo(targetTransform.rotation, placingDuration * 0.1f, Transitions.TimeScales.Scaled);
+            cameraTransform.RotateTo(targetTransform.rotation, placingDuration * 0.1f, Transitions.TimeScales.Scaled);
 
             Invoke(nameof(PlayCutscene), 1f);
         }

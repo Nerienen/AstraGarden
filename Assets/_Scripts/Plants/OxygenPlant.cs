@@ -15,6 +15,7 @@ public class OxygenPlant : BasePlant
     {
         _ctx.OnPlantHasBeenHolden += OnStartProducingOxygen;
         _ctx.OnPlantHasStoppedBeenHolden += OnStopProducingOxygen;
+        _ctx.OnPlantDissolve += OnStopProducingOxygen;
         _ctx.OnChangeTypeReceived += OnChangeTypeReceived;
         _ctx.OnPlantFullyGrown += OnFullyGrown;
 
@@ -40,6 +41,7 @@ public class OxygenPlant : BasePlant
     {
         _ctx.OnPlantHasBeenHolden -= OnStartProducingOxygen;
         _ctx.OnPlantHasStoppedBeenHolden -= OnStopProducingOxygen;
+        _ctx.OnPlantDissolve -= OnStopProducingOxygen;
         _ctx.OnChangeTypeReceived -= OnChangeTypeReceived;
         _ctx.OnPlantFullyGrown -= OnFullyGrown;
 

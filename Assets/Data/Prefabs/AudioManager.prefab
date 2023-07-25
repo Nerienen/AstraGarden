@@ -32,7 +32,7 @@ Transform:
   - {fileID: 1874555675577866771}
   - {fileID: 4477078876907130829}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1972829298294696947
 MonoBehaviour:
@@ -46,10 +46,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd8da0b88102244fa6540c27bb90c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <masterVolume>k__BackingField: 0.8
-  <musicVolume>k__BackingField: 0.8
-  <sfxVolume>k__BackingField: 0.8
-  <ambienceVolume>k__BackingField: 0.8
+  masterVolume: 0.8
+  musicVolume: 0.8
+  sfxVolume: 0.8
+  ambienceVolume: 0.8
 --- !u!1 &4976895741926255845
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,14 +94,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e1f46805a47e84981069635d7a0f14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isIntro: 1
-  hasTriggeredIntro: 0
-  isNormal: 0
-  isBlackout: 0
-  hasTriggeredBlackout: 0
-  isEnding: 0
-  hasTriggeredTransitionToEnd: 0
-  hasTriggeredEndingSequence: 0
 --- !u!1 &9195697857639306227
 GameObject:
   m_ObjectHideFlags: 0

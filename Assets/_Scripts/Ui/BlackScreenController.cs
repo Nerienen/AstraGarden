@@ -19,7 +19,7 @@ public class BlackScreenController : MonoBehaviour
 
     void Show()
     {
-        Transitions.DoChangeColorAsync(image, Color.black, fadeOutDuration, Transitions.TimeScales.Fixed);
+        Transitions.DoChangeColor(image, Color.black, fadeOutDuration, Transitions.TimeScales.Fixed);
         StartCoroutine(MovetoMenu());
     }
 

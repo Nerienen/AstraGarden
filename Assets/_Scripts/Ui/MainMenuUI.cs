@@ -17,6 +17,9 @@ public class MainMenuUI : MonoBehaviour
         if (startButton != null) startButton.onClick.AddListener(StarGame);
         if (quitButton != null) quitButton.onClick.AddListener(QuitGame);
         if (settingsButton != null) settingsButton.onClick.AddListener(Settings);
+
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
     
     private void StarGame()
