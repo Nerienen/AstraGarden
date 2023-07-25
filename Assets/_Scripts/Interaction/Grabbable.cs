@@ -53,6 +53,7 @@ public class Grabbable : Interactable
             hasBeenHolded = true;
             _rb.constraints = RigidbodyConstraints.FreezeRotation;
             _rb.velocity = Vector3.zero;
+            _rb.drag = 0;
             _collider.material = grabbedMaterial;
             onGrabObject?.Invoke();
             SetCollisions(true);
@@ -61,6 +62,7 @@ public class Grabbable : Interactable
         else
         {
             SetCollisions(false);
+            _rb.drag = 0.3f;
             _rb.constraints = RigidbodyConstraints.None;
             _collider.material = bouncyMaterial;
         }
@@ -88,11 +90,6 @@ public class Grabbable : Interactable
         
         Vector3 targetPos = Vector3.Lerp(transform.position, _grabPoint.transform.position, Time.fixedDeltaTime * 10f);
         float dist = Vector3.Distance(transform.position, targetPos);
-        if (dist < 0.01f)
-        {
-            _rb.velocity = Vector3.zero;
-            return;
-        }
         _rb.velocity = (targetPos-transform.position).normalized *  dist / Time.fixedDeltaTime;
     }
 

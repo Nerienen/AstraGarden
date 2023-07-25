@@ -122,7 +122,7 @@ public class OxygenPlant : BasePlant
             }
         }
 
-        if(_ctx.Holden)
+        if(_ctx.Holden && !_ctx.startsGrown)
         {
             OnStartProducingOxygen();
         }

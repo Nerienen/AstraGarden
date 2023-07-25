@@ -64,7 +64,7 @@ public class Plant : Grabbable
     }
 
     [HideInInspector] public bool hasGrownInitially;
-    [SerializeField] private bool startsGrown;
+    public bool startsGrown;
 
     private PlantState _currentPlantState = PlantState.Sprout;
 
@@ -145,7 +145,11 @@ public class Plant : Grabbable
             AudioManager.instance.PlayOneShot(FMODEvents.instance.pickUpPlant, transform.position);
         };
 
-        if(startsGrown) OnPlantFullyGrown?.Invoke();
+        if (startsGrown)
+        {
+            _growPercentage = 1;
+            OnPlantFullyGrown?.Invoke();
+        }
         hasGrownInitially = true;
     }
 
@@ -191,7 +195,10 @@ public class Plant : Grabbable
         if (_previousHolden != holden)
         {
             if (holden) OnPlantHasBeenHolden?.Invoke();
-            else OnPlantHasStoppedBeenHolden?.Invoke();
+            else
+            {
+                OnPlantHasStoppedBeenHolden?.Invoke();
+            }
         }
 
         _previousHolden = holden;
