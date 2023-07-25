@@ -29,7 +29,7 @@ public class PlayerInteract : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
         if (Physics.Raycast(Helpers.Camera.transform.position, Helpers.Camera.transform.forward ,out var hit, interactDistance, interacting? holdersLayer:interactLayer))
         {
@@ -108,7 +108,10 @@ public class PlayerInteract : MonoBehaviour
                 _interactable = null;
             }
         }
+    }
 
+    private void Update()
+    {
         if (Input.GetKeyDown(KeyCode.E) && _interactable != null)
         {
             _interactable.SetOutlineWidth(0);
