@@ -52,6 +52,7 @@ public class Grabbable : Interactable
         {
             hasBeenHolded = true;
             _rb.constraints = RigidbodyConstraints.FreezeRotation;
+            _rb.velocity = Vector3.zero;
             _collider.material = grabbedMaterial;
             onGrabObject?.Invoke();
             SetCollisions(true);
@@ -85,8 +86,14 @@ public class Grabbable : Interactable
     {
         if(!_grabbing) return;
         
-        Vector3 targetPos = Vector3.Lerp(transform.position, _grabPoint.transform.position, Time.deltaTime * 10f);
-        _rb.velocity = (targetPos-transform.position).normalized*Vector3.Distance(transform.position, targetPos) / Time.fixedDeltaTime;
+        Vector3 targetPos = Vector3.Lerp(transform.position, _grabPoint.transform.position, Time.fixedDeltaTime * 10f);
+        float dist = Vector3.Distance(transform.position, targetPos);
+        if (dist < 0.01f)
+        {
+            _rb.velocity = Vector3.zero;
+            return;
+        }
+        _rb.velocity = (targetPos-transform.position).normalized *  dist / Time.fixedDeltaTime;
     }
 
     public void SetHolden(bool value)

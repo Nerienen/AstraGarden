@@ -64,6 +64,7 @@ public class Plant : Grabbable
     }
 
     [HideInInspector] public bool hasGrownInitially;
+    [SerializeField] private bool startsGrown;
 
     private PlantState _currentPlantState = PlantState.Sprout;
 
@@ -72,7 +73,7 @@ public class Plant : Grabbable
     float _fruitGrowPercentage = 0;
     public float FruitGrowPercentage { get => _fruitGrowPercentage; set => _fruitGrowPercentage = value; }
 
-    [SerializeField] float _growPercentage = 0;
+    float _growPercentage = 0;
     public float GrowPercentage { get => _growPercentage; set => _growPercentage = value; }
 
     BasePlant _currentPlant;
@@ -144,6 +145,7 @@ public class Plant : Grabbable
             AudioManager.instance.PlayOneShot(FMODEvents.instance.pickUpPlant, transform.position);
         };
 
+        if(startsGrown) OnPlantFullyGrown?.Invoke();
         hasGrownInitially = true;
     }
 

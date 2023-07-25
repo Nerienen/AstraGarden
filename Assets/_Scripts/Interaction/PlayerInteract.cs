@@ -29,7 +29,7 @@ public class PlayerInteract : MonoBehaviour
         else Destroy(gameObject);
     }
 
-    private void FixedUpdate()
+    private void LateUpdate()
     {
         if (Physics.Raycast(Helpers.Camera.transform.position, Helpers.Camera.transform.forward ,out var hit, interactDistance, interacting? holdersLayer:interactLayer))
         {

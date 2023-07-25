@@ -16,6 +16,7 @@ public class EmergencyButton : Interactable
     void ProcessInteraction()
     {
         _animator.SetTrigger("Press");
+        FindObjectOfType<OxygenMeterDisplay>().gameObject.SetActive(false);
 
         if (CutsceneController.Instance != null && FMODEvents.instance != null)
         {

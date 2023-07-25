@@ -203,6 +203,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 117361747429709471, guid: d5f5aa753e6023240a761dcc3e7d4ba7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 597823010074928015, guid: d5f5aa753e6023240a761dcc3e7d4ba7,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 65527
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136657356708703161, guid: d5f5aa753e6023240a761dcc3e7d4ba7,
+        type: 3}
+      propertyPath: m_Name
+      value: StatsCam
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136657356708703161, guid: d5f5aa753e6023240a761dcc3e7d4ba7,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2701783311875031375, guid: d5f5aa753e6023240a761dcc3e7d4ba7,
         type: 3}
       propertyPath: m_RootOrder
@@ -216,7 +236,7 @@ PrefabInstance:
     - target: {fileID: 2701783311875031375, guid: d5f5aa753e6023240a761dcc3e7d4ba7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.359
+      value: 1.534
       objectReference: {fileID: 0}
     - target: {fileID: 2701783311875031375, guid: d5f5aa753e6023240a761dcc3e7d4ba7,
         type: 3}
@@ -257,6 +277,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854627689947956283, guid: d5f5aa753e6023240a761dcc3e7d4ba7,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 65536
       objectReference: {fileID: 0}
     - target: {fileID: 8148942797581835539, guid: d5f5aa753e6023240a761dcc3e7d4ba7,
         type: 3}
@@ -2036,6 +2061,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4775915195663004287, guid: 134d6415d414c11498187de368feddbc,
+        type: 3}
+      propertyPath: changeType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4775915195663004287, guid: 134d6415d414c11498187de368feddbc,
+        type: 3}
+      propertyPath: startsGrown
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4775915195663004287, guid: 134d6415d414c11498187de368feddbc,
         type: 3}
@@ -5286,7 +5321,7 @@ PrefabInstance:
     - target: {fileID: 4492292897743154298, guid: c92df7c7db816444e94d0b5ec0f5dde7,
         type: 3}
       propertyPath: m_SceneBindings.Array.size
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4492292897743154298, guid: c92df7c7db816444e94d0b5ec0f5dde7,
         type: 3}
@@ -5294,6 +5329,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1441291491336728501, guid: 0386b8258ffb94c409eb6d14a8e95ef4,
         type: 2}
+    - target: {fileID: 4492292897743154298, guid: c92df7c7db816444e94d0b5ec0f5dde7,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.data[8].key
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4492292897743154298, guid: c92df7c7db816444e94d0b5ec0f5dde7,
         type: 3}
       propertyPath: m_SceneBindings.Array.data[0].value
@@ -5334,6 +5374,11 @@ PrefabInstance:
       propertyPath: m_SceneBindings.Array.data[7].value
       value: 
       objectReference: {fileID: 786834631}
+    - target: {fileID: 4492292897743154298, guid: c92df7c7db816444e94d0b5ec0f5dde7,
+        type: 3}
+      propertyPath: m_SceneBindings.Array.data[8].value
+      value: 
+      objectReference: {fileID: 1422447991}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -6283,8 +6328,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4775915195663004287, guid: 134d6415d414c11498187de368feddbc,
         type: 3}
+      propertyPath: startsGrown
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4775915195663004287, guid: 134d6415d414c11498187de368feddbc,
+        type: 3}
       propertyPath: _growPercentage
       value: 0.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 4775915195663004287, guid: 134d6415d414c11498187de368feddbc,
+        type: 3}
+      propertyPath: plantGroups.Array.data[2].resourceCapacity
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 5656469501118774270, guid: 134d6415d414c11498187de368feddbc,
         type: 3}
@@ -6557,6 +6612,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8300177740227813824, guid: 6a1a85ef11af0f34fa65b9bfdf03b466,
+        type: 3}
+      propertyPath: oxygenRate
+      value: -0.95
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10200,6 +10260,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnergyDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 1810097653141147758, guid: b5829f9b6cf5c3c4fb5bda0b6be53f56,
+        type: 3}
+      propertyPath: oxygenRateToDecrease
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 8647491337095249049, guid: b5829f9b6cf5c3c4fb5bda0b6be53f56,
         type: 3}

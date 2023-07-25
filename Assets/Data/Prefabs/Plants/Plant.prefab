@@ -6785,17 +6785,17 @@ MonoBehaviour:
     plantName: Water Cactus
     grownPlantHolder: {fileID: 4485803905288797941}
     sproutPlantHolder: {fileID: 7979254649901213864}
-    resourceCapacity: 3
+    resourceCapacity: 2
   - plantType: 1
     plantName: Energy Lettuce
     grownPlantHolder: {fileID: 4752990996006806680}
     sproutPlantHolder: {fileID: 5869509488571032324}
-    resourceCapacity: 2.25
+    resourceCapacity: 1.5
   - plantType: 2
     plantName: Oxygen Fungus
     grownPlantHolder: {fileID: 3247234081790641148}
     sproutPlantHolder: {fileID: 8569222820442706828}
-    resourceCapacity: 1.1
+    resourceCapacity: 0.5
   fruitGrowFactor:
     serializedVersion: 2
     m_Curve:
@@ -6848,7 +6848,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   maxHealthPoints: 100
   healthPoints: 100
-  dryingSpeed: 1.2
+  dryingSpeed: 1.225
   waterSensitivity: 30
   changeType: 0
   type: 0
@@ -6856,7 +6856,7 @@ MonoBehaviour:
   oxygenParticles: {fileID: 1471111809962855004}
   emitter: {fileID: 8476055608702803126}
   hasGrownInitially: 0
-  _growPercentage: 0
+  startsGrown: 0
 --- !u!114 &645206282926566912
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8188,7 +8188,7 @@ PrefabInstance:
     - target: {fileID: 543709241603847523, guid: 07860439467141444a226c6fe238b781,
         type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 543709241603847523, guid: 07860439467141444a226c6fe238b781,
         type: 3}
@@ -8318,7 +8318,7 @@ PrefabInstance:
     - target: {fileID: 3360641420215659775, guid: 07860439467141444a226c6fe238b781,
         type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 4759259855171330927, guid: 07860439467141444a226c6fe238b781,
         type: 3}
@@ -8328,12 +8328,12 @@ PrefabInstance:
     - target: {fileID: 5019626581172340711, guid: 07860439467141444a226c6fe238b781,
         type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 6839905440588563975, guid: 07860439467141444a226c6fe238b781,
         type: 3}
       propertyPath: m_Layer
-      value: 11
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
