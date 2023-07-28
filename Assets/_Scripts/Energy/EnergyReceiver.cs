@@ -21,21 +21,27 @@ public class EnergyReceiver : MonoBehaviour
    {
       _materials = new List<Material>();
       _materials.AddRange(renderer.materials);
-      
-      if (isFinalDoor)
-      {
-         _materials[5] = OffMaterial;
-         GetComponent<Collider>().enabled = false;
-         
-         FuseBox.Instance.OnPowerUp += () =>
-         {
+
+        if (isFinalDoor)
+        {
+            _materials[5] = OffMaterial;
+            _materials[4] = OffMaterial;
+            GetComponent<Collider>().enabled = false;
+
+            FuseBox.Instance.OnPowerUp += () =>
+            {
+                _materials[5] = OnMaterial;
+                _materials[4] = OnMaterial;
+                GetComponent<Collider>().enabled = true;
+                renderer.SetMaterials(_materials);
+            };
+        }
+        else
+        {
             _materials[5] = OnMaterial;
-            GetComponent<Collider>().enabled = true;
-            renderer.SetMaterials(_materials);
-         };
-      }
-      else _materials[5] = OnMaterial;
-      renderer.SetMaterials(_materials);
+            _materials[4] = OnMaterial;
+        }
+        renderer.SetMaterials(_materials);
 
 
    }
