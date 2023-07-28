@@ -9,18 +9,13 @@ using UnityEngine;
 public class FluidGun : MonoBehaviour
 {
     [Header("Bindings")]
-    [SerializeField] private GameObject waterDropPrefab;
-    [SerializeField] private GameObject energyDropPrefab;
     [SerializeField] private Transform shootPoint;
 
-    [Header("Gun parameters")] 
+    [Header("Ammo")]
+    [SerializeField] private AmmoTypeAmmoDataDictionary ammunition;
+    
+    [Header("Gun parameters")]
     [SerializeField] private float shootingPower;
-    
-    [SerializeField] private float waterAmmo;
-    [SerializeField] private float energyAmmo;
-    [SerializeField] private float maxWaterAmmo;
-    [SerializeField] private float maxEnergyAmmo;
-    
     [SerializeField] private float dropGrowSpeed;
     [SerializeField] private float attackSpeed;
     [SerializeField] private float changeSpeed;
@@ -45,8 +40,8 @@ public class FluidGun : MonoBehaviour
         _lastTimeAttacked = float.MinValue;
 
         //Initialize Viusals
-        OnAmmoChanged?.Invoke(AmmoType.WaterAmmo, waterAmmo, maxWaterAmmo);
-        OnAmmoChanged?.Invoke(AmmoType.EnergyAmmo, energyAmmo, maxEnergyAmmo);
+        OnAmmoChanged?.Invoke(AmmoType.WaterAmmo, ammunition[AmmoType.WaterAmmo].currentAmmo, ammunition[AmmoType.WaterAmmo].maxAmmo);
+        OnAmmoChanged?.Invoke(AmmoType.EnergyAmmo,  ammunition[AmmoType.EnergyAmmo].currentAmmo, ammunition[AmmoType.EnergyAmmo].maxAmmo);
         OnChangeType?.Invoke(_currentAmmoType);
 
         ResourcesController.Instance.OnFluidCollected += ReloadAmmo;
@@ -63,52 +58,22 @@ public class FluidGun : MonoBehaviour
             _emitter.Play();
         }
     }
-
-    #region DropCharging
-
+    
     public void ChargeDrop()
     {
         if(CurrentDrop == null) return;
+        AmmoData ammoData = ammunition[_currentAmmoType];
         
-        switch (_currentAmmoType)
-        {
-            case AmmoType.WaterAmmo:
-                ChargeWaterDrop();
-                break;
-            case AmmoType.EnergyAmmo:
-                ChargeEnergyDrop();
-                break;
-        }
-    }
+        if(ammoData.currentAmmo <= 0) return;
 
-    private void ChargeEnergyDrop()
-    {
-        if(energyAmmo <= 0) return;
-
-        energyAmmo -= CurrentDrop.Grow(dropGrowSpeed);
-        if (energyAmmo < 0.01f)    {
-            energyAmmo = 0;
+        ammoData.currentAmmo -= CurrentDrop.Grow(dropGrowSpeed);
+        if (ammoData.currentAmmo < 0.01f)    {
+            ammoData.currentAmmo = 0;
             CurrentDrop.emitterCharge.Stop();
         }
         
-        OnAmmoChanged?.Invoke(AmmoType.EnergyAmmo, energyAmmo, maxEnergyAmmo);
+        OnAmmoChanged?.Invoke(_currentAmmoType, ammoData.currentAmmo, ammoData.maxAmmo);
     }
-    
-    private void ChargeWaterDrop()
-    {
-        if(waterAmmo <= 0) return;
-
-        waterAmmo -= CurrentDrop.Grow(dropGrowSpeed);
-        if (waterAmmo < 0.01f)
-        {
-            waterAmmo = 0;
-            CurrentDrop.emitterCharge.Stop();
-        }
-
-        OnAmmoChanged?.Invoke(AmmoType.WaterAmmo, waterAmmo, maxWaterAmmo);
-    }
-
-    #endregion
     
     public void ShootDrop()
     {
@@ -123,62 +88,28 @@ public class FluidGun : MonoBehaviour
             CurrentDrop = null;
         }
     }
-
-    #region DropInstantiation
-
+    
     public void InstantiateDrop()
     {
         if(Time.time - _lastTimeAttacked < attackSpeed) return;
+        AmmoData ammoData = ammunition[_currentAmmoType];
 
-        switch (_currentAmmoType)
-        {
-            case AmmoType.WaterAmmo:
-                InstantiateWaterDrop();
-                break;
-            case AmmoType.EnergyAmmo:
-                InstantiateEnergyDrop();
-                break;
-        }
+        if(ammoData.currentAmmo <= 0) return;
+        ammoData.currentAmmo -= 0.1f;
+        if (ammoData.currentAmmo < 0.01f) ammoData.currentAmmo = 0;
+            
+        OnAmmoChanged?.Invoke(_currentAmmoType, ammoData.currentAmmo, ammoData.maxAmmo);
+        CurrentDrop = ObjectPool.Instance.InstantiateFromPool(ammoData.bulletPrefab, shootPoint.position, Quaternion.identity).GetComponent<Drop>();
 
         if(CurrentDrop != null) CurrentDrop.Initialize(shootPoint);
     }
 
-    private void InstantiateWaterDrop()
-    {
-        if(waterAmmo <= 0) return;
-        waterAmmo -= 0.1f;
-        if (waterAmmo < 0.01f) waterAmmo = 0;
-            
-        OnAmmoChanged?.Invoke(AmmoType.WaterAmmo, waterAmmo, maxWaterAmmo);
-        CurrentDrop = ObjectPool.Instance.InstantiateFromPool(waterDropPrefab, shootPoint.position, Quaternion.identity).GetComponent<Drop>();
-    }
-
-    private void InstantiateEnergyDrop()
-    { 
-        if(energyAmmo <= 0) return;
-        energyAmmo -= 0.1f;
-        if (energyAmmo < 0.01f) energyAmmo = 0;
-            
-        OnAmmoChanged?.Invoke(AmmoType.EnergyAmmo, energyAmmo, maxEnergyAmmo);
-        CurrentDrop = ObjectPool.Instance.InstantiateFromPool(energyDropPrefab, shootPoint.position, Quaternion.identity).GetComponent<Drop>();
-    }
-
-    #endregion
-   
-
     public void ReloadAmmo(AmmoType ammoType, float quantity)
     {
-        switch (ammoType)
-        {
-            case AmmoType.WaterAmmo:
-                waterAmmo = Mathf.Clamp(waterAmmo + quantity, 0, maxWaterAmmo);
-                OnAmmoChanged?.Invoke(AmmoType.WaterAmmo, waterAmmo, maxWaterAmmo);
-                break;
-            case AmmoType.EnergyAmmo:
-                energyAmmo = Mathf.Clamp(energyAmmo + quantity, 0, maxEnergyAmmo);
-                OnAmmoChanged?.Invoke(AmmoType.EnergyAmmo, energyAmmo, maxEnergyAmmo);
-                break;
-        }
+        AmmoData ammoData = ammunition[ammoType];
+        ammoData.currentAmmo = Mathf.Clamp(ammoData.currentAmmo + quantity, 0, ammoData.maxAmmo);
+        
+        OnAmmoChanged?.Invoke(ammoType, ammoData.currentAmmo, ammoData.maxAmmo);
     }
 
     private void ChangeCurrentAmmoType()

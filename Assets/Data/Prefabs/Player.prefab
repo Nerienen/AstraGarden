@@ -1826,16 +1826,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc828c72bef6f5b48b5988c4e56f37d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waterDropPrefab: {fileID: 2279402026520296736, guid: 21713af7a933ad74c849269b21d71bf5,
-    type: 3}
-  energyDropPrefab: {fileID: 2279402026520296736, guid: 752ed1356699a5e49ab8560e3d40d1d0,
-    type: 3}
   shootPoint: {fileID: 1378559844260265303}
+  ammunition:
+    m_keys: 0000000001000000
+    m_values:
+    - currentAmmo: 5
+      maxAmmo: 10
+      bulletPrefab: {fileID: 2279402026520296736, guid: 21713af7a933ad74c849269b21d71bf5,
+        type: 3}
+    - currentAmmo: 0
+      maxAmmo: 10
+      bulletPrefab: {fileID: 2279402026520296736, guid: 752ed1356699a5e49ab8560e3d40d1d0,
+        type: 3}
   shootingPower: 10
-  waterAmmo: 5
-  energyAmmo: 0
-  maxWaterAmmo: 10
-  maxEnergyAmmo: 5
   dropGrowSpeed: 1
   attackSpeed: 0.3
   changeSpeed: 0.2
