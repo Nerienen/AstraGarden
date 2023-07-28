@@ -60,15 +60,14 @@ public class EnergyPlant : BasePlant
 
     protected override void Recollect()
     {
-        if (EnergyController.Instance != null)
+        if (ResourcesController.Instance == null) return;
+        
+        foreach (PlantGroup plantGroup in _ctx.PlantGroups)
         {
-            foreach (PlantGroup plantGroup in _ctx.PlantGroups)
-            {
-                if (plantGroup.plantType == Plant.PlantTypes.EnergyPlant)
-                {
-                    EnergyController.Instance.FillFluidGunBy(plantGroup.resourceCapacity);
-                }
-            }
+            if (plantGroup.plantType != Plant.PlantTypes.EnergyPlant) continue;
+                
+            ResourcesController.Instance.OnFluidCollected(AmmoType.EnergyAmmo, plantGroup.resourceCapacity);
+            return;
         }
     }
 

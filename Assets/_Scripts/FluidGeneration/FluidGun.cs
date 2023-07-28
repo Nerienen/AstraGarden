@@ -12,89 +12,103 @@ public class FluidGun : MonoBehaviour
     [SerializeField] private GameObject waterDropPrefab;
     [SerializeField] private GameObject energyDropPrefab;
     [SerializeField] private Transform shootPoint;
-    
-    [Header("Display")]
-    [SerializeField] private Liquid energyDisplay;
-    [SerializeField] private Liquid waterDisplay;
-    [SerializeField] private Material waterModeMaterial;
-    [SerializeField] private Material energyModeMaterial;
-    [SerializeField] private MeshRenderer[] weaponModeDisplays;
 
     [Header("Gun parameters")] 
     [SerializeField] private float shootingPower;
+    
     [SerializeField] private float waterAmmo;
     [SerializeField] private float energyAmmo;
     [SerializeField] private float maxWaterAmmo;
     [SerializeField] private float maxEnergyAmmo;
-
+    
+    [SerializeField] private float dropGrowSpeed;
+    [SerializeField] private float attackSpeed;
     [SerializeField] private float changeSpeed;
     private float _lastChange;
-    [field:SerializeReference] public float attackSpeed { get; private set; }
-    [SerializeField] private float cadence;
     private float _lastTimeAttacked;
-    private FMODUnity.StudioEventEmitter _emitter;
 
     [Header("Physics")] 
     [SerializeField] private LayerMask ignoredLayers;
     
-    public Drop currentDrop { get; private set;}
-    private bool _throwsEnergy;
+    public Drop CurrentDrop { get; private set;}
+    private AmmoType _currentAmmoType = AmmoType.WaterAmmo;
+    
+    private StudioEventEmitter _emitter;
+
+    public event Action<AmmoType, float, float> OnAmmoChanged; 
+    public event Action<AmmoType> OnChangeType;
 
     private void Start()
     {
         _emitter = GetComponent<StudioEventEmitter>();
         _lastChange = float.MinValue;
         _lastTimeAttacked = float.MinValue;
-        waterDisplay.fillAmount = 0.61f - 0.21f * waterAmmo / maxWaterAmmo;
-        energyDisplay.fillAmount = 0.61f - 0.21f * energyAmmo / maxEnergyAmmo;
 
-        if (energyDisplay.fillAmount >= 0.61f) energyDisplay.fillAmount = 10;
-        if (waterDisplay.fillAmount >= 0.61f) waterDisplay.fillAmount = 10;
-        DisplayMode();
+        //Initialize Viusals
+        OnAmmoChanged?.Invoke(AmmoType.WaterAmmo, waterAmmo, maxWaterAmmo);
+        OnAmmoChanged?.Invoke(AmmoType.EnergyAmmo, energyAmmo, maxEnergyAmmo);
+        OnChangeType?.Invoke(_currentAmmoType);
+
+        ResourcesController.Instance.OnFluidCollected += ReloadAmmo;
     }
 
     private void Update()
     {
-        if (Input.mouseScrollDelta.y != 0 && currentDrop == null && Time.timeScale > 0 && Time.time - _lastChange >= changeSpeed)
+        if (Input.mouseScrollDelta.y != 0 && CurrentDrop == null && Time.timeScale > 0 && Time.time - _lastChange >= changeSpeed)
         {
             _lastChange = Time.time;
+            ChangeCurrentAmmoType();
+            
+            //Play change type sound
             _emitter.Play();
-            _throwsEnergy = !_throwsEnergy;
-            DisplayMode();
         }
     }
+
+    #region DropCharging
 
     public void ChargeDrop()
     {
-        if(currentDrop == null)return;
-        if (!_throwsEnergy)
+        if(CurrentDrop == null) return;
+        
+        switch (_currentAmmoType)
         {
-            if(waterAmmo <= 0) return;
-
-            waterAmmo -= currentDrop.Grow(cadence);
-            if (waterAmmo < 0.01f)
-            {
-                waterAmmo = 0;
-                currentDrop.emitterCharge.Stop();
-            }
-            
-            waterDisplay.fillAmount = 0.6f - 0.2f * waterAmmo / maxWaterAmmo;
-            if (waterDisplay.fillAmount >= 0.6f) waterDisplay.fillAmount = 10;
-        }
-        else
-        {
-            if(energyAmmo <= 0) return;
-
-            energyAmmo -= currentDrop.Grow(cadence);
-            //Sonido
-            if (energyAmmo < 0.01f)    {
-                energyAmmo = 0;
-                currentDrop.emitterCharge.Stop();
-            }
-            energyDisplay.fillAmount = 0.6f - 0.2f * energyAmmo / maxEnergyAmmo;
-            if (energyDisplay.fillAmount >= 0.6f) energyDisplay.fillAmount = 10;
+            case AmmoType.WaterAmmo:
+                ChargeWaterDrop();
+                break;
+            case AmmoType.EnergyAmmo:
+                ChargeEnergyDrop();
+                break;
         }
     }
+
+    private void ChargeEnergyDrop()
+    {
+        if(energyAmmo <= 0) return;
+
+        energyAmmo -= CurrentDrop.Grow(dropGrowSpeed);
+        if (energyAmmo < 0.01f)    {
+            energyAmmo = 0;
+            CurrentDrop.emitterCharge.Stop();
+        }
+        
+        OnAmmoChanged?.Invoke(AmmoType.EnergyAmmo, energyAmmo, maxEnergyAmmo);
+    }
+    
+    private void ChargeWaterDrop()
+    {
+        if(waterAmmo <= 0) return;
+
+        waterAmmo -= CurrentDrop.Grow(dropGrowSpeed);
+        if (waterAmmo < 0.01f)
+        {
+            waterAmmo = 0;
+            CurrentDrop.emitterCharge.Stop();
+        }
+
+        OnAmmoChanged?.Invoke(AmmoType.WaterAmmo, waterAmmo, maxWaterAmmo);
+    }
+
+    #endregion
     
     public void ShootDrop()
     {
@@ -104,67 +118,92 @@ public class FluidGun : MonoBehaviour
             Vector3 dir = hit.point - shootPoint.position;
             dir.Normalize();
             
-            Debug.DrawLine(shootPoint.position, hit.point, Color.red, 10);
-            Debug.DrawLine(Helpers.Camera.transform.position, hit.point, Color.green, 10);
-            currentDrop.Throw(dir, shootingPower);
-            if(_throwsEnergy) AudioManager.instance.PlayOneShot(FMODEvents.instance.shootEnergy, transform.position);
-            else AudioManager.instance.PlayOneShot(FMODEvents.instance.shootWater, transform.position);
-            currentDrop = null;
+            CurrentDrop.Throw(dir, shootingPower);
+            DisplaySounds();
+            CurrentDrop = null;
         }
     }
+
+    #region DropInstantiation
 
     public void InstantiateDrop()
     {
         if(Time.time - _lastTimeAttacked < attackSpeed) return;
 
-        if (_throwsEnergy)
-        { 
-            if(energyAmmo <= 0) return;
-            energyAmmo -= 0.1f;
-            if (energyAmmo < 0.01f) energyAmmo = 0;
-            
-            energyDisplay.fillAmount = 0.6f - 0.2f * energyAmmo / maxEnergyAmmo;
-            if (energyDisplay.fillAmount >= 0.6f) energyDisplay.fillAmount = 10;
-            currentDrop = ObjectPool.Instance.InstantiateFromPool(energyDropPrefab, shootPoint.position, Quaternion.identity).GetComponent<Drop>();
-        }
-        else
+        switch (_currentAmmoType)
         {
-            if(waterAmmo <= 0) return;
-            waterAmmo -= 0.1f;
-            if (waterAmmo < 0.01f) waterAmmo = 0;
-            
-            waterDisplay.fillAmount = 0.6f - 0.2f * waterAmmo / maxWaterAmmo;
-            if (waterDisplay.fillAmount >= 0.6f) waterDisplay.fillAmount = 10;
-            
-            currentDrop = ObjectPool.Instance.InstantiateFromPool(waterDropPrefab, shootPoint.position, Quaternion.identity).GetComponent<Drop>();
+            case AmmoType.WaterAmmo:
+                InstantiateWaterDrop();
+                break;
+            case AmmoType.EnergyAmmo:
+                InstantiateEnergyDrop();
+                break;
         }
-        
-        currentDrop.Initialize(shootPoint);
+
+        if(CurrentDrop != null) CurrentDrop.Initialize(shootPoint);
     }
+
+    private void InstantiateWaterDrop()
+    {
+        if(waterAmmo <= 0) return;
+        waterAmmo -= 0.1f;
+        if (waterAmmo < 0.01f) waterAmmo = 0;
+            
+        OnAmmoChanged?.Invoke(AmmoType.WaterAmmo, waterAmmo, maxWaterAmmo);
+        CurrentDrop = ObjectPool.Instance.InstantiateFromPool(waterDropPrefab, shootPoint.position, Quaternion.identity).GetComponent<Drop>();
+    }
+
+    private void InstantiateEnergyDrop()
+    { 
+        if(energyAmmo <= 0) return;
+        energyAmmo -= 0.1f;
+        if (energyAmmo < 0.01f) energyAmmo = 0;
+            
+        OnAmmoChanged?.Invoke(AmmoType.EnergyAmmo, energyAmmo, maxEnergyAmmo);
+        CurrentDrop = ObjectPool.Instance.InstantiateFromPool(energyDropPrefab, shootPoint.position, Quaternion.identity).GetComponent<Drop>();
+    }
+
+    #endregion
+   
 
     public void ReloadAmmo(AmmoType ammoType, float quantity)
     {
-        if (ammoType == AmmoType.WaterAmmo)
+        switch (ammoType)
         {
-            waterAmmo = Mathf.Clamp(waterAmmo + quantity, 0, maxWaterAmmo);
-            waterDisplay.fillAmount = 0.6f - 0.2f * waterAmmo / maxWaterAmmo;
-        }
-        else
-        {
-            energyAmmo = Mathf.Clamp(energyAmmo + quantity, 0, maxEnergyAmmo);
-            energyDisplay.fillAmount = 0.6f - 0.2f * energyAmmo / maxEnergyAmmo;
+            case AmmoType.WaterAmmo:
+                waterAmmo = Mathf.Clamp(waterAmmo + quantity, 0, maxWaterAmmo);
+                OnAmmoChanged?.Invoke(AmmoType.WaterAmmo, waterAmmo, maxWaterAmmo);
+                break;
+            case AmmoType.EnergyAmmo:
+                energyAmmo = Mathf.Clamp(energyAmmo + quantity, 0, maxEnergyAmmo);
+                OnAmmoChanged?.Invoke(AmmoType.EnergyAmmo, energyAmmo, maxEnergyAmmo);
+                break;
         }
     }
 
-    private void DisplayMode()
+    private void ChangeCurrentAmmoType()
     {
-        foreach (var display in weaponModeDisplays)
+        int currentValue = (int) _currentAmmoType;
+        _currentAmmoType = (AmmoType) ((currentValue + 1) % 2);
+        
+        //Change visuals
+        OnChangeType?.Invoke(_currentAmmoType);
+    }
+    
+    private void DisplaySounds()
+    {
+        if(AudioManager.instance == null) return;
+        
+        switch (_currentAmmoType)
         {
-            display.material = _throwsEnergy ? energyModeMaterial : waterModeMaterial;
+            case AmmoType.WaterAmmo:
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.shootWater, transform.position);
+                break;
+            case AmmoType.EnergyAmmo:
+                AudioManager.instance.PlayOneShot(FMODEvents.instance.shootEnergy, transform.position);
+                break;
         }
     }
 }
 
-public enum AmmoType{
-    WaterAmmo, EnergyAmmo
-}
+

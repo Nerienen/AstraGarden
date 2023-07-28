@@ -278,12 +278,12 @@ GameObject:
   - component: {fileID: 4356249818970802675}
   - component: {fileID: 1697438071525421598}
   m_Layer: 6
-  m_Name: WeaponCam
+  m_Name: StatsCam
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8964697831851641350
 Transform:
   m_ObjectHideFlags: 0
@@ -338,7 +338,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 65536
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -755,7 +755,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 65527
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -1501,7 +1501,7 @@ Transform:
   - {fileID: 8964697831851641350}
   - {fileID: 7901888881510703228}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!136 &3237762382837949220
 CapsuleCollider:
@@ -1776,6 +1776,7 @@ GameObject:
   - component: {fileID: 1349612204628578312}
   - component: {fileID: 4841819541062357213}
   - component: {fileID: 3959262780375804051}
+  - component: {fileID: 1105049108150501504}
   m_Layer: 6
   m_Name: FluidGun
   m_TagString: Untagged
@@ -1830,23 +1831,14 @@ MonoBehaviour:
   energyDropPrefab: {fileID: 2279402026520296736, guid: 752ed1356699a5e49ab8560e3d40d1d0,
     type: 3}
   shootPoint: {fileID: 1378559844260265303}
-  energyDisplay: {fileID: 169136502224398654}
-  waterDisplay: {fileID: 3469948488073543101}
-  waterModeMaterial: {fileID: 2100000, guid: 6521dc2f8f9be4d4c905b4a812764de6, type: 2}
-  energyModeMaterial: {fileID: 2100000, guid: 533aa497e40329049b543ce5f6ad64f0, type: 2}
-  weaponModeDisplays:
-  - {fileID: 9027615077045428666}
-  - {fileID: 2860200139983419819}
-  - {fileID: 7763945400030654654}
-  - {fileID: 7953534020910022236}
   shootingPower: 10
   waterAmmo: 5
   energyAmmo: 0
   maxWaterAmmo: 10
   maxEnergyAmmo: 5
-  changeSpeed: 1
-  <attackSpeed>k__BackingField: 0.4
-  cadence: 1
+  dropGrowSpeed: 1
+  attackSpeed: 0.3
+  changeSpeed: 0.2
   ignoredLayers:
     serializedVersion: 2
     m_Bits: 192
@@ -1902,6 +1894,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1105049108150501504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8231090818006064100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c65c2606c9a7574a98a5ba04a6298e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  energyDisplay: {fileID: 169136502224398654}
+  waterDisplay: {fileID: 3469948488073543101}
+  waterModeMaterial: {fileID: 2100000, guid: 6521dc2f8f9be4d4c905b4a812764de6, type: 2}
+  energyModeMaterial: {fileID: 2100000, guid: 533aa497e40329049b543ce5f6ad64f0, type: 2}
+  weaponModeDisplays:
+  - {fileID: 7953534020910022236}
+  - {fileID: 7763945400030654654}
+  - {fileID: 2860200139983419819}
+  - {fileID: 9027615077045428666}
 --- !u!1 &8435921616839615944
 GameObject:
   m_ObjectHideFlags: 0

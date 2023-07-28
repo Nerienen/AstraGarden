@@ -61,13 +61,13 @@ public class WaterPlant : BasePlant
 
     protected override void Recollect()
     {
-        if (WaterController.Instance != null)
+        if (ResourcesController.Instance != null)
         {
             foreach (PlantGroup plantGroup in _ctx.PlantGroups)
             {
                 if (plantGroup.plantType == Plant.PlantTypes.WaterPlant)
                 {
-                    WaterController.Instance.FillFluidGunBy(plantGroup.resourceCapacity);
+                    ResourcesController.Instance.OnFluidCollected(AmmoType.WaterAmmo, plantGroup.resourceCapacity);
                 }
             }
         }

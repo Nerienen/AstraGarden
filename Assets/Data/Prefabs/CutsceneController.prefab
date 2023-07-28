@@ -26,14 +26,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 399474139373672094}
-  m_LocalRotation: {x: -0.06495861, y: -0.69897676, z: 0.064012684, w: -0.7093055}
+  m_LocalRotation: {x: 0.064957336, y: 0.69897956, z: -0.064011924, w: 0.70930296}
   m_LocalPosition: {x: 1.1713502, y: 1.5310566, z: 7.743312}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 10.465, y: 89.16, z: 0}
 --- !u!114 &827629494896863546
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d105cfa0be4e9640bad181c411dd9be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPlayingCutscene: 0
   playerTransform: {fileID: 0}
   cameraTransform: {fileID: 0}
   targetTransform: {fileID: 2212481701336684835}
@@ -78,6 +79,10 @@ PlayableDirector:
   - key: {fileID: 285621323006679583, guid: 0386b8258ffb94c409eb6d14a8e95ef4, type: 2}
     value: {fileID: 0}
   - key: {fileID: -2501783271734482419, guid: 0386b8258ffb94c409eb6d14a8e95ef4, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 1441291491336728501, guid: 0386b8258ffb94c409eb6d14a8e95ef4, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 0}
     value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
