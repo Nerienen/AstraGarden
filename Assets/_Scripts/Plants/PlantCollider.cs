@@ -6,11 +6,12 @@ public class PlantCollider : MonoBehaviour
     public struct ColliderData
     {
         public Vector3 center;
-        public Vector3 size;
+        public float radius;
+        public float height;
     }
 
     [SerializeField] Plant plant;
-    [SerializeField] BoxCollider boxCollider;
+    [SerializeField] CapsuleCollider capsuleCollider;
     [SerializeField] ColliderData sproutColliderValues;
     [SerializeField] ColliderData grownColliderValues;
 
@@ -30,13 +31,15 @@ public class PlantCollider : MonoBehaviour
 
     void OnChangedToSprout(Plant.PlantTypes type)
     {
-        boxCollider.center = sproutColliderValues.center;
-        boxCollider.size = sproutColliderValues.size;
+        capsuleCollider.center = sproutColliderValues.center;
+        capsuleCollider.radius = sproutColliderValues.radius;
+        capsuleCollider.height = sproutColliderValues.height;
     }
 
     void OnChangedToGrown()
     {
-        boxCollider.center = grownColliderValues.center;
-        boxCollider.size = grownColliderValues.size;
+        capsuleCollider.center = grownColliderValues.center;
+        capsuleCollider.radius = grownColliderValues.radius;
+        capsuleCollider.height = grownColliderValues.height;
     }
 }

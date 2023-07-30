@@ -9,6 +9,8 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private Transform objectGrabPointTransform;
     [SerializeField] private LayerMask interactLayer;
     [SerializeField] private LayerMask holdersLayer;
+    [SerializeField] private LayerMask grabbableCollisionLayer;
+
 
     [field:SerializeReference] public float interactDistance  { get; private set; }
 
@@ -42,37 +44,11 @@ public class PlayerInteract : MonoBehaviour
             bool holdIsNull = hold == null || hold.IsHoldingObject;
             if (!holdIsNull) _holdPoint = hold;
             
-            //Display outline if watching to an object
-            if (!interacting && hit.transform.TryGetComponent(out _interactable))
-            {
-                if (_interactable.TryGetComponent(out MachineButton button))
-                {
-                    var holder = _interactable.GetComponentInParent<HoldPoint>();
-                    if (holder != null && !holder.IsHoldingObject)
-                        _interactable.SetOutlineWidth(0);
-                    else
-                    {
-                        _interactable.SetOutlineWidth(5);
-                        Plant plant = holder.CurrentHoldenObject.GetComponent<Plant>();
-                        Machine machine = _interactable.GetComponentInParent<Machine>();
-                        _interactable.SetOutlineColor(plant.CurrentType == button.buttonType || plant.PlantData.health <= 0 || machine.GetFillAmount(button.buttonType) <= 0 ? Color.red : Color.green);
-                    }
-                }
-                else _interactable.SetOutlineWidth(5);
-                
-            }
+            DisplayOutline(hit);
 
-            if (!seenInteract && _interactable != null && UiController.instance != null)
-            {
-                seenInteract = true;
-                UiController.instance.DisplayInteract();
-            }
-            if (!seenPlant && _inspectable != null && _interactable.TryGetComponent(out Plant _) && UiController.instance != null && UiController.instance.eDisplayed)
-            {
-                seenPlant = true;
-                UiController.instance.DisplayInspectPlant();
-            }
-            
+            DisplayTutorial();
+
+            //Reset HoldPoint
             if(lastHoldPoint != null && lastHoldPoint != _holdPoint) lastHoldPoint.SetOutlineWidth(0);
             if (lastInteractable != null && lastInteractable != _interactable)
             {
@@ -110,8 +86,51 @@ public class PlayerInteract : MonoBehaviour
         }
     }
 
+    private void DisplayTutorial()
+    {
+        if (!seenInteract && _interactable != null && UiController.instance != null)
+        {
+            seenInteract = true;
+            UiController.instance.DisplayInteract();
+        }
+
+        if (!seenPlant && _inspectable != null && _interactable.TryGetComponent(out Plant _) &&
+            UiController.instance != null && UiController.instance.eDisplayed)
+        {
+            seenPlant = true;
+            UiController.instance.DisplayInspectPlant();
+        }
+    }
+
+    private void DisplayOutline(RaycastHit hit)
+    {
+        if (!interacting && hit.transform.TryGetComponent(out _interactable))
+        {
+            if (_interactable.TryGetComponent(out MachineButton button))
+            {
+                var holder = _interactable.GetComponentInParent<HoldPoint>();
+                if (holder != null && !holder.IsHoldingObject)
+                    _interactable.SetOutlineWidth(0);
+                else
+                {
+                    _interactable.SetOutlineWidth(5);
+                    Plant plant = holder.CurrentHoldenObject.GetComponent<Plant>();
+                    Machine machine = _interactable.GetComponentInParent<Machine>();
+                    _interactable.SetOutlineColor(
+                        plant.CurrentType == button.buttonType || plant.PlantData.health <= 0 ||
+                        machine.GetFillAmount(button.buttonType) <= 0
+                            ? Color.red
+                            : Color.green);
+                }
+            }
+            else _interactable.SetOutlineWidth(5);
+        }
+    }
+
     private void Update()
     {
+        if(Time.timeScale == 0) return;
+        
         if (Input.GetKeyDown(KeyCode.E) && _interactable != null)
         {
             _interactable.SetOutlineWidth(0);
@@ -136,8 +155,27 @@ public class PlayerInteract : MonoBehaviour
                 _holdPoint = null;
             }
         }
+
+        if (interacting && _interactable.TryGetComponent(out Grabbable grab))
+        {
+            MoveGrabbable(grab);
+        }
     }
 
+    private void MoveGrabbable(Grabbable grab)
+    {
+        float dist = 2;
+
+        var cameraTransform = Helpers.Camera.transform;
+        Ray ray = new Ray(cameraTransform.position, cameraTransform.forward);
+
+        if (Physics.Raycast(ray, out var hit, dist, grabbableCollisionLayer)) dist = hit.distance;
+
+        if (Vector3.Distance(grab.transform.position, ray.GetPoint(dist)) > 2.1f)
+            grab.MoveTransform(ray.GetPoint(dist - 0.5f));
+        else grab.Move(ray.GetPoint(dist));
+    }
+    
     private void ResetInteraction()
     {
         _currentPlant.OnPlantDissolve -= ResetInteraction;
@@ -206,26 +244,5 @@ public class PlayerInteract : MonoBehaviour
             _inspectable.StopInspecting();
             _inspectable = null;
         }
-    }
-
-    private bool CheckIfInteracting(bool hold, bool interact)
-    {
-        if (interacting) return false;
-        bool res = false;
-        
-        if (hold)
-        {
-            _holdPoint.SetOutlineWidth(0);
-            _holdPoint = null;
-            res = true;
-        }
-        if (interact)
-        {
-            _interactable.SetOutlineWidth(0);
-            _interactable = null;
-            res = true;
-        }
-
-        return res;
     }
 }

@@ -6717,11 +6717,11 @@ GameObject:
   - component: {fileID: 2625952889867595681}
   - component: {fileID: 4775915195663004287}
   - component: {fileID: 645206282926566912}
-  - component: {fileID: 207476948667938856}
   - component: {fileID: 653728099603191215}
   - component: {fileID: 2827221390086981154}
   - component: {fileID: 6754779273499281818}
   - component: {fileID: 8476055608702803126}
+  - component: {fileID: 8078605732144313494}
   m_Layer: 11
   m_Name: Plant
   m_TagString: Untagged
@@ -6870,27 +6870,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _plantStatsUI: {fileID: 7956132300260991192}
---- !u!65 &207476948667938856
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5656469501118774270}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.6774988, y: 1.1149079, z: 0.72615814}
-  m_Center: {x: -0.0027813911, y: 0.1535204, z: -0.0072803497}
 --- !u!114 &653728099603191215
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6943,13 +6922,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plant: {fileID: 4775915195663004287}
-  boxCollider: {fileID: 207476948667938856}
+  capsuleCollider: {fileID: 8078605732144313494}
   sproutColliderValues:
-    center: {x: -0.025479794, y: -0.010605395, z: -0.005534172}
-    size: {x: 0.41559696, y: 0.60507023, z: 0.3944149}
+    center: {x: -0.015770018, y: -0.050679393, z: 0.0073559284}
+    radius: 0.1105336
+    height: 0.5244799
   grownColliderValues:
-    center: {x: -0.0027813911, y: 0.1535204, z: -0.0072803497}
-    size: {x: 0.6774988, y: 1.1149079, z: 0.72615814}
+    center: {x: -0.004368454, y: 0.14418474, z: 0}
+    radius: 0.2380266
+    height: 0.9380829
 --- !u!114 &8476055608702803126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6981,6 +6962,29 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!136 &8078605732144313494
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5656469501118774270}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.2380266
+  m_Height: 0.9380829
+  m_Direction: 1
+  m_Center: {x: -0.004368454, y: 0.14418474, z: 0}
 --- !u!1 &5791348135024758197
 GameObject:
   m_ObjectHideFlags: 0

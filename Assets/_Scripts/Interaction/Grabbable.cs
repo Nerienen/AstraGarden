@@ -84,15 +84,20 @@ public class Grabbable : Interactable
         }
     }
 
-    private void FixedUpdate()
+    public void MoveTransform(Vector3 targetPos)
     {
-        if(!_grabbing) return;
-        
-        Vector3 targetPos = Vector3.Lerp(transform.position, _grabPoint.transform.position, Time.fixedDeltaTime * 10f);
-        float dist = Vector3.Distance(transform.position, targetPos);
-        Vector3 vel = (targetPos-transform.position).normalized *  dist / Time.fixedDeltaTime;
-        _rb.velocity = vel;
+        targetPos = Vector3.Lerp(transform.position, targetPos, Time.deltaTime*25f);
+        transform.position = targetPos;
     }
+    
+    public void Move(Vector3 targetPos)
+    {
+        targetPos = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * 10f);
+        
+        float dist = Vector3.Distance(transform.position, targetPos);
+        _rb.velocity = (targetPos-transform.position).normalized *  dist / Time.deltaTime;
+    }
+    
 
     public void SetHolden(bool value)
     {
