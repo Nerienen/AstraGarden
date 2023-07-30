@@ -3971,6 +3971,7 @@ Transform:
   - {fileID: 1005688926}
   - {fileID: 786834630}
   - {fileID: 1254339582}
+  - {fileID: 847080219}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3980,6 +3981,67 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1904220700}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &847080218
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 847080219}
+  - component: {fileID: 847080220}
+  m_Layer: 0
+  m_Name: QuestManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &847080219
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847080218}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 835707829}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &847080220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847080218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09b6991a725c1fa47a0c2633c9ad90ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  quests:
+  - narration: {fileID: 11400000, guid: e66ec81427bed614c82d63bb7818a56d, type: 2}
+    <title>k__BackingField: Get Oxygen
+    <description>k__BackingField: 
+    conditions:
+    - description: Grab the "Water Catus" sprout that is floating around the room
+      questCondition: 0
+      completed: 0
+    - description: Use the "Genetic Manipulator" to change the plant type to oxygen
+      questCondition: 1
+      completed: 0
+    onStartQuest:
+      m_PersistentCalls:
+        m_Calls: []
+    onCompleteQuest:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &852139331
 GameObject:
   m_ObjectHideFlags: 0

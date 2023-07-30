@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dd31fc9aedb83646994aa4efab575c5, type: 3}
+  m_Name: Quest_1
+  m_EditorClassIdentifier: 
+  narrations:
+  - startDelay: 0
+    text: Rebooting system...
+    voiceLine:
+      Guid:
+        Data1: -1888023638
+        Data2: 1277845001
+        Data3: -635243104
+        Data4: 128026760
+      Path: event:/Voicelines/Dialogue/RebootingSystem
+    voiceLineDuration: 2
+  - startDelay: 0
+    text: Life Signs Detected.
+    voiceLine:
+      Guid:
+        Data1: -1080904814
+        Data2: 1171566041
+        Data3: 1972570558
+        Data4: -1743405180
+      Path: event:/Voicelines/Dialogue/LifeSignsDetected
+    voiceLineDuration: 2.2
