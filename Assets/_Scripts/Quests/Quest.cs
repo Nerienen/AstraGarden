@@ -6,15 +6,8 @@ using UnityEngine.Events;
 [Serializable]
 public struct Quest 
 {
-    [Header("Narration")]
-    [SerializeField] private QuestNarrations narration;
-
-    [field:Header("UI text")] 
-    [field:SerializeReference] public string title { get; private set; }
-    [field:SerializeReference] public string description { get; private set; }
-
-    [Header("Conditions")] 
-    public Condition[] conditions;
+    [field: Header("Data")]
+    [field: SerializeReference] public QuestData questData { get; private set; }
     
     [Header("Events")] 
     [SerializeField] private UnityEvent onStartQuest;
@@ -23,26 +16,20 @@ public struct Quest
     public void StartQuest()
     {
         onStartQuest?.Invoke();
-        NarrationManager.instance.StartNarration(narration.narrations);
+        NarrationManager.instance.StartNarration(questData.narration.narrations);
     }
 
-    public bool CompleteQuest(QuestCondition[] conditions)
+    public bool CompleteQuest(QuestObjective[] objectives)
     {
-        foreach (var condition in this.conditions)
+        foreach (var objective in questData.objectives)
         {
-            if (!condition.completed && conditions.Contains(condition.questCondition)) condition.completed = true;
+            if (!objective.completed && objectives.Contains(objective.questObjective)) objective.completed = true;
         }
-        if (this.conditions.Any(condition => !condition.completed)) return false;
+        if (questData.objectives.Any(condition => !condition.completed)) return false;
         
         onCompleteQuest?.Invoke();
         return true;
     }
 }
 
-[Serializable]
-public class Condition
-{
-    public string description;
-    public QuestCondition questCondition;
-    public bool completed;
-}
+

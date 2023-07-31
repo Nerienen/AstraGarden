@@ -9,7 +9,7 @@ public class QuestManager : MonoBehaviour
     [SerializeField] private Quest[] quests;
     private int _currentQuestIndex;
 
-    private readonly HashSet<QuestCondition> _conditions = new();
+    private readonly HashSet<QuestObjective> _conditions = new();
 
     public static QuestManager instance { get; private set; }
     private void Awake()
@@ -49,9 +49,9 @@ public class QuestManager : MonoBehaviour
         }    
     }
     
-    public void AddCondition(QuestCondition condition)
+    public void AddCondition(QuestObjective objective)
     {
-        _conditions.Add(condition);
+        _conditions.Add(objective);
     }
 
     private void ContinueQuestLine(int index)

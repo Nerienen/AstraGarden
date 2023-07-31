@@ -1,4 +1,4 @@
-public enum QuestCondition 
+public enum QuestObjective 
 {
     //First Quest
     GrabSprout,

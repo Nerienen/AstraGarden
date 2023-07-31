@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dff1e06ca1373743852bbe4919a07d0, type: 3}
+  m_Name: Quest_1
+  m_EditorClassIdentifier: 
+  narration: {fileID: 11400000, guid: 8dceee45f54e00b41a5476cd80634c0d, type: 2}
+  title: Get Oxygen
+  description: 
+  objectives:
+  - description: Grab the sprout that is floating around the room.
+    questObjective: 0
+    completed: 0
+  - description: "Put it in the \u201CGenetic Manipulator\u201D and press the white
+      button to change its type to \u201Coxygen\u201D."
+    questObjective: 1
+    completed: 0

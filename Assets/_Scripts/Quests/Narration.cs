@@ -5,13 +5,17 @@ using UnityEngine;
 [Serializable]
 public struct Narration 
 {
-    [Header("Narration options")] 
     public float startDelay;
     
-    [Header("Subtitles")]
     public string text;
     
-    [Header("Audio")]
     public EventReference voiceLine;
     public float voiceLineDuration;
+
+    public Narration(float startDelay, string text, float voiceLineDuration) : this()
+    {
+        this.startDelay = startDelay;
+        this.text = text;
+        this.voiceLineDuration = voiceLineDuration;
+    }
 }
