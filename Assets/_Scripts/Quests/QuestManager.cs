@@ -11,6 +11,8 @@ public class QuestManager : MonoBehaviour
 
     private readonly HashSet<QuestObjective> _conditions = new();
 
+    public Action<Quest> onStartQuest;
+
     public static QuestManager instance { get; private set; }
     private void Awake()
     {
@@ -39,6 +41,7 @@ public class QuestManager : MonoBehaviour
     {
         _conditions.Clear();
         quest.StartQuest();
+        onStartQuest?.Invoke(quest);
     }
 
     public void TryCompleteCurrentQuest()
