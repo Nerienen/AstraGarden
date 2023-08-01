@@ -3,7 +3,6 @@ using System.IO;
 using UnityEngine;
 using FMOD.Studio;
 using FMODUnity;
-using System.Diagnostics;
 
 public class OxygenController : MonoBehaviour
 {
@@ -15,6 +14,9 @@ public class OxygenController : MonoBehaviour
     [SerializeField] float currentAmount = 70f;
 
     [SerializeField] float oxygenRate = 0f;
+
+    [SerializeField] bool useOxygenLimit;
+    [HideInInspector][SerializeField] float minOxygenLimit = 70f;
 
     public float MaxAmount {  get { return maxAmount; } }
     public float CurrentAmount {  get { return currentAmount; } set {  currentAmount = value; } }
@@ -52,7 +54,9 @@ public class OxygenController : MonoBehaviour
     void UpdateOxygenOverTime()
     {
         currentAmount += oxygenRate * Time.deltaTime;
+        if (useOxygenLimit) currentAmount = Mathf.Max(minOxygenLimit, currentAmount);
         currentAmount = Mathf.Clamp(currentAmount, 0, maxAmount);
+
         CheckOxygenFinished();
 
         count += 1;
@@ -103,4 +107,8 @@ public class OxygenController : MonoBehaviour
     {
         oxygenRate -= amount;
     }
+
+    public void UseOxygenLimit() => useOxygenLimit = true;
+    public void RemoveOxygenLimit() => useOxygenLimit = false;
+    public void ChangeOxygenLimit(float amount) => minOxygenLimit = amount;
 }
