@@ -8,7 +8,8 @@ public class Plant : Grabbable
     public event Action OnPlantHasStoppedBeenHolden;
     public event Action<PlantTypes> OnChangeTypeReceived;
     public event Action OnPlantFullyGrown;
-
+    public event Action OnCollectPlant;
+    public event Action OnPlantReceivedWater;
     public event Action OnPlantDissolve;
 
     [Header("Plant parameters")]
@@ -271,6 +272,7 @@ public class Plant : Grabbable
         if (_fruitGrowPercentage < 1 || _grabbing || _currentType == PlantTypes.OxygenPlant || _currentPlantState == PlantState.Dead)
             return false;
 
+        OnCollectPlant?.Invoke();
         ResetFruitGrowing();
         _currentPlant.Interact();
         return true;
@@ -318,6 +320,7 @@ public class Plant : Grabbable
     {
         healthPoints += amount * waterSensitivity;
         healthPoints = Mathf.Min(healthPoints, maxHealthPoints);
+        OnPlantReceivedWater?.Invoke();
         
         if(AudioManager.instance != null) AudioManager.instance.PlayOneShot(FMODEvents.instance.waterAbsorb, transform.position);
     }

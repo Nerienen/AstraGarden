@@ -95,7 +95,10 @@ public class Grabbable : Interactable
         targetPos = Vector3.Lerp(transform.position, targetPos, Time.deltaTime * 10f);
         
         float dist = Vector3.Distance(transform.position, targetPos);
-        _rb.velocity = (targetPos-transform.position).normalized *  dist / Time.deltaTime;
+        Vector3 velocity = (targetPos-transform.position).normalized *  dist / Time.deltaTime;
+       
+        if(velocity != new Vector3(Single.NaN, Single.NaN, Single.NaN))
+            _rb.velocity = velocity;
     }
     
 

@@ -17,6 +17,8 @@ public class EnergyReceiver : MonoBehaviour
    public float currentEnergy { get; private set; }
    private List<Material> _materials;
 
+   public event Action onReceiveEnergy;
+
    private void Start()
    {
       _materials = new List<Material>();
@@ -68,6 +70,7 @@ public class EnergyReceiver : MonoBehaviour
 
    public void AddEnergy(float quantity)
    {
+       onReceiveEnergy?.Invoke();
       AudioManager.instance.PlayOneShot(FMODEvents.instance.energyAbsorb, transform.position);
       currentEnergy += quantity;
 

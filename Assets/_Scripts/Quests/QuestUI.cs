@@ -17,6 +17,15 @@ public class QuestUI : MonoBehaviour
     private void Start()
     {
         QuestManager.instance.onStartQuest += StartQuest;
+        QuestManager.instance.onTryCompleteQuest += CheckObjectives;
+    }
+
+    private void CheckObjectives(Objective[] obj)
+    {
+        foreach (Transform objective in objectives)
+        {
+            objective.GetComponent<ObjectiveUI>().SetCheck(obj[objective.GetSiblingIndex()].completed);
+        }
     }
 
     private void StartQuest(Quest quest)

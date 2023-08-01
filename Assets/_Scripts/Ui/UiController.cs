@@ -11,6 +11,8 @@ public class UiController : MonoBehaviour
         public static UiController instance;
         public bool eDisplayed;
 
+        public Action<bool> onSetPaused; 
+
         private void Awake()
         {
             if (instance != null)
@@ -31,10 +33,7 @@ public class UiController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Escape) && !CutsceneController.Instance.isPlayingCutscene)
             {
-                if (Time.timeScale == 1)
-                {
-                    pauseMenu.PauseGame();
-                }
+                if (Time.timeScale == 1) pauseMenu.PauseGame();
                 else pauseMenu.Resume();
             }
         }

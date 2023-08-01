@@ -31,26 +31,24 @@ public class NarrationManager : MonoBehaviour
     private void Start()
     {
         _emitter = GetComponent<StudioEventEmitter>();
-    }
 
-    private void Update()
-    {
-        if (Time.timeScale == 0)
+        UiController.instance.onSetPaused += paused =>
         {
-            _emitter.EventInstance.setPaused(true);
-            subtitles.transform.parent.gameObject.SetActive(false);
-        }
-        else
-        {
-            _emitter.EventInstance.getPaused(out var paused);
+            if (!_narrationIsRunning) return;
+
             if (paused)
+            {
+                _emitter.EventInstance.setPaused(true);
+                subtitles.transform.parent.gameObject.SetActive(false);
+            }
+            else
             {
                 _emitter.EventInstance.setPaused(false);
                 subtitles.transform.parent.gameObject.SetActive(true);
             }
-        }
+        };
     }
-    
+
     public void StartNarration(Narration[] narrations, int index = 0)
     {
         if (_currentNarration != null && _narrationIsRunning) StopCoroutine(_currentNarration);

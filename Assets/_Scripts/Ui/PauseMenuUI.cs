@@ -33,6 +33,8 @@ public class PauseMenuUI : MonoBehaviour
           FindObjectOfType<EventSystem>().SetSelectedGameObject(null);
          Time.timeScale = 0;
          pauseMenu.SetActive(true);
+         
+         UiController.instance.onSetPaused?.Invoke(true);
      }
 
      public void StartGame()
@@ -49,6 +51,8 @@ public class PauseMenuUI : MonoBehaviour
          settingsMenu.DisableSettings();
          settingsMenuWebGL.DisableSettings();
          pauseMenu.SetActive(false);
+         
+         UiController.instance.onSetPaused?.Invoke(false);
      }
 
      private void HomeButtonAction()
