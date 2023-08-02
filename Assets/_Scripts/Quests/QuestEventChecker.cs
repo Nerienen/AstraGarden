@@ -52,7 +52,7 @@ public class QuestEventChecker : MonoBehaviour
         firstReceiver.onReceiveEnergy += () => QuestManager.instance.TryCompleteCurrentQuest(QuestObjective.ShootEnergyToEnergyReceiver);
     }
 
-    private HashSet<Plant> _plants;
+    private readonly HashSet<Plant> _plants = new();
     private void FourthQuestAddEvents(Plant plant)
     {
         if(_plants.Contains(plant)) return;

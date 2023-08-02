@@ -29,7 +29,7 @@ RectTransform:
   m_GameObject: {fileID: 543709241603847523}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1824211205917703036}
@@ -40,8 +40,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 9.159973, y: 4.8461914}
-  m_SizeDelta: {x: 0.5, y: 0.5277}
+  m_AnchoredPosition: {x: 9.159973, y: 4.8135986}
+  m_SizeDelta: {x: 0.5, y: 0.4624}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7061075281467901398
 Canvas:
@@ -88,7 +88,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &6103971941769093172
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,8 +155,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.215}
-  m_SizeDelta: {x: -0.049999975, y: -0.04999998}
+  m_AnchoredPosition: {x: 0, y: -0.089}
+  m_SizeDelta: {x: -0.05, y: -0.2355}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3311315827282952740
 CanvasRenderer:
@@ -186,17 +186,16 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '
+  m_text: '-------------------------
 
-
-    ---------------------
 
     Grown Percentage
 
     100%
 
 
-    ---------------------
+    -------------------------
+
 
     Fruits
     Grown Percentage
@@ -265,7 +264,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0.24833679}
+  m_margin: {x: 0, y: 0.0024290085, z: 0, w: 0.0011715889}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -306,8 +305,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.0024999967, y: 0}
-  m_SizeDelta: {x: -0.055000007, y: -0.04999998}
+  m_AnchoredPosition: {x: 0.0064, y: 0.129}
+  m_SizeDelta: {x: -0.0689, y: -0.2734}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5840229183201172826
 CanvasRenderer:
@@ -337,7 +336,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\n\n\nName: Oxigen Fungus\n\n\u2022 Type:   Water\n\n\u2022 Status: Perfect"
+  m_text: "Name: Oxigen Fungus\n\n\u2022 Type:   Water\n\n\u2022 Status: Perfect"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 464245c10c4214e48a8d4e26760a1f5e, type: 2}
   m_sharedMaterial: {fileID: -8409225184037262119, guid: 464245c10c4214e48a8d4e26760a1f5e,
@@ -401,7 +400,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0.24833679}
+  m_margin: {x: 0, y: 0.03774357, z: 0, w: 0.009340763}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -467,7 +466,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Material: {fileID: 2100000, guid: 4abb25b21680767458889c5187695ea2, type: 2}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
+  m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
