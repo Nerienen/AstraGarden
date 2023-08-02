@@ -186,21 +186,26 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '---------------------------
+  m_text: '
+
+
+    ---------------------
 
     Grown Percentage
 
     100%
 
-    ---------------------------
+
+    ---------------------
 
     Fruits
     Grown Percentage
 
     100%'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 464245c10c4214e48a8d4e26760a1f5e, type: 2}
+  m_sharedMaterial: {fileID: -8409225184037262119, guid: 464245c10c4214e48a8d4e26760a1f5e,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -224,8 +229,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.035
-  m_fontSizeBase: 0.035
+  m_fontSize: 0.025
+  m_fontSizeBase: 0.025
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -301,8 +306,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -0.049999975, y: -0.04999998}
+  m_AnchoredPosition: {x: -0.0024999967, y: 0}
+  m_SizeDelta: {x: -0.055000007, y: -0.04999998}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5840229183201172826
 CanvasRenderer:
@@ -332,10 +337,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Name: Oxigen Fungus\n\n\u2022 Type:   Water\n\n\u2022 Status: Perfect"
+  m_text: "\n\n\nName: Oxigen Fungus\n\n\u2022 Type:   Water\n\n\u2022 Status: Perfect"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 464245c10c4214e48a8d4e26760a1f5e, type: 2}
+  m_sharedMaterial: {fileID: -8409225184037262119, guid: 464245c10c4214e48a8d4e26760a1f5e,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -359,8 +365,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 0.035
-  m_fontSizeBase: 0.035
+  m_fontSize: 0.025
+  m_fontSizeBase: 0.025
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
