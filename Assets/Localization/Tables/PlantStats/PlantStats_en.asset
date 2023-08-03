@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: PlantStats_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: a80806eccf44e0b44856c730a8f69e07, type: 2}
+  m_Metadata:
+    m_Items:
+    - rid: 565511892561035276
+  m_TableData:
+  - m_Id: 24610353152
+    m_Localized: <color={variables.waterColorHex}>Water</color>
+    m_Metadata:
+      m_Items:
+      - rid: 565511892561035276
+  - m_Id: 310716411904
+    m_Localized: <color={variables.oxygenColorHex}>Oxygen</color>
+    m_Metadata:
+      m_Items:
+      - rid: 565511892561035276
+  - m_Id: 817895845888
+    m_Localized: <color={variables.energyColorHex}>cEnergy</color>
+    m_Metadata:
+      m_Items:
+      - rid: 565511892561035276
+  - m_Id: 1137367592960
+    m_Localized: <color={variables.perfectColorHex}Perfect</color>
+    m_Metadata:
+      m_Items:
+      - rid: 565511892561035276
+  - m_Id: 1274332590080
+    m_Localized: <color={variables.needsWaterColorHex}Needs water</color>
+    m_Metadata:
+      m_Items:
+      - rid: 565511892561035276
+  - m_Id: 1327667359744
+    m_Localized: <color={variables.dehydrated}Dehydrated</color>
+    m_Metadata:
+      m_Items:
+      - rid: 565511892561035276
+  - m_Id: 1421850456064
+    m_Localized: <color={variables.dead}Dead</color>
+    m_Metadata:
+      m_Items:
+      - rid: 565511892561035276
+  - m_Id: 2305779052544
+    m_Localized: Type
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2374192345088
+    m_Localized: Status
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2505956405248
+    m_Localized: 'Grown percentage
+
+      {variables.growPercentage}%'
+    m_Metadata:
+      m_Items:
+      - rid: 565511892561035276
+  - m_Id: 3259614113792
+    m_Localized: 'Fruits Grown Percentage
+
+      {variables.growPercentage}%'
+    m_Metadata:
+      m_Items:
+      - rid: 565511892561035276
+  references:
+    version: 2
+    RefIds:
+    - rid: 565511892561035276
+      type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_Entries: 0030646ebe000000003064d008010000003024b4280100000030241f350100000030e40c4b0100000030a47647020000003024f0f602000000302458480000000030e4ba05000000
