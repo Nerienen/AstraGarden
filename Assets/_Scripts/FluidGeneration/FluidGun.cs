@@ -9,6 +9,7 @@ using UnityEngine;
 public class FluidGun : MonoBehaviour
 {
     [Header("Bindings")]
+    [SerializeField] private Player_InputManager inputManager;
     [SerializeField] private Transform shootPoint;
 
     [Header("Ammo")]
@@ -33,6 +34,16 @@ public class FluidGun : MonoBehaviour
     public event Action<AmmoType, float, float> OnAmmoChanged; 
     public event Action<AmmoType> OnChangeType;
 
+    private void OnEnable()
+    {
+        inputManager.OnScroll += OnScroll;
+    }
+
+    private void OnDisable()
+    {
+        inputManager.OnScroll -= OnScroll;
+    }
+
     private void Start()
     {
         _emitter = GetComponent<StudioEventEmitter>();
@@ -47,18 +58,6 @@ public class FluidGun : MonoBehaviour
         ResourcesController.Instance.OnFluidCollected += ReloadAmmo;
     }
 
-    private void Update()
-    {
-        if (Input.mouseScrollDelta.y != 0 && CurrentDrop == null && Time.timeScale > 0 && Time.time - _lastChange >= changeSpeed)
-        {
-            _lastChange = Time.time;
-            ChangeCurrentAmmoType();
-            
-            //Play change type sound
-            _emitter.Play();
-        }
-    }
-    
     public void ChargeDrop()
     {
         if(CurrentDrop == null) return;
@@ -133,6 +132,18 @@ public class FluidGun : MonoBehaviour
             case AmmoType.EnergyAmmo:
                 AudioManager.instance.PlayOneShot(FMODEvents.instance.shootEnergy, transform.position);
                 break;
+        }
+    }
+
+    private void OnScroll()
+    {
+        if (CurrentDrop == null && Time.timeScale > 0 && Time.time - _lastChange >= changeSpeed)
+        {
+            _lastChange = Time.time;
+            ChangeCurrentAmmoType();
+
+            //Play change type sound
+            _emitter.Play();
         }
     }
 }

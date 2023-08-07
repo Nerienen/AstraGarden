@@ -406,6 +406,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c105090752850040a3d3d1b36a90f24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputManager: {fileID: 0}
   sensitivityX: 100
   sensitivityY: 100
 --- !u!1 &1261796277992981120
@@ -824,6 +825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c105090752850040a3d3d1b36a90f24, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputManager: {fileID: 3020029035827545766}
   sensitivityX: 100
   sensitivityY: 100
 --- !u!114 &7502693052131905371
@@ -1478,6 +1480,7 @@ GameObject:
   - component: {fileID: 682679222044484194}
   - component: {fileID: 9128023895771302182}
   - component: {fileID: 4559103212328658823}
+  - component: {fileID: 3020029035827545766}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -1688,6 +1691,7 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   fluidGun: {fileID: 1349612204628578312}
+  inputManager: {fileID: 3020029035827545766}
 --- !u!114 &682679222044484194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1707,6 +1711,10 @@ MonoBehaviour:
   holdersLayer:
     serializedVersion: 2
     m_Bits: 513
+  grabbableCollisionLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  inputManager: {fileID: 3020029035827545766}
   <interactDistance>k__BackingField: 3.75
   seenPlant: 0
   seenInteract: 0
@@ -1764,6 +1772,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3020029035827545766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8148942797581835539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc7ee37922d15b9418aa49bdbc332be1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8231090818006064100
 GameObject:
   m_ObjectHideFlags: 0
@@ -1826,6 +1846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc828c72bef6f5b48b5988c4e56f37d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inputManager: {fileID: 3020029035827545766}
   shootPoint: {fileID: 1378559844260265303}
   ammunition:
     m_keys: 0000000001000000

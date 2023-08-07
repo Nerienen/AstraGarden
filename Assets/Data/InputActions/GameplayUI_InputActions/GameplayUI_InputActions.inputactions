@@ -1,0 +1,34 @@
+{
+    "name": "GameplayUI_InputActions",
+    "maps": [
+        {
+            "name": "GameplayUI_ActionMap",
+            "id": "237a6b34-04de-42be-9dc9-8cb0e549516c",
+            "actions": [
+                {
+                    "name": "Cancel",
+                    "type": "Button",
+                    "id": "5f8911f8-31cf-4078-8391-b033925c628a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "377cabf7-4381-41d6-bb17-f2ca8a88bd78",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Cancel",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

@@ -1,7 +1,7 @@
-using ProjectUtils.Helpers;
 using System;
 using FMODUnity;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : CharacterMovement
 {
@@ -9,12 +9,17 @@ public class PlayerController : CharacterMovement
 
     [Header("Bindings")]
     [SerializeField] private FluidGun fluidGun;
+    [SerializeField] private Player_InputManager inputManager;
+
     private Vector3 _input;
     private PlayerInteract _playerInteract;
 
     private bool _isDead;
 
     private StudioEventEmitter _emitter;
+
+    bool _isCharging;
+    bool _isFiring;
     
     public static PlayerController Instance { get; private set; }
     
@@ -35,6 +40,20 @@ public class PlayerController : CharacterMovement
 
         _emitter = GetComponent<StudioEventEmitter>();
        // _emitter.Play();
+    }
+
+    private void OnEnable()
+    {
+        inputManager.OnStartCharging += OnStartCharging;
+        inputManager.OnStopCharging += OnStopCharging;
+        inputManager.OnFire += OnFire;
+    }
+
+    private void OnDisable()
+    {
+        inputManager.OnStartCharging -= OnStartCharging;
+        inputManager.OnStopCharging -= OnStopCharging;
+        inputManager.OnFire -= OnFire;
     }
 
     private void Start()
@@ -64,28 +83,24 @@ public class PlayerController : CharacterMovement
         if (_isDead) return;
         
         //_emitter.EventInstance.setParameterByName("Oxygen", OxygenController.Instance.CurrentAmount/OxygenController.Instance.MaxAmount);
-        _input = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+        _input = new Vector3(inputManager.MoveInput.x, 0, inputManager.MoveInput.y);
         
-        if (Input.GetMouseButton(0))
+        if (_isCharging)
         {
             if(fluidGun.CurrentDrop == null)fluidGun.InstantiateDrop();
             fluidGun.ChargeDrop();
         }
-        if (Input.GetMouseButtonUp(0) && fluidGun.CurrentDrop != null)
-        {
-            fluidGun.CurrentDrop.emitterCharge.Stop();
-        }
-
        
-        if (Input.GetMouseButton(1) && fluidGun.CurrentDrop != null)
+        if (_isFiring)
         {
+            _isFiring = false;
             fluidGun.ShootDrop();
         }
     }
     
     private void FixedUpdate()
     {
-        if (_isDead) return;
+        if (_isDead ) return;
         MovementUpdate(_input);
     }
 
@@ -94,4 +109,31 @@ public class PlayerController : CharacterMovement
         _isDead = true;
         OnHasDied?.Invoke();
     }
+
+    #region Input system implementation
+    void OnStartCharging()
+    {
+        if (Time.timeScale <= 0 || _isDead) return;
+        _isCharging = true;
+    }
+
+    void OnStopCharging()
+    {
+        if (Time.timeScale <= 0 || _isDead) return;
+
+        _isCharging = false;
+
+        if (fluidGun.CurrentDrop)
+        {
+            fluidGun.CurrentDrop.emitterCharge.Stop();
+        }
+    }
+
+    void OnFire()
+    {
+        if (Time.timeScale <= 0 || _isDead || fluidGun.CurrentDrop == null) return;
+
+        _isFiring = true;
+    }
+    #endregion
 }

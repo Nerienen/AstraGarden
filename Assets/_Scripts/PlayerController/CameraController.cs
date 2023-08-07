@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
+    [SerializeField] private Player_InputManager inputManager;
+
     public float sensitivityX;
     public float sensitivityY;
     private float _x, _y;
@@ -30,9 +32,9 @@ public class CameraController : MonoBehaviour
             transform.localRotation = Helpers.Camera.transform.localRotation;
             return;
         }
-        
-        _x -= Input.GetAxisRaw("Mouse Y") * sensitivityY * Time.deltaTime;
-        _y += Input.GetAxisRaw("Mouse X") * sensitivityX * Time.deltaTime;
+
+        _x -= inputManager.MouseInput.y * sensitivityY * Time.deltaTime;
+        _y += inputManager.MouseInput.x * sensitivityX * Time.deltaTime;
 
         _x = Mathf.Clamp(_x, -85f, 90f);
         

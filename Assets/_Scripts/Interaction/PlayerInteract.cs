@@ -11,6 +11,7 @@ public class PlayerInteract : MonoBehaviour
     [SerializeField] private LayerMask holdersLayer;
     [SerializeField] private LayerMask grabbableCollisionLayer;
 
+    [SerializeField] private Player_InputManager inputManager;
 
     [field:SerializeReference] public float interactDistance  { get; private set; }
 
@@ -29,6 +30,16 @@ public class PlayerInteract : MonoBehaviour
     {
         if(instance == null) instance = this;
         else Destroy(gameObject);
+    }
+
+    private void OnEnable()
+    {
+        inputManager.OnInteract += OnInteract;
+    }
+
+    private void OnDisable()
+    {
+        inputManager.OnInteract -= OnInteract;
     }
 
     private void LateUpdate()
@@ -131,31 +142,6 @@ public class PlayerInteract : MonoBehaviour
     {
         if(Time.timeScale == 0) return;
         
-        if (Input.GetKeyDown(KeyCode.E) && _interactable != null)
-        {
-            _interactable.SetOutlineWidth(0);
-            if(!_interactable.Interact(objectGrabPointTransform))
-                _interactable.Interact();
-
-            if (!interacting && _currentPlant != null)
-            {
-                _currentPlant.OnPlantDissolve -= ResetInteraction;
-                _currentPlant = null;
-            }
-            if (interacting && _interactable.TryGetComponent(out _currentPlant))
-                _currentPlant.OnPlantDissolve += ResetInteraction;
-
-            if (_holdPoint != null)
-            {
-                if(HandleTank()) return;
-                if(!_interactable.TryGetComponent(out Plant _) && _holdPoint.justForPlants) return;
-                
-                _holdPoint.SetOutlineWidth(0);
-                _holdPoint.HoldObject(_interactable.transform);
-                _holdPoint = null;
-            }
-        }
-
         if (interacting && _interactable.TryGetComponent(out Grabbable grab))
         {
             MoveGrabbable(grab);
@@ -226,7 +212,7 @@ public class PlayerInteract : MonoBehaviour
     private void ManageInspectable(RaycastHit hit)
     {
         IInspectable inspectable = hit.transform.GetComponent<IInspectable>();
-        if (Input.GetKey(KeyCode.Tab) || Input.GetKey(KeyCode.Q))
+        if (inputManager.InspectInput)
         {
             if (_inspectable != null && inspectable != null && inspectable != _inspectable)
             {
@@ -245,4 +231,34 @@ public class PlayerInteract : MonoBehaviour
             _inspectable = null;
         }
     }
+
+    #region Input system implementation
+    private void OnInteract()
+    {
+        if (_interactable != null)
+        {
+            _interactable.SetOutlineWidth(0);
+            if (!_interactable.Interact(objectGrabPointTransform))
+                _interactable.Interact();
+
+            if (!interacting && _currentPlant != null)
+            {
+                _currentPlant.OnPlantDissolve -= ResetInteraction;
+                _currentPlant = null;
+            }
+            if (interacting && _interactable.TryGetComponent(out _currentPlant))
+                _currentPlant.OnPlantDissolve += ResetInteraction;
+
+            if (_holdPoint != null)
+            {
+                if (HandleTank()) return;
+                if (!_interactable.TryGetComponent(out Plant _) && _holdPoint.justForPlants) return;
+
+                _holdPoint.SetOutlineWidth(0);
+                _holdPoint.HoldObject(_interactable.transform);
+                _holdPoint = null;
+            }
+        }
+    }
+    #endregion
 }

@@ -138,6 +138,16 @@ PrefabInstance:
       propertyPath: collisionLayer.m_Bits
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1349612204628578312, guid: d5f5aa753e6023240a761dcc3e7d4ba7,
+        type: 3}
+      propertyPath: ammunition.m_values.Array.data[0].maxAmmo
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349612204628578312, guid: d5f5aa753e6023240a761dcc3e7d4ba7,
+        type: 3}
+      propertyPath: ammunition.m_values.Array.data[0].currentAmmo
+      value: 70
+      objectReference: {fileID: 0}
     - target: {fileID: 2701783311875031375, guid: d5f5aa753e6023240a761dcc3e7d4ba7,
         type: 3}
       propertyPath: m_RootOrder
