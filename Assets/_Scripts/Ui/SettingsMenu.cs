@@ -6,6 +6,8 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 public class SettingsMenu : MonoBehaviour
 {
@@ -31,11 +33,27 @@ public class SettingsMenu : MonoBehaviour
     private Vector2 _currentResolution;
     [SerializeField] private TMP_Dropdown screenMode;
     private FullScreenMode _currentScreenMode;
+    [SerializeField] private TMP_Dropdown language;
+    private int _currentLanguageIndex;
 
     [Header("FPS")] 
     [SerializeField] private Toggle vSync;
 
     private void Start()
+    {
+        StartVolumeSettings();
+        StartCameraSettings();
+        StartRenderSettings();
+        StartLanguageSettings();
+        LoadLanguageSetting();
+
+        if (exitButton != null)
+        {
+            exitButton.onClick.AddListener(ExitButton);
+        }
+    }
+
+    void StartVolumeSettings()
     {
         AudioManager audioManager = AudioManager.instance;
 
@@ -62,26 +80,32 @@ public class SettingsMenu : MonoBehaviour
             musicVolume.SetValueWithoutNotify(audioManager.MusicVolume);
             musicVolume.onValueChanged.AddListener(audioManager.SetMusicVolume);
         }
+    }
 
+    private void StartCameraSettings()
+    {
         CameraController cameraController = Helpers.Camera.GetComponent<CameraController>();
-        if (sensitivityX != null &&  cameraController != null)
+        if (sensitivityX != null && cameraController != null)
         {
             sensitivityX.SetValueWithoutNotify(cameraController.sensitivityX);
             sensitivityX.onValueChanged.AddListener(cameraController.SetSensX);
         }
-        
-        if (sensitivityY != null &&  cameraController != null)
+
+        if (sensitivityY != null && cameraController != null)
         {
             sensitivityY.SetValueWithoutNotify(cameraController.sensitivityY);
             sensitivityY.onValueChanged.AddListener(cameraController.SetSensY);
         }
-        
-        if (fov != null &&  cameraController != null)
+
+        if (fov != null && cameraController != null)
         {
             fov.SetValueWithoutNotify(Helpers.Camera.fieldOfView);
             fov.onValueChanged.AddListener(cameraController.SetFov);
         }
+    }
 
+    private void StartRenderSettings()
+    {
         if (resolution != null)
         {
             resolution.options = new List<TMP_Dropdown.OptionData>()
@@ -104,10 +128,31 @@ public class SettingsMenu : MonoBehaviour
         {
             vSync.onValueChanged.AddListener(ToggleVsync);
         }
+    }
 
-        if (exitButton != null)
+    void StartLanguageSettings()
+    {
+        if (language != null)
         {
-            exitButton.onClick.AddListener(ExitButton);
+            language.options = new List<TMP_Dropdown.OptionData>()
+            {
+                new("English"), new("Spanish"), new("Catalan")
+            };
+            language.onValueChanged.AddListener(ChangeLanguage);
+        }
+    }
+
+    private void LoadLanguageSetting()
+    {
+        if (language != null)
+        {
+            var init = LocalizationSettings.InitializationOperation;
+            init.Completed += a =>
+            {
+                _currentLanguageIndex = PlayerPrefs.GetInt("languageIndex", 0);
+                LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[_currentLanguageIndex];
+                language.value = _currentLanguageIndex;
+            };
         }
     }
 
@@ -172,6 +217,13 @@ public class SettingsMenu : MonoBehaviour
     private void ToggleVsync(bool value)
     {
         QualitySettings.vSyncCount = value ? 1 : 0;
+    }
+
+    private void ChangeLanguage(int index)
+    {
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[index];
+        _currentLanguageIndex = index;
+        PlayerPrefs.SetInt("languageIndex", _currentLanguageIndex);
     }
 
     public void DisableSettings()
