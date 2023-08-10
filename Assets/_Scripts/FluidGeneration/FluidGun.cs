@@ -37,11 +37,13 @@ public class FluidGun : MonoBehaviour
     private void OnEnable()
     {
         inputManager.OnScroll += OnScroll;
+        inputManager.OnSwap += OnScroll;
     }
 
     private void OnDisable()
     {
         inputManager.OnScroll -= OnScroll;
+        inputManager.OnSwap -= OnScroll;
     }
 
     private void Start()

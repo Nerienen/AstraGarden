@@ -10,6 +10,7 @@ public class Player_InputManager : MonoBehaviour
     public event Action OnInteract;
     public event Action OnCancel;
     public event Action OnScroll;
+    public event Action OnSwap;
 
     public Vector2 MoveInput { get; private set; }
     public Vector2 MouseInput { get; private set; }
@@ -41,9 +42,8 @@ public class Player_InputManager : MonoBehaviour
 
         _inputActions.FirstPersonCharacter_ActionMap.Inspect.performed += Inspect;
 
-        _inputActions.FirstPersonCharacter_ActionMap.Cancel.performed += Cancel;
-
         _inputActions.FirstPersonCharacter_ActionMap.Scroll.performed += Scroll;
+        _inputActions.FirstPersonCharacter_ActionMap.Swap.performed += Swap;
     }
 
     private void OnDisable()
@@ -63,9 +63,8 @@ public class Player_InputManager : MonoBehaviour
 
         _inputActions.FirstPersonCharacter_ActionMap.Interact.performed -= Interact;
 
-        _inputActions.FirstPersonCharacter_ActionMap.Cancel.performed -= Cancel;
-
         _inputActions.FirstPersonCharacter_ActionMap.Scroll.performed -= Scroll;
+        _inputActions.FirstPersonCharacter_ActionMap.Swap.performed -= Swap;
 
         _inputActions.Disable();
     }
@@ -105,13 +104,13 @@ public class Player_InputManager : MonoBehaviour
         InspectInput = ctx.ReadValue<float>() > 0.1f;
     }
 
-    private void Cancel(InputAction.CallbackContext ctx)
-    {
-        OnCancel?.Invoke();
-    }
-
     private void Scroll(InputAction.CallbackContext ctx)
     {
         OnScroll?.Invoke();
+    }
+
+    private void Swap(InputAction.CallbackContext ctx)
+    {
+        OnSwap?.Invoke();
     }
 }

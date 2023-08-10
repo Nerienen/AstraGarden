@@ -60,15 +60,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Cancel",
-                    "type": "Button",
-                    "id": "b433e8e5-a188-4b35-8209-47c81825acf4",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Scroll",
                     "type": "Value",
                     "id": "d8e5ac8c-312b-498f-9646-8c6564af7328",
@@ -76,6 +67,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Swap",
+                    "type": "Button",
+                    "id": "6f4db1e5-9f2c-4e94-a33a-d36e41c30928",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -158,6 +158,17 @@
                 },
                 {
                     "name": "",
+                    "id": "f5dfef7f-5075-4f5f-bcf7-98765554fc70",
+                    "path": "<Gamepad>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "ddb5f90f-cf8d-4aca-98e7-8018bf8a22a5",
                     "path": "<Mouse>/leftButton",
                     "interactions": "",
@@ -169,8 +180,8 @@
                 },
                 {
                     "name": "",
-                    "id": "9c5da21f-7e7a-44c7-9c85-2076df4512f3",
-                    "path": "<HID::Logitech Logitech Dual Action>/trigger",
+                    "id": "a0c6170d-1457-420e-aa31-13c43d699892",
+                    "path": "<Gamepad>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -182,6 +193,17 @@
                     "name": "",
                     "id": "ac731184-1e9f-432a-a4b1-5eb77e1ac1b6",
                     "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "43d1fd50-317d-4246-8a3b-2f77dab72a72",
+                    "path": "<Gamepad>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
@@ -235,12 +257,23 @@
                 },
                 {
                     "name": "",
-                    "id": "b5cde44b-6095-45a9-8087-49eef82ce545",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
+                    "id": "ae35bf30-e967-474d-be60-90db0d185b3e",
+                    "path": "<Gamepad>/leftTrigger",
+                    "interactions": "Press(behavior=2)",
                     "processors": "",
                     "groups": "",
-                    "action": "Cancel",
+                    "action": "Inspect",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "aa51bd05-0131-4e8a-8f3b-a25432ee0295",
+                    "path": "<Gamepad>/rightTrigger",
+                    "interactions": "Press(behavior=2)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Inspect",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -252,6 +285,28 @@
                     "processors": "",
                     "groups": "",
                     "action": "Scroll",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c39e8d92-c13f-40c3-a075-2492294b6e5b",
+                    "path": "<Gamepad>/leftShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Swap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "52a39839-10aa-4a93-a21a-4321523023d7",
+                    "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Swap",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
