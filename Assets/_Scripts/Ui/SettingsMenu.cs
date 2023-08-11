@@ -39,6 +39,9 @@ public class SettingsMenu : MonoBehaviour
     [Header("FPS")] 
     [SerializeField] private Toggle vSync;
 
+    [Header("Selectables")]
+    [SerializeField] private Selectable firstMainMenuSelectable;
+
     private void Start()
     {
         StartVolumeSettings();
@@ -190,7 +193,12 @@ public class SettingsMenu : MonoBehaviour
             vSync.SetIsOnWithoutNotify(QualitySettings.vSyncCount == 1);
         }
         
-        settingsMenu.SetActive(true);
+        //settingsMenu.SetActive(true);
+        if (settingsMenu.TryGetComponent(out CanvasGroup canvasGroup))
+        {
+            canvasGroup.alpha = 1;
+            canvasGroup.blocksRaycasts = true;
+        }
     }
     
     private void ChangeResolution(int res)
@@ -233,6 +241,12 @@ public class SettingsMenu : MonoBehaviour
     
     private void ExitButton()
     {
-        settingsMenu.SetActive(false);
+        //settingsMenu.SetActive(false);
+        if (settingsMenu.TryGetComponent(out CanvasGroup canvasGroup))
+        {
+            canvasGroup.alpha = 0;
+            canvasGroup.blocksRaycasts = false;
+        }
+        firstMainMenuSelectable.Select();
     }
 }

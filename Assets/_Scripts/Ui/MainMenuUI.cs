@@ -12,9 +12,14 @@ public class MainMenuUI : MonoBehaviour
     [SerializeField] private Button startButton;
     [SerializeField] private Button settingsButton;
     [SerializeField] private Button quitButton;
+
+    [Header("Selectables")]
+    [SerializeField] private Selectable firstSettingsSelectable;
+    [SerializeField] private Selectable firstSettingsWebGLSelectable;
+
     private void Start()
     {
-        if (startButton != null) startButton.onClick.AddListener(StarGame);
+        if (startButton != null) startButton.onClick.AddListener(StartGame);
         if (quitButton != null) quitButton.onClick.AddListener(QuitGame);
         if (settingsButton != null) settingsButton.onClick.AddListener(Settings);
 
@@ -22,25 +27,32 @@ public class MainMenuUI : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
     }
     
-    private void StarGame()
+    private void StartGame()
     {
         startButton.enabled = false;
         SceneManager.LoadScene(1);
     }
     private void QuitGame()
     {
-       #if UNITY_WEBGL
+#if UNITY_WEBGL
            return; 
-       #endif
+#elif UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
         Application.Quit();
+#endif
     }
+
     private void Settings()
     {
-        #if UNITY_WEBGL
-           settingsMenuWebGL.EnableSettings();
-           return; 
-        #endif
+#if UNITY_WEBGL
+        settingsMenuWebGL.EnableSettings();
+        firstSettingsWebGLSelectable.Select();
+        return; 
+#else
         settingsMenu.EnableSettings();
+        firstSettingsSelectable.Select();
+#endif
     }
     
 }
