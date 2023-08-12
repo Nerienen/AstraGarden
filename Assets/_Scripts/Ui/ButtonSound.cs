@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class ButtonSound : MonoBehaviour, IPointerEnterHandler, IPointerDownHandler
 {
-    public void OnPointerEnter(PointerEventData eventData)
+    private void PlaySelectSound()
     {
         if (AudioManager.instance != null)
         {
@@ -14,11 +14,31 @@ public class ButtonSound : MonoBehaviour, IPointerEnterHandler, IPointerDownHand
         }
     }
 
-    public void OnPointerDown(PointerEventData eventData)
+    private void PlaySubmitSound()
     {
         if (AudioManager.instance != null)
         {
             AudioManager.instance.PlayOneShot(FMODEvents.instance.menuSelect, Helpers.Camera.transform.position);
         }
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        PlaySelectSound();
+    }
+
+    public void OnPointerDown(PointerEventData eventData)
+    {
+        PlaySubmitSound();
+    }
+
+    public void OnSelect()
+    {
+        PlaySelectSound();
+    }
+
+    public void OnSubmit()
+    {
+        PlaySubmitSound();
     }
 }
