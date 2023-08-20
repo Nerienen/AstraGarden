@@ -2,6 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Components;
+using UnityEngine.Localization.SmartFormat.PersistentVariables;
 
 [RequireComponent(typeof(LocalizeStringEvent))]
 public class LocalizedDynamicText : MonoBehaviour

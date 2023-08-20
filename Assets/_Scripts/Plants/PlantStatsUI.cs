@@ -8,8 +8,22 @@ using UnityEngine;
 
 public class PlantStatsUI : MonoBehaviour
 {
+    [SerializeField] private LocalizedDynamicText nameVariableLocalizedText;
+    [SerializeField] private LocalizedDynamicText typeVariableLocalizedText;
+    [SerializeField] private LocalizedDynamicText statusVariableLocalizedText;
+    [SerializeField] private LocalizedDynamicText lightRequirementVariableLocalizedText;
+
+    [SerializeField] private TMP_Text nameVariableText;
+    [SerializeField] private TMP_Text typeVariableText;
+    [SerializeField] private TMP_Text statusVariableText;
+    [SerializeField] private TMP_Text grownPercentageVariableText;
+    [SerializeField] private TMP_Text fruitsGrownPercentageVariableText;
+    [SerializeField] private TMP_Text lightRequirementVariableText;
+
     [SerializeField] private TMP_Text nameTypeStatus;
     [SerializeField] private TMP_Text percentages;
+
+    [SerializeField] private float expandedScale = 0.9f;
 
     private void Start()
     {
@@ -18,17 +32,22 @@ public class PlantStatsUI : MonoBehaviour
 
     public void SetData(PlantData plantData)
     {
-        nameTypeStatus.text = $"Name: {plantData.name}\n\n• Type:   {GetType(plantData.type)}\n\n• Status: {GetStatus(plantData.health)}";
-        percentages.text = $"-------------------------\n\nGrown Percentage\n{GetPercentage(plantData.growPercentage)}\n\n-------------------------\n\nFruits Grown Percentage\n{GetPercentage(plantData.fruitsGrowPercentage)}";
+
+        nameVariableLocalizedText.DisplayLine(plantData.name);
+        typeVariableLocalizedText.DisplayLine(GetType(plantData.type));
+        statusVariableLocalizedText.DisplayLine(GetStatus(plantData.health));
+        grownPercentageVariableText.text = GetPercentage(plantData.growPercentage);
+        fruitsGrownPercentageVariableText.text = GetPercentage(plantData.fruitsGrowPercentage);
+        lightRequirementVariableLocalizedText.DisplayLine(GetRequiresLight(plantData.needsLightToGrow));
     }
 
     private string GetType(Plant.PlantTypes type)
     {
         return type switch
         {
-            Plant.PlantTypes.WaterPlant => $"<color={GetColorHex(new Color(0, 8f * 16f / 255f, 1))}>Water</color>",
-            Plant.PlantTypes.EnergyPlant => $"<color={GetColorHex(new Color(15f * 16f / 255f, 0.8f, 0))}>Energy</color>",
-            Plant.PlantTypes.OxygenPlant => $"<color={GetColorHex(new Color(0.5f, 1f, 1f))}>Oxygen</color>"
+            Plant.PlantTypes.WaterPlant => "type_water",
+            Plant.PlantTypes.EnergyPlant => "type_energy",
+            Plant.PlantTypes.OxygenPlant => "type_oxygen"
         };
     }
 
@@ -36,11 +55,17 @@ public class PlantStatsUI : MonoBehaviour
     {
         return health switch
         {
-            >= 85 => $"<color={GetColorHex(new Color(0f, 1f, 0.3f))}>Perfect</color>",
-            >= 50 => $"<color={GetColorHex(new Color(1f, 0.6f, 0))}>Needs Water</color>",
-            > 0 => $"<color={GetColorHex(new Color(1, 0.1f, 0))}>Dehydrated</color>",
-            <= 0 => $"<color={GetColorHex(new Color(0.2f, 0.2f, 0.2f))}>Dead</color>"
+            >= 85 => "status_perfect",
+            >= 50 => "status_needs_water",
+            > 0 => "status_dehydrated",
+            <= 0 => "status_dead"
         };
+    }
+
+    private string GetRequiresLight(bool requiresLight)
+    {
+        if (requiresLight) { return "light_requirement_yes"; }
+        return "light_requirement_no";
     }
 
     private string GetPercentage(float value)
@@ -77,7 +102,7 @@ public class PlantStatsUI : MonoBehaviour
         transform.localScale = Vector3.zero;
       
         gameObject.SetActive(true);
-        await transform.DoScaleAsync(Vector3.one*0.9f, 0.15f, Transitions.TimeScales.Scaled);
+        await transform.DoScaleAsync(Vector3.one * expandedScale, 0.15f, Transitions.TimeScales.Scaled);
     }
 
     public async Task DisableAsync()

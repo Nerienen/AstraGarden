@@ -20,37 +20,37 @@ MonoBehaviour:
     - rid: 565511892561035276
   m_TableData:
   - m_Id: 24610353152
-    m_Localized: <color={variables.waterColorHex}>Water</color>
+    m_Localized: <color={global.typeWaterColorHex}>Water</color>
     m_Metadata:
       m_Items:
       - rid: 565511892561035276
   - m_Id: 310716411904
-    m_Localized: <color={variables.oxygenColorHex}>Oxygen</color>
+    m_Localized: <color={global.typeOxygenColorHex}>Oxygen</color>
     m_Metadata:
       m_Items:
       - rid: 565511892561035276
   - m_Id: 817895845888
-    m_Localized: <color={variables.energyColorHex}>cEnergy</color>
+    m_Localized: <color={global.typeEnergyColorHex}>Energy</color>
     m_Metadata:
       m_Items:
       - rid: 565511892561035276
   - m_Id: 1137367592960
-    m_Localized: <color={variables.perfectColorHex}Perfect</color>
+    m_Localized: <color={global.statusPerfectColorHex}>Perfect</color>
     m_Metadata:
       m_Items:
       - rid: 565511892561035276
   - m_Id: 1274332590080
-    m_Localized: <color={variables.needsWaterColorHex}Needs water</color>
+    m_Localized: <color={global.statusNeedsWaterColorHex}>Needs water</color>
     m_Metadata:
       m_Items:
       - rid: 565511892561035276
   - m_Id: 1327667359744
-    m_Localized: <color={variables.dehydrated}Dehydrated</color>
+    m_Localized: <color={global.statusDehydratedColorHex}>Dehydrated</color>
     m_Metadata:
       m_Items:
       - rid: 565511892561035276
   - m_Id: 1421850456064
-    m_Localized: <color={variables.dead}Dead</color>
+    m_Localized: <color={global.statusDeadColorHex}>Dead</color>
     m_Metadata:
       m_Items:
       - rid: 565511892561035276
@@ -63,23 +63,45 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2505956405248
-    m_Localized: 'Grown percentage
-
-      {variables.growPercentage}%'
+    m_Localized: Grown percentage
     m_Metadata:
-      m_Items:
-      - rid: 565511892561035276
+      m_Items: []
   - m_Id: 3259614113792
-    m_Localized: 'Fruits Grown Percentage
-
-      {variables.growPercentage}%'
+    m_Localized: Fruits Grown Percentage
     m_Metadata:
-      m_Items:
-      - rid: 565511892561035276
+      m_Items: []
+  - m_Id: 5238539342327808
+    m_Localized: Needs light to grow
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5239399581495296
+    m_Localized: 'Name:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5569681975160832
+    m_Localized: Water cactus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5569751093096448
+    m_Localized: Energy lettuce
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5569753710342144
+    m_Localized: Oxygen fungus
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5571336099606528
+    m_Localized: Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5571430555332608
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
     - rid: 565511892561035276
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 0030646ebe000000003064d008010000003024b4280100000030241f350100000030e40c4b0100000030a47647020000003024f0f602000000302458480000000030e4ba05000000
+        m_Entries: 0030646ebe000000003064d008010000003024b4280100000030241f350100000030e40c4b01000000302458480000000030e4ba05000000

@@ -20,37 +20,37 @@ MonoBehaviour:
     - rid: 565511892561035277
   m_TableData:
   - m_Id: 24610353152
-    m_Localized: <color={variables.waterColorHex}>Agua</color>
+    m_Localized: <color={global.typeWaterColorHex}>Agua</color>
     m_Metadata:
       m_Items:
       - rid: 565511892561035277
   - m_Id: 310716411904
-    m_Localized: "<color={variables.oxygenColorHex}>Ox\xEDgeno</color>"
+    m_Localized: "<color={global.typeOxygenColorHex}>Ox\xEDgeno</color>"
     m_Metadata:
       m_Items:
       - rid: 565511892561035277
   - m_Id: 817895845888
-    m_Localized: "<color={variables.energyColorHex}>cEnerg\xEDa</color>"
+    m_Localized: "<color={global.typeEnergyColorHex}>Energ\xEDa</color>"
     m_Metadata:
       m_Items:
       - rid: 565511892561035277
   - m_Id: 1137367592960
-    m_Localized: <color={variables.perfectColorHex}Perfecto</color>
+    m_Localized: <color={global.statusPerfectColorHex}>Perfecto</color>
     m_Metadata:
       m_Items:
       - rid: 565511892561035277
   - m_Id: 1274332590080
-    m_Localized: <color={variables.needsWaterColorHex}Necesita agua</color>
+    m_Localized: <color={global.statusNeedsWaterColorHex}>Necesita agua</color>
     m_Metadata:
       m_Items:
       - rid: 565511892561035277
   - m_Id: 1327667359744
-    m_Localized: <color={variables.dehydrated}Deshidratada</color>
+    m_Localized: <color={global.statusDehydratedColorHex}>Deshidratada</color>
     m_Metadata:
       m_Items:
       - rid: 565511892561035277
   - m_Id: 1421850456064
-    m_Localized: <color={variables.dead}Muerta</color>
+    m_Localized: <color={global.statusDeadColorHex}>Muerta</color>
     m_Metadata:
       m_Items:
       - rid: 565511892561035277
@@ -63,23 +63,45 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 2505956405248
-    m_Localized: 'Porcentaje crecimiento
-
-      {variables.growPercentage}%'
+    m_Localized: Porcentaje crecimiento
     m_Metadata:
-      m_Items:
-      - rid: 565511892561035277
+      m_Items: []
   - m_Id: 3259614113792
-    m_Localized: 'Porcentaje Crecimiento
-
-      {variables.growPercentage}%'
+    m_Localized: Porcentaje Crecimiento
     m_Metadata:
-      m_Items:
-      - rid: 565511892561035277
+      m_Items: []
+  - m_Id: 5238539342327808
+    m_Localized: Necesita luz para crecer
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5239399581495296
+    m_Localized: 'Nombre:'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5569681975160832
+    m_Localized: Cactus de agua
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5569751093096448
+    m_Localized: "Lechuga de energ\xEDa"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5569753710342144
+    m_Localized: "Hongo de ox\xEDgeno"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5571336099606528
+    m_Localized: "S\xED"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5571430555332608
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds:
     - rid: 565511892561035277
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 0030646ebe000000003064d008010000003024b4280100000030241f350100000030e40c4b0100000030a47647020000003024f0f602000000302458480000000030e4ba05000000
+        m_Entries: 0030646ebe000000003064d008010000003024b4280100000030241f350100000030e40c4b01000000302458480000000030e4ba05000000

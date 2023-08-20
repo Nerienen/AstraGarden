@@ -95,8 +95,8 @@ public class Plant : Grabbable
     {
         get
         {
-            if(_plantData == null) _plantData = new PlantData(GetCurrentPlantName(), healthPoints, _growPercentage, _fruitGrowPercentage, _currentType);
-            else _plantData.UpdatePlantData(GetCurrentPlantName(), healthPoints, _growPercentage, _fruitGrowPercentage, _currentType);
+            if(_plantData == null) _plantData = new PlantData(GetCurrentPlantName(), healthPoints, _growPercentage, _fruitGrowPercentage, NeedsLightToGrow(), _currentType);
+            else _plantData.UpdatePlantData(GetCurrentPlantName(), healthPoints, _growPercentage, _fruitGrowPercentage, NeedsLightToGrow(), _currentType);
             return _plantData;
         }
     }
@@ -353,5 +353,10 @@ public class Plant : Grabbable
     void OnLightsOff()
     {
         _isIlluminated = false;
+    }
+
+    public bool NeedsLightToGrow()
+    {
+        return _currentType != PlantTypes.EnergyPlant;
     }
 }
